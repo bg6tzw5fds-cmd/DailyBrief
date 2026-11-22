@@ -1,5 +1,8 @@
 name: Daily Brief
 
+# 投資晨報客製版：預設 台北時間每天 07:00、Anthropic Claude、繁體中文。
+# 只需要在 Settings → Secrets and variables → Actions → Secrets 新增 ANTHROPIC_API_KEY。
+
 # Generate a fresh daily report and publish to GitHub Pages.
 #
 # One-time setup for forkers (see README → "Run on GitHub Actions"):
@@ -76,8 +79,8 @@ jobs:
             exit 0
           fi
 
-          TZ_VAL="${REPORT_TZ:-UTC}"
-          HOURS_VAL="${REPORT_HOUR:-8}"
+          TZ_VAL="${REPORT_TZ:-Asia/Taipei}"
+          HOURS_VAL="${REPORT_HOUR:-7}"
           DAYS_VAL="${REPORT_DAYS:-*}"
 
           NOW_HOUR=$(TZ="$TZ_VAL" date +%-H)
@@ -143,10 +146,9 @@ jobs:
             # Tolerate 1h early: if BJ 07:XX is the only trigger before BJ
             # 08:00 gets swallowed, we'd rather fire slightly early than
             # not at all. earliest_hour=0 edge case: don't go negative.
+            # 投資晨報：不提早執行（07:00 前美股收盤資料才完整），
+            # 只在預定時間之後補跑。
             catchup_threshold=$earliest_hour
-            if [ "$earliest_hour" -gt 0 ]; then
-              catchup_threshold=$((earliest_hour - 1))
-            fi
             if [ "$NOW_HOUR" -ge "$catchup_threshold" ]; then
               TODAY=$(TZ="$TZ_VAL" date +%Y-%m-%d)
               CHECK_URL="https://api.github.com/repos/${GITHUB_REPOSITORY}/contents/${TODAY}/${TODAY}.html?ref=gh-pages"
@@ -211,7 +213,7 @@ jobs:
 
       - name: Generate today's report
         env:
-          LLM_BACKEND: ${{ vars.LLM_BACKEND || 'deepseek' }}
+          LLM_BACKEND: ${{ vars.LLM_BACKEND || 'anthropic' }}
           LLM_MODEL: ${{ vars.LLM_MODEL }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -233,14 +235,14 @@ jobs:
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
           LLM_BASE_URL: ${{ vars.LLM_BASE_URL }}
           REPORT_LOCALE: ${{ vars.REPORT_LOCALE || 'zh' }}
-          REPORT_TZ: ${{ vars.REPORT_TZ }}
+          REPORT_TZ: ${{ vars.REPORT_TZ || 'Asia/Taipei' }}
           # Sources to skip in CI (comma-separated ids). linux.do's WAF blocks
           # datacenter egress from Actions runners (and Cloudflare Workers too —
           # no free proxy gets through), so fetching it here always fails. It
           # still works locally, so we skip it only in CI rather than disabling
           # it in the shared config. Override via the DISABLE_SOURCE_IDS
           # Actions Variable if you want a different set.
-          DISABLE_SOURCE_IDS: ${{ vars.DISABLE_SOURCE_IDS || 'linuxdo' }}
+          DISABLE_SOURCE_IDS: ${{ vars.DISABLE_SOURCE_IDS }}
           WEB_MODE: 'true'
         run: npm run daily
 

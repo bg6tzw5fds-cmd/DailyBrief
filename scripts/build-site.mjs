@@ -53,15 +53,15 @@ const rows = dates
   .join("\n");
 
 const archiveHtml = `<!doctype html>
-<html lang="en">
+<html lang="zh-Hant-TW">
 <head>
 <meta charset="utf-8">
-<title>daily-brief — archive</title>
+<title>投資晨報 — 歷史晨報</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
   :root { color-scheme: light dark; }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
     max-width: 720px;
     margin: 3rem auto;
     padding: 0 1.5rem;
@@ -95,10 +95,10 @@ const archiveHtml = `<!doctype html>
 </style>
 </head>
 <body>
-  <h1>daily-brief — archive</h1>
-  <p class="meta">${dates.length} report${dates.length === 1 ? "" : "s"} · newest first · generated ${new Date().toISOString().slice(0, 10)}</p>
+  <h1>投資晨報 — 歷史晨報</h1>
+  <p class="meta">共 ${dates.length} 份 · 最新在前 · 更新於 ${new Date().toISOString().slice(0, 10)}</p>
   <div class="top">
-    <a href="./index.html">→ Latest report (${latest})</a>
+    <a href="./index.html">→ 最新一期（${latest}）</a>
   </div>
   <ul>
 ${rows}

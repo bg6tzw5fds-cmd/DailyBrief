@@ -52,16 +52,16 @@ export interface TickerAnalysis {
 }
 
 const SIGNAL_LABELS: Record<SignalType, string> = {
-  "golden-cross": "金叉(SMA50↑SMA200)",
-  "death-cross": "死叉(SMA50↓SMA200)",
-  "macd-bull-cross": "MACD 金叉",
-  "macd-bear-cross": "MACD 死叉",
-  "rsi-overbought": "RSI 超买",
-  "rsi-oversold": "RSI 超卖",
-  "near-52w-high": "接近 52 周高",
-  "near-52w-low": "接近 52 周低",
-  "above-sma50-sma200": "多头排列",
-  "below-sma50-sma200": "空头排列",
+  "golden-cross": "黃金交叉(SMA50↑SMA200)",
+  "death-cross": "死亡交叉(SMA50↓SMA200)",
+  "macd-bull-cross": "MACD 黃金交叉",
+  "macd-bear-cross": "MACD 死亡交叉",
+  "rsi-overbought": "RSI 超買",
+  "rsi-oversold": "RSI 超賣",
+  "near-52w-high": "接近 52 週高點",
+  "near-52w-low": "接近 52 週低點",
+  "above-sma50-sma200": "多頭排列",
+  "below-sma50-sma200": "空頭排列",
 };
 
 export function analyzeTicker(

@@ -14,7 +14,7 @@ export const PRESETS: Record<AnthropicCompatConfig["backend"], AnthropicCompatCo
   anthropic: {
     backend: "anthropic",
     defaultBaseUrl: undefined,
-    defaultModel: "claude-sonnet-4-6",
+    defaultModel: "claude-sonnet-5-5",
     apiKeyEnv: "ANTHROPIC_API_KEY",
     baseUrlEnv: "ANTHROPIC_BASE_URL",
   },

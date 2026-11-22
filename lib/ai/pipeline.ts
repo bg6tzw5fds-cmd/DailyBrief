@@ -47,7 +47,7 @@ export interface ArticleInput extends RawArticle {
 
 const PER_CATEGORY_LIMIT: Record<Category, number> = {
   tech: 25,
-  finance: 20,
+  finance: 40,
   politics: 15,
 };
 
@@ -55,7 +55,7 @@ const MAX_AGE_DAYS = 14;
 
 const FALLBACK_BRIEF_LIMIT: Record<Category, number> = {
   tech: 5,
-  finance: 5,
+  finance: 6,
   politics: 3,
 };
 
@@ -161,7 +161,10 @@ function isRecoverableDigestOutputError(error: unknown): boolean {
   );
 }
 
-async function callOnce(userPayloadJson: string): Promise<DailyReport> {
+async function callOnce(
+  userPayloadJson: string,
+  marketSnapshot = "",
+): Promise<DailyReport> {
   // Claude Code CLI's built-in system prompt biases the model toward
   // conversational markdown output. Anchor the format expectation in the
   // user message (instruction recency wins) *and* explicitly demand every
@@ -187,26 +190,32 @@ async function callOnce(userPayloadJson: string): Promise<DailyReport> {
           "**Quote rule (important!)**: For any quotation INSIDE a JSON string, use single quotes ' or curly quotes '\" — **never** raw double quotes \", which break JSON parsing.",
           "No trailing commas.",
           "",
+          marketSnapshot ? `Previous-close market data (only cite these numbers):\n${marketSnapshot}\n` : "",
           `Candidate news (JSON array, ${userPayloadJson.length} chars):`,
           userPayloadJson,
         ].join("\n")
       : [
-          "你的任务：根据下方候选新闻，生成一份当日简报，**响应必须是一个合法 JSON 对象**——以 `{` 开头，以 `}` 结尾，不要 markdown / 不要代码围栏 / 不要任何解释。",
+          "**輸出語言：繁體中文（台灣用語）。** JSON 內所有字串都必須是繁體中文，不得出現簡體字。",
           "",
-          "JSON 必须包含全部字段且不能为空（briefs 数组按 system prompt 规定的条数填充）：",
-          "  - hero_headline: 10-25 字的当日一句话头条",
-          "  - daily_overview: **150-220 字** 的当日总览段落，一段话覆盖技术 / 财经 / 时政 的核心信号，让读者一眼抓住全貌",
-          "  - tech_briefs: **3-5 条** 科技 BriefItem",
-          "  - finance_briefs: **3-5 条** 财经 BriefItem",
-          "  - politics_briefs: **2-3 条** 时政 BriefItem",
-          "  - editor_note: 30-60 字的编辑短评",
-          "  - keywords: 5-8 个关键词",
+          "你的任務：根據下方的收盤數據與候選新聞，產生今日投資晨報，**回應必須是一個合法 JSON 物件**——以 `{` 開頭，以 `}` 結尾，不要 markdown、不要程式碼框、不要任何解釋。",
           "",
-          "BriefItem 字段：title、url（必须从候选条目原样选取）、source、summary、importance(1-10)。",
-          "**引号规则（重要！）**：JSON 字符串内的中文引用请使用**中文全角引号**「」或者 “”，**绝对不要**用英文双引号 \" —— 那会导致 JSON 解析失败。例：写 商务部回应「内卷」 而不是 商务部回应\"内卷\"。",
-          "不要使用单引号、不要末尾多余逗号。",
+          "JSON 必須包含全部欄位且不能為空（briefs 陣列依 system prompt 規定的條數填入）：",
+          "  - hero_headline: 15-30 字的今日頭條",
+          "  - daily_overview: **200-300 字** 的晨報總覽，先講收盤數據，再串連重要新聞",
+          "  - finance_briefs: **4-6 條** 財經與總經 BriefItem",
+          "  - tech_briefs: **3-5 條** AI 與半導體 BriefItem",
+          "  - politics_briefs: **2-3 條** 國際與地緣 BriefItem",
+          "  - editor_note: 50-90 字的中性觀察",
+          "  - keywords: 5-8 個關鍵字",
           "",
-          "候选新闻（JSON 数组，共 " + userPayloadJson.length + " 字符）：",
+          "BriefItem 欄位：title、url（必須從候選條目原樣選取）、source、summary、importance(1-10)。",
+          "**引號規則（重要！）**：JSON 字串內的引用請使用全形引號「」，**絕對不要**用英文雙引號 \" —— 那會導致 JSON 解析失敗。例：寫 鮑爾表示「不急於降息」 而不是 鮑爾表示\"不急於降息\"。",
+          "不要使用單引號、不要結尾多餘逗號。",
+          "",
+          marketSnapshot
+            ? "前一交易日收盤數據（只能引用這裡的數字）：\n" + marketSnapshot + "\n"
+            : "（今日無收盤數據，daily_overview 請聚焦新聞。）\n",
+          "候選新聞（JSON 陣列，共 " + userPayloadJson.length + " 字元）：",
           userPayloadJson,
         ].join("\n");
   const { text } = await runLlm({
@@ -254,7 +263,8 @@ async function callOnce(userPayloadJson: string): Promise<DailyReport> {
 
 export async function generateDailyReport(
   articles: ArticleInput[],
-  callDigest: (userPayloadJson: string) => Promise<DailyReport> = callOnce,
+  callDigest: (userPayloadJson: string, marketSnapshot?: string) => Promise<DailyReport> = callOnce,
+  marketSnapshot = "",
 ): Promise<{ report: DailyReport; tokensUsed: number }> {
   const grouped: Record<Category, ArticleInput[]> = {
     tech: [],
@@ -280,7 +290,7 @@ export async function generateDailyReport(
 
   let report: DailyReport;
   try {
-    report = await callDigest(userPayloadJson);
+    report = await callDigest(userPayloadJson, marketSnapshot);
   } catch (firstErr) {
     // One retry covers transient provider interruptions and occasional
     // narration/malformed JSON on the first response.
@@ -290,7 +300,7 @@ export async function generateDailyReport(
       }`,
     );
     try {
-      report = await callDigest(userPayloadJson);
+      report = await callDigest(userPayloadJson, marketSnapshot);
     } catch (secondErr) {
       if (
         isRecoverableDigestOutputError(firstErr) &&

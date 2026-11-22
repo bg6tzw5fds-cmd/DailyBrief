@@ -28,14 +28,14 @@ test("buildFallbackDailyReport preserves enriched summaries and category caps", 
     ...Array.from({ length: 7 }, (_, i) =>
       article("tech", i, i === 0 ? "enriched tech summary" : undefined),
     ),
-    ...Array.from({ length: 6 }, (_, i) => article("finance", i)),
+    ...Array.from({ length: 8 }, (_, i) => article("finance", i)),
     ...Array.from({ length: 4 }, (_, i) => article("politics", i)),
   ];
 
   const report = buildFallbackDailyReport(articles);
 
   assert.equal(report.tech_briefs.length, 5);
-  assert.equal(report.finance_briefs.length, 5);
+  assert.equal(report.finance_briefs.length, 6);
   assert.equal(report.politics_briefs.length, 3);
   assert.equal(report.tech_briefs[0]?.summary, "enriched tech summary");
   assert.equal(report.finance_briefs[0]?.summary, "finance excerpt 0");

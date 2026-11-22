@@ -1,16 +1,452 @@
 [
   {
+    "id": "cna-finance",
+    "name": "中央社 財經",
+    "type": "rss",
+    "url": "https://feeds.feedburner.com/rsscna/finance",
+    "category": "finance",
+    "subcategory": "tw-market",
+    "lang": "zh",
+    "enabled": true,
+    "locales": [
+      "zh"
+    ],
+    "notes": "[投資晨報] 新增來源"
+  },
+  {
+    "id": "ltn-business",
+    "name": "自由時報 財經",
+    "type": "rss",
+    "url": "https://news.ltn.com.tw/rss/business.xml",
+    "category": "finance",
+    "subcategory": "tw-market",
+    "lang": "zh",
+    "enabled": true,
+    "locales": [
+      "zh"
+    ],
+    "notes": "[投資晨報] 新增來源"
+  },
+  {
+    "id": "yahoo-tw-market",
+    "name": "Yahoo 股市 台股",
+    "type": "rss",
+    "url": "https://tw.stock.yahoo.com/rss?category=tw-market",
+    "category": "finance",
+    "subcategory": "tw-market",
+    "lang": "zh",
+    "enabled": true,
+    "locales": [
+      "zh"
+    ],
+    "notes": "[投資晨報] 新增來源"
+  },
+  {
+    "id": "udn-money",
+    "name": "經濟日報",
+    "type": "rss",
+    "url": "https://money.udn.com/rssfeed/news/1001/5591?ch=money",
+    "category": "finance",
+    "subcategory": "tw-market",
+    "lang": "zh",
+    "enabled": true,
+    "locales": [
+      "zh"
+    ],
+    "notes": "[投資晨報] 新增來源"
+  },
+  {
+    "id": "fed-press",
+    "name": "Fed 新聞稿",
+    "type": "rss",
+    "url": "https://www.federalreserve.gov/feeds/press_all.xml",
+    "category": "finance",
+    "subcategory": "central-bank",
+    "enabled": true,
+    "locales": [
+      "zh",
+      "en"
+    ],
+    "notes": "[投資晨報] 新增來源"
+  },
+  {
+    "id": "ecb-press",
+    "name": "ECB 新聞稿",
+    "type": "rss",
+    "url": "https://www.ecb.europa.eu/rss/press.html",
+    "category": "finance",
+    "subcategory": "central-bank",
+    "enabled": true,
+    "locales": [
+      "zh",
+      "en"
+    ],
+    "notes": "[投資晨報] 新增來源"
+  },
+  {
+    "id": "boj-whatsnew",
+    "name": "日本央行",
+    "type": "rss",
+    "url": "https://www.boj.or.jp/en/rss/whatsnew.xml",
+    "category": "finance",
+    "subcategory": "central-bank",
+    "enabled": true,
+    "locales": [
+      "zh",
+      "en"
+    ],
+    "notes": "[投資晨報] 新增來源"
+  },
+  {
+    "id": "cnbc-economy",
+    "name": "CNBC Economy",
+    "type": "rss",
+    "url": "https://www.cnbc.com/id/20910258/device/rss/rss.html",
+    "category": "finance",
+    "subcategory": "central-bank",
+    "enabled": true,
+    "locales": [
+      "zh",
+      "en"
+    ],
+    "notes": "[投資晨報] 新增來源"
+  },
+  {
+    "id": "oilprice",
+    "name": "OilPrice.com",
+    "type": "rss",
+    "url": "https://oilprice.com/rss/main",
+    "category": "finance",
+    "subcategory": "energy",
+    "enabled": true,
+    "locales": [
+      "zh",
+      "en"
+    ],
+    "notes": "[投資晨報] 新增來源"
+  },
+  {
+    "id": "eia-today",
+    "name": "EIA Today in Energy",
+    "type": "rss",
+    "url": "https://www.eia.gov/rss/todayinenergy.xml",
+    "category": "finance",
+    "subcategory": "energy",
+    "enabled": true,
+    "locales": [
+      "zh",
+      "en"
+    ],
+    "notes": "[投資晨報] 新增來源"
+  },
+  {
+    "id": "cnbc-energy",
+    "name": "CNBC Energy",
+    "type": "rss",
+    "url": "https://www.cnbc.com/id/19836768/device/rss/rss.html",
+    "category": "finance",
+    "subcategory": "energy",
+    "enabled": true,
+    "locales": [
+      "zh",
+      "en"
+    ],
+    "notes": "[投資晨報] 新增來源"
+  },
+  {
+    "id": "semiengineering",
+    "name": "Semiconductor Engineering",
+    "type": "rss",
+    "url": "https://semiengineering.com/feed/",
+    "category": "tech",
+    "subcategory": "semis",
+    "enabled": true,
+    "locales": [
+      "zh",
+      "en"
+    ],
+    "notes": "[投資晨報] 新增來源"
+  },
+  {
+    "id": "eetimes",
+    "name": "EE Times",
+    "type": "rss",
+    "url": "https://www.eetimes.com/feed/",
+    "category": "tech",
+    "subcategory": "semis",
+    "enabled": true,
+    "locales": [
+      "zh",
+      "en"
+    ],
+    "notes": "[投資晨報] 新增來源"
+  },
+  {
+    "id": "tomshardware",
+    "name": "Tom's Hardware",
+    "type": "rss",
+    "url": "https://www.tomshardware.com/feeds/all",
+    "category": "tech",
+    "subcategory": "semis",
+    "enabled": true,
+    "locales": [
+      "zh",
+      "en"
+    ],
+    "notes": "[投資晨報] 新增來源"
+  },
+  {
+    "id": "nextplatform",
+    "name": "The Next Platform",
+    "type": "rss",
+    "url": "https://www.nextplatform.com/feed/",
+    "category": "tech",
+    "subcategory": "semis",
+    "enabled": true,
+    "locales": [
+      "zh",
+      "en"
+    ],
+    "notes": "[投資晨報] 新增來源"
+  },
+  {
+    "id": "techcrunch-ai",
+    "name": "TechCrunch AI",
+    "type": "rss",
+    "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
+    "category": "tech",
+    "subcategory": "ai-news",
+    "enabled": true,
+    "locales": [
+      "zh",
+      "en"
+    ],
+    "notes": "[投資晨報] 新增來源"
+  },
+  {
+    "id": "technews-tw",
+    "name": "科技新報",
+    "type": "rss",
+    "url": "https://technews.tw/feed/",
+    "category": "tech",
+    "subcategory": "tw-tech",
+    "lang": "zh",
+    "enabled": true,
+    "locales": [
+      "zh"
+    ],
+    "notes": "[投資晨報] 新增來源"
+  },
+  {
+    "id": "cna-tech",
+    "name": "中央社 科技",
+    "type": "rss",
+    "url": "https://feeds.feedburner.com/rsscna/technology",
+    "category": "tech",
+    "subcategory": "tw-tech",
+    "lang": "zh",
+    "enabled": true,
+    "locales": [
+      "zh"
+    ],
+    "notes": "[投資晨報] 新增來源"
+  },
+  {
+    "id": "cna-intl",
+    "name": "中央社 國際",
+    "type": "rss",
+    "url": "https://feeds.feedburner.com/rsscna/intworld",
+    "category": "politics",
+    "subcategory": "world",
+    "lang": "zh",
+    "enabled": true,
+    "locales": [
+      "zh"
+    ],
+    "notes": "[投資晨報] 新增來源"
+  },
+  {
+    "id": "openai-news",
+    "name": "OpenAI News",
+    "type": "rss",
+    "url": "https://openai.com/news/rss.xml",
+    "category": "tech",
+    "subcategory": "ai-news",
+    "enabled": true,
+    "locales": [
+      "zh",
+      "en"
+    ]
+  },
+  {
+    "id": "tldr-ai",
+    "name": "TLDR AI",
+    "type": "rss",
+    "url": "https://tldr.tech/api/rss/ai",
+    "category": "tech",
+    "subcategory": "ai-news",
+    "enabled": true,
+    "locales": [
+      "zh",
+      "en"
+    ]
+  },
+  {
+    "id": "mit-tech-review-ai",
+    "name": "MIT Tech Review AI",
+    "type": "rss",
+    "url": "https://www.technologyreview.com/topic/artificial-intelligence/feed",
+    "category": "tech",
+    "subcategory": "ai-news",
+    "enabled": true,
+    "locales": [
+      "zh",
+      "en"
+    ]
+  },
+  {
+    "id": "bloomberg-markets",
+    "name": "Bloomberg Markets",
+    "type": "rss",
+    "url": "https://feeds.bloomberg.com/markets/news.rss",
+    "category": "finance",
+    "subcategory": "news",
+    "enabled": true,
+    "locales": [
+      "zh",
+      "en"
+    ]
+  },
+  {
+    "id": "wsj-markets",
+    "name": "WSJ Markets",
+    "type": "rss",
+    "url": "https://feeds.a.dj.com/rss/RSSMarketsMain.xml",
+    "category": "finance",
+    "subcategory": "news",
+    "enabled": true,
+    "locales": [
+      "zh",
+      "en"
+    ]
+  },
+  {
+    "id": "cnbc-topnews",
+    "name": "CNBC",
+    "type": "rss",
+    "url": "https://www.cnbc.com/id/100003114/device/rss/rss.html",
+    "category": "finance",
+    "subcategory": "news",
+    "enabled": true,
+    "locales": [
+      "zh",
+      "en"
+    ]
+  },
+  {
+    "id": "ft-companies",
+    "name": "Financial Times",
+    "type": "rss",
+    "url": "https://www.ft.com/companies?format=rss",
+    "category": "finance",
+    "subcategory": "news",
+    "enabled": true,
+    "locales": [
+      "zh",
+      "en"
+    ]
+  },
+  {
+    "id": "bbc-business",
+    "name": "BBC Business",
+    "type": "rss",
+    "url": "https://feeds.bbci.co.uk/news/business/rss.xml",
+    "category": "finance",
+    "subcategory": "news",
+    "enabled": true,
+    "locales": [
+      "zh",
+      "en"
+    ]
+  },
+  {
+    "id": "economist-finance",
+    "name": "The Economist Finance",
+    "type": "rss",
+    "url": "https://www.economist.com/finance-and-economics/rss.xml",
+    "category": "finance",
+    "subcategory": "news",
+    "enabled": true,
+    "locales": [
+      "zh",
+      "en"
+    ]
+  },
+  {
+    "id": "bbc-world",
+    "name": "BBC World",
+    "type": "rss",
+    "url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "category": "politics",
+    "subcategory": "world",
+    "enabled": true,
+    "locales": [
+      "zh",
+      "en"
+    ]
+  },
+  {
+    "id": "nyt-world",
+    "name": "NYT World",
+    "type": "rss",
+    "url": "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
+    "category": "politics",
+    "subcategory": "world",
+    "enabled": true,
+    "locales": [
+      "zh",
+      "en"
+    ]
+  },
+  {
+    "id": "aljazeera",
+    "name": "Al Jazeera",
+    "type": "rss",
+    "url": "https://www.aljazeera.com/xml/rss/all.xml",
+    "category": "politics",
+    "subcategory": "world",
+    "enabled": true,
+    "locales": [
+      "zh",
+      "en"
+    ]
+  },
+  {
+    "id": "the-diplomat",
+    "name": "The Diplomat",
+    "type": "rss",
+    "url": "https://thediplomat.com/feed/",
+    "category": "politics",
+    "subcategory": "world",
+    "enabled": true,
+    "locales": [
+      "zh",
+      "en"
+    ]
+  },
+  {
     "id": "github-trending",
     "name": "GitHub Trending",
     "type": "scrape",
     "url": "https://github.com/trending",
     "category": "tech",
     "subcategory": "github-trending",
-    "enabled": true,
+    "enabled": false,
     "locales": [
       "zh",
       "en"
-    ]
+    ],
+    "notes": "[投資晨報] 與投資主題無關，已停用。"
   },
   {
     "id": "v2ex-hot",
@@ -19,10 +455,11 @@
     "url": "https://www.v2ex.com/api/topics/show.json",
     "category": "tech",
     "subcategory": "cn-community",
-    "enabled": true,
+    "enabled": false,
     "locales": [
       "zh"
-    ]
+    ],
+    "notes": "[投資晨報] 與投資主題無關，已停用。"
   },
   {
     "id": "linuxdo",
@@ -31,11 +468,11 @@
     "url": "https://linux.do/top.rss?period=daily",
     "category": "tech",
     "subcategory": "cn-community",
-    "enabled": true,
+    "enabled": false,
     "locales": [
       "zh"
     ],
-    "notes": "Discourse RSS feed; fetcher falls back to /latest.rss if /top.rss fails"
+    "notes": "[投資晨報] 與投資主題無關，已停用。 Discourse RSS feed; fetcher falls back to /latest.rss if /top.rss fails"
   },
   {
     "id": "juejin",
@@ -56,10 +493,11 @@
     "url": "https://hacker-news.firebaseio.com/v0",
     "category": "tech",
     "subcategory": "overseas-community",
-    "enabled": true,
+    "enabled": false,
     "locales": [
       "en"
-    ]
+    ],
+    "notes": "[投資晨報] 與投資主題無關，已停用。"
   },
   {
     "id": "lobsters",
@@ -87,30 +525,18 @@
     ]
   },
   {
-    "id": "openai-news",
-    "name": "OpenAI News",
-    "type": "rss",
-    "url": "https://openai.com/news/rss.xml",
-    "category": "tech",
-    "subcategory": "ai-news",
-    "enabled": true,
-    "locales": [
-      "zh",
-      "en"
-    ]
-  },
-  {
     "id": "deepmind-blog",
     "name": "DeepMind Blog",
     "type": "rss",
     "url": "https://deepmind.google/blog/rss.xml",
     "category": "tech",
     "subcategory": "ai-news",
-    "enabled": true,
+    "enabled": false,
     "locales": [
       "zh",
       "en"
-    ]
+    ],
+    "notes": "[投資晨報] 與投資主題無關，已停用。"
   },
   {
     "id": "huggingface-blog",
@@ -119,11 +545,12 @@
     "url": "https://huggingface.co/blog/feed.xml",
     "category": "tech",
     "subcategory": "ai-news",
-    "enabled": true,
+    "enabled": false,
     "locales": [
       "zh",
       "en"
-    ]
+    ],
+    "notes": "[投資晨報] 與投資主題無關，已停用。"
   },
   {
     "id": "huggingface-papers",
@@ -132,26 +559,19 @@
     "url": "https://huggingface.co/api/daily_papers",
     "category": "tech",
     "subcategory": "trending-papers",
-    "enabled": true,
+    "enabled": false,
     "locales": [
       "zh",
       "en"
     ],
-    "keywords": ["LLM", "agent", "RAG", "reasoning", "coding"],
-    "notes": "Daily trending papers from HuggingFace. Set keywords to filter; empty array or omit for all papers."
-  },
-  {
-    "id": "tldr-ai",
-    "name": "TLDR AI",
-    "type": "rss",
-    "url": "https://tldr.tech/api/rss/ai",
-    "category": "tech",
-    "subcategory": "ai-news",
-    "enabled": true,
-    "locales": [
-      "zh",
-      "en"
-    ]
+    "keywords": [
+      "LLM",
+      "agent",
+      "RAG",
+      "reasoning",
+      "coding"
+    ],
+    "notes": "[投資晨報] 與投資主題無關，已停用。 Daily trending papers from HuggingFace. Set keywords to filter; empty array or omit for all papers."
   },
   {
     "id": "smol-ai-news",
@@ -160,11 +580,12 @@
     "url": "https://news.smol.ai/rss.xml",
     "category": "tech",
     "subcategory": "ai-news",
-    "enabled": true,
+    "enabled": false,
     "locales": [
       "zh",
       "en"
-    ]
+    ],
+    "notes": "[投資晨報] 與投資主題無關，已停用。"
   },
   {
     "id": "latent-space",
@@ -173,24 +594,12 @@
     "url": "https://www.latent.space/feed",
     "category": "tech",
     "subcategory": "ai-news",
-    "enabled": true,
+    "enabled": false,
     "locales": [
       "zh",
       "en"
-    ]
-  },
-  {
-    "id": "mit-tech-review-ai",
-    "name": "MIT Tech Review AI",
-    "type": "rss",
-    "url": "https://www.technologyreview.com/topic/artificial-intelligence/feed",
-    "category": "tech",
-    "subcategory": "ai-news",
-    "enabled": true,
-    "locales": [
-      "zh",
-      "en"
-    ]
+    ],
+    "notes": "[投資晨報] 與投資主題無關，已停用。"
   },
   {
     "id": "attentionvc-ai",
@@ -199,11 +608,12 @@
     "url": "https://reply-vc-90459984647.us-central1.run.app/v1/articles/leaderboard?window=3d&category=ai&lang=en&limit=30",
     "category": "tech",
     "subcategory": "x-viral",
-    "enabled": true,
+    "enabled": false,
     "locales": [
       "zh",
       "en"
-    ]
+    ],
+    "notes": "[投資晨報] 與投資主題無關，已停用。"
   },
   {
     "id": "solidot",
@@ -347,58 +757,6 @@
     ]
   },
   {
-    "id": "bloomberg-markets",
-    "name": "Bloomberg Markets",
-    "type": "rss",
-    "url": "https://feeds.bloomberg.com/markets/news.rss",
-    "category": "finance",
-    "subcategory": "news",
-    "enabled": true,
-    "locales": [
-      "zh",
-      "en"
-    ]
-  },
-  {
-    "id": "wsj-markets",
-    "name": "WSJ Markets",
-    "type": "rss",
-    "url": "https://feeds.a.dj.com/rss/RSSMarketsMain.xml",
-    "category": "finance",
-    "subcategory": "news",
-    "enabled": true,
-    "locales": [
-      "zh",
-      "en"
-    ]
-  },
-  {
-    "id": "cnbc-topnews",
-    "name": "CNBC",
-    "type": "rss",
-    "url": "https://www.cnbc.com/id/100003114/device/rss/rss.html",
-    "category": "finance",
-    "subcategory": "news",
-    "enabled": false,
-    "locales": [
-      "zh",
-      "en"
-    ]
-  },
-  {
-    "id": "ft-companies",
-    "name": "Financial Times",
-    "type": "rss",
-    "url": "https://www.ft.com/companies?format=rss",
-    "category": "finance",
-    "subcategory": "news",
-    "enabled": true,
-    "locales": [
-      "zh",
-      "en"
-    ]
-  },
-  {
     "id": "ftchinese-news",
     "name": "FT中文网",
     "type": "rss",
@@ -431,32 +789,6 @@
     "category": "finance",
     "subcategory": "news",
     "enabled": false,
-    "locales": [
-      "zh",
-      "en"
-    ]
-  },
-  {
-    "id": "bbc-business",
-    "name": "BBC Business",
-    "type": "rss",
-    "url": "https://feeds.bbci.co.uk/news/business/rss.xml",
-    "category": "finance",
-    "subcategory": "news",
-    "enabled": true,
-    "locales": [
-      "zh",
-      "en"
-    ]
-  },
-  {
-    "id": "economist-finance",
-    "name": "The Economist Finance",
-    "type": "rss",
-    "url": "https://www.economist.com/finance-and-economics/rss.xml",
-    "category": "finance",
-    "subcategory": "news",
-    "enabled": true,
     "locales": [
       "zh",
       "en"
@@ -496,11 +828,11 @@
     "category": "tech",
     "subcategory": "overseas-community",
     "useCurl": true,
-    "enabled": true,
+    "enabled": false,
     "locales": [
       "en"
     ],
-    "notes": "Lives in tech:overseas-community so it shares the L1 'Community' panel with Hacker News in en mode (mirrors cn-community in zh mode)."
+    "notes": "[投資晨報] 與投資主題無關，已停用。 Lives in tech:overseas-community so it shares the L1 'Community' panel with Hacker News in en mode (mirrors cn-community in zh mode)."
   },
   {
     "id": "reddit-chinastocks",
@@ -540,43 +872,18 @@
     ]
   },
   {
-    "id": "bbc-world",
-    "name": "BBC World",
-    "type": "rss",
-    "url": "https://feeds.bbci.co.uk/news/world/rss.xml",
-    "category": "politics",
-    "subcategory": "world",
-    "enabled": true,
-    "locales": [
-      "zh",
-      "en"
-    ]
-  },
-  {
     "id": "guardian-world",
     "name": "The Guardian",
     "type": "rss",
     "url": "https://www.theguardian.com/world/rss",
     "category": "politics",
     "subcategory": "world",
-    "enabled": true,
+    "enabled": false,
     "locales": [
       "zh",
       "en"
-    ]
-  },
-  {
-    "id": "nyt-world",
-    "name": "NYT World",
-    "type": "rss",
-    "url": "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
-    "category": "politics",
-    "subcategory": "world",
-    "enabled": true,
-    "locales": [
-      "zh",
-      "en"
-    ]
+    ],
+    "notes": "[投資晨報] 與投資主題無關，已停用。"
   },
   {
     "id": "npr-world",
@@ -585,11 +892,12 @@
     "url": "https://feeds.npr.org/1004/rss.xml",
     "category": "politics",
     "subcategory": "world",
-    "enabled": true,
+    "enabled": false,
     "locales": [
       "zh",
       "en"
-    ]
+    ],
+    "notes": "[投資晨報] 與投資主題無關，已停用。"
   },
   {
     "id": "dw-chinese",
@@ -598,36 +906,11 @@
     "url": "https://rss.dw.com/rdf/rss-chi-all",
     "category": "politics",
     "subcategory": "world",
-    "enabled": true,
+    "enabled": false,
     "locales": [
       "zh"
-    ]
-  },
-  {
-    "id": "aljazeera",
-    "name": "Al Jazeera",
-    "type": "rss",
-    "url": "https://www.aljazeera.com/xml/rss/all.xml",
-    "category": "politics",
-    "subcategory": "world",
-    "enabled": true,
-    "locales": [
-      "zh",
-      "en"
-    ]
-  },
-  {
-    "id": "the-diplomat",
-    "name": "The Diplomat",
-    "type": "rss",
-    "url": "https://thediplomat.com/feed/",
-    "category": "politics",
-    "subcategory": "world",
-    "enabled": true,
-    "locales": [
-      "zh",
-      "en"
-    ]
+    ],
+    "notes": "[投資晨報] 與投資主題無關，已停用。"
   },
   {
     "id": "peoples-daily",

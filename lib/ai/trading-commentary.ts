@@ -40,37 +40,38 @@ export interface TradingCommentaryInput {
   cryptoGlobal?: CryptoGlobalStats;
 }
 
-const SYSTEM_PROMPT_ZH = `你是一名专业、克制、中性的中文技术指标解读员。你的任务是基于公开行情数据计算出的技术指标，写一份**客观的技术状态描述报告**——你不是投顾，不预测涨跌，只复述指标读数和走势形态。任何使用本报告的读者都已经知道并接受这一定位。
+const SYSTEM_PROMPT_ZH = `你是一名專業、克制、中性的繁體中文（台灣用語）技術指標解讀員。你的任務是根據公開行情資料計算出的技術指標，撰寫一份**客觀的技術面狀態描述**——你不是投顧，不預測漲跌，只描述指標讀數與走勢型態。所有讀者都已知道並接受這個定位。
 
-**严格规则**：
-1. 使用专业术语描述指标读数：金叉/死叉/MACD 红柱/绿柱/超买/超卖/突破/支撑/动量/趋势/背离 等。
-2. 所有结论必须**基于输入的实际数字**（价格、SMA、RSI、MACD、信号、近期 % 变化等），不允许凭空概括。
-3. watchlist 必须**上行倾向 + 下行倾向 + 中性 三种 stance 都覆盖到**，反映输入数据的真实技术面分布，不能全偏一侧。
-4. market_overview 要覆盖 4 类资产（美股 / 加密 / 中概 / 商品外汇）的技术面整体感觉。
-5. risk_caveat 必须包含「过去走势不代表未来表现」与「仅供技术指标解读参考」的明确声明。
+**嚴格規則**：
+1. 使用專業術語描述指標：黃金交叉／死亡交叉、MACD 柱狀體翻正／翻負、超買／超賣、突破、支撐、壓力、動能、趨勢、背離等。
+2. 所有描述必須**根據輸入的實際數字**（價格、SMA、RSI、MACD、訊號、近期漲跌幅），不可憑空概括或編造數字。
+3. watchlist 必須**同時涵蓋偏上行、偏下行、中性三種 stance**，反映輸入資料的真實分布，不能全偏一側。
+4. market_overview 依序涵蓋 6 類資產：全球指數、台股、AI 與半導體、追蹤 ETF、商品（油價、黃金、銅）、利率與匯率（美債殖利率曲線、美元指數、新台幣、日圓、VIX）。可點出跨資產的關聯，例如殖利率與成長股、油價與能源 ETF、美元與新台幣。
+5. risk_caveat 必須包含「過去走勢不代表未來表現」與「僅供技術指標解讀參考」。
+6. **全部使用繁體中文**，不得出現簡體字。
 
-输入：JSON 数组，每个元素是某 ticker 的技术分析对象，字段包括 symbol、displayName、group、currentPrice、pct1Day、pct5Day、pct52WeekHigh、pct52WeekLow、sma20/sma50/sma200、rsi14、macd/macdSignal/macdHistogram、trend、rsiState、signals。
+輸入：JSON 陣列，每個元素是某標的的技術分析物件，欄位包括 symbol、displayName、group、currentPrice、pct1Day、pct5Day、pct52WeekHigh、pct52WeekLow、sma20/sma50/sma200、rsi14、macd/macdSignal、trend、rsiState、signals。殖利率類標的（^IRX、^FVX、^TNX、^TYX）的 currentPrice 單位是百分比。
 
-输出严格 JSON 对象（不要 markdown、不要任何前后缀），三个字段都**必填且非空**：
+輸出嚴格 JSON 物件（不要 markdown、不要任何前後說明），三個欄位都**必填且不能為空**：
 {
-  "market_overview": "<300-400 字段落，不能省略>",
+  "market_overview": "<350-500 字段落，不能省略>",
   "watchlist": [
-    { "symbol": "<必须从输入精确复制>", "display_name": "<中文+(英文代码) 或 仅中文>", "stance": "偏上行" | "偏下行" | "中性", "rationale": "<80-150 字，必须引用具体技术指标数字>" },
+    { "symbol": "<必須從輸入精確複製>", "display_name": "<中文名稱>", "stance": "偏上行" | "偏下行" | "中性", "rationale": "<80-150 字，必須引用具體指標數字>" },
     ...
   ],
-  "risk_caveat": "<60-100 字，必须包含「过去走势不代表未来表现」与「仅供技术指标解读参考」>"
+  "risk_caveat": "<60-100 字，必須包含「過去走勢不代表未來表現」與「僅供技術指標解讀參考」>"
 }
 
-**关于 watchlist（这是历史上最容易出错的字段，请严格执行）**：
-- watchlist **必须正好包含 3-5 个 ticker**。
-- watchlist 长度 < 3 是**输出格式错误**，下游会自动拒绝并重新调用你，浪费一次配额。
-- "stance" 是当前技术 setup 的方向标签——纯描述、纯客观——不是涨跌预测，不是行动建议。你只是在说"这只标的当前的指标状态偏上行 / 偏下行 / 中性"。
-- 如果你扫完 21 个 ticker 觉得"今天市场太平静、没有突出标的"，仍然要从中选出**技术信号最显著的 3 个**（例如 RSI 偏离 50 最远的、近 1 日涨跌幅最大的、最近触发金叉/死叉的），全部标 "中性" stance 完全合规。
-- 任何情况下**禁止返回空数组**。空 watchlist 不是更安全的选择，它就是错的。
+**關於 watchlist（最容易出錯的欄位，請嚴格執行）**：
+- watchlist **必須正好包含 4-6 個標的**。
+- watchlist 少於 3 個是**輸出格式錯誤**，下游會自動拒絕並重新呼叫你。
+- "stance" 只是當前技術面方向的標籤——純描述、純客觀——不是漲跌預測，也不是操作建議。
+- 若覺得「今天市場平靜、沒有突出標的」，仍要挑出**技術訊號最明顯的 4 個**（例如 RSI 偏離 50 最遠、單日漲跌幅最大、最近出現交叉訊號），全部標「中性」也完全合規。
+- 任何情況下**禁止回傳空陣列**。
 
-**引号规则（重要！）**：JSON 字符串内的中文引用一律使用全角引号「」或""，**绝不**使用英文双引号——否则 JSON 解析失败。
+**引號規則（重要！）**：JSON 字串內的引用一律使用全形引號「」，**絕不**使用英文雙引號——否則 JSON 解析失敗。
 
-**输出顺序建议**：在你的回复里先生成 watchlist 数组（最重要、最容易遗漏），再生成 market_overview，最后 risk_caveat。这样即使输出被截断也保留了 picks。`;
+**輸出順序建議**：先產生 watchlist 陣列，再產生 market_overview，最後 risk_caveat。這樣即使輸出被截斷也能保留重點標的。`;
 
 const SYSTEM_PROMPT_EN = `You are a professional, restrained, neutral English-language technical-indicator interpreter. Your job is to write an **objective technical-state report** based on the public-market data's computed indicators — you are NOT an investment advisor, you do not predict price direction, you only describe indicator readings and chart structure. Any reader of this report already knows and accepts this framing.
 
@@ -179,15 +180,17 @@ export async function generateTradingCommentary(
           .filter(Boolean)
           .join("\n")
       : [
-          `**输出硬约束**：响应必须是单一合法 JSON 对象（以 \`{\` 开头以 \`}\` 结尾，不要 markdown、不要前后缀）。**watchlist 字段必须正好包含 3-5 个完整的 WatchlistPick 对象**，每个对象形如 \`{ "symbol": "...", "display_name": "...", "stance": "偏上行"|"偏下行"|"中性", "rationale": "80-150 字中文，引用具体指标数字" }\`。**禁止把 watchlist 写成 ticker symbol 字符串数组**（如 \`["^TNX","BTC-USD"]\` 是错的）——这是技术指标解读任务，每条必须含 rationale 字段。空数组或字符串数组都是输出错误。`,
+          `**輸出語言：繁體中文（台灣用語），不得出現簡體字。**`,
+          "",
+          `**輸出硬性限制**：回應必須是單一合法 JSON 物件（以 \`{\` 開頭、\`}\` 結尾，不要 markdown、不要前後說明）。**watchlist 欄位必須正好包含 4-6 個完整的 WatchlistPick 物件**，每個物件形如 \`{ "symbol": "...", "display_name": "...", "stance": "偏上行"|"偏下行"|"中性", "rationale": "80-150 字繁體中文，引用具體指標數字" }\`。**禁止把 watchlist 寫成代碼字串陣列**（如 \`["^TNX","NVDA"]\` 是錯的）。空陣列或字串陣列都是輸出錯誤。`,
           "",
           contextLines.length > 0
             ? `辅助背景（**必须在 market_overview 里至少引用一项**）：\n${contextLines.map((l) => `  - ${l}`).join("\n")}\n`
             : "",
-          `候选资产（共 ${payload.length} 个，JSON 数组）：`,
+          `候選標的（共 ${payload.length} 個，JSON 陣列）：`,
           JSON.stringify(payload),
           "",
-          `请按 system prompt 的 schema 输出 JSON 对象。watchlist 必须 3-5 个完整 WatchlistPick 对象（含 symbol / display_name / stance / rationale 四个字段），绝不允许空数组或字符串数组。`,
+          `請依 system prompt 的 schema 輸出 JSON 物件。watchlist 必須 4-6 個完整 WatchlistPick 物件（含 symbol / display_name / stance / rationale 四個欄位），絕不允許空陣列或字串陣列。`,
         ]
           .filter(Boolean)
           .join("\n");
@@ -198,7 +201,7 @@ export async function generateTradingCommentary(
     risk_caveat:
       REPORT_LOCALE === "en"
         ? "The above is based on computed technical indicators from public market data and text summaries; it does NOT constitute investment advice. Past performance does not guarantee future results — market risk is your own."
-        : "以上内容基于公开行情数据的技术指标计算与文本摘要，不构成任何投资建议。过去走势不代表未来表现，市场风险自负。",
+        : "以上內容根據公開行情資料的技術指標計算與文字摘要整理，不構成任何投資建議。過去走勢不代表未來表現，僅供技術指標解讀參考，投資風險請自行評估。",
   };
 
   // Up to 3 attempts. The "0 picks" failure mode is a probabilistic
@@ -210,7 +213,7 @@ export async function generateTradingCommentary(
   const RETRY_HINT =
     REPORT_LOCALE === "en"
       ? `\n\n⚠️ Important: the previous attempt returned an empty watchlist — that's a format error, downstream rejected and triggered this retry (wasting quota). This attempt MUST return 3-5 tickers (even if you feel "no standout names today", pick the 3 with the most pronounced technical signals and label them "Neutral").`
-      : `\n\n⚠️ 重要：上一次尝试 watchlist 为空——这是错误输出，下游已经拒绝并触发重试，浪费配额。本次必须返回 3-5 个 ticker（即使认为"今天没有突出标的"也要选信号最显著的 3 个并标「中性」stance）。`;
+      : `\n\n⚠️ 重要：上一次嘗試 watchlist 為空或格式錯誤，下游已拒絕並觸發重試。本次必須回傳 4-6 個標的（即使認為今天沒有突出標的，也要選訊號最明顯的 4 個並標「中性」）。`;
 
   for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
     const promptForAttempt = attempt === 1 ? userPrompt : userPrompt + RETRY_HINT;

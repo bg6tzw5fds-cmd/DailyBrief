@@ -29,6 +29,7 @@ import { fetchCryptoGlobal } from "../lib/trading/coingecko";
 import { generateTradingCommentary } from "../lib/ai/trading-commentary";
 import type { TradingSection } from "../lib/ai/pipeline";
 import { todayKey } from "../lib/utils";
+import { getAssetGroupLabels, type AssetGroup } from "../lib/trading/watchlist";
 
 const OUTPUT_DIR = "daily_reports";
 
@@ -204,13 +205,12 @@ async function enrichMergedSubgroup(
  * picks-to-watch list. Returns null if no ticker came back.
  */
 async function runTrading(): Promise<TradingSection | null> {
-  console.log(`[daily] analyzing watchlist + crypto context (Yahoo / alt.me / CoinGecko)…`);
+  console.log(`[daily] analyzing watchlist (Yahoo Finance)…`);
   const t0 = Date.now();
-  const [tickers, cryptoFearGreed, cryptoGlobal] = await Promise.all([
-    analyzeWatchlist(),
-    fetchCryptoFearGreed(),
-    fetchCryptoGlobal(),
-  ]);
+  // 投資晨報版不追蹤加密貨幣，因此不抓 alt.me / CoinGecko。
+  const tickers = await analyzeWatchlist();
+  const cryptoFearGreed = null as Awaited<ReturnType<typeof fetchCryptoFearGreed>>;
+  const cryptoGlobal = null as Awaited<ReturnType<typeof fetchCryptoGlobal>>;
   console.log(
     `[daily] indicators ready in ${((Date.now() - t0) / 1000).toFixed(1)}s — ${tickers.length} tickers` +
       (cryptoFearGreed ? `, F&G ${cryptoFearGreed.value}` : ", F&G ✗") +
@@ -238,6 +238,22 @@ async function runTrading(): Promise<TradingSection | null> {
   };
 }
 
+/**
+ * Compact one-line-per-ticker text block handed to the digest prompt so the
+ * overview can cite real closing numbers (and only those).
+ */
+export function buildMarketSnapshot(trading: TradingSection): string {
+  const fmt = (n: number) => (Math.abs(n) >= 1000 ? n.toFixed(0) : n.toFixed(2));
+  const sign = (n: number) => `${n >= 0 ? "+" : ""}${n.toFixed(2)}%`;
+  const labels = getAssetGroupLabels(REPORT_LOCALE);
+  return trading.tickers
+    .map(
+      (t) =>
+        `- [${labels[t.group as AssetGroup] ?? t.group}] ${t.displayName} (${t.symbol})：${fmt(t.currentPrice)}，日 ${sign(t.pct1Day)}，5 日 ${sign(t.pct5Day)}`,
+    )
+    .join("\n");
+}
+
 async function main() {
   // Fail fast on misconfigured backend before we spend 30s fetching
   // 500+ articles only to discover the LLM has no credentials.
@@ -254,9 +270,17 @@ async function main() {
   // Enrich GH Trending, papers, finance news, and politics with summaries.
   await enrichGhTrending(articles);
   await enrichTrendingPapers(articles);
-  await enrichFinanceNews(articles);
-  await enrichPolitics(articles);
-  await enrichAiNews(articles);
+  // 投資晨報：每個「合併清單」分頁（台灣財經、國際財經、央行、能源、
+  // 半導體、AI、台灣科技、國際要聞）都產生繁中摘要。
+  for (const key of Object.keys(MERGED_SUBGROUP_LIMITS)) {
+    const [cat, sub] = key.split(":") as ["tech" | "finance" | "politics", string];
+    try {
+      await enrichMergedSubgroup(articles, cat, sub);
+    } catch (e) {
+      const msg = e instanceof Error ? e.message : String(e);
+      console.warn(`[daily] enrichment ${key} failed (non-fatal): ${msg}`);
+    }
+  }
   await enrichXViral(articles);
 
   // Trading signals: Yahoo fetch + indicators + commentary. Non-fatal —
@@ -271,7 +295,11 @@ async function main() {
 
   console.log(`[daily] generating digest with ${getModelTag()}…`);
   const t0 = Date.now();
-  const { report } = await generateDailyReport(articles);
+  const { report } = await generateDailyReport(
+    articles,
+    undefined,
+    trading ? buildMarketSnapshot(trading) : "",
+  );
   if (trading) report.trading = trading;
   console.log(`[daily] digest ready in ${((Date.now() - t0) / 1000).toFixed(1)}s`);
 

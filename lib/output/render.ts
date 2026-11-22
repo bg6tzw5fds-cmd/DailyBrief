@@ -13,6 +13,7 @@ import type { TickerAnalysis } from "../trading/signals";
 import {
   getAssetGroupLabels,
   ASSET_GROUP_ORDER,
+  SNAPSHOT_SYMBOLS,
   type AssetGroup,
 } from "../trading/watchlist";
 
@@ -24,52 +25,72 @@ import {
  * this object so adding a third locale = adding one more table.
  */
 const TEXTS_ZH = {
-  siteTitle: "每日简报",
-  catTech: "技术动态",
-  catFinance: "财经要点",
-  catPolitics: "时政观察",
-  catTrading: "市场行情",
-  catCommunity: "社区讨论",
-  subAiNews: "AI 媒体",
-  subTrendingPapers: "热门论文",
+  siteTitle: "投資晨報",
+  catTech: "AI 與半導體",
+  catFinance: "財經要點",
+  catPolitics: "國際與地緣",
+  catTrading: "市場行情",
+  catCommunity: "社群討論",
+  catDigest: "今日重點",
+  subAiNews: "AI 產業",
+  subSemis: "半導體產業",
+  subTwTech: "台灣科技",
+  subTwMarket: "台灣財經",
+  subCentralBank: "央行與總經",
+  subEnergy: "能源與原物料",
+  subTrendingPapers: "熱門論文",
   subXViral: "X 推文",
-  subBlogWeekly: "博客周刊",
-  subCnCommunity: "中文社区",
-  subOverseasCommunity: "海外社区",
-  subFinanceNews: "财经新闻",
-  subFinanceCommunity: "社区讨论",
-  subWorld: "国际要闻",
+  subBlogWeekly: "部落格",
+  subCnCommunity: "中文社群",
+  subOverseasCommunity: "海外社群",
+  subFinanceNews: "國際財經",
+  subFinanceCommunity: "社群討論",
+  subWorld: "國際要聞",
   subOverseasNews: "海外科技",
   subOverseas: "海外",
-  emptySource: "该源今日无内容。",
-  emptyCategory: "该分类今日无内容。",
-  emptyGroup: "该组今日无数据。",
-  footer: "内容均来自原媒体，本站仅作摘要整理与回链。",
+  emptySource: "此來源今日無內容。",
+  emptyCategory: "此分類今日無內容。",
+  emptyGroup: "此組今日無資料。",
+  footer: "內容均來自原始媒體與公開行情資料，本頁僅做摘要整理與連結，不構成投資建議。",
   summaryLabelNews: "中文摘要",
-  summaryLabelIntro: "中文介绍",
-  tradingMarketOverview: "市场总览",
-  tradingTodayFocus: "今日关注",
-  tradingAllAssets: "全部资产",
-  tradingRiskCaveat: "风险提示",
-  widgetCryptoFearGreed: "加密恐慌贪婪",
-  widgetCryptoCap: "加密总市值",
-  widgetBtcDom: "BTC 主导率",
+  summaryLabelIntro: "中文介紹",
+  tradingMarketOverview: "技術面總覽",
+  tradingTodayFocus: "今日技術面焦點",
+  tradingAllAssets: "全部標的",
+  tradingRiskCaveat: "風險提示",
+  widgetCryptoFearGreed: "加密恐慌貪婪",
+  widgetCryptoCap: "加密總市值",
+  widgetBtcDom: "BTC 市占率",
   widgetVolume24h: "24h 成交量",
-  widgetActiveCoins: "活跃币",
+  widgetActiveCoins: "活躍幣種",
   ticker5d: "5 日",
-  tickerVs52wHigh: "距 52w 高",
-  tickerTrend: "趋势",
-  tickerMacd: "MACD / 信号",
+  tickerVs52wHigh: "距 52 週高",
+  tickerTrend: "趨勢",
+  tickerMacd: "MACD / 訊號",
   signalToday: "今天",
   signalDaysAgoSuffix: "天前",
-  trendBullish: "多头",
-  trendBearish: "空头",
+  trendBullish: "多頭",
+  trendBearish: "空頭",
   trendNeutral: "中性",
-  mdTodayOverview: "今日总览",
-  mdEditorNote: "编辑短评",
-  mdTodayKeywords: "今日关键词",
+  mdTodayOverview: "今日總覽",
+  mdEditorNote: "編輯短評",
+  mdTodayKeywords: "今日關鍵字",
   mdImportance: "重要度",
-  archiveLink: "← 历史归档",
+  archiveLink: "← 歷史晨報",
+  digestHeadline: "今日頭條",
+  digestOverview: "晨報總覽",
+  digestSnapshot: "收盤快照",
+  digestSnapshotNote: "前一交易日收盤；殖利率單位為 %，漲跌以「台股慣例」紅漲綠跌呈現",
+  snapshotName: "標的",
+  snapshotLast: "最新",
+  snapshot1d: "日漲跌",
+  snapshot5d: "5 日",
+  digestFinance: "財經與總經重點",
+  digestTech: "AI 與半導體重點",
+  digestPolitics: "國際與地緣重點",
+  digestEditorNote: "編輯觀點",
+  digestKeywords: "今日關鍵字",
+  digestEmpty: "今日 AI 摘要未產生，請直接瀏覽各分頁新聞。",
 };
 
 const TEXTS_EN: typeof TEXTS_ZH = {
@@ -120,6 +141,26 @@ const TEXTS_EN: typeof TEXTS_ZH = {
   mdTodayKeywords: "Keywords",
   mdImportance: "Importance",
   archiveLink: "← Archive",
+  catDigest: "Today",
+  subSemis: "Semiconductors",
+  subTwTech: "Taiwan Tech",
+  subTwMarket: "Taiwan Markets",
+  subCentralBank: "Central Banks & Macro",
+  subEnergy: "Energy & Materials",
+  digestHeadline: "Headline",
+  digestOverview: "Overview",
+  digestSnapshot: "Market Snapshot",
+  digestSnapshotNote: "Previous close; yields in %",
+  snapshotName: "Asset",
+  snapshotLast: "Last",
+  snapshot1d: "1D",
+  snapshot5d: "5D",
+  digestFinance: "Finance & Macro",
+  digestTech: "AI & Semis",
+  digestPolitics: "World & Geopolitics",
+  digestEditorNote: "Editor's Note",
+  digestKeywords: "Keywords",
+  digestEmpty: "No AI digest today — browse the tabs for news.",
 };
 
 const STR = REPORT_LOCALE === "en" ? TEXTS_EN : TEXTS_ZH;
@@ -171,12 +212,12 @@ const SUBCATEGORY_ORDER: Partial<Record<Category, string[]>> = {
   // Locale filtering at registry level decides which actually appears:
   // zh mode keeps cn-community (V2EX / LinuxDo); en mode keeps
   // overseas-community (Hacker News / r/stocks).
-  tech: ["github-trending", "trending-papers", "x-viral", "ai-news", "cn-community", "overseas-community"],
-  finance: ["news"],
+  tech: ["semis", "ai-news", "tw-tech", "github-trending", "trending-papers", "x-viral", "cn-community", "overseas-community"],
+  finance: ["tw-market", "news", "central-bank", "energy"],
   politics: ["world"],
 };
 
-const TECH_MAIN_SUBS = new Set(["github-trending", "trending-papers", "x-viral", "ai-news"]);
+const TECH_MAIN_SUBS = new Set(["semis", "ai-news", "tw-tech", "github-trending", "trending-papers", "x-viral"]);
 const TECH_COMMUNITY_SUBS = new Set(["cn-community", "overseas-community"]);
 
 const SUBCATEGORY_LABELS: Record<string, string> = {
@@ -189,6 +230,11 @@ const SUBCATEGORY_LABELS: Record<string, string> = {
   "blog-weekly": STR.subBlogWeekly,
   news: STR.subFinanceNews,
   world: STR.subWorld,
+  semis: STR.subSemis,
+  "tw-tech": STR.subTwTech,
+  "tw-market": STR.subTwMarket,
+  "central-bank": STR.subCentralBank,
+  energy: STR.subEnergy,
 };
 
 /**
@@ -239,9 +285,14 @@ function displayLimitFor(
  * Exported so daily.ts can read the cap to keep enrichment in sync.
  */
 export const MERGED_SUBGROUP_LIMITS: Record<string, number> = {
-  "tech:ai-news": 15,
-  "finance:news": 12,
-  "politics:world": 15,
+  "tech:semis": 12,
+  "tech:ai-news": 10,
+  "tech:tw-tech": 12,
+  "finance:tw-market": 15,
+  "finance:news": 15,
+  "finance:central-bank": 10,
+  "finance:energy": 10,
+  "politics:world": 12,
 };
 
 /**
@@ -253,7 +304,7 @@ export const MERGED_SUBGROUP_LIMITS: Record<string, number> = {
  * "match" that overlap with diplomacy headlines.
  */
 const POLITICS_SPORTS_RE =
-  /\b(World\s*Cup|Olympics?|UEFA|FIFA|NBA|NFL|NHL|MLB|ATP|WTA|Premier\s*League|Bundesliga|La\s*Liga|Serie\s*A|Champions\s*League|Eurovision|Wimbledon|Grand\s*Slam|F1|Formula\s*1|Ronaldo|Messi|Mbappe|Beckham|Lukaku|Mitoma|sportsman|footballer|squad)\b|世界杯|奥运|残奥|冬奥|欧冠|英超|西甲|意甲|德甲|网球|足球|篮球|高尔夫|棒球|板球|橄榄球/i;
+  /\b(World\s*Cup|Olympics?|UEFA|FIFA|NBA|NFL|NHL|MLB|ATP|WTA|Premier\s*League|Bundesliga|La\s*Liga|Serie\s*A|Champions\s*League|Eurovision|Wimbledon|Grand\s*Slam|F1|Formula\s*1|Ronaldo|Messi|Mbappe|Beckham|Lukaku|Mitoma|sportsman|footballer|squad)\b|世界杯|奥运|残奥|冬奥|欧冠|英超|西甲|意甲|德甲|网球|足球|篮球|高尔夫|棒球|板球|橄榄球|世界盃|奧運|帕運|冬奧|歐冠|網球|籃球|高爾夫|橄欖球|中職|職棒|經典賽|世界12強/i;
 
 export function isSportsArticle(title: string): boolean {
   return POLITICS_SPORTS_RE.test(title);
@@ -426,7 +477,7 @@ function formatDate(d: Date | undefined): string {
   if (!d) return "";
   try {
     // zh: "05/20 16:00"  · en: "May 20, 4:00 PM" → keep 24h en-GB style "20/05 16:00"
-    const localeTag = REPORT_LOCALE === "en" ? "en-GB" : "zh-CN";
+    const localeTag = REPORT_LOCALE === "en" ? "en-GB" : "zh-TW";
     return d.toLocaleString(localeTag, {
       timeZone: getReportTz(),
       month: "2-digit",
@@ -554,7 +605,7 @@ export function renderHtml(
   };
 
   return `<!doctype html>
-<html lang="${REPORT_LOCALE === "en" ? "en" : "zh-CN"}">
+<html lang="${REPORT_LOCALE === "en" ? "en" : "zh-Hant-TW"}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -608,7 +659,7 @@ export function renderHtml(
     background: var(--bg);
     color: var(--fg);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-      "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", "Heiti TC", sans-serif;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
@@ -974,11 +1025,11 @@ export function renderHtml(
     color: var(--muted);
     margin-top: 0.25rem;
   }
-  .widget-sub.positive { color: #16a34a; }
-  .widget-sub.negative { color: #dc2626; }
+  .widget-sub.positive { color: #dc2626; }
+  .widget-sub.negative { color: #16a34a; }
   @media (prefers-color-scheme: dark) {
-    .widget-sub.positive { color: #4ade80; }
-    .widget-sub.negative { color: #fca5a5; }
+    .widget-sub.positive { color: #fca5a5; }
+    .widget-sub.negative { color: #4ade80; }
   }
   .crypto-widget.fg-fear-extreme { border-left: 4px solid #b91c1c; }
   .crypto-widget.fg-fear-extreme .widget-value { color: #b91c1c; }
@@ -987,13 +1038,13 @@ export function renderHtml(
   .crypto-widget.fg-neutral { border-left: 4px solid var(--muted); }
   .crypto-widget.fg-greed { border-left: 4px solid #65a30d; }
   .crypto-widget.fg-greed .widget-value { color: #65a30d; }
-  .crypto-widget.fg-greed-extreme { border-left: 4px solid #16a34a; }
-  .crypto-widget.fg-greed-extreme .widget-value { color: #16a34a; }
+  .crypto-widget.fg-greed-extreme { border-left: 4px solid #dc2626; }
+  .crypto-widget.fg-greed-extreme .widget-value { color: #dc2626; }
   @media (prefers-color-scheme: dark) {
     .crypto-widget.fg-fear-extreme .widget-value,
-    .crypto-widget.fg-fear .widget-value { color: #fca5a5; }
+    .crypto-widget.fg-fear .widget-value { color: #4ade80; }
     .crypto-widget.fg-greed .widget-value,
-    .crypto-widget.fg-greed-extreme .widget-value { color: #4ade80; }
+    .crypto-widget.fg-greed-extreme .widget-value { color: #fca5a5; }
   }
 
   .trading-overview-card {
@@ -1032,8 +1083,8 @@ export function renderHtml(
     border-radius: 0.5rem;
     padding: 0.8rem 1rem;
   }
-  .trading-pick.stance-bull { border-left-color: #16a34a; }
-  .trading-pick.stance-bear { border-left-color: #dc2626; }
+  .trading-pick.stance-bull { border-left-color: #dc2626; }
+  .trading-pick.stance-bear { border-left-color: #16a34a; }
   .trading-pick.stance-neutral { border-left-color: var(--muted); }
   .pick-head {
     display: flex;
@@ -1057,8 +1108,8 @@ export function renderHtml(
     border-radius: 999px;
     white-space: nowrap;
   }
-  .pick-stance-bull { background: rgba(22,163,74,0.12); color: #16a34a; }
-  .pick-stance-bear { background: rgba(220,38,38,0.12); color: #dc2626; }
+  .pick-stance-bull { background: rgba(220,38,38,0.12); color: #dc2626; }
+  .pick-stance-bear { background: rgba(22,163,74,0.12); color: #16a34a; }
   .pick-stance-neutral { background: var(--card); color: var(--muted); }
   .pick-rationale { margin: 0; font-size: 0.88rem; line-height: 1.65; color: var(--fg-soft); }
 
@@ -1116,8 +1167,8 @@ export function renderHtml(
   .ticker-price-block { text-align: right; flex-shrink: 0; }
   .ticker-price { display: block; font-size: 1.05rem; font-weight: 600; font-variant-numeric: tabular-nums; }
   .ticker-pct { display: inline-block; font-size: 0.82rem; font-weight: 500; margin-top: 0.15rem; font-variant-numeric: tabular-nums; }
-  .ticker-pct.positive, .positive { color: #16a34a; }
-  .ticker-pct.negative, .negative { color: #dc2626; }
+  .ticker-pct.positive, .positive { color: #dc2626; }
+  .ticker-pct.negative, .negative { color: #16a34a; }
 
   .ticker-indicators {
     display: grid;
@@ -1133,8 +1184,8 @@ export function renderHtml(
   .ticker-indicators > div { display: flex; gap: 0.4rem; align-items: baseline; min-width: 0; }
   .ticker-indicators dt { color: var(--muted); font-size: 0.74rem; margin: 0; white-space: nowrap; }
   .ticker-indicators dd { margin: 0; font-variant-numeric: tabular-nums; font-weight: 500; color: var(--fg); }
-  .trend-bullish { color: #16a34a; }
-  .trend-bearish { color: #dc2626; }
+  .trend-bullish { color: #dc2626; }
+  .trend-bearish { color: #16a34a; }
   .trend-neutral { color: var(--muted); }
   .rsi-overbought { color: #d97706; }
   .rsi-oversold { color: #2563eb; }
@@ -1153,21 +1204,21 @@ export function renderHtml(
     border-radius: 999px;
     font-weight: 500;
   }
-  .signal-pill.tone-bull { background: rgba(22,163,74,0.13); color: #166534; }
-  .signal-pill.tone-bear { background: rgba(220,38,38,0.13); color: #991b1b; }
+  .signal-pill.tone-bull { background: rgba(220,38,38,0.13); color: #991b1b; }
+  .signal-pill.tone-bear { background: rgba(22,163,74,0.13); color: #166534; }
   .signal-pill.tone-caution { background: rgba(217,119,6,0.15); color: #92400e; }
   @media (prefers-color-scheme: dark) {
-    .signal-pill.tone-bull { color: #4ade80; }
-    .signal-pill.tone-bear { color: #fca5a5; }
+    .signal-pill.tone-bull { color: #fca5a5; }
+    .signal-pill.tone-bear { color: #4ade80; }
     .signal-pill.tone-caution { color: #fcd34d; }
-    .trend-bullish, .positive, .ticker-pct.positive { color: #4ade80; }
-    .trend-bearish, .negative, .ticker-pct.negative { color: #fca5a5; }
+    .trend-bullish, .positive, .ticker-pct.positive { color: #fca5a5; }
+    .trend-bearish, .negative, .ticker-pct.negative { color: #4ade80; }
     .rsi-overbought { color: #fcd34d; }
     .rsi-oversold { color: #93c5fd; }
-    .trading-pick.stance-bull { border-left-color: #4ade80; }
-    .trading-pick.stance-bear { border-left-color: #fca5a5; }
-    .pick-stance-bull { background: rgba(74,222,128,0.15); color: #4ade80; }
-    .pick-stance-bear { background: rgba(252,165,165,0.15); color: #fca5a5; }
+    .trading-pick.stance-bull { border-left-color: #fca5a5; }
+    .trading-pick.stance-bear { border-left-color: #4ade80; }
+    .pick-stance-bull { background: rgba(252,165,165,0.15); color: #fca5a5; }
+    .pick-stance-bear { background: rgba(74,222,128,0.15); color: #4ade80; }
   }
   .signal-age { opacity: 0.7; font-weight: 400; }
 
@@ -1180,6 +1231,31 @@ export function renderHtml(
   }
   .trading-risk .eyebrow { display: block; margin-bottom: 0.35rem; }
   .trading-risk p { margin: 0; font-size: 0.82rem; line-height: 1.65; color: var(--fg-soft); }
+
+  .snapshot-card {
+    margin: 0.9rem 0 1.4rem;
+    padding: 0.8rem 1.1rem 0.6rem;
+    background: var(--bg-elevated);
+    border: 1px solid var(--rule);
+    border-radius: 0.5rem;
+  }
+  .snapshot-card .eyebrow { display: block; margin-bottom: 0.4rem; }
+  .snapshot-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+  .snapshot-table th {
+    text-align: right; font-weight: 500; color: var(--muted);
+    font-size: 0.75rem; padding: 0.25rem 0.4rem; border-bottom: 1px solid var(--rule);
+  }
+  .snapshot-table th:first-child { text-align: left; }
+  .snapshot-table td { padding: 0.32rem 0.4rem; border-bottom: 1px solid var(--rule); }
+  .snapshot-table tr:last-child td { border-bottom: none; }
+  .snap-name { color: var(--fg); }
+  .snap-num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .snapshot-note { margin: 0.45rem 0 0; font-size: 0.72rem; color: var(--muted); }
+  .digest-category { margin-top: 1.2rem; }
+  @media (max-width: 520px) {
+    .snapshot-table { font-size: 0.8rem; }
+    .snapshot-table td, .snapshot-table th { padding: 0.28rem 0.25rem; }
+  }
 
   footer {
     margin-top: 2.5rem;
@@ -1199,22 +1275,26 @@ export function renderHtml(
   </header>
 
   <nav class="tabs" role="tablist">
-    <button class="tab active" data-tab="tech">${CATEGORY_LABELS.tech}<span class="count">${counts.tech}</span></button>
+    <button class="tab active" data-tab="digest">${STR.catDigest}</button>
     ${trading ? `<button class="tab" data-tab="trading">${STR.catTrading}<span class="count">${trading.tickers.length}</span></button>` : ""}
-    <button class="tab" data-tab="politics">${CATEGORY_LABELS.politics}<span class="count">${counts.politics}</span></button>
     <button class="tab" data-tab="finance">${CATEGORY_LABELS.finance}<span class="count">${counts.finance}</span></button>
+    <button class="tab" data-tab="tech">${CATEGORY_LABELS.tech}<span class="count">${counts.tech}</span></button>
+    <button class="tab" data-tab="politics">${CATEGORY_LABELS.politics}<span class="count">${counts.politics}</span></button>
     ${techCommunitySubs.length > 0 ? `<button class="tab" data-tab="community">${STR.catCommunity}<span class="count">${counts.community}</span></button>` : ""}
   </nav>
 
-  <section class="panel active" data-panel="tech">
-    ${renderRawCategoryPanel("tech", techMainSubs)}
+  <section class="panel active" data-panel="digest">
+    ${renderDigestPanel(report)}
   </section>
   ${trading ? `<section class="panel" data-panel="trading">${renderTradingPanel(trading)}</section>` : ""}
-  <section class="panel" data-panel="politics">
-    ${renderRawCategoryPanel("politics", raw.politics)}
-  </section>
   <section class="panel" data-panel="finance">
     ${renderRawCategoryPanel("finance", raw.finance)}
+  </section>
+  <section class="panel" data-panel="tech">
+    ${renderRawCategoryPanel("tech", techMainSubs)}
+  </section>
+  <section class="panel" data-panel="politics">
+    ${renderRawCategoryPanel("politics", raw.politics)}
   </section>
   ${techCommunitySubs.length > 0 ? `<section class="panel" data-panel="community">
     ${renderRawCategoryPanel("tech", techCommunitySubs)}
@@ -1307,7 +1387,7 @@ function stanceClass(stance: string): "bull" | "bear" | "neutral" {
   // Supports both legacy ("看多"/"看空") and current ("偏上行"/"偏下行")
   // stance values. The current values were chosen to avoid Sonnet's
   // "no investment advice" guardrail; rendering keeps both readable.
-  if (/多|涨|上行|bull/i.test(stance)) return "bull";
+  if (/多|涨|漲|上行|bull/i.test(stance)) return "bull";
   if (/空|跌|下行|bear/i.test(stance)) return "bear";
   return "neutral";
 }
@@ -1357,7 +1437,7 @@ function renderTickerCard(t: TickerAnalysis): string {
       return `<span class="signal-pill tone-${tone}">${escapeHtml(s.label)}${ageSuffix}</span>`;
     })
     .join("");
-  const currencyPrefix = t.currency === "USD" ? "$" : t.currency === "HKD" ? "HK$" : t.currency === "CNY" ? "¥" : "";
+  const currencyPrefix = currencyPrefixFor(t);
   return `<article class="ticker-card">
     <header class="ticker-head">
       <div class="ticker-id">
@@ -1379,6 +1459,19 @@ function renderTickerCard(t: TickerAnalysis): string {
     </dl>
     ${signals ? `<div class="ticker-signals">${signals}</div>` : ""}
   </article>`;
+}
+
+function currencyPrefixFor(t: TickerAnalysis): string {
+  // Indices, yields, FX pairs and DXY are levels, not prices — no symbol.
+  if (t.symbol.startsWith("^") || t.symbol.endsWith("=X") || t.symbol.startsWith("DX-Y")) return "";
+  switch (t.currency) {
+    case "USD": return "$";
+    case "TWD": return "NT$";
+    case "HKD": return "HK$";
+    case "JPY": return "¥";
+    case "EUR": return "€";
+    default: return "";
+  }
 }
 
 function fearGreedTone(value: number): "fear-extreme" | "fear" | "neutral" | "greed" | "greed-extreme" {
@@ -1432,13 +1525,9 @@ function renderCryptoWidgets(t: TradingSection): string {
 
 function renderTradingPanel(trading: TradingSection): string {
   const tickers = trading.tickers;
-  const groupCounts: Record<AssetGroup, number> = {
-    "us-equity": 0,
-    crypto: 0,
-    "china-equity": 0,
-    "commodity-fx": 0,
-    macro: 0,
-  };
+  const groupCounts = Object.fromEntries(
+    ASSET_GROUP_ORDER.map((g) => [g, 0]),
+  ) as Record<AssetGroup, number>;
   for (const t of tickers) groupCounts[t.group as AssetGroup] = (groupCounts[t.group as AssetGroup] ?? 0) + 1;
 
   const groupTabs = ASSET_GROUP_ORDER.map(
@@ -1450,7 +1539,7 @@ function renderTradingPanel(trading: TradingSection): string {
     const groupTickers = tickers.filter((t) => t.group === g);
     // Crypto sub-tab carries an extra header widget panel (F&G + global stats)
     const cryptoWidgets =
-      g === "crypto" ? renderCryptoWidgets(trading) : "";
+      (g as string) === "crypto" ? renderCryptoWidgets(trading) : "";
     return `<div class="trading-group-content${i === 0 ? " active" : ""}" data-group="${g}">
       ${cryptoWidgets}
       ${groupTickers.length === 0 ? `<p class="empty">${STR.emptyGroup}</p>` : groupTickers.map(renderTickerCard).join("")}
@@ -1490,6 +1579,93 @@ function renderTradingPanel(trading: TradingSection): string {
   </section>`
       : ""
   }`;
+}
+
+// ----- digest (今日重點) -----
+
+function rankClass(importance: number): "high" | "mid" | "low" {
+  if (importance >= 8) return "high";
+  if (importance >= 5) return "mid";
+  return "low";
+}
+
+function renderBriefCard(b: BriefItem): string {
+  const imp = Number.isFinite(b.importance) ? b.importance : 0;
+  return `<article class="brief">
+    <div class="brief-head">
+      <span class="brief-source">${escapeHtml(b.source ?? "")}</span>
+      ${imp ? `<span class="brief-rank ${rankClass(imp)}">${STR.mdImportance} ${imp}</span>` : ""}
+    </div>
+    <h3 class="brief-title"><a href="${escapeHtml(b.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(b.title)}</a></h3>
+    <p class="brief-summary">${escapeHtml(b.summary ?? "")}</p>
+  </article>`;
+}
+
+function renderBriefSection(title: string, briefs: BriefItem[]): string {
+  if (!briefs || briefs.length === 0) return "";
+  return `<section class="digest-category">
+    <header class="category-header">
+      <h2 class="category-title">${title}</h2>
+      <span class="category-count">${briefs.length}</span>
+    </header>
+    <div class="brief-list">${briefs.map(renderBriefCard).join("\n")}</div>
+  </section>`;
+}
+
+function renderSnapshot(trading: TradingSection | undefined): string {
+  if (!trading || trading.tickers.length === 0) return "";
+  const bySymbol = new Map(trading.tickers.map((t) => [t.symbol, t]));
+  const rows = SNAPSHOT_SYMBOLS.map((sym) => bySymbol.get(sym))
+    .filter((t): t is TickerAnalysis => t !== undefined)
+    .map((t) => {
+      const c1 = t.pct1Day >= 0 ? "positive" : "negative";
+      const c5 = t.pct5Day >= 0 ? "positive" : "negative";
+      return `<tr><td class="snap-name">${escapeHtml(t.displayName)}</td><td class="snap-num">${currencyPrefixFor(t)}${fmtNum(t.currentPrice)}</td><td class="snap-num ${c1}">${fmtPct(t.pct1Day)}</td><td class="snap-num ${c5}">${fmtPct(t.pct5Day)}</td></tr>`;
+    });
+  if (rows.length === 0) return "";
+  return `<section class="snapshot-card">
+    <span class="eyebrow">${STR.digestSnapshot}</span>
+    <table class="snapshot-table">
+      <thead><tr><th>${STR.snapshotName}</th><th>${STR.snapshotLast}</th><th>${STR.snapshot1d}</th><th>${STR.snapshot5d}</th></tr></thead>
+      <tbody>${rows.join("")}</tbody>
+    </table>
+    <p class="snapshot-note">${STR.digestSnapshotNote}</p>
+  </section>`;
+}
+
+function renderDigestPanel(report: DailyReport): string {
+  const hasDigest =
+    !!report.hero_headline ||
+    !!report.daily_overview ||
+    report.finance_briefs.length + report.tech_briefs.length + report.politics_briefs.length > 0;
+  const parts: string[] = [];
+  if (report.hero_headline) {
+    parts.push(`<section class="hero-card">
+      <span class="hero-eyebrow">${STR.digestHeadline}</span>
+      <p class="hero-headline">${escapeHtml(report.hero_headline)}</p>
+    </section>`);
+  }
+  if (report.daily_overview) {
+    parts.push(`<section class="overview-card">
+      <span class="eyebrow">${STR.digestOverview}</span>
+      <p class="overview-text">${escapeHtml(report.daily_overview)}</p>
+    </section>`);
+  }
+  parts.push(renderSnapshot(report.trading));
+  parts.push(renderBriefSection(STR.digestFinance, report.finance_briefs));
+  parts.push(renderBriefSection(STR.digestTech, report.tech_briefs));
+  parts.push(renderBriefSection(STR.digestPolitics, report.politics_briefs));
+  if (report.editor_note) {
+    parts.push(`<section class="editor-card">
+      <span class="eyebrow">${STR.digestEditorNote}</span>
+      <p class="editor-text">${escapeHtml(report.editor_note)}</p>
+    </section>`);
+  }
+  if (report.keywords && report.keywords.length > 0) {
+    parts.push(`<div class="keywords">${report.keywords.map((k) => `<span class="keyword">#${escapeHtml(k)}</span>`).join("")}</div>`);
+  }
+  if (!hasDigest) parts.unshift(`<p class="empty">${STR.digestEmpty}</p>`);
+  return parts.filter(Boolean).join("\n");
 }
 
 // ----- markdown -----
