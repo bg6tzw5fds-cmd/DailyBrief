@@ -1,161 +1,117 @@
 {
-  "hero_headline": "費半單日重挫逾一成，台股上週暴跌17.5%，金管會23日起全面禁空",
-  "daily_overview": "美股週五全面重挫，S&P 500 收 6910 點、日跌 3.70%，那斯達克日跌 5.28%，費城半導體暴跌 10.73%、5 日累計下跌 17.13%；輝達跌 14.01%、美光跌 13.89%。台股加權指數收 36033 點，日跌 6.23%、5 日跌 17.50%，台積電收 2000 元、台積電 ADR 跌 9.48%。美債殖利率下滑，10 年期降至 4.91%，VIX 升至 35.89。美元指數 103.84，美元兌新台幣 32.96。Brent 原油 89.95 美元，黃金跌 4.62% 至 3515 美元。報導指出，大型科技財報令人失望與輝達相關爭議削弱 AI 交易信心，金管會因此宣布 23 日起平盤下全面禁空，證交所研議調降融資擔保維持率，國科會也將向產業界喊話。後續觀察台股週一開盤的賣壓與外資動向、各國穩定市場措施，以及 AI 資本支出疑慮能否緩解。",
+  "hero_headline": "半導體股遭重挫，費半單日跌10.73%、台股一週跌17.5%",
+  "daily_overview": "美股前一交易日重挫，S&P 500 跌 3.70% 至 6910 點，那斯達克跌 5.28%，費城半導體指數大跌 10.73%，輝達跌 14.01%，VIX 升至 35.89。台股加權指數收 36033 點、跌 6.23%，5 日累計跌 17.50%。美債 10 年期殖利率 4.91%，美元兌新台幣 32.96，Brent 原油 89.95 美元，黃金跌 4.62% 至 3515 美元。台股融資餘額 4352.3 億元、減少 491.4 億元，融券減少 10,028 張至 199,791 張。新聞面上，輝達執行長異動與晶片走私調查增添 AI 族群不確定性，台灣當局以禁空與產業座談因應。23 日國科會與行政院座談為觀察重點。",
   "tech_briefs": [
     {
-      "title": "報導：中國國安部秘密協助企業取得輝達先進AI晶片",
-      "url": "https://ec.ltn.com.tw/article/breakingnews/5649680",
-      "source": "自由時報 財經",
-      "summary": "《紐約時報》21 日報導，中國國家安全部至少兩年來運行秘密行動，協助中國企業取得先進 AI 晶片並蒐集半導體產業相關資訊。此事恐加劇外界對出口管制與輝達中國業務的關注。",
-      "importance": 8
-    },
-    {
-      "title": "輝達最新財報與高層呼籲黃仁勳回歸形成兩種圖像",
+      "title": "輝達財報創紀錄，但科技高層呼籲黃仁勳回歸",
       "url": "https://techcrunch.com/2026/11/21/a-tale-of-two-nvidias/",
       "source": "TechCrunch AI",
-      "summary": "TechCrunch 指出，輝達最新財報與科技高層高調呼籲黃仁勳回歸，呈現兩種截然不同的畫面。輝達週五股價收 125.53 美元，單日下跌 14.01%，反映市場信心波動。",
-      "importance": 7
+      "summary": "輝達最新財報營收與獲利再創紀錄，但多位科技業高層公開呼籲黃仁勳回歸，另有報導稱黃已辭去執行長等職務。市場同時消化獲利成長與領導層不確定性，輝達前一交易日跌14.01%。（多家報導）",
+      "importance": 9
     },
     {
-      "title": "勒索組織將輝達列入暗網洩漏網站，官方稱系統未遭入侵",
+      "title": "輝達遭勒索組織列入暗網，官方稱系統未遭入侵",
       "url": "https://infosecu.technews.tw/2026/11/22/nvidia-ransom-demand-by-the-gentlemen-leak-timer-under-10-days/",
       "source": "科技新報",
-      "summary": "勒索軟體組織 The Gentlemen 於 18 日將輝達列入暗網資料外洩網站，聲稱取得公司資料並設下約十天的倒數。輝達官方表示系統未遭入侵。此事為市場信心增添資安疑慮。",
+      "summary": "勒索軟體組織 The Gentlemen 於18日將輝達列入暗網資料外洩網站，聲稱取得公司資料並設十天倒數；輝達官方表示系統未遭入侵。事件為AI龍頭增添資安與信譽風險。",
       "importance": 6
     },
     {
-      "title": "國科會23日邀半導體與園區業者向市場喊話",
-      "url": "https://money.udn.com/money/story/5612/9894845",
-      "source": "經濟日報",
-      "summary": "台股上週受費半與國際科技大廠股價重挫影響，創史上單週最大跌點，金管會已祭出全面禁空，行政院亦提四大指示。國科會主委吳誠文 23 日上午將與台灣半導體協會、SEMI 及科學園區同業公會舉行記者會，強調台灣半導體產業競爭力。",
-      "importance": 7
-    },
-    {
-      "title": "IEA：資料中心用電量2030年前可能倍增",
-      "url": "https://www.cnbc.com/2026/11/19/data-center-electricity-demand-iea.html",
-      "source": "CNBC Energy",
-      "summary": "國際能源署指出，隨 AI 熱潮推進，全球資料中心用電量 2030 年前可能增加一倍，將加重各國電網壓力。這顯示 AI 基礎建設長期需求仍在，但電力供給與投資成本是需持續追蹤的限制。",
-      "importance": 6
+      "title": "晶片週報：英特爾18A-P客戶、輝達擴封裝產能",
+      "url": "https://semiengineering.com/chip-industry-week-in-review-165/",
+      "source": "Semiconductor Engineering",
+      "summary": "Semiconductor Engineering 週報指出，英特爾取得首個18A-P外部客戶，微軟採用 EMIB 封裝，輝達擴充先進封裝產能，同時對中國的出口管制進一步收緊，牽動晶圓代工與封裝供應鏈。",
+      "importance": 8
     }
   ],
   "finance_briefs": [
     {
-      "title": "金管會加碼限空，23日起平盤下全面禁放空",
-      "url": "https://www.cna.com.tw/news/afe/202611220085.aspx",
-      "source": "中央社 財經",
-      "summary": "AI 產業前景疑慮升溫，費城半導體指數重挫 10.73%、台積電 ADR 跌 9.48%。金管會宣布 23 日起實施平盤下全面禁放空等 5 項穩定股市措施。法人預期台股週一開盤仍面臨沉重的系統性賣壓。",
-      "importance": 10
-    },
-    {
-      "title": "台股上週創史上最大單週跌點，法人估本週恐探 32,000 點",
-      "url": "https://tw.news.yahoo.com/%E5%8F%B0%E8%82%A1%E5%89%B5%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%A4%A7%E5%96%AE%E5%91%A8%E8%B7%8C%E9%BB%9E-%E9%99%90%E7%A9%BA%E4%BB%A4%E4%B8%8D%E5%88%A9%E6%B5%81%E5%8B%95%E6%80%A7-%E6%B3%95%E4%BA%BA-%E6%9C%AC%E5%91%A8%E6%81%90%E4%B8%8B%E6%8E%A232-000%E9%BB%9E-101721996.html",
-      "source": "Yahoo 股市 台股",
-      "summary": "台股上週大跌 7,641 點、跌幅 17.5%，收 36,033 點，為史上最大單週跌點與 1990 年以來最大單週跌幅。永豐投顧指融資明顯減少，但限空令不利流動性。凱基投顧認為外資賣壓何時減緩是關鍵。（多家報導）",
+      "title": "國科會明與半導體業者喊話，台股前週創最大跌點",
+      "url": "https://money.udn.com/money/story/5612/9894845",
+      "source": "經濟日報",
+      "summary": "台股上週創史上單週最大跌點，金管會祭出平盤下全面禁空，行政院提出四大指示。國科會23日將與半導體及園區業者喊話，行政院長卓榮泰同日與工商團體座談，市場關注穩定效果。（多家報導）",
       "importance": 9
     },
     {
-      "title": "證交所研議融資擔保維持率由130%降至120%",
-      "url": "https://ec.ltn.com.tw/article/breakingnews/5649746",
-      "source": "自由時報 財經",
-      "summary": "美股跌勢擴大、台股週一開盤承壓，證交所邀集十家大型券商研商救市措施，擬將融資擔保維持率由 130% 降至 120%。此舉讓約 6400 戶追繳戶暫時鬆一口氣，但仍須主管機關確認，旨在降低斷頭賣壓。",
+      "title": "傳證交所討論融資維持率由130%降至120%",
+      "url": "https://tw.news.yahoo.com/%E5%8F%B0%E8%82%A1%E6%85%98%E8%B7%8C%E7%A5%AD%E6%95%91%E5%B8%82%E6%96%B0%E6%8B%9B-%E5%82%B3%E8%9E%8D%E8%B3%87%E7%B6%AD%E6%8C%81%E7%8E%87-%E9%99%8D%E8%87%B3120-%E6%9C%80%E5%BF%AB%E6%98%8E%E5%A4%A9%E4%B8%8A%E8%B7%AF-122000266.html",
+      "source": "Yahoo 股市 台股",
+      "summary": "傳證交所通知元大、凱基、富邦、群益金鼎等十大券商，討論將整戶融資擔保維持率從130%調降至120%，最快23日上路，仍待金管會拍板。此舉可能緩解斷頭賣壓，但目前尚屬傳聞。",
       "importance": 8
     },
     {
-      "title": "高盛警告新一輪拋售恐到來，點出觸底前須觀察三件事",
-      "url": "https://ec.ltn.com.tw/article/breakingnews/5649714",
-      "source": "自由時報 財經",
-      "summary": "過去兩週大型科技公司財報令人失望，加上輝達相關爭議，削弱市場對 AI 交易的信心，標普 500 指數陷入回檔區間。高盛警告新一輪拋售恐到來，並指出市場觸底前需看到三項條件。",
-      "importance": 8
-    },
-    {
-      "title": "南韓宣布分階段措施穩定市場，確保穩定基金到位",
-      "url": "https://www.bloomberg.com/news/articles/2026-11-22/s-korea-rolls-out-phased-measures-to-stabilize-volatile-markets",
-      "source": "Bloomberg Markets",
-      "summary": "南韓高層財金官員在緊急會議後宣布分階段措施，因應市場波動升溫，包括確保股市穩定基金就位、必要時啟動。韓國綜合指數週五收 4870 點、日跌 5.21%，顯示亞洲市場同步承壓。",
+      "title": "台股一週修正逾17%，安聯投信提四大止穩訊號",
+      "url": "https://finance.technews.tw/2026/11/22/falling-below-the-annual-moving-average/",
+      "source": "科技新報",
+      "summary": "台股自11月13日收盤43,675.12點起算，一週修正幅度逾17%並失守年線。安聯投信認為後市須觀察四大止穩訊號，反映市場短線仍承受高波動壓力。",
       "importance": 7
     },
     {
-      "title": "ECB：AI估值、財政失衡與地緣經濟緊張威脅金融穩定",
-      "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261118~83c5c60158.en.html",
-      "source": "ECB 新聞稿",
-      "summary": "歐洲央行 11 月金融穩定評估指出，AI 估值、財政失衡與地緣經濟緊張是金融穩定前景的主要風險。在科技股劇烈修正之際，凸顯估值風險已受到央行關注。",
+      "title": "Fed 主席華許看見 AI 革命，面臨就業與利率難題",
+      "url": "https://www.cnbc.com/2026/11/16/kevin-warsh-fed-ai-jobs-productivity-interest-rateshtml.html",
+      "source": "CNBC Economy",
+      "summary": "CNBC 報導，Fed 主席華許（Kevin Warsh）認為 AI 正處於轉折點，但須回答 AI 對就業與利率政策的棘手問題。其看法將影響市場對利率路徑與生產力的解讀。",
       "importance": 7
-    }
-  ],
-  "politics_briefs": [
+    },
     {
-      "title": "澤倫斯基：俄無人機襲基輔州住宅大樓，至少14人失聯",
-      "url": "https://www.cna.com.tw/news/aopl/202611220147.aspx",
-      "source": "中央社 國際",
-      "summary": "烏克蘭總統澤倫斯基表示，俄羅斯無人機 22 日上午襲擊基輔州一棟住宅大樓，至少 14 人可能仍受困瓦礫。俄烏衝突持續升溫，對能源與避險情緒的影響值得留意。",
+      "title": "經濟學人：全球債券殖利率上升，中國為例外",
+      "url": "https://www.economist.com/finance-and-economics/2026/11/19/bond-yields-are-rising-everywhere-except-china",
+      "source": "The Economist Finance",
+      "summary": "經濟學人指出，全球多數市場公債殖利率持續走高，唯獨中國例外，中國人民銀行已降息。美國10年期公債殖利率前一交易日為4.91%，下跌2.77%。",
       "importance": 6
     },
     {
-      "title": "西方對俄制裁分歧：歐洲收緊、美國放鬆",
-      "url": "https://www.economist.com/finance-and-economics/2026/11/19/europe-tightens-sanctions-on-russia-america-loosens-them",
-      "source": "The Economist Finance",
-      "summary": "《經濟學人》指出，西方對俄制裁方向出現分歧，歐洲正收緊對俄制裁，美國則放鬆相關限制。政策不一致可能影響能源貿易流向與大宗商品價格預期。",
-      "importance": 5
-    },
-    {
-      "title": "COP31談判延長，歐盟警告可能無共識",
-      "url": "https://www.ft.com/content/b3ba64e9-9482-4525-acc7-49825f3daace?syn-25a6b1a6=1",
-      "source": "Financial Times",
-      "summary": "COP31 談判進入加時賽第二天，歐盟提出可能無法達成協議。沙烏地阿拉伯領導反對將逐步淘汰化石燃料納入最終協議。結果將影響各國能源政策與化石燃料需求預期。",
-      "importance": 5
+      "title": "EIA：第三季中東關鍵海上要道石油運量增19%",
+      "url": "https://www.eia.gov/todayinenergy/detail.php?id=",
+      "source": "EIA Today in Energy",
+      "summary": "美國能源資訊署（EIA）表示，2026年第三季經中東主要海上要道的石油運量增加19%。運量回升有助供應，但當地攻擊事件仍是油價風險，Brent 前一交易日收 89.95 美元。",
+      "importance": 6
     }
   ],
-  "editor_note": "市場正同時面對 AI 估值修正、融資追繳與跨市場連動賣壓。週一台股開盤受禁空令與融資新措施影響，價格訊號與流動性可能失真。建議留意外資買賣超、台積電 ADR 走勢、VIX 與各國穩定措施成效。",
-  "keywords": [
-    "台股暴跌",
-    "費城半導體",
-    "禁空令",
-    "融資維持率",
-    "輝達",
-    "VIX",
-    "AI估值"
-  ],
+  "politics_briefs": [],
+  "editor_note": "",
+  "keywords": [],
   "trading": {
-    "market_overview": "全球風險資產同步重挫，S&P 500 單日 -3.7%、5日 -8.61%，那斯達克綜合單日 -5.28%，RSI14 分別為 24.7 與 25.6，皆進入超賣區，價格也低於 SMA20 與 SMA50。台股加權指數單日 -6.23%、5日 -17.5%，RSI14 為 25.6；台積電收 2000、RSI 27.8，元大台灣50 的 RSI 同為 25.6，MACD 均低於訊號線。AI 與半導體族群跌幅最深，費城半導體單日 -10.73%，輝達 RSI 僅 15，Sandisk 單日 -18.33%，SOXX 與 PSI 同步走弱。商品方面，Brent 89.95、WTI 83.41 均低於 SMA20，XLE 與 OIH 跟著回落；黃金 3515.4、RSI 21.6，白銀與銅的 RSI 也在 21 上下，金屬類整體超賣；天然氣單日 +14.69%，是少數呈多頭排列的標的。利率方面，10 年期殖利率 4.91%、單日 -2.77%，接近 52 週低點，反映資金轉向債券；VIX 升至 35.89、RSI 71.7 進入超買。美元指數 103.84 接近 52 週高點，美元兌新台幣 32.96 同步偏強，美元兌日圓 158.51 大致持平。",
+    "market_overview": "全球指數同步重挫：S&P 500 收 6910.39 點，單日下跌 3.70%、五日下跌 8.61%，RSI 24.7；那斯達克單日下跌 5.28%，費城半導體單日下跌 10.73%，跌幅最深。台股加權指數單日下跌 6.23%、五日下跌 17.50%，RSI 25.6，台積電報 2000 元（RSI 27.8），廣達 RSI 僅 19.7。AI 與半導體族群方面，輝達 RSI 15.0、單日下跌 14.01%，Sandisk 單日下跌 18.33%，多數標的 MACD 位於訊號線下方。追蹤 ETF 中，SOXX 與 PSI 單日均下跌逾 10%，PSI 出現 SMA50 下穿 SMA200 的死亡交叉，FLOT 則幾乎持平。商品方面，Brent 89.95 美元、WTI 83.41 美元均低於 SMA20，黃金 RSI 21.6、銅 RSI 20.6 同步超賣，天然氣單日上漲 14.69% 逆勢走強。利率與匯率方面，10 年期殖利率 4.91%，五日下滑 4.70%，但未能支撐成長股；VIX 升至 35.89（RSI 71.7 超買），美元指數 103.84 接近 52 週高點，美元兌新台幣 32.96 偏高，美元兌日圓 158.51 大致持平。",
     "watchlist": [
       {
         "symbol": "NG=F",
         "display_name": "美國天然氣",
         "stance": "偏上行",
-        "rationale": "收 3.75，單日 +14.69%、5日 +16.04%，價格站上 SMA20 3.08、SMA50 3.05 與 SMA200 2.97，並出現黃金交叉（SMA50 上穿 SMA200）與多頭排列。MACD 0.1242 高於訊號線 0.0688，動能偏多。RSI14 為 69.4，接近超買邊緣，短線漲幅已大。"
+        "rationale": "現價 3.75 站上 SMA20（3.08）、SMA50（3.05）與 SMA200（2.97），出現 SMA50 上穿 SMA200 的黃金交叉並呈多頭排列。MACD 0.1242 高於訊號線 0.0688，單日上漲 14.69%、五日上漲 16.04%，RSI 69.4 已接近超買區，短線漲幅較大。"
       },
       {
         "symbol": "DX-Y.NYB",
         "display_name": "美元指數 DXY",
         "stance": "偏上行",
-        "rationale": "收 103.84，高於 SMA20 102.57、SMA50 101.89 與 SMA200 100.01，呈多頭排列，且接近 52 週高點。MACD 0.5781 高於訊號線 0.4329，動能仍偏多。RSI14 為 68.4，逼近超買門檻，在風險資產劇烈下跌時，避險需求使趨勢維持偏強。"
+        "rationale": "指數 103.84 高於 SMA20（102.57）、SMA50（101.89）與 SMA200（100.01），呈多頭排列，且距 52 週高點僅 0.13%。MACD 0.5781 位於訊號線 0.4329 之上，動能偏多；RSI 68.4 接近超買門檻，須留意高檔震盪。"
       },
       {
-        "symbol": "^TNX",
-        "display_name": "美國 10 年期公債殖利率",
-        "stance": "中性",
-        "rationale": "殖利率 4.91%，單日 -2.77%、5日 -4.7%，低於 SMA20 4.99 與 SMA50 5.08，但仍高於 SMA200 4.6，屬於高檔回落。RSI14 為 41.3，MACD -0.003 略低於訊號線 -0.0088，動能變化有限。目前缺乏明確方向，歸類為中性。"
-      },
-      {
-        "symbol": "^GSPC",
-        "display_name": "S&P 500",
-        "stance": "中性",
-        "rationale": "收 6910.39，單日 -3.7%、5日 -8.61%，RSI14 為 24.7，屬明顯超賣。價格低於 SMA20 7499.23、SMA50 7625.26 與 SMA200 7348.58，MACD -129.64 低於訊號線 -75.05，空方動能強。超賣讀數與負向動能並存，方向尚待確認，標示為中性。"
-      },
-      {
-        "symbol": "NVDA",
-        "display_name": "輝達 NVIDIA",
+        "symbol": "^SOX",
+        "display_name": "費城半導體",
         "stance": "偏下行",
-        "rationale": "收 125.53，單日 -14.01%、5日 -22.92%，RSI14 僅 15，屬深度超賣。價格低於 SMA20 181.46、SMA50 207 與 SMA200 203.35，MACD -19.83 低於訊號線 -15.20，空方動能尚未收斂。價格距 52 週低點僅 0.83%，後續需觀察支撐是否守住。"
+        "rationale": "指數 8408.59，單日下跌 10.73%、五日下跌 17.13%，遠低於 SMA20（10201.99）、SMA50（11334.79）與 SMA200（10921.22）。MACD -606.32 低於訊號線 -517.89 並出現死亡交叉，RSI 29.0 雖屬超賣，但價格結構仍弱。"
       },
       {
         "symbol": "GC=F",
         "display_name": "黃金",
         "stance": "偏下行",
-        "rationale": "收 3515.4，單日 -4.62%、5日 -9.54%，價格低於 SMA20 3942.15、SMA50 4110.86 與 SMA200 4444.68，呈空頭排列。MACD -120.96 低於訊號線 -82.49，RSI14 為 21.6，屬超賣區，且接近 52 週低點，趨勢偏弱。"
+        "rationale": "現價 3515.4，低於 SMA20（3942.15）、SMA50（4110.86）與 SMA200（4444.68），呈空頭排列，單日下跌 4.62%、五日下跌 9.54%。MACD -120.96 低於訊號線 -82.49，RSI 21.6 深度超賣且接近 52 週低點，趨勢偏弱但短線有技術性反彈條件。"
+      },
+      {
+        "symbol": "^TNX",
+        "display_name": "美國 10 年期公債殖利率",
+        "stance": "中性",
+        "rationale": "殖利率 4.91%，低於 SMA20（4.99）與 SMA50（5.08），但仍高於 SMA200（4.60），五日下滑 4.70%。MACD -0.003 略高於訊號線 -0.0088，柱狀體為正，RSI 41.3 落在中性偏弱區間，多空訊號互見。"
+      },
+      {
+        "symbol": "FLOT",
+        "display_name": "FLOT 浮動利率債",
+        "stance": "中性",
+        "rationale": "價格 50.91，與 SMA20（50.91）、SMA50（50.95）、SMA200（50.94）幾乎重合，單日與五日漲跌幅均為 0。RSI 48.0 貼近中軸，MACD -0.0112 高於訊號線 -0.0163 出現黃金交叉，但幅度極小，且接近 52 週高點，波動極低。"
       }
     ],
-    "risk_caveat": "以上內容僅依公開行情計算的技術指標進行客觀描述，過去走勢不代表未來表現。超賣或超買讀數不代表必然反轉，僅供技術指標解讀參考，不構成任何投資建議或操作依據。",
+    "risk_caveat": "技術指標為落後性統計，在劇烈波動時容易失真，超賣不等於止跌。過去走勢不代表未來表現，本內容僅供技術指標解讀參考，不構成任何投資建議或買賣依據。",
     "tickers": [
       {
         "symbol": "^GSPC",
@@ -433,7 +389,7 @@
         "symbol": "^STOXX50E",
         "displayName": "歐洲 STOXX 50",
         "group": "index",
-        "currency": "EUR",
+        "currency": "",
         "exchangeName": "ZRH",
         "currentPrice": 5941.95,
         "pct1Day": -2.811805751612171,
@@ -1867,6 +1823,74 @@
         ]
       }
     ],
-    "generated_at": "2026-11-22T10:52:08.787Z"
+    "generated_at": "2026-11-22T13:31:55.224Z"
+  },
+  "margin": {
+    "date": "2026-11-20",
+    "marginAmount": 435227267,
+    "marginAmountChange": -49141093,
+    "marginUnits": 8398744,
+    "marginUnitsChange": -548868,
+    "shortUnits": 199791,
+    "shortUnitsChange": -10028,
+    "shortToMarginRatio": 2.378819975939259,
+    "stocks": [
+      {
+        "code": "2330",
+        "name": "台積電",
+        "marginToday": 29764,
+        "marginChange": -3020,
+        "shortToday": 59,
+        "shortChange": -52
+      },
+      {
+        "code": "2317",
+        "name": "鴻海",
+        "marginToday": 48802,
+        "marginChange": -1464,
+        "shortToday": 903,
+        "shortChange": 258
+      },
+      {
+        "code": "2454",
+        "name": "聯發科",
+        "marginToday": 10611,
+        "marginChange": -579,
+        "shortToday": 26,
+        "shortChange": -16
+      },
+      {
+        "code": "2308",
+        "name": "台達電",
+        "marginToday": 9755,
+        "marginChange": -510,
+        "shortToday": 28,
+        "shortChange": -11
+      },
+      {
+        "code": "2382",
+        "name": "廣達",
+        "marginToday": 13545,
+        "marginChange": -1170,
+        "shortToday": 230,
+        "shortChange": 23
+      },
+      {
+        "code": "3711",
+        "name": "日月光投控",
+        "marginToday": 9608,
+        "marginChange": -1486,
+        "shortToday": 281,
+        "shortChange": -17
+      },
+      {
+        "code": "0050",
+        "name": "元大台灣50",
+        "marginToday": 59403,
+        "marginChange": -61672,
+        "shortToday": 415,
+        "shortChange": -16
+      }
+    ]
   }
 }

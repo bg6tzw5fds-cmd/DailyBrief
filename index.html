@@ -646,6 +646,15 @@
   .snap-num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
   .snapshot-note { margin: 0.45rem 0 0; font-size: 0.72rem; color: var(--muted); }
   .digest-category { margin-top: 1.2rem; }
+  .margin-stats {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.6rem; margin: 0.2rem 0 0.8rem;
+  }
+  @media (max-width: 520px) { .margin-stats { grid-template-columns: repeat(2, 1fr); } }
+  .margin-stats > div { background: var(--card); border-radius: 0.4rem; padding: 0.5rem 0.7rem; }
+  .margin-stats .widget-value { font-size: 1.05rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .margin-stats .widget-label { font-size: 0.72rem; color: var(--muted); }
+  .margin-stats .widget-sub { font-size: 0.78rem; font-variant-numeric: tabular-nums; }
+  .margin-code { color: var(--muted); font-size: 0.75rem; }
   @media (max-width: 520px) {
     .snapshot-table { font-size: 0.8rem; }
     .snapshot-table td, .snapshot-table th { padding: 0.28rem 0.25rem; }
@@ -671,7 +680,7 @@
   <nav class="tabs" role="tablist">
     <button class="tab active" data-tab="digest">今日重點</button>
     <button class="tab" data-tab="trading">市場行情<span class="count">56</span></button>
-    <button class="tab" data-tab="finance">財經要點<span class="count">50</span></button>
+    <button class="tab" data-tab="finance">財經要點<span class="count">65</span></button>
     <button class="tab" data-tab="tech">AI 與半導體<span class="count">34</span></button>
     <button class="tab" data-tab="politics">國際與地緣<span class="count">12</span></button>
     
@@ -680,11 +689,11 @@
   <section class="panel active" data-panel="digest">
     <section class="hero-card">
       <span class="hero-eyebrow">今日頭條</span>
-      <p class="hero-headline">費半單日重挫逾一成，台股上週暴跌17.5%，金管會23日起全面禁空</p>
+      <p class="hero-headline">半導體股遭重挫，費半單日跌10.73%、台股一週跌17.5%</p>
     </section>
 <section class="overview-card">
       <span class="eyebrow">晨報總覽</span>
-      <p class="overview-text">美股週五全面重挫，S&amp;P 500 收 6910 點、日跌 3.70%，那斯達克日跌 5.28%，費城半導體暴跌 10.73%、5 日累計下跌 17.13%；輝達跌 14.01%、美光跌 13.89%。台股加權指數收 36033 點，日跌 6.23%、5 日跌 17.50%，台積電收 2000 元、台積電 ADR 跌 9.48%。美債殖利率下滑，10 年期降至 4.91%，VIX 升至 35.89。美元指數 103.84，美元兌新台幣 32.96。Brent 原油 89.95 美元，黃金跌 4.62% 至 3515 美元。報導指出，大型科技財報令人失望與輝達相關爭議削弱 AI 交易信心，金管會因此宣布 23 日起平盤下全面禁空，證交所研議調降融資擔保維持率，國科會也將向產業界喊話。後續觀察台股週一開盤的賣壓與外資動向、各國穩定市場措施，以及 AI 資本支出疑慮能否緩解。</p>
+      <p class="overview-text">美股前一交易日重挫，S&amp;P 500 跌 3.70% 至 6910 點，那斯達克跌 5.28%，費城半導體指數大跌 10.73%，輝達跌 14.01%，VIX 升至 35.89。台股加權指數收 36033 點、跌 6.23%，5 日累計跌 17.50%。美債 10 年期殖利率 4.91%，美元兌新台幣 32.96，Brent 原油 89.95 美元，黃金跌 4.62% 至 3515 美元。台股融資餘額 4352.3 億元、減少 491.4 億元，融券減少 10,028 張至 199,791 張。新聞面上，輝達執行長異動與晶片走私調查增添 AI 族群不確定性，台灣當局以禁空與產業座談因應。23 日國科會與行政院座談為觀察重點。</p>
     </section>
 <section class="snapshot-card">
     <span class="eyebrow">收盤快照</span>
@@ -694,6 +703,20 @@
     </table>
     <p class="snapshot-note">前一交易日收盤；殖利率單位為 %，漲跌以「台股慣例」紅漲綠跌呈現</p>
   </section>
+<section class="snapshot-card margin-card">
+    <span class="eyebrow">台股信用交易（上市） · 2026-11-20</span>
+    <div class="margin-stats">
+      <div><div class="widget-label">融資餘額</div><div class="widget-value">4352.3 億</div><div class="widget-sub negative">-491.4 億</div></div>
+      <div><div class="widget-label">融資（張）</div><div class="widget-value">8,398,744</div><div class="widget-sub negative">-548,868</div></div>
+      <div><div class="widget-label">融券（張）</div><div class="widget-value">199,791</div><div class="widget-sub negative">-10,028</div></div>
+      <div><div class="widget-label">券資比</div><div class="widget-value">2.38%</div></div>
+    </div>
+    <table class="snapshot-table">
+      <thead><tr><th>個股</th><th>融資（張）</th><th>增減</th><th>融券（張）</th><th>增減</th></tr></thead>
+      <tbody><tr><td class="snap-name">台積電 <span class="margin-code">2330</span></td><td class="snap-num">29,764</td><td class="snap-num negative">-3,020</td><td class="snap-num">59</td><td class="snap-num negative">-52</td></tr><tr><td class="snap-name">鴻海 <span class="margin-code">2317</span></td><td class="snap-num">48,802</td><td class="snap-num negative">-1,464</td><td class="snap-num">903</td><td class="snap-num positive">+258</td></tr><tr><td class="snap-name">聯發科 <span class="margin-code">2454</span></td><td class="snap-num">10,611</td><td class="snap-num negative">-579</td><td class="snap-num">26</td><td class="snap-num negative">-16</td></tr><tr><td class="snap-name">台達電 <span class="margin-code">2308</span></td><td class="snap-num">9,755</td><td class="snap-num negative">-510</td><td class="snap-num">28</td><td class="snap-num negative">-11</td></tr><tr><td class="snap-name">廣達 <span class="margin-code">2382</span></td><td class="snap-num">13,545</td><td class="snap-num negative">-1,170</td><td class="snap-num">230</td><td class="snap-num positive">+23</td></tr><tr><td class="snap-name">日月光投控 <span class="margin-code">3711</span></td><td class="snap-num">9,608</td><td class="snap-num negative">-1,486</td><td class="snap-num">281</td><td class="snap-num negative">-17</td></tr><tr><td class="snap-name">元大台灣50 <span class="margin-code">0050</span></td><td class="snap-num">59,403</td><td class="snap-num negative">-61,672</td><td class="snap-num">415</td><td class="snap-num negative">-16</td></tr></tbody>
+    </table>
+    <p class="snapshot-note">資料來源：臺灣證券交易所；為前一交易日資料，張數為交易單位</p>
+  </section>
 <section class="digest-category">
     <header class="category-header">
       <h2 class="category-title">財經與總經重點</h2>
@@ -701,138 +724,87 @@
     </header>
     <div class="brief-list"><article class="brief">
     <div class="brief-head">
-      <span class="brief-source">中央社 財經</span>
-      <span class="brief-rank high">重要度 10</span>
+      <span class="brief-source">經濟日報</span>
+      <span class="brief-rank high">重要度 9</span>
     </div>
-    <h3 class="brief-title"><a href="https://www.cna.com.tw/news/afe/202611220085.aspx" target="_blank" rel="noopener noreferrer">金管會加碼限空，23日起平盤下全面禁放空</a></h3>
-    <p class="brief-summary">AI 產業前景疑慮升溫，費城半導體指數重挫 10.73%、台積電 ADR 跌 9.48%。金管會宣布 23 日起實施平盤下全面禁放空等 5 項穩定股市措施。法人預期台股週一開盤仍面臨沉重的系統性賣壓。</p>
+    <h3 class="brief-title"><a href="https://money.udn.com/money/story/5612/9894845" target="_blank" rel="noopener noreferrer">國科會明與半導體業者喊話，台股前週創最大跌點</a></h3>
+    <p class="brief-summary">台股上週創史上單週最大跌點，金管會祭出平盤下全面禁空，行政院提出四大指示。國科會23日將與半導體及園區業者喊話，行政院長卓榮泰同日與工商團體座談，市場關注穩定效果。（多家報導）</p>
   </article>
 <article class="brief">
     <div class="brief-head">
       <span class="brief-source">Yahoo 股市 台股</span>
-      <span class="brief-rank high">重要度 9</span>
-    </div>
-    <h3 class="brief-title"><a href="https://tw.news.yahoo.com/%E5%8F%B0%E8%82%A1%E5%89%B5%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%A4%A7%E5%96%AE%E5%91%A8%E8%B7%8C%E9%BB%9E-%E9%99%90%E7%A9%BA%E4%BB%A4%E4%B8%8D%E5%88%A9%E6%B5%81%E5%8B%95%E6%80%A7-%E6%B3%95%E4%BA%BA-%E6%9C%AC%E5%91%A8%E6%81%90%E4%B8%8B%E6%8E%A232-000%E9%BB%9E-101721996.html" target="_blank" rel="noopener noreferrer">台股上週創史上最大單週跌點，法人估本週恐探 32,000 點</a></h3>
-    <p class="brief-summary">台股上週大跌 7,641 點、跌幅 17.5%，收 36,033 點，為史上最大單週跌點與 1990 年以來最大單週跌幅。永豐投顧指融資明顯減少，但限空令不利流動性。凱基投顧認為外資賣壓何時減緩是關鍵。（多家報導）</p>
-  </article>
-<article class="brief">
-    <div class="brief-head">
-      <span class="brief-source">自由時報 財經</span>
       <span class="brief-rank high">重要度 8</span>
     </div>
-    <h3 class="brief-title"><a href="https://ec.ltn.com.tw/article/breakingnews/5649746" target="_blank" rel="noopener noreferrer">證交所研議融資擔保維持率由130%降至120%</a></h3>
-    <p class="brief-summary">美股跌勢擴大、台股週一開盤承壓，證交所邀集十家大型券商研商救市措施，擬將融資擔保維持率由 130% 降至 120%。此舉讓約 6400 戶追繳戶暫時鬆一口氣，但仍須主管機關確認，旨在降低斷頭賣壓。</p>
+    <h3 class="brief-title"><a href="https://tw.news.yahoo.com/%E5%8F%B0%E8%82%A1%E6%85%98%E8%B7%8C%E7%A5%AD%E6%95%91%E5%B8%82%E6%96%B0%E6%8B%9B-%E5%82%B3%E8%9E%8D%E8%B3%87%E7%B6%AD%E6%8C%81%E7%8E%87-%E9%99%8D%E8%87%B3120-%E6%9C%80%E5%BF%AB%E6%98%8E%E5%A4%A9%E4%B8%8A%E8%B7%AF-122000266.html" target="_blank" rel="noopener noreferrer">傳證交所討論融資維持率由130%降至120%</a></h3>
+    <p class="brief-summary">傳證交所通知元大、凱基、富邦、群益金鼎等十大券商，討論將整戶融資擔保維持率從130%調降至120%，最快23日上路，仍待金管會拍板。此舉可能緩解斷頭賣壓，但目前尚屬傳聞。</p>
   </article>
 <article class="brief">
     <div class="brief-head">
-      <span class="brief-source">自由時報 財經</span>
-      <span class="brief-rank high">重要度 8</span>
-    </div>
-    <h3 class="brief-title"><a href="https://ec.ltn.com.tw/article/breakingnews/5649714" target="_blank" rel="noopener noreferrer">高盛警告新一輪拋售恐到來，點出觸底前須觀察三件事</a></h3>
-    <p class="brief-summary">過去兩週大型科技公司財報令人失望，加上輝達相關爭議，削弱市場對 AI 交易的信心，標普 500 指數陷入回檔區間。高盛警告新一輪拋售恐到來，並指出市場觸底前需看到三項條件。</p>
-  </article>
-<article class="brief">
-    <div class="brief-head">
-      <span class="brief-source">Bloomberg Markets</span>
+      <span class="brief-source">科技新報</span>
       <span class="brief-rank mid">重要度 7</span>
     </div>
-    <h3 class="brief-title"><a href="https://www.bloomberg.com/news/articles/2026-11-22/s-korea-rolls-out-phased-measures-to-stabilize-volatile-markets" target="_blank" rel="noopener noreferrer">南韓宣布分階段措施穩定市場，確保穩定基金到位</a></h3>
-    <p class="brief-summary">南韓高層財金官員在緊急會議後宣布分階段措施，因應市場波動升溫，包括確保股市穩定基金就位、必要時啟動。韓國綜合指數週五收 4870 點、日跌 5.21%，顯示亞洲市場同步承壓。</p>
+    <h3 class="brief-title"><a href="https://finance.technews.tw/2026/11/22/falling-below-the-annual-moving-average/" target="_blank" rel="noopener noreferrer">台股一週修正逾17%，安聯投信提四大止穩訊號</a></h3>
+    <p class="brief-summary">台股自11月13日收盤43,675.12點起算，一週修正幅度逾17%並失守年線。安聯投信認為後市須觀察四大止穩訊號，反映市場短線仍承受高波動壓力。</p>
   </article>
 <article class="brief">
     <div class="brief-head">
-      <span class="brief-source">ECB 新聞稿</span>
+      <span class="brief-source">CNBC Economy</span>
       <span class="brief-rank mid">重要度 7</span>
     </div>
-    <h3 class="brief-title"><a href="https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261118~83c5c60158.en.html" target="_blank" rel="noopener noreferrer">ECB：AI估值、財政失衡與地緣經濟緊張威脅金融穩定</a></h3>
-    <p class="brief-summary">歐洲央行 11 月金融穩定評估指出，AI 估值、財政失衡與地緣經濟緊張是金融穩定前景的主要風險。在科技股劇烈修正之際，凸顯估值風險已受到央行關注。</p>
+    <h3 class="brief-title"><a href="https://www.cnbc.com/2026/11/16/kevin-warsh-fed-ai-jobs-productivity-interest-rateshtml.html" target="_blank" rel="noopener noreferrer">Fed 主席華許看見 AI 革命，面臨就業與利率難題</a></h3>
+    <p class="brief-summary">CNBC 報導，Fed 主席華許（Kevin Warsh）認為 AI 正處於轉折點，但須回答 AI 對就業與利率政策的棘手問題。其看法將影響市場對利率路徑與生產力的解讀。</p>
+  </article>
+<article class="brief">
+    <div class="brief-head">
+      <span class="brief-source">The Economist Finance</span>
+      <span class="brief-rank mid">重要度 6</span>
+    </div>
+    <h3 class="brief-title"><a href="https://www.economist.com/finance-and-economics/2026/11/19/bond-yields-are-rising-everywhere-except-china" target="_blank" rel="noopener noreferrer">經濟學人：全球債券殖利率上升，中國為例外</a></h3>
+    <p class="brief-summary">經濟學人指出，全球多數市場公債殖利率持續走高，唯獨中國例外，中國人民銀行已降息。美國10年期公債殖利率前一交易日為4.91%，下跌2.77%。</p>
+  </article>
+<article class="brief">
+    <div class="brief-head">
+      <span class="brief-source">EIA Today in Energy</span>
+      <span class="brief-rank mid">重要度 6</span>
+    </div>
+    <h3 class="brief-title"><a href="https://www.eia.gov/todayinenergy/detail.php?id=" target="_blank" rel="noopener noreferrer">EIA：第三季中東關鍵海上要道石油運量增19%</a></h3>
+    <p class="brief-summary">美國能源資訊署（EIA）表示，2026年第三季經中東主要海上要道的石油運量增加19%。運量回升有助供應，但當地攻擊事件仍是油價風險，Brent 前一交易日收 89.95 美元。</p>
   </article></div>
   </section>
 <section class="digest-category">
     <header class="category-header">
       <h2 class="category-title">AI 與半導體重點</h2>
-      <span class="category-count">5</span>
+      <span class="category-count">3</span>
     </header>
     <div class="brief-list"><article class="brief">
     <div class="brief-head">
-      <span class="brief-source">自由時報 財經</span>
-      <span class="brief-rank high">重要度 8</span>
-    </div>
-    <h3 class="brief-title"><a href="https://ec.ltn.com.tw/article/breakingnews/5649680" target="_blank" rel="noopener noreferrer">報導：中國國安部秘密協助企業取得輝達先進AI晶片</a></h3>
-    <p class="brief-summary">《紐約時報》21 日報導，中國國家安全部至少兩年來運行秘密行動，協助中國企業取得先進 AI 晶片並蒐集半導體產業相關資訊。此事恐加劇外界對出口管制與輝達中國業務的關注。</p>
-  </article>
-<article class="brief">
-    <div class="brief-head">
       <span class="brief-source">TechCrunch AI</span>
-      <span class="brief-rank mid">重要度 7</span>
+      <span class="brief-rank high">重要度 9</span>
     </div>
-    <h3 class="brief-title"><a href="https://techcrunch.com/2026/11/21/a-tale-of-two-nvidias/" target="_blank" rel="noopener noreferrer">輝達最新財報與高層呼籲黃仁勳回歸形成兩種圖像</a></h3>
-    <p class="brief-summary">TechCrunch 指出，輝達最新財報與科技高層高調呼籲黃仁勳回歸，呈現兩種截然不同的畫面。輝達週五股價收 125.53 美元，單日下跌 14.01%，反映市場信心波動。</p>
+    <h3 class="brief-title"><a href="https://techcrunch.com/2026/11/21/a-tale-of-two-nvidias/" target="_blank" rel="noopener noreferrer">輝達財報創紀錄，但科技高層呼籲黃仁勳回歸</a></h3>
+    <p class="brief-summary">輝達最新財報營收與獲利再創紀錄，但多位科技業高層公開呼籲黃仁勳回歸，另有報導稱黃已辭去執行長等職務。市場同時消化獲利成長與領導層不確定性，輝達前一交易日跌14.01%。（多家報導）</p>
   </article>
 <article class="brief">
     <div class="brief-head">
       <span class="brief-source">科技新報</span>
       <span class="brief-rank mid">重要度 6</span>
     </div>
-    <h3 class="brief-title"><a href="https://infosecu.technews.tw/2026/11/22/nvidia-ransom-demand-by-the-gentlemen-leak-timer-under-10-days/" target="_blank" rel="noopener noreferrer">勒索組織將輝達列入暗網洩漏網站，官方稱系統未遭入侵</a></h3>
-    <p class="brief-summary">勒索軟體組織 The Gentlemen 於 18 日將輝達列入暗網資料外洩網站，聲稱取得公司資料並設下約十天的倒數。輝達官方表示系統未遭入侵。此事為市場信心增添資安疑慮。</p>
+    <h3 class="brief-title"><a href="https://infosecu.technews.tw/2026/11/22/nvidia-ransom-demand-by-the-gentlemen-leak-timer-under-10-days/" target="_blank" rel="noopener noreferrer">輝達遭勒索組織列入暗網，官方稱系統未遭入侵</a></h3>
+    <p class="brief-summary">勒索軟體組織 The Gentlemen 於18日將輝達列入暗網資料外洩網站，聲稱取得公司資料並設十天倒數；輝達官方表示系統未遭入侵。事件為AI龍頭增添資安與信譽風險。</p>
   </article>
 <article class="brief">
     <div class="brief-head">
-      <span class="brief-source">經濟日報</span>
-      <span class="brief-rank mid">重要度 7</span>
+      <span class="brief-source">Semiconductor Engineering</span>
+      <span class="brief-rank high">重要度 8</span>
     </div>
-    <h3 class="brief-title"><a href="https://money.udn.com/money/story/5612/9894845" target="_blank" rel="noopener noreferrer">國科會23日邀半導體與園區業者向市場喊話</a></h3>
-    <p class="brief-summary">台股上週受費半與國際科技大廠股價重挫影響，創史上單週最大跌點，金管會已祭出全面禁空，行政院亦提四大指示。國科會主委吳誠文 23 日上午將與台灣半導體協會、SEMI 及科學園區同業公會舉行記者會，強調台灣半導體產業競爭力。</p>
-  </article>
-<article class="brief">
-    <div class="brief-head">
-      <span class="brief-source">CNBC Energy</span>
-      <span class="brief-rank mid">重要度 6</span>
-    </div>
-    <h3 class="brief-title"><a href="https://www.cnbc.com/2026/11/19/data-center-electricity-demand-iea.html" target="_blank" rel="noopener noreferrer">IEA：資料中心用電量2030年前可能倍增</a></h3>
-    <p class="brief-summary">國際能源署指出，隨 AI 熱潮推進，全球資料中心用電量 2030 年前可能增加一倍，將加重各國電網壓力。這顯示 AI 基礎建設長期需求仍在，但電力供給與投資成本是需持續追蹤的限制。</p>
+    <h3 class="brief-title"><a href="https://semiengineering.com/chip-industry-week-in-review-165/" target="_blank" rel="noopener noreferrer">晶片週報：英特爾18A-P客戶、輝達擴封裝產能</a></h3>
+    <p class="brief-summary">Semiconductor Engineering 週報指出，英特爾取得首個18A-P外部客戶，微軟採用 EMIB 封裝，輝達擴充先進封裝產能，同時對中國的出口管制進一步收緊，牽動晶圓代工與封裝供應鏈。</p>
   </article></div>
   </section>
-<section class="digest-category">
-    <header class="category-header">
-      <h2 class="category-title">國際與地緣重點</h2>
-      <span class="category-count">3</span>
-    </header>
-    <div class="brief-list"><article class="brief">
-    <div class="brief-head">
-      <span class="brief-source">中央社 國際</span>
-      <span class="brief-rank mid">重要度 6</span>
-    </div>
-    <h3 class="brief-title"><a href="https://www.cna.com.tw/news/aopl/202611220147.aspx" target="_blank" rel="noopener noreferrer">澤倫斯基：俄無人機襲基輔州住宅大樓，至少14人失聯</a></h3>
-    <p class="brief-summary">烏克蘭總統澤倫斯基表示，俄羅斯無人機 22 日上午襲擊基輔州一棟住宅大樓，至少 14 人可能仍受困瓦礫。俄烏衝突持續升溫，對能源與避險情緒的影響值得留意。</p>
-  </article>
-<article class="brief">
-    <div class="brief-head">
-      <span class="brief-source">The Economist Finance</span>
-      <span class="brief-rank mid">重要度 5</span>
-    </div>
-    <h3 class="brief-title"><a href="https://www.economist.com/finance-and-economics/2026/11/19/europe-tightens-sanctions-on-russia-america-loosens-them" target="_blank" rel="noopener noreferrer">西方對俄制裁分歧：歐洲收緊、美國放鬆</a></h3>
-    <p class="brief-summary">《經濟學人》指出，西方對俄制裁方向出現分歧，歐洲正收緊對俄制裁，美國則放鬆相關限制。政策不一致可能影響能源貿易流向與大宗商品價格預期。</p>
-  </article>
-<article class="brief">
-    <div class="brief-head">
-      <span class="brief-source">Financial Times</span>
-      <span class="brief-rank mid">重要度 5</span>
-    </div>
-    <h3 class="brief-title"><a href="https://www.ft.com/content/b3ba64e9-9482-4525-acc7-49825f3daace?syn-25a6b1a6=1" target="_blank" rel="noopener noreferrer">COP31談判延長，歐盟警告可能無共識</a></h3>
-    <p class="brief-summary">COP31 談判進入加時賽第二天，歐盟提出可能無法達成協議。沙烏地阿拉伯領導反對將逐步淘汰化石燃料納入最終協議。結果將影響各國能源政策與化石燃料需求預期。</p>
-  </article></div>
-  </section>
-<section class="editor-card">
-      <span class="eyebrow">編輯觀點</span>
-      <p class="editor-text">市場正同時面對 AI 估值修正、融資追繳與跨市場連動賣壓。週一台股開盤受禁空令與融資新措施影響，價格訊號與流動性可能失真。建議留意外資買賣超、台積電 ADR 走勢、VIX 與各國穩定措施成效。</p>
-    </section>
-<div class="keywords"><span class="keyword">#台股暴跌</span><span class="keyword">#費城半導體</span><span class="keyword">#禁空令</span><span class="keyword">#融資維持率</span><span class="keyword">#輝達</span><span class="keyword">#VIX</span><span class="keyword">#AI估值</span></div>
   </section>
   <section class="panel" data-panel="trading"><section class="trading-overview-card">
     <span class="eyebrow">技術面總覽</span>
-    <p class="overview-text trading-overview-text">全球風險資產同步重挫，S&amp;P 500 單日 -3.7%、5日 -8.61%，那斯達克綜合單日 -5.28%，RSI14 分別為 24.7 與 25.6，皆進入超賣區，價格也低於 SMA20 與 SMA50。台股加權指數單日 -6.23%、5日 -17.5%，RSI14 為 25.6；台積電收 2000、RSI 27.8，元大台灣50 的 RSI 同為 25.6，MACD 均低於訊號線。AI 與半導體族群跌幅最深，費城半導體單日 -10.73%，輝達 RSI 僅 15，Sandisk 單日 -18.33%，SOXX 與 PSI 同步走弱。商品方面，Brent 89.95、WTI 83.41 均低於 SMA20，XLE 與 OIH 跟著回落；黃金 3515.4、RSI 21.6，白銀與銅的 RSI 也在 21 上下，金屬類整體超賣；天然氣單日 +14.69%，是少數呈多頭排列的標的。利率方面，10 年期殖利率 4.91%、單日 -2.77%，接近 52 週低點，反映資金轉向債券；VIX 升至 35.89、RSI 71.7 進入超買。美元指數 103.84 接近 52 週高點，美元兌新台幣 32.96 同步偏強，美元兌日圓 158.51 大致持平。</p>
+    <p class="overview-text trading-overview-text">全球指數同步重挫：S&amp;P 500 收 6910.39 點，單日下跌 3.70%、五日下跌 8.61%，RSI 24.7；那斯達克單日下跌 5.28%，費城半導體單日下跌 10.73%，跌幅最深。台股加權指數單日下跌 6.23%、五日下跌 17.50%，RSI 25.6，台積電報 2000 元（RSI 27.8），廣達 RSI 僅 19.7。AI 與半導體族群方面，輝達 RSI 15.0、單日下跌 14.01%，Sandisk 單日下跌 18.33%，多數標的 MACD 位於訊號線下方。追蹤 ETF 中，SOXX 與 PSI 單日均下跌逾 10%，PSI 出現 SMA50 下穿 SMA200 的死亡交叉，FLOT 則幾乎持平。商品方面，Brent 89.95 美元、WTI 83.41 美元均低於 SMA20，黃金 RSI 21.6、銅 RSI 20.6 同步超賣，天然氣單日上漲 14.69% 逆勢走強。利率與匯率方面，10 年期殖利率 4.91%，五日下滑 4.70%，但未能支撐成長股；VIX 升至 35.89（RSI 71.7 超買），美元指數 103.84 接近 52 週高點，美元兌新台幣 32.96 偏高，美元兌日圓 158.51 大致持平。</p>
   </section>
 
   <section class="trading-watchlist">
@@ -846,7 +818,7 @@
       </div>
       <span class="pick-stance pick-stance-bull">偏上行</span>
     </header>
-    <p class="pick-rationale">收 3.75，單日 +14.69%、5日 +16.04%，價格站上 SMA20 3.08、SMA50 3.05 與 SMA200 2.97，並出現黃金交叉（SMA50 上穿 SMA200）與多頭排列。MACD 0.1242 高於訊號線 0.0688，動能偏多。RSI14 為 69.4，接近超買邊緣，短線漲幅已大。</p>
+    <p class="pick-rationale">現價 3.75 站上 SMA20（3.08）、SMA50（3.05）與 SMA200（2.97），出現 SMA50 上穿 SMA200 的黃金交叉並呈多頭排列。MACD 0.1242 高於訊號線 0.0688，單日上漲 14.69%、五日上漲 16.04%，RSI 69.4 已接近超買區，短線漲幅較大。</p>
   </article>
 <article class="trading-pick stance-bull">
     <header class="pick-head">
@@ -856,37 +828,17 @@
       </div>
       <span class="pick-stance pick-stance-bull">偏上行</span>
     </header>
-    <p class="pick-rationale">收 103.84，高於 SMA20 102.57、SMA50 101.89 與 SMA200 100.01，呈多頭排列，且接近 52 週高點。MACD 0.5781 高於訊號線 0.4329，動能仍偏多。RSI14 為 68.4，逼近超買門檻，在風險資產劇烈下跌時，避險需求使趨勢維持偏強。</p>
-  </article>
-<article class="trading-pick stance-neutral">
-    <header class="pick-head">
-      <div class="pick-symbol-block">
-        <span class="pick-symbol">^TNX</span>
-        <span class="pick-name">美國 10 年期公債殖利率</span>
-      </div>
-      <span class="pick-stance pick-stance-neutral">中性</span>
-    </header>
-    <p class="pick-rationale">殖利率 4.91%，單日 -2.77%、5日 -4.7%，低於 SMA20 4.99 與 SMA50 5.08，但仍高於 SMA200 4.6，屬於高檔回落。RSI14 為 41.3，MACD -0.003 略低於訊號線 -0.0088，動能變化有限。目前缺乏明確方向，歸類為中性。</p>
-  </article>
-<article class="trading-pick stance-neutral">
-    <header class="pick-head">
-      <div class="pick-symbol-block">
-        <span class="pick-symbol">^GSPC</span>
-        <span class="pick-name">S&amp;P 500</span>
-      </div>
-      <span class="pick-stance pick-stance-neutral">中性</span>
-    </header>
-    <p class="pick-rationale">收 6910.39，單日 -3.7%、5日 -8.61%，RSI14 為 24.7，屬明顯超賣。價格低於 SMA20 7499.23、SMA50 7625.26 與 SMA200 7348.58，MACD -129.64 低於訊號線 -75.05，空方動能強。超賣讀數與負向動能並存，方向尚待確認，標示為中性。</p>
+    <p class="pick-rationale">指數 103.84 高於 SMA20（102.57）、SMA50（101.89）與 SMA200（100.01），呈多頭排列，且距 52 週高點僅 0.13%。MACD 0.5781 位於訊號線 0.4329 之上，動能偏多；RSI 68.4 接近超買門檻，須留意高檔震盪。</p>
   </article>
 <article class="trading-pick stance-bear">
     <header class="pick-head">
       <div class="pick-symbol-block">
-        <span class="pick-symbol">NVDA</span>
-        <span class="pick-name">輝達 NVIDIA</span>
+        <span class="pick-symbol">^SOX</span>
+        <span class="pick-name">費城半導體</span>
       </div>
       <span class="pick-stance pick-stance-bear">偏下行</span>
     </header>
-    <p class="pick-rationale">收 125.53，單日 -14.01%、5日 -22.92%，RSI14 僅 15，屬深度超賣。價格低於 SMA20 181.46、SMA50 207 與 SMA200 203.35，MACD -19.83 低於訊號線 -15.20，空方動能尚未收斂。價格距 52 週低點僅 0.83%，後續需觀察支撐是否守住。</p>
+    <p class="pick-rationale">指數 8408.59，單日下跌 10.73%、五日下跌 17.13%，遠低於 SMA20（10201.99）、SMA50（11334.79）與 SMA200（10921.22）。MACD -606.32 低於訊號線 -517.89 並出現死亡交叉，RSI 29.0 雖屬超賣，但價格結構仍弱。</p>
   </article>
 <article class="trading-pick stance-bear">
     <header class="pick-head">
@@ -896,7 +848,27 @@
       </div>
       <span class="pick-stance pick-stance-bear">偏下行</span>
     </header>
-    <p class="pick-rationale">收 3515.4，單日 -4.62%、5日 -9.54%，價格低於 SMA20 3942.15、SMA50 4110.86 與 SMA200 4444.68，呈空頭排列。MACD -120.96 低於訊號線 -82.49，RSI14 為 21.6，屬超賣區，且接近 52 週低點，趨勢偏弱。</p>
+    <p class="pick-rationale">現價 3515.4，低於 SMA20（3942.15）、SMA50（4110.86）與 SMA200（4444.68），呈空頭排列，單日下跌 4.62%、五日下跌 9.54%。MACD -120.96 低於訊號線 -82.49，RSI 21.6 深度超賣且接近 52 週低點，趨勢偏弱但短線有技術性反彈條件。</p>
+  </article>
+<article class="trading-pick stance-neutral">
+    <header class="pick-head">
+      <div class="pick-symbol-block">
+        <span class="pick-symbol">^TNX</span>
+        <span class="pick-name">美國 10 年期公債殖利率</span>
+      </div>
+      <span class="pick-stance pick-stance-neutral">中性</span>
+    </header>
+    <p class="pick-rationale">殖利率 4.91%，低於 SMA20（4.99）與 SMA50（5.08），但仍高於 SMA200（4.60），五日下滑 4.70%。MACD -0.003 略高於訊號線 -0.0088，柱狀體為正，RSI 41.3 落在中性偏弱區間，多空訊號互見。</p>
+  </article>
+<article class="trading-pick stance-neutral">
+    <header class="pick-head">
+      <div class="pick-symbol-block">
+        <span class="pick-symbol">FLOT</span>
+        <span class="pick-name">FLOT 浮動利率債</span>
+      </div>
+      <span class="pick-stance pick-stance-neutral">中性</span>
+    </header>
+    <p class="pick-rationale">價格 50.91，與 SMA20（50.91）、SMA50（50.95）、SMA200（50.94）幾乎重合，單日與五日漲跌幅均為 0。RSI 48.0 貼近中軸，MACD -0.0112 高於訊號線 -0.0163 出現黃金交叉，但幅度極小，且接近 52 週高點，波動極低。</p>
   </article>
     </div>
   </section>
@@ -2047,117 +2019,117 @@
 
   <section class="trading-risk">
     <span class="eyebrow">風險提示</span>
-    <p>以上內容僅依公開行情計算的技術指標進行客觀描述，過去走勢不代表未來表現。超賣或超買讀數不代表必然反轉，僅供技術指標解讀參考，不構成任何投資建議或操作依據。</p>
+    <p>技術指標為落後性統計，在劇烈波動時容易失真，超賣不等於止跌。過去走勢不代表未來表現，本內容僅供技術指標解讀參考，不構成任何投資建議或買賣依據。</p>
   </section></section>
   <section class="panel" data-panel="finance">
-    <nav class="sub-tabs"><button class="sub-tab active" data-sub="tw-market" data-cat="finance">台灣財經<span class="count">15</span></button><button class="sub-tab" data-sub="news" data-cat="finance">國際財經<span class="count">15</span></button><button class="sub-tab" data-sub="central-bank" data-cat="finance">央行與總經<span class="count">10</span></button><button class="sub-tab" data-sub="energy" data-cat="finance">能源與原物料<span class="count">10</span></button></nav>
+    <nav class="sub-tabs"><button class="sub-tab active" data-sub="tw-market" data-cat="finance">台灣財經<span class="count">15</span></button><button class="sub-tab" data-sub="news" data-cat="finance">國際財經<span class="count">15</span></button><button class="sub-tab" data-sub="wscn" data-cat="finance">華爾街見聞<span class="count">15</span></button><button class="sub-tab" data-sub="central-bank" data-cat="finance">央行與總經<span class="count">10</span></button><button class="sub-tab" data-sub="energy" data-cat="finance">能源與原物料<span class="count">10</span></button></nav>
 <div class="sub-contents"><div class="sub-content active" data-sub-content="tw-market" data-cat="finance">
     
     <div class="source-contents">
       <div class="source-content active" data-source-content="_merged" data-sub="tw-market" data-cat="finance">
     <article class="article">
-  <h3 class="article-title"><a href="https://money.udn.com/money/story/5612/9894845" target="_blank" rel="noopener noreferrer">救股市先穩半導體！國科會明攜手半導體、科學園區業者信心喊話</a></h3>
+  <h3 class="article-title"><a href="https://ec.ltn.com.tw/article/breakingnews/5649847" target="_blank" rel="noopener noreferrer">中國AI產業陷資金困境  3大科技指數市值蒸發56兆元</a></h3>
   
-  <p class="article-meta">經濟日報 · 11/22 18:27</p>
-  <p class="article-excerpt">台股上周受美國費城半導體指數、國際科技大廠股價重挫影響，創下史上當周最大跌點，金管會祭出平盤下全面禁空，行政院亦做出四大指示。國科會22日傍晚緊急發出採訪通知，國科會主委吳誠文23日上午將與台灣半導體協會、SEMI國際半導體產業協會、以及科學園區同業公會等產業代表舉行記者會，向股民信心喊話，台灣半導體產業具有強大競爭力。</p>
-  
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://tw.news.yahoo.com/%E5%87%B1%E5%9F%BA%E6%8A%95%E9%A1%A7-%E5%A4%96%E8%B3%87%E8%B3%A3%E5%A3%93%E4%BD%95%E6%99%82%E6%B8%9B%E7%B7%A9-%E5%8F%AF%E8%83%BD%E6%98%AF%E5%8F%B0%E8%82%A1%E6%93%BA%E8%84%AB%E6%8C%81%E7%BA%8C%E7%A0%B4%E5%BA%95%E7%9A%84%E9%97%9C%E9%8D%B5-101721903.html" target="_blank" rel="noopener noreferrer">凱基投顧：外資賣壓何時減緩 可能是台股擺脫持續破底的關鍵</a></h3>
-  
-  <p class="article-meta">Yahoo 股市 台股 · 11/22 18:17</p>
-  <p class="article-excerpt">台股跌跌不休，上周大跌7,641點、跌幅達17.5%，收在36,033點。凱基投顧指出，技術面失守年線後續跌，即便短期具備跌深反彈條件，但解鈴還須繫鈴人。外資賣壓何時減緩，可能才是台股擺脫持續破底的關</p>
+  <p class="article-meta">自由時報 財經 · 11/22 20:38</p>
+  <p class="article-excerpt">當Anthropic和其他美國矽谷 AI巨頭籌集數百億美元資金時，中國競爭對手卻難以跟上腳步。阿里巴巴等科技巨頭雖然投資了中國一些領先的AI公司，目前卻都面臨現金流為負的...…</p>
   
 </article>
 <article class="article">
-  <h3 class="article-title"><a href="https://tw.news.yahoo.com/%E5%8F%B0%E8%82%A1%E5%89%B5%E5%8F%B2%E4%B8%8A%E6%9C%80%E5%A4%A7%E5%96%AE%E5%91%A8%E8%B7%8C%E9%BB%9E-%E9%99%90%E7%A9%BA%E4%BB%A4%E4%B8%8D%E5%88%A9%E6%B5%81%E5%8B%95%E6%80%A7-%E6%B3%95%E4%BA%BA-%E6%9C%AC%E5%91%A8%E6%81%90%E4%B8%8B%E6%8E%A232-000%E9%BB%9E-101721996.html" target="_blank" rel="noopener noreferrer">台股創史上最大單周跌點…限空令不利流動性 法人：本周恐下探32,000點</a></h3>
+  <h3 class="article-title"><a href="https://ec.ltn.com.tw/article/breakingnews/5649842" target="_blank" rel="noopener noreferrer">台股連日重挫 卓揆23日將與工商團體座談</a></h3>
   
-  <p class="article-meta">Yahoo 股市 台股 · 11/22 18:17</p>
-  <p class="article-excerpt">台股上周大跌7,641點、跌幅達17.5%，收在36,033點，創下史上最大單周跌點與1990年以來最大單周跌幅。永豐投顧指出，雖然融資極致減肥，籌碼逐漸沉澱，但限空令不利流動性，建議暫時觀望等待，本</p>
-  
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://ec.ltn.com.tw/article/breakingnews/5649746" target="_blank" rel="noopener noreferrer">融資擔保率降至120％? 6400戶追繳戶暫鬆一口氣</a></h3>
-  
-  <p class="article-meta">自由時報 財經 · 11/22 18:03</p>
-  <p class="article-excerpt">美股跌勢擴大、台股周一開盤恐遭血洗，繼金管會祭出「限空令3.0」後，今日證交所也邀集十家大型券商研商救市措施，將融資擔保維持率由130%降至120%，不過，此舉仍須等金管...…</p>
+  <p class="article-meta">自由時報 財經 · 11/22 20:35</p>
+  <p class="article-excerpt">國際股市震盪影響，台股連日重挫，衝擊國內資本市場。據了解，行政院長卓榮泰明日下午將在行政院與產業界、工商團體座談，討論當前金融、經濟現況。 卓榮泰21日已召集財經部會...…</p>
   
 </article>
 <article class="article">
-  <h3 class="article-title"><a href="https://tw.news.yahoo.com/%E5%8F%B0%E8%82%A1-%E7%89%87%E6%85%98%E7%B6%A0-%E8%A9%B9%E6%83%9F%E4%B8%AD%E7%AA%81%E7%99%BC%E5%8A%9F-%E6%9B%9D1%E6%99%82%E9%96%93-%E9%99%B0%E9%9C%BE%E6%95%A3%E5%8E%BB-095344734.html" target="_blank" rel="noopener noreferrer">台股一片慘綠！詹惟中突發功「曝1時間」陰霾散去</a></h3>
+  <h3 class="article-title"><a href="https://ec.ltn.com.tw/article/breakingnews/5649875" target="_blank" rel="noopener noreferrer">可開40萬公里汽車排行榜 前十名這家日本車拿九個</a></h3>
   
-  <p class="article-meta">Yahoo 股市 台股 · 11/22 17:53</p>
-  <p class="article-excerpt">生活中心／李筱舲報導台股歷經一週劇烈震盪，20日更重挫2,393.60點，創下史上第三大跌點，讓不少股民人心惶惶。對此，知名命理師詹惟中今（22）日突然發聲指點迷津，透過卡牌占卜預測台股未來3個月的走</p>
-  
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://ec.ltn.com.tw/article/breakingnews/5649714" target="_blank" rel="noopener noreferrer">股市周一開盤提心吊膽 高盛警告新一輪拋售恐到來 觸底前需看到3件事</a></h3>
-  
-  <p class="article-meta">自由時報 財經 · 11/22 17:33</p>
-  <p class="article-excerpt">〔財經頻道／綜合報導〕過去兩週，一系列令人失望的大型科技公司財報以及輝達醜聞削弱了市場對人工智慧交易的信心，導致標普500指數進一步下滑，陷入回檔區間。即便Anthropic PBC創紀錄的IP...…</p>
+  <p class="article-meta">自由時報 財經 · 11/22 20:31</p>
+  <p class="article-excerpt">〔財經頻道／綜合報導〕哪些車輛最有可能達到25萬英里（約40萬公里）的行駛里程？對許多購車者來說，車款可靠性不僅意味著避免維修，還意味著車輛在需要更換之前能夠行駛多長時間。對於希望從購買中獲得最...…</p>
   
 </article>
 <article class="article">
-  <h3 class="article-title"><a href="https://tw.stock.yahoo.com/news/%E5%8F%B0%E8%82%A1%E6%9A%B4%E8%B7%8C%E5%8F%AA%E6%98%AF%E9%96%8B%E5%A7%8B-%E5%B0%88%E5%AE%B6%E6%9B%9D3%E9%A2%A8%E9%9A%AA%E9%AA%A8%E7%89%8C-%E9%80%A3%E7%BA%8C%E5%80%92%E4%B8%8B%E6%81%90%E4%B8%8D%E5%8F%AA%E5%BD%B1%E9%9F%BF%E7%A7%91%E6%8A%80%E6%A5%AD-093324092.html" target="_blank" rel="noopener noreferrer">台股暴跌只是開始？專家曝3風險骨牌：連續倒下恐不只影響科技業</a></h3>
+  <h3 class="article-title"><a href="https://tw.news.yahoo.com/%E5%8F%B0%E8%82%A1%E6%85%98%E5%B4%A9%E8%B2%B7%E9%AB%98%E8%82%A1%E6%81%AFetf%E8%BC%83%E6%8A%97%E8%B7%8C-%E5%B0%88%E5%AE%B6%E6%94%A4%E9%96%8B5%E6%AA%94%E8%B7%8C%E5%B9%85%E5%B0%8D%E6%B1%BA0050-2%E8%80%81%E7%89%8C%E6%A8%99%E7%9A%84%E5%8F%8D%E8%80%8C%E6%9B%B4%E6%85%98-123149758.html" target="_blank" rel="noopener noreferrer">台股慘崩買高股息ETF較抗跌？專家攤開5檔跌幅對決0050：2老牌標的反而更慘</a></h3>
   
-  <p class="article-meta">Yahoo 股市 台股 · 11/22 17:33</p>
-  <p class="article-excerpt">台股這兩個月爆發史詩級崩跌，從10月高點49968.92點，一路下滑到本月20日的36,033.29點，讓許多投資人崩潰。對此，投資專家葉育碩指出，不只台股，這一波全球市場的暴跌，可能藏著一場全球流動</p>
-  
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://ec.ltn.com.tw/article/breakingnews/5649680" target="_blank" rel="noopener noreferrer">輝達晶片走私背後有中國國安部！紐時揭秘密行動至少2年</a></h3>
-  
-  <p class="article-meta">自由時報 財經 · 11/22 17:32</p>
-  <p class="article-excerpt">《紐約時報》21日報導，在輝達（Nvidia）先進人工智慧（AI）晶片走私爭議下，中國最高情報機構「國家安全部」正運行一項秘密行動，協助中國企業取得先進AI晶片並蒐集半導...…</p>
+  <p class="article-meta">Yahoo 股市 台股 · 11/22 20:31</p>
+  <p class="article-excerpt">近期台股遭遇大幅回檔，不少高股息ETF投資人在社群平台表示「還好買高股息比較抗跌」、「遇到熊市還有配息可領、不用賣股」。對此，投資理財臉書粉專「清流君」發文指出，高股息ETF是否真的比較抗跌、以及領到</p>
   
 </article>
 <article class="article">
-  <h3 class="article-title"><a href="https://money.udn.com/money/story/5612/9894767" target="_blank" rel="noopener noreferrer">輝能與 TDAC 宣布 1.35億美元潛在投資案</a></h3>
+  <h3 class="article-title"><a href="https://www.cna.com.tw/news/acn/202611220179.aspx" target="_blank" rel="noopener noreferrer">上海產特斯拉熱銷  韓自中國進口汽車逆差創新高</a></h3>
   
-  <p class="article-meta">經濟日報 · 11/22 17:22</p>
-  <p class="article-excerpt">固態電池廠輝能科技（ProLogium Holding Inc）與特殊目的收購公司Translational Development Acquisition Corp.（TDAC）近期共同宣布，雙方已與多家既有投資人及策略投資人簽署非具約束力的投資意向書，擬議投資總額最高達 1.35億美元。</p>
-  
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://tw.stock.yahoo.com/news/%E5%8F%B0%E8%82%A1%E5%96%AE%E9%80%B1%E6%85%98%E8%B7%8C17-5-%E7%B6%93%E6%BF%9F%E9%83%A8%E5%96%8A%E8%A9%B1-%E4%BC%81%E6%A5%AD%E6%8E%A5%E5%96%AE%E6%9C%AA%E5%8F%97%E5%BD%B1%E9%9F%BF-%E6%98%8E%E5%B9%B4%E5%87%BA%E5%8F%A3%E6%8B%9A%E7%A0%B4%E5%85%86%E7%BE%8E%E5%85%83-092000228.html" target="_blank" rel="noopener noreferrer">台股單週慘跌17.5%！經濟部喊話「企業接單未受影響」　明年出口拚破兆美元</a></h3>
-  
-  <p class="article-meta">Yahoo 股市 台股 · 11/22 17:20</p>
-  <p class="article-excerpt">[FTNN新聞網]記者蕭廷芬／綜合報導台股上週遭遇35年來最慘單週跌幅，加權指數20日重挫2393.60點，收在36,033.29點，單週累計下跌7641.83點、跌幅達17.5%，市...</p>
+  <p class="article-meta">中央社 財經 · 11/22 20:23</p>
+  <p class="article-excerpt">（中央社台北22日電）韓國官方今天公布經濟數據顯示，中國上海生產基地的特斯拉（Tesla）電動車在韓國熱賣，今年韓國自中國進口汽車金額與汽車貿易逆差雙雙創歷年新高。</p>
   
 </article>
 <article class="article">
-  <h3 class="article-title"><a href="https://ec.ltn.com.tw/article/breakingnews/5649682" target="_blank" rel="noopener noreferrer">慢評》「快閃」美光勞資協商 張善政避重就輕不敢談？</a></h3>
+  <h3 class="article-title"><a href="https://tw.news.yahoo.com/%E5%8F%B0%E8%82%A1%E6%85%98%E8%B7%8C%E7%A5%AD%E6%95%91%E5%B8%82%E6%96%B0%E6%8B%9B-%E5%82%B3%E8%9E%8D%E8%B3%87%E7%B6%AD%E6%8C%81%E7%8E%87-%E9%99%8D%E8%87%B3120-%E6%9C%80%E5%BF%AB%E6%98%8E%E5%A4%A9%E4%B8%8A%E8%B7%AF-122000266.html" target="_blank" rel="noopener noreferrer">台股慘跌祭救市新招？傳融資維持率「降至120%」　最快明天上路</a></h3>
   
-  <p class="article-meta">自由時報 財經 · 11/22 17:18</p>
-  <p class="article-excerpt">〔記者廖家寧／特稿〕桃市府強調桃市府主持的3場美光勞資協商會議，張善政有出席2次，卻避重就輕不提張善政在場時間有多長。敢問張市長是否第一次會議是致詞完就離開，另一次會議則包括致詞合計時間約20分...…</p>
-  
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://tw.news.yahoo.com/%E5%8F%B0%E8%82%A11%E5%91%A8%E8%92%B8%E7%99%BC25%E5%85%86%E5%89%B5%E6%9C%80%E6%85%98%E7%B4%80%E9%8C%84-%E5%B8%82%E5%80%BC%E7%AD%89%E5%90%8C-439%E5%BA%A7%E5%8F%B0%E5%8C%97101-%E8%82%A1%E6%B0%91%E5%B9%B3%E5%9D%87%E6%85%98%E8%B3%A089%E8%90%AC-091200142.html" target="_blank" rel="noopener noreferrer">台股1周蒸發25兆創最慘紀錄！市值等同「439座台北101」　股民平均慘賠89萬</a></h3>
-  
-  <p class="article-meta">Yahoo 股市 台股 · 11/22 17:12</p>
-  <p class="article-excerpt">台股寫下史上最慘一周！上周短短5個交易日狂瀉7641.83點、重挫17.5%，創史上最大單周跌點及35年來最大跌幅紀錄。根據證交所統計，全體上市公司市值單周蒸發24兆9665.09億元，若以今年台北1</p>
+  <p class="article-meta">Yahoo 股市 台股 · 11/22 20:20</p>
+  <p class="article-excerpt">台股近來連日慘跌，傳出證交所緊急通知元大、凱基、富邦、群益金鼎等國內十大券商，共同討論是否將整戶融資擔保維持率從現行的130%調降至120%，最快明（23）日上路，還等金管會拍板。財經專家「股海老牛」</p>
   
 </article>
 <article class="article">
-  <h3 class="article-title"><a href="https://ec.ltn.com.tw/article/breakingnews/5649681" target="_blank" rel="noopener noreferrer">台灣人出國好會玩 日本護照世界最強卻少用 中國人出國被日媒酸了</a></h3>
+  <h3 class="article-title"><a href="https://tw.stock.yahoo.com/news/%E5%8F%B0%E8%82%A1%E9%87%8D%E6%8C%AB%E4%BB%96%E7%8B%82%E8%B2%B7-%E8%B2%A1%E7%B6%93%E4%BD%9C%E5%AE%B6%E9%80%A3%E7%A0%B8308%E8%90%AC%E8%B2%B7%E9%80%992%E6%AA%94etf-%E9%9C%B8%E6%B0%A3%E5%96%8A-%E5%A4%A7%E4%B8%8D%E4%BA%86%E5%A5%97%E7%89%A2-113000973.html" target="_blank" rel="noopener noreferrer">台股重挫他狂買！財經作家連砸308萬買這2檔ETF　霸氣喊「大不了套牢」</a></h3>
   
-  <p class="article-meta">自由時報 財經 · 11/22 17:05</p>
-  <p class="article-excerpt">〔財經頻道／綜合報導〕儘管日本護照是全球領先的免簽國家之一，但只有不到20%的日本公民持有有效護照。預計到2024年，只有6%的日本人會出國旅行，遠低於韓國和台灣（2025年）的30%以上比例。...…</p>
-  
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://ec.ltn.com.tw/article/breakingnews/5649616" target="_blank" rel="noopener noreferrer">日本唱片商Tower Records 1100萬筆會員個資外洩</a></h3>
-  
-  <p class="article-meta">自由時報 財經 · 11/22 17:01</p>
-  <p class="article-excerpt">日本唱片商Tower Records（タワーレコード）表示，公司的網路商城遭到未授權存取，導致1100萬筆會員個資外洩，業者強調其中並不包含信用卡資訊。 據《NHK》報...…</p>
+  <p class="article-meta">Yahoo 股市 台股 · 11/22 19:30</p>
+  <p class="article-excerpt">[FTNN新聞網]記者周孫磊／綜合報導台股上周遭遇猛烈賣壓，單周總計下跌7641.83點，跌幅17.5%，股民叫苦連天，也有不少投資人觀望不敢進場，不過「樂活大叔」...</p>
   
 </article>
 <article class="article">
-  <h3 class="article-title"><a href="https://tw.news.yahoo.com/%E6%88%B2%E8%AA%AA-%E7%94%B7%E6%98%9F%E5%85%AC%E5%B8%83%E5%AD%98%E6%91%BA%E9%A4%98%E9%A1%8D-1013%E8%90%AC-%E6%9B%9D%E9%81%BF%E9%96%8B%E5%8F%B0%E8%82%A1%E9%87%8D%E6%8C%AB%E8%A8%A3%E7%AB%85-085208959.html" target="_blank" rel="noopener noreferrer">《戲說》男星公布存摺餘額「1013萬」 曝避開台股重挫訣竅</a></h3>
+  <h3 class="article-title"><a href="https://tw.stock.yahoo.com/news/%E5%8F%B0%E8%82%A1%E6%B8%AC%E5%BA%95%E9%82%84%E6%B2%92%E5%AE%8C-%E5%86%A0%E8%BB%8D%E5%88%86%E6%9E%90%E5%B8%AB%E4%BA%AE%E5%87%BA5%E6%AA%94%E6%8A%97%E8%B7%8C%E8%82%A1-%E9%9B%99%E4%B8%BB%E8%BB%B8%E6%9B%9D%E5%85%89-112852748.html" target="_blank" rel="noopener noreferrer">台股測底還沒完？ 冠軍分析師亮出5檔抗跌股 雙主軸曝光</a></h3>
   
-  <p class="article-meta">Yahoo 股市 台股 · 11/22 16:52</p>
-  <p class="article-excerpt">台股遭遇史詩級修正，造成許多股民的帳面虧損金額擴大，社群一片哀鴻遍野。不過，《戲說台灣》男演員呂嘉興公開股市存摺，透露已獲利破千萬，資產不受台股血崩影響。</p>
+  <p class="article-meta">Yahoo 股市 台股 · 11/22 19:28</p>
+  <p class="article-excerpt">台股近期震盪加劇，上周更是慘跌17.5%，大型權值電子股及半導體族群面臨外資提款與高檔獲利了結壓力，市場資金逐漸轉向軟體服務及資訊安全族群。在《工商時報》「台股逐洞賽」上周第8洞競賽中拿下周冠軍的大來</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://tw.stock.yahoo.com/news/%E5%8F%B0%E8%82%A1%E5%89%B534%E5%B9%B4%E4%BE%86%E6%9C%80%E6%85%98%E5%96%AE%E5%91%A8%E8%B7%8C%E5%B9%85-%E9%80%99%E6%AA%94-%E5%87%BA%E8%B2%A8%E7%A9%A9-%E8%A8%82%E5%96%AE%E4%B8%8A%E7%9C%8B%E6%98%8E%E5%B9%B4%E9%81%AD%E4%B8%89%E5%A4%A7%E6%B3%95%E4%BA%BA%E6%8F%90%E6%AC%BE75%E5%84%84%E6%B7%AA%E8%B3%A3%E8%B6%85%E7%8E%8B-%E5%8D%97%E4%BA%9E%E6%96%A5%E8%B3%87115%E5%84%84%E6%93%B4%E7%94%A2%E4%B9%9F%E5%85%A5%E5%88%97-111000411.html" target="_blank" rel="noopener noreferrer">台股創34年來最慘單周跌幅！「這檔」出貨穩、訂單上看明年遭三大法人提款75億淪賣超王　南亞斥資115億擴產也入列</a></h3>
+  
+  <p class="article-meta">Yahoo 股市 台股 · 11/22 19:10</p>
+  <p class="article-excerpt">[FTNN新聞網]記者邱梓欣／綜合報導台股本（11／16～11／20）周收在36,033.29點，5個交易日一共狂瀉7641.83點，跌幅17.5%，除了周線收黑，也創下自1991年以來...</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://tw.news.yahoo.com/%E5%8F%B0%E8%82%A1%E4%B8%8B%E5%91%A8%E6%9C%89%E6%9C%9B%E5%8F%8D%E5%BD%88-%E6%9D%9C%E9%87%91%E9%BE%8D%E5%96%8A-%E5%8F%B0%E7%A9%8D%E9%9B%BB2000%E5%85%83%E5%B7%B2%E5%88%B0%E5%9C%B0%E6%9D%BF%E5%83%B9-%E9%BB%9E%E5%90%8D2%E6%AA%94%E8%BF%8E%E4%BD%9C%E5%B8%B3%E8%A1%8C%E6%83%85-111000688.html" target="_blank" rel="noopener noreferrer">台股下周有望反彈？杜金龍喊「台積電2000元已到地板價」　點名2檔迎作帳行情</a></h3>
+  
+  <p class="article-meta">Yahoo 股市 台股 · 11/22 19:10</p>
+  <p class="article-excerpt">台股周五（20日）重挫2393.60點，單周累計暴跌7642點；若從10月歷史高點49968點算起，短短一個半月已急殺14230點，波段跌幅達28.4%。面對市場劇烈震盪，資深分析師杜金龍維持原有看法</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://ec.ltn.com.tw/article/breakingnews/5649808" target="_blank" rel="noopener noreferrer">輝達致命傷在這裡？危機再升溫</a></h3>
+  
+  <p class="article-meta">自由時報 財經 · 11/22 19:07</p>
+  <p class="article-excerpt">〔財經頻道／綜合報導〕在聯合創始人黃仁勳因醜聞辭職以及美國證券交易委員會對其會計操作展開調查後，輝達面臨多項調查。該公司在人工智慧晶片領域的統治地位，以及地緣政治緊張局勢，都使這場危機的複雜性雪...…</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://tw.news.yahoo.com/%E5%8F%B0%E8%82%A1%E9%87%8D%E6%8C%AB%E9%80%A3%E8%B2%B74%E5%A4%A9-%E6%A8%82%E6%B4%BB%E5%A4%A7%E5%8F%94%E8%B1%AA%E7%A0%B8308%E8%90%AC%E6%8E%83%E8%B2%A82%E6%AA%94etf-%E6%B7%A1%E5%AE%9A%E5%96%8A-%E5%A4%A7%E4%B8%8D%E4%BA%86%E5%A5%97%E7%89%A2-110300947.html" target="_blank" rel="noopener noreferrer">台股重挫連買4天！樂活大叔豪砸308萬掃貨2檔ETF　淡定喊：大不了套牢</a></h3>
+  
+  <p class="article-meta">Yahoo 股市 台股 · 11/22 19:03</p>
+  <p class="article-excerpt">台股上週遭遇重挫，財經作家施昇輝逆勢進場，砸308萬元分批買進8張0050與50張0056。他表示動用全數閒錢且做好套牢心理準備，其中0056殖利率潛力受關注。貼文引發熱議，面對網友質疑他高EQ回應，</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://tw.news.yahoo.com/%E5%8F%B0%E8%82%A1%E7%8B%82%E7%80%89%E6%AD%BB%E5%AE%8836k%E9%98%B2%E7%B7%9A-%E7%8E%8B%E9%B4%BB%E8%96%87%E7%B1%B2-%E7%99%BC2%E8%90%AC-%E5%8D%93%E6%A6%AE%E6%B3%B0%E9%80%B1-%E5%89%8D%E7%B5%A6%E7%AD%94%E6%A1%88-105349740.html" target="_blank" rel="noopener noreferrer">台股狂瀉死守36K防線　王鴻薇籲「發2萬」：卓榮泰週一前給答案</a></h3>
+  
+  <p class="article-meta">Yahoo 股市 台股 · 11/22 18:53</p>
+  <p class="article-excerpt">王鴻薇表示，國民黨團推動普發現金2萬元，除了讓全民共享經濟成果，也是希望苦民所苦，讓受困股海的投資人在農曆年前獲得紓困，安心過個好年。她指出，相關提案已收到許多民眾透過留言及電話表達支持，認為政府應正</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://tw.news.yahoo.com/%E5%8F%B0%E8%82%A1%E7%8B%82%E7%80%89-%E5%82%B3%E8%AD%89%E4%BA%A4%E6%89%80%E6%93%AC%E6%8E%A8-%E8%9E%8D%E8%B3%87%E7%B6%AD%E6%8C%81%E7%8E%87130-120-%E6%9C%80%E5%BF%AB%E9%80%B1-105217068.html" target="_blank" rel="noopener noreferrer">台股狂瀉！傳證交所擬推「融資維持率130%→120%」　最快週一上路</a></h3>
+  
+  <p class="article-meta">Yahoo 股市 台股 · 11/22 18:52</p>
+  <p class="article-excerpt">台股近一個月來狂瀉14230點，跌點打破歷次股災紀錄。市場傳出，證交所今（11/22）召集國內十大券商，商討是否將整戶融資擔保維持率從現行130%降至120%，最終取得共識，待金管會確認後，最快於明天</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.cna.com.tw/news/aopl/202611220161.aspx" target="_blank" rel="noopener noreferrer">金融時報：黃樂背後晶片供應網牽涉太子集團</a></h3>
+  
+  <p class="article-meta">中央社 財經 · 11/22 18:48</p>
+  <p class="article-excerpt">（中央社香港21日綜合外電報導）英國金融時報（Financial Times）一項調查發現，日前爆出與輝達前執行長黃仁勳過從甚密的中國女商人黃樂，和一個AI晶片供應網有所關連，甚至牽涉到柬埔寨太子集團。</p>
   
 </article>
   </div>
@@ -2168,109 +2140,221 @@
     <div class="source-contents">
       <div class="source-content active" data-source-content="_merged" data-sub="news" data-cat="finance">
     <article class="article">
-  <h3 class="article-title"><a href="https://www.bloomberg.com/news/articles/2026-11-22/s-korea-rolls-out-phased-measures-to-stabilize-volatile-markets" target="_blank" rel="noopener noreferrer">S. Korea Rolls Out Phased Measures to Stabilize Volatile Markets</a></h3>
+  <h3 class="article-title"><a href="https://www.cnbc.com/2026/11/22/saudi-houthi-bahrain-iran-attacks-araghchi-talks.html" target="_blank" rel="noopener noreferrer">Saudi Arabia, Bahrain report new attacks as Iran says it remains open to a deal with U.S.</a></h3>
+  
+  <p class="article-meta">CNBC · 11/22 21:25</p>
+  <p class="article-excerpt">Saudi Arabia said it destroyed a drone launched by Iran-backed Houthis, while Bahrain said an industrial facility was hit by Iranian projectiles.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 沙烏地阿拉伯表示，已擊落一架由伊朗支持的葉門荷蒂武裝組織發射的無人機；巴林則表示，一處工業設施遭伊朗發射的投射物擊中。伊朗方面稱，仍願與美國達成協議。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.bloomberg.com/news/videos/2026-11-22/why-your-health-insurance-keeps-getting-more-expensive-video" target="_blank" rel="noopener noreferrer">Why Your Health Insurance Keeps Getting More Expensive</a></h3>
+  
+  <p class="article-meta">Bloomberg Markets · 11/22 21:03</p>
+  <p class="article-excerpt">The average employer-sponsored family health plan now costs more than $28,000 a year, about the price of a new car, and premiums are expected to climb even faster in 2027. As costs rise, more of the bill is coming out of workers’ paychecks, and health care has become a top budget concern for CFOs. (</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 雇主提供的家庭健康保險平均年費已超過2萬8000美元，約等同一輛新車的價格，預期2027年保費漲幅將更快。成本上升使更多負擔轉嫁到員工薪資，醫療支出也成為家庭預算的主要項目之一。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.cnbc.com/2026/11/22/pizza-chains-sales-glp-1-demand.html" target="_blank" rel="noopener noreferrer">Pizza chains are under pressure. GLP-1 use is only one part of the problem</a></h3>
+  
+  <p class="article-meta">CNBC · 11/22 21:00</p>
+  <p class="article-excerpt">Domino&#39;s, Papa Johns and Pizza Hut face weaker demand, more delivery competition and changing eating habits, including GLP-1 use.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 達美樂（Domino&#39;s）、棒約翰（Papa Johns）與必勝客（Pizza Hut）面臨需求轉弱、外送競爭加劇，以及包括使用GLP-1藥物在內的飲食習慣改變。GLP-1只是披薩連鎖業者承壓的原因之一。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.bloomberg.com/news/videos/2026-11-22/trump-s-asia-trip-leaves-key-issues-unresolved-video" target="_blank" rel="noopener noreferrer">Trump’s Asia Trip Leaves Key Issues Unresolved</a></h3>
+  
+  <p class="article-meta">Bloomberg Markets · 11/22 20:39</p>
+  <p class="article-excerpt">ABC News State Department reporter Shannon Kingston tells Bloomberg This Weekend that Russia’s increasingly provocative actions near NATO countries are complicating President Donald Trump’s push for a negotiated end to the war in Ukraine, while Moscow remains publicly defiant. Speaking with hosts Da</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> ABC新聞駐國務院記者向彭博表示，俄羅斯在北約國家周邊日益挑釁的行動，使美國總統川普推動以談判結束烏克蘭戰爭的努力更為複雜，而莫斯科公開立場仍強硬。川普亞洲行後關鍵議題仍未解決。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.bloomberg.com/news/articles/2026-11-22/taiwan-mulls-lowering-margin-requirement-to-support-stock-market" target="_blank" rel="noopener noreferrer">Taiwan Mulls Lowering Margin Requirement to Support Stock Market</a></h3>
+  
+  <p class="article-meta">Bloomberg Markets · 11/22 20:35</p>
+  <p class="article-excerpt">Taiwan is considering lowering the margin requirement ratio for stock investors using borrowed funds as it tries to stem a selloff after the benchmark equity index’s worst week in 35 years.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 台灣正考慮調降投資人使用借款買股的融資維持率要求，以遏止股市賣壓。台股基準指數剛經歷35年來表現最差的一週。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.cnbc.com/2026/11/22/top-wall-street-analysts-favor-these-stocks-for-strong-returns.html" target="_blank" rel="noopener noreferrer">Top Wall Street analysts favor these 3 dividend stocks for strong returns</a></h3>
+  
+  <p class="article-meta">CNBC · 11/22 20:13</p>
+  <p class="article-excerpt">Wall Street analysts can help shortlist attractive dividend-paying stocks, as their recommendations are backed by thorough analysis of a company&#39;s financials.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> CNBC報導，華爾街分析師的建議以公司財務的深入分析為基礎，可協助投資人篩選配息股。文章介紹分析師看好、具備較強報酬潛力的3檔股息股。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.cnbc.com/2026/11/22/the-nasdaq-is-in-freefall-heres-one-stock-to-look-at.html" target="_blank" rel="noopener noreferrer">The Nasdaq is in freefall. Here&#39;s one stock to look at</a></h3>
+  
+  <p class="article-meta">CNBC · 11/22 20:10</p>
+  <p class="article-excerpt">Elevated options premiums are creating an opportunity in Amazon</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> CNBC指出，那斯達克指數大幅下挫，選擇權權利金處於高檔，使亞馬遜（Amazon）相關選擇權交易出現機會。文章以該股為例進行討論。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.bloomberg.com/news/articles/2026-11-22/us-power-advantage-over-china-shrinks-further-on-iran-war-effect" target="_blank" rel="noopener noreferrer">US Power Advantage Over China Shrinks Further on Iran War Effect</a></h3>
+  
+  <p class="article-meta">Bloomberg Markets · 11/22 19:30</p>
+  <p class="article-excerpt">The advantage the US has over China in influencing the course of international events has shrunk to the smallest level since 2018, with the Iran war and unilateralism undermining its military and diplomatic strength, according to a new report.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 一份新報告指出，美國相對中國在影響國際事務走向上的優勢已縮至2018年以來最小。報告認為，伊朗戰爭與單邊主義削弱了美國的軍事與外交實力。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.ft.com/content/b3ba64e9-9482-4525-acc7-49825f3daace?syn-25a6b1a6=1" target="_blank" rel="noopener noreferrer">Climate talks on the brink as EU rejects deal that ‘green washes fossil fuels’</a></h3>
+  
+  <p class="article-meta">Financial Times · 11/22 19:15</p>
+  <p class="article-excerpt">Group of countries refuses to endorse proposed agreement in direct clash with Saudi Arabia</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 氣候談判陷入僵局，歐盟拒絕支持一項提議的協議，認為其有為化石燃料「漂綠」之嫌。包括歐盟在內的一組國家不願背書，與沙烏地阿拉伯正面衝突。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.economist.com/finance-and-economics/2026/11/22/saudi-arabias-1trn-wealth-pot-suffers-an-identity-crisis" target="_blank" rel="noopener noreferrer">Saudi Arabia’s $1trn wealth pot suffers an identity crisis</a></h3>
+  
+  <p class="article-meta">The Economist Finance · 11/22 19:13</p>
+  <p class="article-excerpt">The Public Investment Fund is distracted, and not just by war</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 沙烏地阿拉伯規模約1兆美元的主權基金公共投資基金（PIF）面臨定位問題。報導指出，該基金分心的原因不只是戰爭。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.bloomberg.com/news/articles/2026-11-22/china-lowers-margin-requirement-to-80-to-boost-stock-liquidity" target="_blank" rel="noopener noreferrer">Asia’s Stock Rescue Efforts Gather Pace After Wall Street Plunge</a></h3>
+  
+  <p class="article-meta">Bloomberg Markets · 11/22 19:06</p>
+  <p class="article-excerpt">Asian authorities are stepping up efforts to stem a deepening stock-market rout, with China easing margin requirements, and Taiwan and South Korea rolling out intervention measures following Friday’s plunge in US equities.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 美股週五重挫後，亞洲當局加大力道遏止股市拋售。中國放寬融資保證金要求，台灣與南韓則推出干預措施。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.ft.com/content/168a7d3f-6e70-44da-9860-623bcf4fc023?syn-25a6b1a6=1" target="_blank" rel="noopener noreferrer">The American dream of home ownership recedes as mortgage rates surge</a></h3>
+  
+  <p class="article-meta">Financial Times · 11/22 19:00</p>
+  <p class="article-excerpt">Donald Trump pledged to lower homeowners’ borrowing costs to 3% but the benchmark rate has surged to over 7%</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 美國總統川普曾承諾將房貸借款成本降至3%，但基準房貸利率已升至7%以上。房貸利率飆升使美國人擁有自宅的夢想更為遙遠。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.ft.com/content/d501198c-14a4-4b96-8880-c3997545902e" target="_blank" rel="noopener noreferrer">Did Anthropic and its bankers get a key call wrong after IPO?</a></h3>
+  
+  <p class="article-meta">Financial Times · 11/22 19:00</p>
+  <p class="article-excerpt">Share price weakness raises questions about hasty exercise of ‘greenshoe’ option to issue more stock</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> Anthropic上市後股價表現疲弱，引發外界質疑其與承銷銀行是否過早行使「綠鞋」超額配售選擇權以增發股票，這項決定是否正確受到檢視。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.bloomberg.com/news/articles/2026-11-22/from-squeezes-to-meltdown-a-week-of-mayhem-rocks-metals-markets" target="_blank" rel="noopener noreferrer">From Squeezes to Meltdown, a Week of Mayhem Rocks Metals Markets</a></h3>
+  
+  <p class="article-meta">Bloomberg Markets · 11/22 19:00</p>
+  <p class="article-excerpt">As the copper industry gathered in Shanghai last week, Grace Li was struck by the overwhelmingly bearish mood over the outlook for demand. She agreed with the pessimism. In fact, she came close to pulling out her phone on the spot to put on a short position after her Monday conversations.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 上週銅業界在上海集會時，市場對需求前景瞥見明顯悲觀情緒。金屬市場經歷從軋空到崩跌的劇烈震盪一週，部分交易人考慮建立空頭部位。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.bloomberg.com/news/articles/2026-11-22/s-korea-rolls-out-phased-measures-to-stabilize-volatile-markets" target="_blank" rel="noopener noreferrer">S. Korea Rolls Out Phased Measures to Stabilize Stock Market</a></h3>
   
   <p class="article-meta">Bloomberg Markets · 11/22 18:16</p>
   <p class="article-excerpt">South Korea announced phased measures to calm markets amid rising volatility, including ensuring a stock stabilization fund is in place to respond when needed, top financial officials said after an emergency meeting on Sunday.</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 南韓高階金融官員週日召開緊急會議後宣布，因市場波動升高，將分階段推出穩定市場措施，包括確保股市穩定基金就位，以便在必要時啟動因應。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 南韓高層財金官員在週日緊急會議後宣布分階段措施以穩定波動的市場，包括確保股市穩定基金就位，以便在必要時因應。</p>
+</article>
+  </div>
+    </div>
+  </div>
+<div class="sub-content" data-sub-content="wscn" data-cat="finance">
+    
+    <div class="source-contents">
+      <div class="source-content active" data-source-content="_merged" data-sub="wscn" data-cat="finance">
+    <article class="article">
+  <h3 class="article-title"><a href="https://wallstreetcn.com/charts/41960215" target="_blank" rel="noopener noreferrer">壟斷、暴利與資本管制：地球上最賺錢的「虛擬央行」</a></h3>
+  
+  <p class="article-meta">華爾街見聞 · 11/22 21:12</p>
+  <p class="article-excerpt">GTA 6 首日狂揽 37.9 亿美元，吊打《复联4》全球票房！但华尔街真正看重的，其实是 R 星背后那家“不用安抚债市、也不用去国会听证”的地球最暴利虚拟央行。 13 年老游戏靠 4% 玩家年印 5 亿美金，零成本收割铸币税、搞资本管制、封杀竞争货币……2027 年 GTA 6 在线模式上线，老玩家十几年的存款清零还是继承？如果你是行长，你怎么选？</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 《GTA 6》首日銷售額達 37.9 億美元，華爾街關注開發商 R 星的營運模式。文中將其比喻為「虛擬央行」，稱 13 年的老遊戲靠約 4% 玩家，每年帶來約 5 億美元收入。2027 年線上模式上線後，老玩家存款如何處理引發討論。</p>
 </article>
 <article class="article">
-  <h3 class="article-title"><a href="https://www.bloomberg.com/news/articles/2026-11-22/ubs-capital-fight-enters-final-round-as-lawmakers-resume-debate" target="_blank" rel="noopener noreferrer">UBS Capital Fight Enters Final Round as Lawmakers Resume Debate</a></h3>
+  <h3 class="article-title"><a href="https://wallstreetcn.com/articles/3786465" target="_blank" rel="noopener noreferrer">當前紅利資產估值還有多少空間？</a></h3>
   
-  <p class="article-meta">Bloomberg Markets · 11/22 18:00</p>
-  <p class="article-excerpt">The argument over UBS Group AG’s future capital requirements is headed for a showdown, with the odds tilted toward defeat for the global wealth manager.</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 瑞銀集團（UBS）未來資本要求之爭進入最後一輪，國會議員重啟辯論。報導指出，這場爭論將迎來攤牌，情勢對這家全球財富管理業者較為不利。</p>
+  <p class="article-meta">華爾街見聞 · 11/22 20:21</p>
+  <p class="article-excerpt">红利资产还能涨多少？广发策略从七大维度给出答案：通过DCF模型测算，家电、医药、汽车、部分城商行仍低于理论估值，而水电、国有大行已接近或超出理论值；若无风险利率从1.5%降至1.0%，相关资产仍有约15%抬升空间，但典型红利资产距估值上沿溢价空间仅剩6%至12%。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 廣發策略以 DCF 模型測算紅利資產估值：家電、醫藥、汽車及部分城商行仍低於理論估值，水電與國有大型銀行已接近或超出理論值。若無風險利率由 1.5% 降至 1.0%，相關資產仍有約 15% 上升空間，但典型紅利資產距估值上沿僅剩 6% 至 12%。</p>
 </article>
 <article class="article">
-  <h3 class="article-title"><a href="https://www.ft.com/content/b3ba64e9-9482-4525-acc7-49825f3daace?syn-25a6b1a6=1" target="_blank" rel="noopener noreferrer">COP31 negotiators try to break impasse after EU raises prospect of ‘no deal’</a></h3>
+  <h3 class="article-title"><a href="https://wallstreetcn.com/articles/3786456" target="_blank" rel="noopener noreferrer">為馬斯克融資買 GPU，高盛「秀操作」</a></h3>
   
-  <p class="article-meta">Financial Times · 11/22 16:15</p>
-  <p class="article-excerpt">Talks run into second day of overtime as Saudi Arabia leads opposition to inclusion of fossil fuel phase out in final agreement</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> COP31 談判進入延長賽第二天，歐盟提出可能「無協議」收場。沙烏地阿拉伯領軍反對將逐步淘汰化石燃料納入最終協議，談判代表正設法打破僵局。</p>
+  <p class="article-meta">華爾街見聞 · 11/22 20:11</p>
+  <p class="article-excerpt">高盛联手阿波罗全球管理公司（Apollo Global Management），协助马斯克旗下的SpaceX完成了约320亿美元债券定价。这批兼具公司债与资产支持证券（ABS）特征的债券，是高盛耗时一年多交出的答卷——试图在不压垮企业资产负债表的前提下，为昂贵的AI芯片找到买单方案。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 高盛與阿波羅全球管理公司協助馬斯克旗下 SpaceX 完成約 320 億美元債券定價。這批債券兼具公司債與資產支持證券（ABS）特徵，高盛耗時一年多設計，目標是在不壓垮企業資產負債表下，為昂貴的 AI 晶片籌措資金。</p>
 </article>
 <article class="article">
-  <h3 class="article-title"><a href="https://www.bbc.co.uk/news/articles/cqkgmy2nxy4lo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">MP criticises Guernsey and Jersey company ownership register plans</a></h3>
+  <h3 class="article-title"><a href="https://wallstreetcn.com/articles/3786464" target="_blank" rel="noopener noreferrer">特斯拉推出 FSD V15，實景視圖疊加行駛規劃，中國市場準備中</a></h3>
   
-  <p class="article-meta">BBC Business · 11/22 15:22</p>
-  <p class="article-excerpt">Sir Andrew Mitchell says access should be easier for people tackling financial crime.</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 英國議員安德魯·米切爾爵士批評根西島與澤西島的公司所有權登記方案，認為應讓打擊金融犯罪的人士更容易查閱相關資料。</p>
+  <p class="article-meta">華爾街見聞 · 11/22 20:07</p>
+  <p class="article-excerpt">特斯拉FSD V15正式推送，安全关键场景处理能力提升25倍，全新Tesla Reality View实景视图功能引爆热搜。马斯克称12月将大规模推送，称其将带来&quot;特别的东西&quot;。北美新车FSD订阅率已超75%，全球活跃订阅用户达174万，同比暴增67%。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 特斯拉開始推送 FSD V15，稱安全關鍵場景處理能力提升 25 倍，並新增「實景視圖」功能。馬斯克表示 12 月將大規模推送。北美新車 FSD 訂閱率已逾 75%，全球活躍訂閱用戶達 174 萬，年增 67%，中國市場準備工作持續推進。</p>
 </article>
 <article class="article">
-  <h3 class="article-title"><a href="https://www.bbc.co.uk/news/articles/c8e39qk5vrpdo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">Italian jeweller and businessman Paolo Bulgari dies aged 89</a></h3>
+  <h3 class="article-title"><a href="https://wallstreetcn.com/articles/3786460" target="_blank" rel="noopener noreferrer">滬深北交易所調整融資保證金比例，由 100% 調降至 80%</a></h3>
   
-  <p class="article-meta">BBC Business · 11/22 15:12</p>
-  <p class="article-excerpt">In a statement to Italian media, his family remember him as &quot;the greatest jeweller of our time&quot;.</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 義大利珠寶商暨企業家保羅·寶格麗（Paolo Bulgari）辭世，享壽89歲。其家人向義大利媒體發表聲明，稱他是「我們這個時代最偉大的珠寶商」。</p>
+  <p class="article-meta">華爾街見聞 · 11/22 18:52</p>
+  <p class="article-excerpt">沪深北交易所发布通知调整融资保证金比例，将投资者融资买入证券的最低保证金比例由100%调低至80%，相关规则调整自2026年11月30日起施行。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 上海、深圳、北京三地證券交易所發布通知，將投資者融資買入證券的最低保證金比例由 100% 調降至 80%。相關規則調整自 2026 年 11 月 30 日起施行。</p>
 </article>
 <article class="article">
-  <h3 class="article-title"><a href="https://www.cnbc.com/2026/11/22/quantum-computing-energy-applications.html" target="_blank" rel="noopener noreferrer">Quantum computing’s first real-world payoff may come in energy, not drug discovery</a></h3>
+  <h3 class="article-title"><a href="https://wallstreetcn.com/articles/3786459" target="_blank" rel="noopener noreferrer">南韓準備啟動股市穩定基金，或為 2008 年來首次，放寬公司回購限額 3 個月</a></h3>
   
-  <p class="article-meta">CNBC · 11/22 14:00</p>
-  <p class="article-excerpt">Quantum computing firms are testing energy-grid optimization, solar materials and hydrogen catalysts as they pursue practical uses.</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 量子運算業者正測試電網最佳化、太陽能材料與氫能催化劑等應用，以尋求實際用途。報導指出，量子運算首個實際收益可能出現在能源領域，而非藥物開發。</p>
+  <p class="article-meta">華爾街見聞 · 11/22 17:36</p>
+  <p class="article-excerpt">2008年10月，韩国交易所等机构在全球金融危机期间筹设了规模为5150亿韩元的基金，同年11月开始按月入市，持续至2009年3月。此后，该基金分别在2020年及2022年进入激活准备程序，但两次均未实际入场。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 南韓準備啟動股市穩定基金，若成真將是 2008 年以來首次，並放寬公司庫藏股回購限額 3 個月。該基金於 2008 年 10 月金融危機期間設立，規模 5150 億韓元，同年 11 月起按月入市至 2009 年 3 月；2020 年與 2022 年雖進入準備程序，但均未實際入場。</p>
 </article>
 <article class="article">
-  <h3 class="article-title"><a href="https://www.ft.com/content/2b2824e2-16b9-4621-85a0-7dad220644d5?syn-25a6b1a6=1" target="_blank" rel="noopener noreferrer">Cheap Chinese ecommerce parcels flood the UK</a></h3>
+  <h3 class="article-title"><a href="https://wallstreetcn.com/charts/41960214" target="_blank" rel="noopener noreferrer">風險遠未結束！矽谷大佬預警：我現在全面避險</a></h3>
   
-  <p class="article-meta">Financial Times · 11/22 13:00</p>
-  <p class="article-excerpt">Value of small imported packages rose fourfold in the past two years as purchases from Asian online retail groups and platforms boomed</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 過去兩年，英國進口小型包裹的價值增加為原來的四倍，主因是向亞洲線上零售集團與平台的購物量大增，大量低價中國電商包裹湧入英國。</p>
+  <p class="article-meta">華爾街見聞 · 11/22 16:57</p>
+  <p class="article-excerpt">硅谷知名投资人查马斯（Chamath Palihapitiya）在最新一期《All-In》播客中明确表示，自己当前整体处于避险模式（Risk-off），并指出市场面临三大下行风险： 1、宏观经济：后面仍有大量不确定性尚未释放； 2、AI 交易与“英伟达银行”：国会听证会尚未落幕，一旦英伟达的资金循环链条收紧或关闭，直接冲击仍未可知； 3、网络安全与现实动荡：黑客攻击频发、系统接连宕机，甚至已出现应急备灾提醒。 你认同查马斯的避险判断，还是觉得 AI 行情依然稳健？评论区聊聊~</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 矽谷投資人查馬斯（Chamath Palihapitiya）在《All-In》podcast 表示目前處於避險模式，並點出三大下行風險：總體經濟不確定性尚未釋放；AI 交易與「輝達銀行」資金循環鏈若收緊，衝擊未知，國會聽證會尚未結束；以及駭客攻擊頻傳、系統當機等網路安全問題。</p>
 </article>
 <article class="article">
-  <h3 class="article-title"><a href="https://www.ft.com/content/dd2a6594-6146-4ff1-ac8e-54749c1fc99f?syn-25a6b1a6=1" target="_blank" rel="noopener noreferrer">Tech suppliers raise AI server prices up to 45% months after deals are signed</a></h3>
+  <h3 class="article-title"><a href="https://wallstreetcn.com/articles/3786457" target="_blank" rel="noopener noreferrer">黃仁勳事件後美對華算力管制走向何方？</a></h3>
   
-  <p class="article-meta">Financial Times · 11/22 13:00</p>
-  <p class="article-excerpt">Dell, HPE, Lenovo and Supermicro demand more for equipment, with the increased costs hitting trading firms</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 戴爾、慧與（HPE）、聯想與美超微（Supermicro）在合約簽訂數月後，要求調漲AI伺服器價格，漲幅最高達45%，增加的成本衝擊到多家交易公司。</p>
+  <p class="article-meta">華爾街見聞 · 11/22 16:26</p>
+  <p class="article-excerpt">2026年11月12日，执掌英伟达三十三年的联合创始人黄仁勋辞去总裁、首席执行官及董事职务，由首席财...</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 文章指出，執掌輝達 33 年的共同創辦人黃仁勳於 2026 年 11 月 12 日辭去總裁、執行長及董事職務，由財務長接任。文章探討此事件後美國對中國的算力管制走向，惟摘要內容資訊有限。</p>
 </article>
 <article class="article">
-  <h3 class="article-title"><a href="https://www.ft.com/content/d299785f-dc83-4850-95b8-e08b9a643f98?syn-25a6b1a6=1" target="_blank" rel="noopener noreferrer">Private equity backers flag fresh concerns about sell-to-yourself deals</a></h3>
+  <h3 class="article-title"><a href="https://wallstreetcn.com/articles/3786455" target="_blank" rel="noopener noreferrer">交易商開始把美國銅運往中國，貿易流向逆轉</a></h3>
   
-  <p class="article-meta">Financial Times · 11/22 13:00</p>
-  <p class="article-excerpt">Co-investors in buyout funds frustrated at being forced out when assets are sold into continuation vehicles</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 買outs基金的共同投資人再度表達不滿：資產被賣給基金管理人自己設立的延續基金（continuation vehicles）時，他們被迫退出，私募股權業界的此類自我交易受到關注。</p>
+  <p class="article-meta">華爾街見聞 · 11/22 15:57</p>
+  <p class="article-excerpt">目前约94%的伦敦金属交易所与芝加哥商品交易所仓库铜库存位于美国境内，而两年前这一比例仅为20%。随着关税预期降温，美国的价格优势已不复存在。这一流向逆转标志着持续近两年的&quot;抢运入美&quot;交易开始瓦解。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 交易商開始將美國銅運往中國，貿易流向出現逆轉。目前約 94% 的倫敦金屬交易所與芝加哥商品交易所倉庫銅庫存位於美國境內，兩年前僅約 20%。隨關稅預期降溫，美國價格優勢消失，持續近兩年的「搶運入美」交易開始瓦解。</p>
 </article>
 <article class="article">
-  <h3 class="article-title"><a href="https://www.ft.com/content/5f83965d-e74d-4088-af9f-b59f2fa5e8f1?syn-25a6b1a6=1" target="_blank" rel="noopener noreferrer">Heathrow’s biggest investor confident airport will build a third runway</a></h3>
+  <h3 class="article-title"><a href="https://wallstreetcn.com/articles/3786449" target="_blank" rel="noopener noreferrer">為何與科技股同跌？黃金成了流動性危機的「提款機」</a></h3>
   
-  <p class="article-meta">Financial Times · 11/22 13:00</p>
-  <p class="article-excerpt">Private capital firm Ardian highlights benefits of expanding the hub to the UK economy</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 希斯洛機場最大投資人、私募資本公司Ardian表示，有信心機場將興建第三條跑道，並強調擴建該樞紐機場對英國經濟有益。</p>
+  <p class="article-meta">華爾街見聞 · 11/22 15:38</p>
+  <p class="article-excerpt">黄金具备两项“变现特质”：市场流动性极佳，且历经牛市后投资者手中仍坐拥可观浮盈。在风险资产难以脱手或亏损惨重时，卖出黄金成为筹措现金阻力最小的选择。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 文章分析黃金為何與科技股同步下跌：黃金市場流動性極佳，且經歷多頭行情後投資人仍有可觀浮盈。當風險資產難以脫手或虧損慘重時，賣出黃金成為籌措現金阻力最小的選擇，使黃金成為流動性危機中的「提款機」。</p>
 </article>
 <article class="article">
-  <h3 class="article-title"><a href="https://www.ft.com/content/d194e93b-8d3c-42eb-85dd-46d58c4f2a80?syn-25a6b1a6=1" target="_blank" rel="noopener noreferrer">Amazon’s AI resistance: workers ready for battle over data centres</a></h3>
+  <h3 class="article-title"><a href="https://wallstreetcn.com/articles/3786452" target="_blank" rel="noopener noreferrer">猜想：AI 泡沫破滅與金融市場危機</a></h3>
   
-  <p class="article-meta">Financial Times · 11/22 13:00</p>
-  <p class="article-excerpt">Tech company’s plans for rapid expansion face opposition from the public and its own employees</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 亞馬遜快速擴建資料中心的計畫面臨來自公眾及公司內部員工的反對，員工已準備就資料中心擴張問題與公司對抗。</p>
+  <p class="article-meta">華爾街見聞 · 11/22 14:37</p>
+  <p class="article-excerpt">AI行业泡沫要破灭吗？GPU二手市场价格是最关键的信号之一。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 文章推測 AI 產業泡沫是否破滅，並指出 GPU 二手市場價格是最關鍵的訊號之一，進而探討可能引發的金融市場危機。內容資訊有限。</p>
 </article>
 <article class="article">
-  <h3 class="article-title"><a href="https://www.ft.com/content/01e128fd-58b4-44e9-8c31-c9d0a909b9b7?syn-25a6b1a6=1" target="_blank" rel="noopener noreferrer">Biotech pioneer calls for UK capital gains tax cut to kick-start listings</a></h3>
+  <h3 class="article-title"><a href="https://wallstreetcn.com/articles/3786451" target="_blank" rel="noopener noreferrer">AI 顛覆市場調研？高露潔論文：讓 AI「角色扮演」預測市場需求</a></h3>
   
-  <p class="article-meta">Financial Times · 11/22 13:00</p>
-  <p class="article-excerpt">British entrepreneur behind oncology group seeking London listing says government needs to offer ‘bold incentives’ to investors</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 一名創立腫瘤治療集團、正尋求在倫敦上市的英國生技創業家呼籲，政府應調降資本利得稅，提供「大膽的誘因」給投資人，以推動企業上市。</p>
+  <p class="article-meta">華爾街見聞 · 11/22 14:04</p>
+  <p class="article-excerpt">有市场观点据此认为，传统调研的商业模式正面临冲击——企业不必耗时数周招募受访者，即可在极短时间内完成上千次定向访谈模拟与定价A/B测试。喧嚣之外，论文作者与一线观察者却给出了更为审慎的判断。研究团队明确表示，合成消费者并非人类调研的全面替代品；社交平台X上的多位评论者也提醒，该方法生成的类人数据分布可能暗藏统计噪音。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 高露潔發表論文，讓 AI 扮演消費者角色來預測市場需求，有市場觀點認為傳統市調模式將受衝擊。但研究團隊表示，合成消費者無法全面取代真人調查；X 平台上也有評論提醒，此方法產生的類人資料分布可能存在統計雜訊。</p>
 </article>
 <article class="article">
-  <h3 class="article-title"><a href="https://www.ft.com/content/2e67313b-d6c5-4e62-bd50-14639fe5ef95?syn-25a6b1a6=1" target="_blank" rel="noopener noreferrer">India’s $126bn insurance sector slams proposed commission cap</a></h3>
+  <h3 class="article-title"><a href="https://wallstreetcn.com/charts/41960213" target="_blank" rel="noopener noreferrer">下週重磅日程：Fed 最愛通膨指標、小米、美團、B 站、戴爾財報</a></h3>
   
-  <p class="article-meta">Financial Times · 11/22 09:30</p>
-  <p class="article-excerpt">Industry argues regulation would hamper growth of a market that only recently opened up fully to foreign investment</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 規模達1,260億美元的印度保險業強烈批評擬議的佣金上限，認為此監管措施將阻礙成長；該市場直到近期才全面對外資開放。</p>
+  <p class="article-meta">華爾街見聞 · 11/22 13:41</p>
+  <p class="article-excerpt">美股三大指数周跌超8%后，下周迎来PCE、三季度GDP修正值与美联储褐皮书，此外因感恩节，美股全周交易不足4天。财报方面，小米、B站先放榜，美团、理想、戴尔接力。国内首批18只主动ETF集体上市，高交会在深圳启幕，中美约定月底前举行AI对话。韩国央行或加息25基点，西班牙大选压轴登场。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 美股三大指數單週下跌逾 8%，下週將公布 PCE、第三季 GDP 修正值與 Fed 褐皮書，且因感恩節交易日不足 4 天。小米、B 站先公布財報，美團、理想、戴爾接續。南韓央行可能升息 25 個基點，西班牙大選登場，中美約定月底前舉行 AI 對話。</p>
 </article>
 <article class="article">
-  <h3 class="article-title"><a href="https://www.bbc.co.uk/news/articles/cm2d94le23xyo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">Employers are being asked to give interview feedback - here&#39;s what applicants want</a></h3>
+  <h3 class="article-title"><a href="https://wallstreetcn.com/articles/3786448" target="_blank" rel="noopener noreferrer">川普：尋求與伊朗達成永久性協議</a></h3>
   
-  <p class="article-meta">BBC Business · 11/22 08:04</p>
-  <p class="article-excerpt">People say they often hear nothing back after applying for jobs. But could employers be forced to respond to every applicant?</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 求職者表示，投遞履歷後常常石沉大海。目前有人提議要求雇主提供面試回饋，是否可能強制雇主回覆每位應徵者，以及求職者期待哪些回饋，引發討論。</p>
+  <p class="article-meta">華爾街見聞 · 11/22 12:13</p>
+  <p class="article-excerpt">特朗普称，没有考虑伊朗政权更迭，“我从来不太在乎政权”。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 美國總統川普表示，正尋求與伊朗達成永久性協議，並稱沒有考慮伊朗政權更迭，「我從來不太在乎政權」。</p>
 </article>
 <article class="article">
-  <h3 class="article-title"><a href="https://www.bloomberg.com/news/articles/2026-11-22/china-s-1-7-trillion-ai-rout-turns-hot-trade-into-losing-bet" target="_blank" rel="noopener noreferrer">China’s $1.7 Trillion AI Rout Turns Hot Trade Into Losing Bet</a></h3>
+  <h3 class="article-title"><a href="https://wallstreetcn.com/member/articles/3786443" target="_blank" rel="noopener noreferrer">人民幣夜盤異動：是擁擠交易出清，還是趨勢性轉弱拐點？</a></h3>
   
-  <p class="article-meta">Bloomberg Markets · 11/22 08:00</p>
-  <p class="article-excerpt">China’s AI stock trade, once a hot bet as the nation’s technology powerhouses raced to catch up with the US, has morphed into a losing strategy.</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 中國AI概念股一度是熱門交易，隨著中國科技龍頭競相追趕美國而受追捧，但如今已轉為虧損策略，相關股票市值重挫約1.7兆美元。</p>
+  <p class="article-meta">華爾街見聞 · 11/22 12:12</p>
+  <p class="article-excerpt">人民币夜盘急贬是弱流动性下拥挤交易出清而非趋势逆转，政策锚仍在，短期有韧性但双向波动加大。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 文章認為人民幣夜盤急貶是流動性偏弱下擁擠交易出清，並非趨勢反轉。政策錨仍在，人民幣短期具韌性，但雙向波動將加大。</p>
 </article>
   </div>
     </div>
@@ -2284,70 +2368,70 @@
   
   <p class="article-meta">CNBC Economy · 11/21 23:04</p>
   <p class="article-excerpt">Recent technology outages have left some worried about AI cyberattacks and the U.S. electricity grid. The doomsday economy is heating up as a result.</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> CNBC 報導，近期多起科技服務中斷事件，讓部分民眾擔憂 AI 驅動的網路攻擊與美國電網安全，帶動緊急應變物資等「末日經濟」相關消費升溫。報導未提供更多具體金額數據。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> CNBC 報導，近期科技服務中斷事件，讓部分民眾擔心 AI 驅動的網路攻擊，以及美國電力網的穩定性。相關疑慮帶動緊急應變物資等「末日經濟」買氣升溫。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://www.federalreserve.gov/newsevents/pressreleases/other20261120b.htm" target="_blank" rel="noopener noreferrer">Federal Reserve announces College Fed Challenge winners</a></h3>
   
   <p class="article-meta">Fed 新聞稿 · 11/21 05:15</p>
   <p class="article-excerpt">Federal Reserve announces College Fed Challenge winners</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 聯準會（Fed）公布大學生「College Fed Challenge」競賽的優勝隊伍。該競賽讓大學生以貨幣政策為題進行分析與簡報。新聞稿摘要未提供優勝學校等進一步細節。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 聯準會（Fed）公布大學生 Fed 挑戰賽（College Fed Challenge）的優勝隊伍。新聞稿摘要未提供得獎學校或競賽細節。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://www.cnbc.com/2026/11/16/kevin-warsh-fed-ai-jobs-productivity-interest-rateshtml.html" target="_blank" rel="noopener noreferrer">Peterson: The Fed&#39;s chairman sees an AI revolution coming. Now he has to figure out what it means</a></h3>
   
   <p class="article-meta">CNBC Economy · 11/21 05:07</p>
   <p class="article-excerpt">Kevin Warsh sees AI at a turning point. He faces tough questions on jobs and interest rates.</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> CNBC 專欄指出，聯準會主席凱文·華許（Kevin Warsh）認為 AI 正處於轉折點，但他必須面對 AI 對就業與利率走向影響的難題，包括生產力提升是否改變貨幣政策判斷。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> CNBC 專欄指出，聯準會主席凱文·華許（Kevin Warsh）認為 AI 正處於轉折點。他須面對 AI 對就業與利率走向影響的難題，包括生產力提升可能帶來的政策意涵。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://www.federalreserve.gov/newsevents/pressreleases/other20261120a.htm" target="_blank" rel="noopener noreferrer">Federal Reserve Board releases results from survey of senior financial officers at banks about their strategies and practices for managing reserve balances</a></h3>
   
   <p class="article-meta">Fed 新聞稿 · 11/20 23:00</p>
   <p class="article-excerpt">Federal Reserve Board releases results from survey of senior financial officers at banks about their strategies and practices for managing reserve balances</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 聯準會理事會公布針對銀行高階財務主管的問卷調查結果，內容涉及銀行管理準備金餘額的策略與作法。摘要未提供具體調查數據或結論。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 聯準會理事會公布一項針對銀行資深財務主管的調查結果，內容涵蓋銀行管理準備金餘額的策略與實務做法。新聞稿摘要未提供具體調查數據。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261120~e52bcc4db2.en.html" target="_blank" rel="noopener noreferrer">Christine Lagarde: Acting in time</a></h3>
   
   <p class="article-meta">ECB 新聞稿 · 11/20 16:30</p>
   
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 歐洲央行（ECB）總裁拉加德發表談話，題為「及時行動」（Acting in time）。目前僅有標題，未提供談話內容，無法進一步說明重點。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 歐洲央行（ECB）公布總裁拉加德（Christine Lagarde）的談話，題為「Acting in time」（及時行動）。所提供資料未附內容摘要，細節不明。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="http://www.boj.or.jp/en/research/imes/mes/mes26.htm" target="_blank" rel="noopener noreferrer">Monetary and Economic Studies (2026)</a></h3>
   
   <p class="article-meta">日本央行 · 11/20 10:00</p>
   
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 日本央行公布 2026 年《貨幣與經濟研究》（Monetary and Economic Studies）期刊頁面。目前僅有標題資訊，未提供具體研究主題或內容。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 日本央行列出 2026 年《貨幣與經濟研究》（Monetary and Economic Studies）期刊的頁面。所提供資料未含具體論文內容或研究結論。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://www.cnbc.com/2026/11/20/japan-inflation-cpi-october.html" target="_blank" rel="noopener noreferrer">Japan core inflation soars to highest this year as energy subsidy expiry pushes up consumer prices</a></h3>
   
   <p class="article-meta">CNBC Economy · 11/20 09:49</p>
   <p class="article-excerpt">The core inflation figure — which strips out prices of food — was lower than the 2.3% expected by Reuters-polled economists.</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 日本 10 月核心通膨升至今年最高，主因能源補貼到期推升消費者物價。不過扣除生鮮食品的核心通膨數字低於路透調查經濟學家預期的 2.3%。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> CNBC 報導，日本 10 月核心通膨升至今年最高，主因能源補貼到期推升消費者物價。不過核心通膨數據低於路透調查經濟學家預期的 2.3%。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://www.cnbc.com/2026/11/11/nvidia-jensen-huang-ai-financial-system-risk.html" target="_blank" rel="noopener noreferrer">Peterson: Nvidia’s leadership crisis tests the chipmaker’s role as the ‘central bank of AI’</a></h3>
   
   <p class="article-meta">CNBC Economy · 11/20 04:21</p>
   <p class="article-excerpt">The tech giant&#39;s web of ties to other companies is raising the possibility that it could do far-reaching economic and financial damage.</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> CNBC 專欄指出，輝達（Nvidia）領導層面臨危機，考驗其「AI 央行」角色。該公司與眾多企業的複雜關係網，使其一旦出問題，可能對經濟與金融體系造成廣泛損害。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> CNBC 專欄指出，輝達（Nvidia）領導層面臨危機，考驗其作為「AI 中央銀行」的角色。該公司與其他企業間的複雜關係網，使其一旦出問題，可能對經濟與金融體系造成廣泛損害。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261119a.htm" target="_blank" rel="noopener noreferrer">Federal Reserve Board issues enforcement action with former employee of First Security Bancorp</a></h3>
   
-  <p class="article-meta">Fed 新聞稿 · 11/20 24:00</p>
+  <p class="article-meta">Fed 新聞稿 · 11/20 00:00</p>
   <p class="article-excerpt">Federal Reserve Board issues enforcement action with former employee of First Security Bancorp</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 聯準會理事會對 First Security Bancorp 的一名前員工發布執法處分。新聞稿摘要未提供處分原因、金額或其他細節。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 聯準會理事會對 First Security Bancorp 一名前員工發布執法處分。新聞稿摘要未提供處分原因或具體內容。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="http://www.boj.or.jp/en/research/research_data/reri/index.htm" target="_blank" rel="noopener noreferrer">Developments in Real Exports and Real Imports</a></h3>
   
   <p class="article-meta">日本央行 · 11/19 15:00</p>
   
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 日本央行公布「實質出口與實質進口動向」資料頁面，追蹤日本貿易的實質數量變化。目前僅有標題，未提供最新數據或具體數字。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 日本央行資料頁面，主題為實質出口與實質進口的發展動向。所提供資料未含具體數據或數值。</p>
 </article>
   </div>
     </div>
@@ -2361,70 +2445,70 @@
   
   <p class="article-meta">CNBC Energy · 11/22 14:00</p>
   <p class="article-excerpt">Quantum computing firms are testing energy-grid optimization, solar materials and hydrogen catalysts as they pursue practical uses.</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 量子運算業者正測試電網最佳化、太陽能材料與氫能催化劑等應用，尋求實際商業用途。報導指出，量子運算最早的實質回報可能出現在能源領域，而非藥物開發。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 量子運算業者正測試電網最佳化、太陽能材料與氫能催化劑等應用，尋找實際商業用途。CNBC 報導指出，量子運算首個具體成效可能出現在能源領域，而非藥物開發。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://oilprice.com/Energy/Crude-Oil/AI-Boom-Forces-Massive-Investment-in-Power-Grids-Worldwide.html" target="_blank" rel="noopener noreferrer">AI Boom Forces Massive Investment in Power Grids Worldwide</a></h3>
   
   <p class="article-meta">OilPrice.com · 11/22 08:00</p>
   <p class="article-excerpt">The information technology industry is driving massive growth in global electricity demand, which is set to rise by more than 10,000 TWh over the next ten years. For this electricity to reach demand hubs, grids around the world will need urgent upgrades. The big question is who will pay for it. In i</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 資訊科技產業推升全球用電需求，預期未來十年將增加逾 10,000 太瓦時（TWh）。為讓電力送抵需求中心，全球電網亟需升級，報導並探討這筆龐大投資將由誰負擔。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 資訊科技產業帶動全球電力需求成長，預計未來十年將增加逾 10,000 太瓦時（TWh）。為讓電力送達需求集中地區，各國電網亟需升級，後續關鍵在於由誰來負擔相關投資。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://oilprice.com/Alternative-Energy/Wind-Power/Wind-Could-Cut-the-Cost-of-Round-the-Clock-Solar-Power-by-18-Ember-Says.html" target="_blank" rel="noopener noreferrer">Wind Could Cut the Cost of Round-the-Clock Solar Power by 18%, Ember Says</a></h3>
   
   <p class="article-meta">OilPrice.com · 11/22 06:00</p>
   <p class="article-excerpt">A new report from Ember Energy shows the enormous cost-saving potential of wind energy. While solar power and battery storage have taken off on a global level, wind power has been slower to expand. But according to the new report from the prominent energy think tank, this is a major missed opportuni</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 能源智庫 Ember 的新報告指出，風電具有可觀的降低成本潛力，可使全天候供電的太陽能成本下降 18%。太陽能與電池儲能在全球快速擴張，風電的擴張速度相對較慢。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 能源智庫 Ember 最新報告指出，風電具有可觀的降低成本潛力，可使全天候供電的太陽能成本降低 18%。報告提到，太陽能與電池儲能在全球快速成長，風電擴張相對較慢。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://oilprice.com/Energy/Coal/Trumps-Coal-Revival-Is-Costing-Americans-More-Than-Expected.html" target="_blank" rel="noopener noreferrer">Trump’s Coal Revival Is Costing Americans More Than Expected</a></h3>
   
   <p class="article-meta">OilPrice.com · 11/22 04:00</p>
   <p class="article-excerpt">United States President Trump has doubled down on his support for fossil fuels since coming into office almost two years ago, including the most polluting of them all – coal. Just as many coal plants were on their way to retirement, Trump stepped in and stopped them from closing, backing his decisio</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 美國總統川普上任近兩年來持續力挺化石燃料，包括煤炭。許多燃煤電廠原本即將除役，川普出手阻止其關閉。報導指出，此一煤炭復興政策對美國民眾造成的成本高於預期。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 美國總統川普上任近兩年來持續力挺化石燃料，包括煤炭。在許多燃煤電廠原本即將退役之際，政府出面阻止其關閉。報導指出，此政策讓美國民眾付出的成本高於預期。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://oilprice.com/Latest-Energy-News/World-News/Thanksgiving-Gas-Prices-Could-Break-a-Record-Despite-Recent-Plunge.html" target="_blank" rel="noopener noreferrer">Thanksgiving Gas Prices Could Break a Record Despite Recent Plunge</a></h3>
   
   <p class="article-meta">OilPrice.com · 11/22 03:10</p>
   <p class="article-excerpt">Gasoline prices have fallen nearly 60 cents in a month, but Americans heading out for Thanksgiving could still pay more at the pump than during any previous Thanksgiving. The national average fell to $3.69 per gallon on Friday, according to AAA, down from approximately $4.30 a month ago. GasBuddy ex</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 美國汽油價格一個月內下跌近 60 美分。根據美國汽車協會（AAA），週五全國平均價降至每加侖 3.69 美元，一個月前約 4.30 美元。但感恩節出遊的油價仍可能高於以往任何一年的感恩節。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 美國汽油價格一個月內下跌近 60 美分，但感恩節出遊的油價仍可能高於歷年同期。根據美國汽車協會（AAA），週五全國平均價為每加侖 3.69 美元，一個月前約為 4.30 美元。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://oilprice.com/Energy/Energy-General/Britains-Net-Zero-Revolution-Has-a-China-Problem.html" target="_blank" rel="noopener noreferrer">Britain&#39;s Net Zero Revolution Has a China Problem</a></h3>
   
   <p class="article-meta">OilPrice.com · 11/22 02:00</p>
   <p class="article-excerpt">The Labour government has been accused of “capitulation” in its trade relations with China as Britain’s transition to net zero faces a number of security risks. A new report, published shortly before President Trump’s momentous trilateral meeting with Xi Jinping and Vladimir Putin, has highlighted t</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 英國工黨政府在對中貿易關係上被指「投降」，英國的淨零轉型面臨多項安全風險。這份新報告發布時間在美國總統川普與習近平、普廷舉行三方會談前不久。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 英國工黨政府在對中貿易關係上被指「投降」，英國的淨零轉型也面臨多項安全風險。相關報告發布時間，接近川普與習近平、普廷舉行三方會晤之前。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://oilprice.com/Alternative-Energy/Nuclear-Power/UK-Races-to-Rewrite-Nuclear-Rules-by-2027.html" target="_blank" rel="noopener noreferrer">UK Races to Rewrite Nuclear Rules by 2027</a></h3>
   
-  <p class="article-meta">OilPrice.com · 11/22 24:00</p>
+  <p class="article-meta">OilPrice.com · 11/22 00:00</p>
   <p class="article-excerpt">As part of its green transition plans, the U.K. government aims to accelerate the development of nuclear power. The government is already doubling down on expanding its renewable energy capacity, and it hopes nuclear power will become a major contributor to a more diverse energy mix that will suppor</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 英國政府作為綠色轉型計畫的一部分，打算加速發展核能，並力拚在 2027 年前改寫核能相關規範。政府同時加碼擴大再生能源裝置容量，期望核能成為更多元能源組合中的重要一環。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 英國政府在綠色轉型計畫中，目標加速核電發展，並計畫在 2027 年前改寫核能相關規範。政府同時持續擴大再生能源裝置容量，期望核電成為更多元能源組合的重要一環。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://www.cnbc.com/2026/11/21/polar-vortex-europe-gas-prices.html" target="_blank" rel="noopener noreferrer">An early breakdown in the polar vortex is threatening already depleted gas stocks</a></h3>
   
   <p class="article-meta">CNBC Energy · 11/21 20:47</p>
   <p class="article-excerpt">Colder weather and low wind speeds could strain Europe’s gas market, where storage started winter at its lowest level in more than a decade.</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 極地渦旋提早減弱，天氣轉冷且風速偏低，可能加重歐洲天然氣市場的壓力。歐洲今年入冬時的儲氣量為逾十年來最低水準，庫存本已偏低。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 極地渦旋提早減弱，加上天氣轉冷與風速偏低，可能加重歐洲天然氣市場壓力。歐洲今年入冬時的儲氣量為十多年來最低水準。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://oilprice.com/Energy/Energy-General/Oil-Prices-Caught-Between-a-Looming-Glut-and-Middle-East-Turmoil.html" target="_blank" rel="noopener noreferrer">Oil Prices Caught Between a Looming Glut and Middle East Turmoil</a></h3>
   
   <p class="article-meta">OilPrice.com · 11/21 08:00</p>
   <p class="article-excerpt">Oil prices have traded in a narrow range over the past few sessions as forecasts of a coming surplus collide with continued attacks and stalled diplomacy in the Middle East. A run of agency reports this month has pushed expectations toward oversupply and weighed on crude. Brent crude was up 0.22% at</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 近幾個交易日油價維持窄幅震盪。供給過剩的預測，與中東持續遭受攻擊、外交談判停滯相互拉扯。本月多份機構報告使市場預期轉向供過於求，對原油價格形成壓力。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 近期油價維持窄幅震盪，供給過剩預期與中東持續衝突、外交談判停滯相互拉扯。本月多份機構報告使市場預期轉向供過於求，對原油價格形成壓力。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://oilprice.com/Energy/Energy-General/Argentine-Energy-Firms-Rush-to-Sell-Bonds-Before-the-2027-Election.html" target="_blank" rel="noopener noreferrer">Argentine Energy Firms Rush to Sell Bonds Before the 2027 Election</a></h3>
   
   <p class="article-meta">OilPrice.com · 11/21 06:00</p>
   <p class="article-excerpt">Argentina’s energy sector is having a banner year. The first half of 2026 saw the South American nation’s best energy trade balance in half a decade as exports boomed thanks to a drop in exports out of the Middle East and strong production numbers out of the Vaca Muerta shale play. And Argentina’s e</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 阿根廷能源業今年表現強勁，2026 年上半年能源貿易收支創五年來最佳。中東出口減少，加上瓦卡穆埃爾塔（Vaca Muerta）頁岩產區產量強勁，帶動出口成長。能源企業趕在 2027 年大選前發行債券。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 阿根廷能源業今年表現亮眼，2026 年上半年能源貿易收支創五年來最佳。出口成長受惠於中東出口下滑，以及瓦卡穆埃爾塔（Vaca Muerta）頁岩區產量強勁。能源業者趕在 2027 年大選前發行債券。</p>
 </article>
   </div>
     </div>
@@ -2437,88 +2521,88 @@
     <div class="source-contents">
       <div class="source-content active" data-source-content="_merged" data-sub="semis" data-cat="tech">
     <article class="article">
-  <h3 class="article-title"><a href="https://www.tomshardware.com/pc-components/nas/ditch-cloud-subscriptions-with-a-usd132-discount-on-a-4-bay-ugreen-dxp4800-gt-nas-enclosure-in-amazon-black-friday-deal-offers-dual-10gbe-ports-and-supports-up-to-144tb-of-storage" target="_blank" rel="noopener noreferrer">Ditch cloud subscriptions with a $132 discount on a 4-Bay UGreen DXP4800 GT NAS enclosure in Amazon Black Friday deal — offers dual 10GbE ports and supports up to 144TB of storage</a></h3>
+  <h3 class="article-title"><a href="https://www.tomshardware.com/peripherals/mice/logitechs-accomplished-mx-master-3s-productivity-mouse-gets-24-percent-discount-usd75-buys-you-a-tried-and-tested-workhorse-with-killer-features" target="_blank" rel="noopener noreferrer">Logitech&#39;s accomplished MX Master 3S productivity mouse gets 24% discount</a></h3>
+  
+  <p class="article-meta">Tom&#39;s Hardware · 11/22 21:20</p>
+  <p class="article-excerpt">You can pick up the Logitech MX Master 3S for just $75 at Amazon, just in time for Black Friday. With its signature MagSpeed scrolling, this deal is unmissable for anyone who wants to pick up a mouse perfect for working through large spreadsheets, code, and more.</p>
+  <p class="article-summary"><span class="summary-label">中文介紹</span> 羅技（Logitech）MX Master 3S 辦公滑鼠在亞馬遜（Amazon）黑色星期五檔期降價約 24%，售價 75 美元。該款滑鼠主打 MagSpeed 滾輪，適合處理大型試算表與程式碼等工作。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.tomshardware.com/tech-industry/semiconductors/ai-agents-design-an-entirely-new-cpu-architecture-from-scratch-startup-claims-frostbite-posts-4-59x-the-performance-per-watt-of-an-in-order-core-in-pre-silicon-tests" target="_blank" rel="noopener noreferrer">AI agents design an entirely new CPU architecture from scratch, startup claims</a></h3>
+  
+  <p class="article-meta">Tom&#39;s Hardware · 11/22 21:00</p>
+  <p class="article-excerpt">Architect Labs says its AI agents designed Frostbite, an interaction-net CPU with 4.59x the performance per watt of an in-order core.</p>
+  <p class="article-summary"><span class="summary-label">中文介紹</span> 新創公司 Architect Labs 宣稱，其 AI 代理程式從零設計出名為 Frostbite 的互動網路（interaction-net）CPU 架構。依矽前測試結果，每瓦效能為循序執行（in-order）核心的 4.59 倍。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.tomshardware.com/pc-components/gpus/moore-threads-next-lushan-gaming-gpu-could-pack-a-record-64gb-of-vram-doubles-the-rtx-5090s-32gb-lofty-claims-of-15x-gaming-and-50x-ray-tracing-over-mtt-s80" target="_blank" rel="noopener noreferrer">Moore Threads&#39; next &#39;Lushan&#39; gaming GPU could pack a record 64GB of VRAM</a></h3>
+  
+  <p class="article-meta">Tom&#39;s Hardware · 11/22 20:30</p>
+  <p class="article-excerpt">Moore Threads teased its Lushan gaming GPU ahead of MDC 2026, with a product manager claiming record VRAM for a consumer graphics card.</p>
+  <p class="article-summary"><span class="summary-label">中文介紹</span> 摩爾線程（Moore Threads）在 MDC 2026 前預告新款「Lushan」遊戲 GPU，產品經理稱其配備的顯示記憶體容量創消費級顯示卡紀錄。報導指容量可能達 64GB，為 RTX 5090 的 32GB 之兩倍。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.tomshardware.com/peripherals/gaming-headsets/one-of-the-best-gaming-headsets-plummets-to-just-usd78-at-amazon-in-unmissable-black-friday-deal-razer-blackshark-v2-pro-outshines-its-successor-at-less-than-half-the-price" target="_blank" rel="noopener noreferrer">One of the best gaming headsets plummets to just $78 at Amazon in unmissable Black Friday deal</a></h3>
+  
+  <p class="article-meta">Tom&#39;s Hardware · 11/22 20:20</p>
+  <p class="article-excerpt">One of our favorite gaming headsets just got a killer discount in time for the Holiday season. The PS5 version Razer Blackshark V2 Pro, has been discounted to just $78 at Amazon, meaning that you can get one of the best all-around gaming headsets out there for even less.</p>
+  <p class="article-summary"><span class="summary-label">中文介紹</span> 雷蛇（Razer）BlackShark V2 Pro 的 PS5 版本在亞馬遜黑色星期五檔期降價至 78 美元。該款電競耳機被評為綜合表現優異的產品之一，價格不到後繼機種的一半。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.tomshardware.com/tech-industry/data-centers/lenders-back-spacexs-usd43-billion-nvidia-gpu-deal-but-worry-the-collateral-could-end-up-in-orbit-making-it-impossible-to-reclaim-if-musk-defaults-five-year-hell-or-high-water-lease-may-lack-a-written-earth-only-guarantee" target="_blank" rel="noopener noreferrer">Lenders back SpaceX&#39;s $43 billion Nvidia GPU deal but worry the collateral could end up in orbit, making them impossible to reclaim if Musk defaults</a></h3>
+  
+  <p class="article-meta">Tom&#39;s Hardware · 11/22 20:00</p>
+  <p class="article-excerpt">The $43 billion loan is structured as a unique arrangement in which a different company buys the Nvidia chips, while SpaceX makes quarterly payments to use them.</p>
+  <p class="article-summary"><span class="summary-label">中文介紹</span> SpaceX 一筆 430 億美元的輝達（Nvidia）GPU 融資案獲貸方支持，架構為由另一家公司購買晶片，SpaceX 按季付款使用。貸方擔心若晶片被送上軌道，違約時恐難以追回抵押品；五年期租約似乎也未明文限定僅在地球使用。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.tomshardware.com/tech-industry/drones/energy-companies-deploy-drones-that-can-be-recharged-by-straddling-power-lines-nomad-quadcopter-drones-can-monitor-the-grid-without-ever-returning-home" target="_blank" rel="noopener noreferrer">Energy companies deploy drones that can be recharged by straddling power lines</a></h3>
+  
+  <p class="article-meta">Tom&#39;s Hardware · 11/22 19:30</p>
+  <p class="article-excerpt">NOMADs are drones that can land on live high-voltage lines, charge from the line itself and relocate ready for their next task.</p>
+  <p class="article-summary"><span class="summary-label">中文介紹</span> 能源業者部署名為 NOMAD 的無人機，可降落在帶電高壓輸電線上，直接從線路取電充電，再移動至下一個任務地點。這類四旋翼無人機可監控電網，無須返回基地。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/dev-squeezes-an-ai-language-model-onto-a-floppy-for-486dx-and-pentium-pc-stalwarts-tiny-2-1-needs-540kb-of-memory-and-speaks-via-pc-speaker-is-a-question-answering-transformer-with-367k-parameters" target="_blank" rel="noopener noreferrer">Dev squeezes an AI language model onto a floppy for 486DX and Pentium PC stalwarts</a></h3>
+  
+  <p class="article-meta">Tom&#39;s Hardware · 11/22 19:00</p>
+  <p class="article-excerpt">An inspired developer has shoehorned a language model onto a floppy disk created especially for 486DX and Pentium PC users running DOS.</p>
+  <p class="article-summary"><span class="summary-label">中文介紹</span> 一名開發者將語言模型 Tiny 2.1 塞進一張軟碟，供執行 DOS 的 486DX 與 Pentium 電腦使用。該模型為問答型 Transformer，約 36.7 萬個參數，需 540KB 記憶體，並透過 PC 喇叭發聲。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.tomshardware.com/pc-components/nas/ditch-cloud-subscriptions-with-a-usd132-discount-on-a-4-bay-ugreen-dxp4800-gt-nas-enclosure-in-amazon-black-friday-deal-offers-dual-10gbe-ports-and-supports-up-to-144tb-of-storage" target="_blank" rel="noopener noreferrer">Ditch cloud subscriptions with a $132 discount on a 4-Bay NAS enclosure in Amazon Black Friday deal</a></h3>
   
   <p class="article-meta">Tom&#39;s Hardware · 11/22 17:45</p>
   <p class="article-excerpt">For those looking to ditch cloud storage this Black Friday, UGreen&#39;s DXP4800 GT 4-bay NAS enclosure has gone on sale with a lovely 20% discount at Amazon, marking the second time it&#39;s returned to its all-time low price point.</p>
-  <p class="article-summary"><span class="summary-label">中文介紹</span> 黑色星期五期間，綠聯（UGreen）4 槽 NAS 機殼 DXP4800 GT 在亞馬遜推出八折優惠，降價約 132 美元，為歷史最低價，也是第二次回到此價位。該機種配備雙 10GbE 網路埠，最高支援 144TB 儲存容量。</p>
+  <p class="article-summary"><span class="summary-label">中文介紹</span> 綠聯（UGreen）DXP4800 GT 四碟位 NAS 在亞馬遜黑色星期五檔期降價 20%，折扣 132 美元，為第二度回到歷史最低價。該機配備雙 10GbE 連接埠，最高支援 144TB 儲存容量。</p>
 </article>
 <article class="article">
-  <h3 class="article-title"><a href="https://www.tomshardware.com/monitors/gaming-monitors/msis-magnificent-32-inch-4k-qd-oled-gaming-monitor-tumbles-to-just-usd569-save-usd130-at-b-and-h-photo-with-this-black-friday-mag-321up-deal-the-perfect-gaming-upgrade-for-your-pc" target="_blank" rel="noopener noreferrer">MSI&#39;s magnificent 32-inch 4K QD-OLED gaming monitor tumbles to just $569 — save $130 at B&amp;H Photo with this Black Friday MAG 321UP deal, the perfect gaming upgrade for your PC</a></h3>
+  <h3 class="article-title"><a href="https://www.tomshardware.com/monitors/gaming-monitors/msis-magnificent-32-inch-4k-qd-oled-gaming-monitor-tumbles-to-just-usd569-save-usd130-at-b-and-h-photo-with-this-black-friday-mag-321up-deal-the-perfect-gaming-upgrade-for-your-pc" target="_blank" rel="noopener noreferrer">MSI&#39;s magnificent 32-inch 4K QD-OLED gaming monitor tumbles to just $569</a></h3>
   
   <p class="article-meta">Tom&#39;s Hardware · 11/22 17:14</p>
   <p class="article-excerpt">Save $130 on this gorgeous 32-inch QD-OLED gaming monitor from MSI and experience crisp visuals in 4K.</p>
-  <p class="article-summary"><span class="summary-label">中文介紹</span> 微星（MSI）MAG 321UP 為 32 吋 4K QD-OLED 電競螢幕，在 B&amp;H Photo 的黑色星期五促銷中降價 130 美元，售價降至 569 美元。</p>
+  <p class="article-summary"><span class="summary-label">中文介紹</span> 微星（MSI）MAG 321UP 32 吋 4K QD-OLED 電競螢幕在 B&amp;H Photo 黑色星期五檔期降價 130 美元，售價 569 美元。</p>
 </article>
 <article class="article">
-  <h3 class="article-title"><a href="https://www.tomshardware.com/laptops/gaming-laptops/oled-gaming-laptop-with-rtx-5060-and-intel-core-ultra-7-cpu-price-crashes-by-usd650-in-black-friday-offer-lenovo-legion-5i-laptop-drops-to-usd1-349-with-free-games-at-b-and-h" target="_blank" rel="noopener noreferrer">OLED gaming laptop with RTX 5060 and Intel Core Ultra 7 CPU price crashes by $650 in Black Friday offer — Lenovo Legion 5i laptop drops to $1,349 with free games at B&amp;H</a></h3>
+  <h3 class="article-title"><a href="https://www.tomshardware.com/laptops/gaming-laptops/oled-gaming-laptop-with-rtx-5060-and-intel-core-ultra-7-cpu-price-crashes-by-usd650-in-black-friday-offer-lenovo-legion-5i-laptop-drops-to-usd1-349-with-free-games-at-b-and-h" target="_blank" rel="noopener noreferrer">OLED gaming laptop with RTX 5060 and Intel Core Ultra 7 CPU price crashes by $650 in Black Friday offer</a></h3>
   
   <p class="article-meta">Tom&#39;s Hardware · 11/22 17:05</p>
   <p class="article-excerpt">Getting a gaming laptop this holiday season doesn&#39;t have to mean spending thousands of dollars, as this modestly priced Lenovo Legion 5i OLED gaming laptop has dropped to just $1,349 at B&amp;H.</p>
-  <p class="article-summary"><span class="summary-label">中文介紹</span> 聯想（Lenovo）Legion 5i OLED 電競筆電搭載 RTX 5060 顯示卡與英特爾 Core Ultra 7 處理器，在 B&amp;H 黑色星期五促銷中降價 650 美元，售價為 1,349 美元，並附贈遊戲。</p>
+  <p class="article-summary"><span class="summary-label">中文介紹</span> 聯想（Lenovo）Legion 5i OLED 電競筆電搭載 RTX 5060 與 Intel Core Ultra 7 處理器，在 B&amp;H 黑色星期五檔期降價 650 美元，售價 1,349 美元，並附贈遊戲。</p>
 </article>
 <article class="article">
-  <h3 class="article-title"><a href="https://www.tomshardware.com/desktops/gaming-pcs/alienware-aurora-pc-with-rtx-5070-32gb-of-ram-drops-to-usd1-899-in-amazon-black-friday-offer-core-ultra-7-equipped-pc-is-one-of-the-best-value-prebuilt-deals-weve-seen-so-far" target="_blank" rel="noopener noreferrer">Alienware Aurora PC with RTX 5070, 32GB of RAM drops to $1,899 in Amazon Black Friday offer — Core Ultra 7 equipped PC is one of the best value prebuilt deals we’ve seen so far</a></h3>
+  <h3 class="article-title"><a href="https://www.tomshardware.com/desktops/gaming-pcs/alienware-aurora-pc-with-rtx-5070-32gb-of-ram-drops-to-usd1-899-in-amazon-black-friday-offer-core-ultra-7-equipped-pc-is-one-of-the-best-value-prebuilt-deals-weve-seen-so-far" target="_blank" rel="noopener noreferrer">Alienware Aurora PC with RTX 5070, 32GB of RAM drops to $1,899 in Amazon Black Friday offer</a></h3>
   
   <p class="article-meta">Tom&#39;s Hardware · 11/22 16:08</p>
   <p class="article-excerpt">Pick up a gaming PC bargain this Black Friday with this RTX 5070-powered Alienware Aurora rig, which also comes with 32GB of DDR5 memory for only $1.899.</p>
-  <p class="article-summary"><span class="summary-label">中文介紹</span> Alienware Aurora 電競主機搭載 RTX 5070 顯示卡、Core Ultra 7 處理器與 32GB DDR5 記憶體，在亞馬遜黑色星期五促銷中降至 1,899 美元，被報導評為目前較具價值的組裝機優惠之一。</p>
+  <p class="article-summary"><span class="summary-label">中文介紹</span> 外星人（Alienware）Aurora 電競主機搭載 RTX 5070、Core Ultra 7 處理器與 32GB DDR5 記憶體，在亞馬遜黑色星期五檔期降至 1,899 美元，被評為目前較具價值的組裝電腦優惠之一。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://www.tomshardware.com/pc-components/cpus/act-fast-to-score-intels-core-i7-14700k-for-its-lowest-price-ever-at-usd249-99-raptor-lake-refresh-cpu-is-a-bargain-that-supports-ddr5-and-ddr4-motherboards" target="_blank" rel="noopener noreferrer">Act fast to score Intel&#39;s Core i7-14700K for its lowest price ever at $249.99</a></h3>
   
   <p class="article-meta">Tom&#39;s Hardware · 11/22 04:00</p>
   <p class="article-excerpt">After months of inconsistent pricing, Intel&#39;s Core i7-14700K is down to its lowest price ever at $249.99, with support for LGA 1700 motherboards that come with either DDR4 or DDR5 memory support.</p>
-  <p class="article-summary"><span class="summary-label">中文介紹</span> 經過數月價格不穩後，英特爾 Core i7-14700K 處理器降至 249.99 美元，創歷史新低。該晶片採用 LGA 1700 腳位，可搭配支援 DDR4 或 DDR5 記憶體的主機板。</p>
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://www.tomshardware.com/pc-components/pc-cases/save-usd78-on-corsairs-triple-chamber-air-5400-rs-r-midtower-pc-case-at-new-all-time-low-price-chassis-includes-three-pre-installed-rs-r-argb-fans-and-back-connector-motherboard-support" target="_blank" rel="noopener noreferrer">Save $78 on Corsair&#39;s triple-chamber AIR 5400 RS-R midtower PC case at new all-time low price</a></h3>
-  
-  <p class="article-meta">Tom&#39;s Hardware · 11/22 02:49</p>
-  <p class="article-excerpt">Corsair&#39;s triple-chamber AIR 5400 RS-R is down to its lowest price ever in a run-up Black Friday sale, saving you nearly $80 off list price.</p>
-  <p class="article-summary"><span class="summary-label">中文介紹</span> 海盜船（Corsair）三艙式中塔機殼 AIR 5400 RS-R 在黑色星期五前的促銷中，較定價折省 78 美元，創下歷史最低價。該機殼預裝三顆 RS-R ARGB 風扇，並支援背插式主機板。</p>
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://www.tomshardware.com/peripherals/gaming-chairs/best-gaming-chair-deals-secretlab-razer-and-more" target="_blank" rel="noopener noreferrer">Best Black Friday gaming chair deals 2026</a></h3>
-  
-  <p class="article-meta">Tom&#39;s Hardware · 11/22 24:38</p>
-  <p class="article-excerpt">The best Black Friday deals on gaming chairs for every budget, style, and comfort level. Upgrade your gaming chair with something high-quality.</p>
-  <p class="article-summary"><span class="summary-label">中文介紹</span> Tom&#39;s Hardware 彙整 2026 年黑色星期五電競椅優惠，涵蓋 Secretlab、Razer 等品牌，依不同預算、風格與舒適度需求分類，供消費者挑選。</p>
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://www.tomshardware.com/tech-industry/data-centers/trump-wants-to-ban-us-companies-from-building-overseas-data-centers-as-bans-slow-development-also-considers-putting-a-tremendous-tax-in-lieu-of-prohibition" target="_blank" rel="noopener noreferrer">Trump wants to ban US companies from building overseas data centers as bans slow development</a></h3>
-  
-  <p class="article-meta">Tom&#39;s Hardware · 11/22 24:29</p>
-  <p class="article-excerpt">The president wants U.S. data center companies to stay within U.S. borders or pay a hefty fee if they want to build in foreign countries.</p>
-  <p class="article-summary"><span class="summary-label">中文介紹</span> 報導指美國總統川普希望美國資料中心業者將設施留在國內，否則若要在海外興建，須支付高額費用。標題並提到，相關禁令或將拖慢開發進度，並考慮以重稅取代直接禁止。</p>
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://www.tomshardware.com/tech-industry/supercomputers/this-week-on-toms-hardware-premium-21-november-2026-amd-nvidia-and-more-show-off-the-future-of-high-performance-computing-at-sc26" target="_blank" rel="noopener noreferrer">This week on Tom&#39;s Hardware Premium: 21 November 2026</a></h3>
-  
-  <p class="article-meta">Tom&#39;s Hardware · 11/22 24:00</p>
-  <p class="article-excerpt">We go through an exhaustive list of everything we covered at SC26, which includes brand-new devices and developments from AMD, Nvidia, Intel and many more.</p>
-  <p class="article-summary"><span class="summary-label">中文介紹</span> Tom&#39;s Hardware Premium 於 2026 年 11 月 21 日的每週整理，回顧 SC26 超級運算大會的報導，內容包括 AMD、輝達（Nvidia）、英特爾等業者發表的新裝置與技術進展。</p>
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://www.tomshardware.com/pc-components/air-cooling/laptop-cooled-by-bounce-house-blower-gets-35-degree-drop-in-temperatures-modder-compares-laptop-cooler-with-increasingly-powerful-fan-setups" target="_blank" rel="noopener noreferrer">Modder cools gaming laptop with a bounce house blower for a 35-degree drop</a></h3>
-  
-  <p class="article-meta">Tom&#39;s Hardware · 11/21 23:31</p>
-  <p class="article-excerpt">A PC cooling enthusiast attached a bounce house blower to the bottom of his laptop, bringing temperatures below 50 degrees Celsius.</p>
-  <p class="article-summary"><span class="summary-label">中文介紹</span> 一名 PC 散熱愛好者將充氣城堡用鼓風機接在筆電底部散熱，使溫度降低 35 度，並降至攝氏 50 度以下。他也比較了不同強度的風扇配置對筆電散熱的效果。</p>
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://www.tomshardware.com/tech-industry/semiconductors/rapidus-reportedly-struggles-to-produce-working-sram-on-its-2nm-node-putting-2027-mass-production-at-risk-company-faces-significant-challenges-using-euv-to-develop-gaa-transistors" target="_blank" rel="noopener noreferrer">Rapidus reportedly struggles to produce working SRAM on its 2nm node, putting 2027 mass production at risk</a></h3>
-  
-  <p class="article-meta">Tom&#39;s Hardware · 11/21 23:30</p>
-  <p class="article-excerpt">Japan&#39;s semiconductor startup has demonstrated functioning GAA transistors, but integrating them into working memory cells appears to be a considerably greater challenge.</p>
-  <p class="article-summary"><span class="summary-label">中文介紹</span> 據報導，日本半導體新創 Rapidus 在 2 奈米製程上已展示可運作的 GAA 電晶體，但要整合成可正常運作的 SRAM 記憶體單元難度明顯更高，使其 2027 年量產計畫面臨風險。</p>
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/35-year-old-snes-runs-chatgpt-accelerated-with-a-super-fx-2-chip-21-mhz-of-risc-muscle-speeds-2-2m-parameter-chatbot-replies" target="_blank" rel="noopener noreferrer">35-year-old SNES runs ChatGPT, accelerated with a Super FX 2 chip — 21 MHz of RISC muscle speeds 2.2M parameter chatbot replies</a></h3>
-  
-  <p class="article-meta">Tom&#39;s Hardware · 11/21 23:02</p>
-  <p class="article-excerpt">Nintendo’s classic SNES console now has its own ChatGPT client, and it&#39;s accelerated by the Super FX 2 chip.</p>
-  <p class="article-summary"><span class="summary-label">中文介紹</span> 任天堂已有 35 年歷史的經典 SNES 主機如今可運行 ChatGPT 用戶端，並藉由 Super FX 2 晶片加速。該晶片時脈為 21 MHz，用於加快 220 萬參數聊天機器人的回覆速度。</p>
+  <p class="article-summary"><span class="summary-label">中文介紹</span> 英特爾（Intel）Core i7-14700K 處理器經過數月價格不穩後，降至歷史最低價 249.99 美元。該款 Raptor Lake Refresh CPU 採用 LGA 1700 腳位，支援 DDR4 或 DDR5 記憶體主機板。</p>
 </article>
   </div>
     </div>
@@ -2532,70 +2616,70 @@
   
   <p class="article-meta">TechCrunch AI · 11/22 05:37</p>
   <p class="article-excerpt">Signal is limiting users&#39; ability to take screenshots in both its Android and iOS apps.</p>
-  <p class="article-summary"><span class="summary-label">中文介紹</span> 加密通訊軟體 Signal 宣布在 Android 與 iOS 版應用程式中限制使用者截圖功能。標題指出，此舉是為了因應人工智慧監控對其構成的「生存威脅」。報導摘要未提供更多實施細節。</p>
+  <p class="article-summary"><span class="summary-label">中文介紹</span> 加密通訊軟體 Signal 正在限制使用者在 Android 與 iOS 應用程式中截圖的功能。標題指出，此舉是為了因應 AI 監控對隱私構成的「生存威脅」。摘要未提供更多實施細節。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://techcrunch.com/2026/11/21/a-tale-of-two-nvidias/" target="_blank" rel="noopener noreferrer">A tale of two Nvidias</a></h3>
   
   <p class="article-meta">TechCrunch AI · 11/22 05:07</p>
   <p class="article-excerpt">We got two very different pictures of Nvidia — the company’s latest earnings report vs. the tech executives loudly calling for Jensen Huang’s return.</p>
-  <p class="article-summary"><span class="summary-label">中文介紹</span> TechCrunch 指出，輝達（Nvidia）近期呈現兩種截然不同的面貌：一邊是最新公布的財報，另一邊是多位科技業高層公開呼籲黃仁勳回歸。文章對比公司營運表現與管理層動盪的落差，摘要未提供財報具體數字。</p>
+  <p class="article-summary"><span class="summary-label">中文介紹</span> 文章比較輝達（Nvidia）近期呈現的兩種截然不同的面貌：一是最新公布的財報，二是多位科技業高層公開呼籲黃仁勳（Jensen Huang）回任。內容聚焦於公司業績與領導層風波之間的落差。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://techcrunch.com/2026/11/21/all-the-ai-agents-that-can-live-in-your-text-messages/" target="_blank" rel="noopener noreferrer">Here are the top AI agents that can live in your text messages</a></h3>
   
   <p class="article-meta">TechCrunch AI · 11/22 01:00</p>
   <p class="article-excerpt">We created a list of the most notable AI agents that can live in your text messages, from general assistants to agents designed for families, travel, and work.</p>
-  <p class="article-summary"><span class="summary-label">中文介紹</span> TechCrunch 整理出可在簡訊中使用的主要 AI 代理程式清單，涵蓋一般型助理，以及專為家庭、旅遊與工作情境設計的代理。文章以介紹各類產品的定位與用途為主。</p>
+  <p class="article-summary"><span class="summary-label">中文介紹</span> TechCrunch 整理出可在簡訊中使用的主要 AI 代理程式清單，涵蓋一般型助理，以及專為家庭、旅遊與工作情境設計的代理程式，供使用者參考比較。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://techcrunch.com/2026/11/21/is-selling-an-ai-version-of-your-face-to-this-microdrama-startup-the-future-of-hollywood/" target="_blank" rel="noopener noreferrer">Is selling an AI version of your face to this microdrama startup the future of Hollywood?</a></h3>
   
-  <p class="article-meta">TechCrunch AI · 11/22 24:00</p>
+  <p class="article-meta">TechCrunch AI · 11/22 00:00</p>
   <p class="article-excerpt">An actor has licensed his face to a microdrama startup — in a trend that&#39;s already popular in China. Experts question the long-term consequences if this becomes a trend in Hollywood, too.</p>
-  <p class="article-summary"><span class="summary-label">中文介紹</span> 一名演員已將自己的臉部授權給一家微短劇新創公司製作 AI 版本，這類做法在中國已相當流行。專家則質疑，若此趨勢延伸至好萊塢，可能對產業帶來長期影響。</p>
+  <p class="article-summary"><span class="summary-label">中文介紹</span> 一名演員將自己的臉部授權給微短劇新創公司，製作 AI 版本的形象，這類做法在中國已相當流行。專家對於此模式若在好萊塢普及，可能帶來的長期影響表達疑慮。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://techcrunch.com/2026/11/20/daniel-ek-backs-ai-researchers-fusion-power-startup-heres-what-theyre-building/" target="_blank" rel="noopener noreferrer">Daniel Ek backs AI researcher’s fusion power startup. Here’s what they’re building.</a></h3>
   
   <p class="article-meta">TechCrunch AI · 11/21 03:53</p>
   <p class="article-excerpt">Spotify founder Daniel Ek is backing Europa Fusion, a fusion power startup founded by an AI researcher. Here&#39;s what the startup is building.</p>
-  <p class="article-summary"><span class="summary-label">中文介紹</span> Spotify 創辦人丹尼爾·埃克（Daniel Ek）投資核融合發電新創公司 Europa Fusion，該公司由一名 AI 研究人員創辦。報導介紹了這家新創正在研發的技術方向，摘要未提供投資金額。</p>
+  <p class="article-summary"><span class="summary-label">中文介紹</span> Spotify 創辦人 Daniel Ek 投資核融合發電新創公司 Europa Fusion，該公司由一名 AI 研究人員創立。報導介紹了這家新創公司正在開發的技術與方向。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://techcrunch.com/2026/11/20/ai-claimed-a-solution-to-the-167-year-old-riemann-hypothesis-and-a-human-did-too/" target="_blank" rel="noopener noreferrer">AI claimed a solution to the 167-year-old Riemann hypothesis — and a human did, too</a></h3>
   
   <p class="article-meta">TechCrunch AI · 11/21 03:32</p>
   <p class="article-excerpt">Mathematicians are having their minds blown by the latest AI-driven result — and there&#39;s a competing human solution, too.</p>
-  <p class="article-summary"><span class="summary-label">中文介紹</span> 有 AI 驅動的成果宣稱解決了已有 167 年歷史的黎曼猜想，令數學家大感震撼。同時也有人類數學家提出另一套競爭性的解法。相關證明尚待進一步檢驗，摘要未提供細節。</p>
+  <p class="article-summary"><span class="summary-label">中文介紹</span> 有 AI 宣稱解決了已有 167 年歷史的黎曼猜想（Riemann hypothesis），數學界為之震驚。同時也有人類數學家提出另一套競爭性的解法，兩者並行出現。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://www.technologyreview.com/2026/11/20/1149399/the-most-misunderstood-graph-in-ai-just-got-a-major-update/" target="_blank" rel="noopener noreferrer">The most misunderstood graph in AI just got a major update</a></h3>
   
   <p class="article-meta">MIT Tech Review AI · 11/21 02:15</p>
   <p class="article-excerpt">A new report from the AI evaluation nonprofit METR finds that some AI capabilities are continuing to improve along an exponential trajectory—but it also indicates that models aren’t quite as good at tasks that require judgment as they are at coding. The report is an update to the organization’s time</p>
-  <p class="article-summary"><span class="summary-label">中文介紹</span> AI 評測非營利組織 METR 發布更新報告，指出部分 AI 能力仍沿著指數曲線持續進步。不過報告也顯示，模型在需要判斷力的任務上，表現不如程式撰寫任務。該報告更新的是先前廣受討論的圖表。</p>
+  <p class="article-summary"><span class="summary-label">中文介紹</span> AI 評測非營利組織 METR 發布更新報告，指出部分 AI 能力仍沿指數曲線持續進步，但模型在需要判斷力的任務上，表現不如程式撰寫任務。此報告更新了先前廣受討論但常被誤解的圖表。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://techcrunch.com/2026/11/20/chips-can-survive-the-space-environment-can-their-financing/" target="_blank" rel="noopener noreferrer">Chips can survive the space environment — can their financing?</a></h3>
   
   <p class="article-meta">TechCrunch AI · 11/21 01:40</p>
   <p class="article-excerpt">Lenders don&#39;t want SpaceX shooting their collateral into orbit. What does that mean for space data centers writ large?</p>
-  <p class="article-summary"><span class="summary-label">中文介紹</span> 晶片本身或許能承受太空環境，但融資面卻面臨挑戰。報導指出，貸款機構不希望抵押品被 SpaceX 發射進軌道。文章探討這對太空資料中心整體發展可能帶來的影響。</p>
+  <p class="article-summary"><span class="summary-label">中文介紹</span> 貸款機構不希望抵押品被 SpaceX 送入軌道。報導探討這對太空資料中心的融資意味著什麼，並指出晶片雖可耐受太空環境，但相關資金安排面臨挑戰。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://techcrunch.com/podcast/the-fallout-from-nvidias-jensen-huang-scandal-continues/" target="_blank" rel="noopener noreferrer">The fallout from Nvidia’s Jensen Huang scandal continues</a></h3>
   
   <p class="article-meta">TechCrunch AI · 11/20 22:55</p>
   <p class="article-excerpt">In the midst of dealing with the fallout from its ouster of CEO Jensen Huang, Nvidia delivered its latest earnings report this week, with healthy growth and promises that the good times will continue. At the same time, the chipmaker said it will stop selling its H200 chips in China, and it dismissed</p>
-  <p class="article-summary"><span class="summary-label">中文介紹</span> 輝達在處理執行長黃仁勳遭罷免的後續風波之際，本週公布最新財報，顯示成長穩健，並表示好景將持續。同時，這家晶片大廠宣布將停止在中國銷售 H200 晶片。</p>
+  <p class="article-summary"><span class="summary-label">中文介紹</span> 輝達在處理罷免執行長黃仁勳後續風波之際，本週公布最新財報，顯示成長穩健，並表示好景將持續。同時，這家晶片大廠宣布將停止在中國銷售 H200 晶片。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://techcrunch.com/2026/11/20/6-ai-powered-gadgets-that-could-make-your-home-office-smarter/" target="_blank" rel="noopener noreferrer">Six AI-powered gadgets that could make your home office smarter</a></h3>
   
   <p class="article-meta">TechCrunch AI · 11/20 22:00</p>
   <p class="article-excerpt">From notetakers to webcams, here are six AI-powered gadgets to upgrade your workspace.</p>
-  <p class="article-summary"><span class="summary-label">中文介紹</span> TechCrunch 推薦六款 AI 智慧裝置，用來升級居家辦公空間，產品類型涵蓋會議記錄工具到網路攝影機等。文章屬於產品選購介紹。</p>
+  <p class="article-summary"><span class="summary-label">中文介紹</span> TechCrunch 推薦六款 AI 驅動的居家辦公設備，從會議記錄工具到網路攝影機皆有，協助使用者升級工作空間。</p>
 </article>
   </div>
     </div>
@@ -2698,88 +2782,88 @@
     <div class="source-contents">
       <div class="source-content active" data-source-content="_merged" data-sub="world" data-cat="politics">
     <article class="article">
-  <h3 class="article-title"><a href="https://www.nytimes.com/2026/11/21/world/asia/bangladesh-protests-sheikh-hasina-what-to-know.html" target="_blank" rel="noopener noreferrer">Deadly Protests Erupt in Bangladesh Over Exiled Former Leader. What to Know.</a></h3>
+  <h3 class="article-title"><a href="https://www.nytimes.com/2026/11/22/climate/cop31-climate-summit-ends-climate.html" target="_blank" rel="noopener noreferrer">U.N. Climate Talks Collapse in a Bitter Clash Over Fossil Fuels</a></h3>
   
-  <p class="article-meta">NYT World · 11/22 18:22</p>
-  <p class="article-excerpt">Supporters of the deposed prime minister, Sheikh Hasina, who was sentenced to death in absentia, have waged a small-scale insurgency to destabilize the current government.</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 孟加拉爆發致命抗議，支持遭罷黜前總理哈西娜（Sheikh Hasina）的民眾發動小規模武裝騷亂，意圖動搖現任政府。哈西娜已遭缺席審判判處死刑，目前流亡海外。</p>
+  <p class="article-meta">NYT World · 11/22 21:25</p>
+  <p class="article-excerpt">European and vulnerable nations rejected a proposed agreement after Saudi Arabia and other oil producers blocked any mention of phasing out coal, oil and gas.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 聯合國氣候談判破局。歐洲與較脆弱的國家否決了擬議協議，原因是沙烏地阿拉伯及其他產油國阻擋文本提及逐步淘汰煤、石油與天然氣。雙方在化石燃料議題上嚴重對立。</p>
 </article>
 <article class="article">
-  <h3 class="article-title"><a href="https://www.nytimes.com/2026/11/21/world/americas/mexico-el-chapo-isidro-drug-kingpin.html" target="_blank" rel="noopener noreferrer">Who Is the Mexican Drug Kingpin Known as El Chapo Isidro?</a></h3>
+  <h3 class="article-title"><a href="https://www.aljazeera.com/news/2026/11/22/houthis-report-attack-on-sanaa-as-saudi-arabia-intercepts-drone?traffic_source=rss" target="_blank" rel="noopener noreferrer">Saudi Arabia intercepts drone, missile as Houthis report attack on Sanaa</a></h3>
   
-  <p class="article-meta">NYT World · 11/22 18:16</p>
-  <p class="article-excerpt">The kingpin, Fausto Isidro Meza Flores, was captured in a violent operation in Mexico. He was one of the F.B.I.’s 10 most wanted fugitives.</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 墨西哥毒梟法烏斯托·伊西德羅·梅薩·弗洛雷斯（Fausto Isidro Meza Flores，外號「El Chapo Isidro」）在一場暴力行動中落網。他曾名列美國聯邦調查局（FBI）十大最受通緝逃犯。</p>
+  <p class="article-meta">Al Jazeera · 11/22 21:16</p>
+  <p class="article-excerpt">Houthi media say several people were injured in an attack on an oil company as Saudi air defences down a drone.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 胡塞武裝媒體稱，一家石油公司遭到攻擊，造成數人受傷，地點在葉門首都沙那。沙烏地阿拉伯方面表示，其防空系統攔截了一架無人機與一枚飛彈。</p>
 </article>
 <article class="article">
-  <h3 class="article-title"><a href="https://www.cna.com.tw/news/aopl/202611220154.aspx" target="_blank" rel="noopener noreferrer">湄公河委員會河內召開  缺乏強制力恐難解聖嬰旱象隱憂</a></h3>
+  <h3 class="article-title"><a href="https://www.aljazeera.com/features/2026/11/22/children-in-besieged-gaza-struggle-to-find-life-saving-insulin-for-diabetes?traffic_source=rss" target="_blank" rel="noopener noreferrer">Children in besieged Gaza struggle to find life-saving insulin for diabetes</a></h3>
   
-  <p class="article-meta">中央社 國際 · 11/22 18:07</p>
-  <p class="article-excerpt">（中央社記者曾婷瑄河內22日專電）面對超級聖嬰恐引爆大旱，處於湄公河最下游的越南，在20日河內登場的湄公河委員會理事會上疾呼共享水庫資訊與緊急預警，以面對嚴峻挑戰；然而該機制缺乏強制約束力，外交呼籲難撼上游大壩排程，凸顯下游國家無奈。</p>
+  <p class="article-meta">Al Jazeera · 11/22 21:15</p>
+  <p class="article-excerpt">Insulin and blood glucose testing supplies become increasingly difficult to obtain in war-torn Gaza.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 在遭圍困的加薩，胰島素與血糖檢測用品愈來愈難取得，罹患糖尿病的兒童難以獲得維生所需的藥物。戰事持續使相關醫療物資供應受到衝擊。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.cna.com.tw/news/aopl/202611220182.aspx" target="_blank" rel="noopener noreferrer">紐時：輝達醜聞爆發數年前　中國國安部已盯上AI晶片</a></h3>
   
+  <p class="article-meta">中央社 國際 · 11/22 20:34</p>
+  <p class="article-excerpt">（中央社北京22日綜合外電報導）紐約時報引述多國官員說法報導，中國最高情報機構國家安全部持續推動祕密行動，協助中企取得先進人工智慧（AI）晶片，同時蒐集該領域相關情報，這項行動已持續至少2年。</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.nytimes.com/2026/11/22/world/asia/mahjong-american-chinese-controversy.html" target="_blank" rel="noopener noreferrer">American vs. Chinese Mahjong: Why the Rivalry Is Stirring Controversy</a></h3>
+  
+  <p class="article-meta">NYT World · 11/22 20:32</p>
+  <p class="article-excerpt">American mahjong, with its own tiles and rules, has overshadowed the traditional Chinese game. The rivalry has fueled anger and cultural misunderstanding.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 美式麻將擁有自己的牌組與規則，其能見度已蓋過傳統中國麻將。兩種玩法之間的競爭引發不滿，也造成文化上的誤解與爭議。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.aljazeera.com/news/2026/11/22/us-congress-helped-end-the-vietnam-war-can-it-stop-the-iran?traffic_source=rss" target="_blank" rel="noopener noreferrer">US Congress helped end the Vietnam War. Can it stop the Iran war?</a></h3>
+  
+  <p class="article-meta">Al Jazeera · 11/22 20:31</p>
+  <p class="article-excerpt">Congress forbade funding for the Vietnam War, contributing to the fall of the South Vietnamese government in Saigon.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 美國國會過去曾禁止撥款支持越戰，促使西貢的南越政府垮台。文章探討國會是否能比照當年的作法，阻止美國對伊朗的戰爭。</p>
 </article>
 <article class="article">
   <h3 class="article-title"><a href="https://www.nytimes.com/2026/11/22/world/canada/canada-boreal-forest-degradation-deforestation-logging.html" target="_blank" rel="noopener noreferrer">Canada’s Boreal Forest Is Reshaped by Logging and Climate Change</a></h3>
   
-  <p class="article-meta">NYT World · 11/22 18:00</p>
+  <p class="article-meta">NYT World · 11/22 20:29</p>
   <p class="article-excerpt">Canada has framed the preservation of its boreal forest as a model for the world, but commercial logging combined with climate change is inflicting severe damage.</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 加拿大一直將保護北方針葉林（boreal forest）塑造為全球典範，但商業伐木加上氣候變遷，正對森林造成嚴重破壞，使其面貌改變。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 加拿大把保護北方針葉林標榜為全球典範，但商業伐木加上氣候變遷，正對森林造成嚴重破壞，使其面貌改變。</p>
 </article>
 <article class="article">
-  <h3 class="article-title"><a href="https://www.aljazeera.com/sports/2026/11/22/iraqi-bodybuilding-champion-sajad-jawad-dies-days-after-winning-the-asian-crown?traffic_source=rss" target="_blank" rel="noopener noreferrer">Iraqi bodybuilding champion Sajad Jawad dies days after winning the Asian crown</a></h3>
+  <h3 class="article-title"><a href="https://www.aljazeera.com/sports/2026/11/22/bruno-fernandes-manchester-united-contract-talks-premier-league-football?traffic_source=rss" target="_blank" rel="noopener noreferrer">Bruno Fernandes says contract talks on hold as Man United battle poor start</a></h3>
   
-  <p class="article-meta">Al Jazeera · 11/22 17:45</p>
-  <p class="article-excerpt">Sajad Jawad died three days after winning the gold medal in the 90kg category at the Asian Championships in Thailand.</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 伊拉克健美選手薩賈德·賈瓦德（Sajad Jawad）在泰國舉行的亞洲錦標賽奪得90公斤級金牌，三天後離世。報導並未提供死因等進一步細節。</p>
+  <p class="article-meta">Al Jazeera · 11/22 20:22</p>
+  <p class="article-excerpt">The Manchester United captain&#39;s current deal expires at the end of the season, though the club has an option to extend.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 曼聯隊長布魯諾·費南德斯表示，續約談判暫時擱置，球隊本季開局不佳。他目前的合約將於本季結束時到期，不過球會握有延長合約的選擇權。</p>
 </article>
 <article class="article">
-  <h3 class="article-title"><a href="https://www.cna.com.tw/news/aopl/202611220147.aspx" target="_blank" rel="noopener noreferrer">澤倫斯基：俄無人機襲基輔州住宅大樓  至少14人失聯</a></h3>
+  <h3 class="article-title"><a href="https://www.aljazeera.com/news/2026/11/22/israeli-settlers-attack-several-palestinian-villages-in-occupied-west-bank?traffic_source=rss" target="_blank" rel="noopener noreferrer">Israeli settlers attack several Palestinian villages in occupied West Bank</a></h3>
   
-  <p class="article-meta">中央社 國際 · 11/22 17:42</p>
-  <p class="article-excerpt">（中央社基輔22日綜合外電報導）烏克蘭總統澤倫斯基（Volodymyr Zelenskyy）表示，俄羅斯無人機今天上午襲擊基輔州一棟住宅大樓，至少有14人可能仍受困在瓦礫堆下。</p>
-  
+  <p class="article-meta">Al Jazeera · 11/22 20:19</p>
+  <p class="article-excerpt">Attacks in Ramallah, el-Bireh provinces included the burning of 12 vehicles and spray-painting racist slogans on homes.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 以色列屯墾者攻擊約旦河西岸被占領區多個巴勒斯坦村莊，地點包括拉姆安拉與比雷地區，12 輛車遭縱火焚毀，民宅牆面被噴上種族歧視標語。</p>
 </article>
 <article class="article">
-  <h3 class="article-title"><a href="https://www.aljazeera.com/features/2026/11/22/restored-wells-bring-life-back-to-hebrons-occupied-old-city?traffic_source=rss" target="_blank" rel="noopener noreferrer">Restored wells bring life back to Hebron’s occupied Old City</a></h3>
+  <h3 class="article-title"><a href="https://www.aljazeera.com/news/2026/11/22/whats-behind-irans-escalation-of-attacks-in-the-gulf?traffic_source=rss" target="_blank" rel="noopener noreferrer">What’s behind Iran’s escalation of attacks in the Gulf?</a></h3>
   
-  <p class="article-meta">Al Jazeera · 11/22 17:33</p>
-  <p class="article-excerpt">Hebron&#39;s Old City has been under constant siege by Israeli settlers and the military.</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 約旦河西岸希伯崙（Hebron）被占領的舊城區長期受以色列屯墾者與軍隊圍困，當地水井經修復後，為舊城帶來新的生活活力。</p>
+  <p class="article-meta">Al Jazeera · 11/22 19:46</p>
+  <p class="article-excerpt">Tehran has ramped up attacks as the US naval blockade and sanctions campaign hurt the country economically.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 德黑蘭近期加強在波斯灣的攻擊行動。分析指出，美國的海上封鎖與制裁行動已對伊朗經濟造成衝擊，成為其升高攻勢的背景。</p>
 </article>
 <article class="article">
-  <h3 class="article-title"><a href="https://www.aljazeera.com/gallery/2026/11/22/photos-people-rally-across-france-over-living-costs-public-services?traffic_source=rss" target="_blank" rel="noopener noreferrer">Photos: People rally across France over living costs, public services</a></h3>
+  <h3 class="article-title"><a href="https://www.aljazeera.com/news/2026/11/22/why-have-un-efforts-to-regulate-killer-robots-stalled?traffic_source=rss" target="_blank" rel="noopener noreferrer">Why have UN efforts to regulate ‘killer robots’ stalled?</a></h3>
   
-  <p class="article-meta">Al Jazeera · 11/22 17:27</p>
-  <p class="article-excerpt">Protests held on sixth weekend as tens of thousands march over inequality and organisers plan more rallies.</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 法國各地連續第六個週末舉行抗議，數以萬計民眾上街，訴求涵蓋生活成本、公共服務與不平等問題。主辦團體表示將規劃更多集會活動。</p>
+  <p class="article-meta">Al Jazeera · 11/22 19:44</p>
+  <p class="article-excerpt">CWC countries agree to &#39;elaborate&#39; on potential accord regulating autonomous weapons in two years, prompting criticism.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 《特定常規武器公約》（CWC）成員國同意在兩年內就規範自主武器的潛在協議進一步「詳細討論」，此結果引發外界批評，聯合國管制「殺手機器人」的努力進展停滯。</p>
 </article>
 <article class="article">
-  <h3 class="article-title"><a href="https://www.cna.com.tw/news/aopl/202611220141.aspx" target="_blank" rel="noopener noreferrer">日本多地大雪　數百遊客一度受困福島旅館</a></h3>
+  <h3 class="article-title"><a href="https://www.cna.com.tw/news/aopl/202611220172.aspx" target="_blank" rel="noopener noreferrer">俄貨船疑遭烏克蘭無人機襲擊　漂流芬蘭水域燃燒不止</a></h3>
   
-  <p class="article-meta">中央社 國際 · 11/22 17:20</p>
-  <p class="article-excerpt">（中央社東京22日綜合外電報導）日本多地受到強烈寒流影響而下雪，福島縣的雪勢使當地居民與旅館的遊客，共約1400人一度因聯外道路中斷而受困。一名遊客回憶，車頂上的積雪厚到難以辨認車子的形狀。</p>
+  <p class="article-meta">中央社 國際 · 11/22 19:32</p>
+  <p class="article-excerpt">（中央社赫爾辛基22日綜合外電報導）芬蘭海岸防衛隊今天表示，一艘在波羅的海遭無人機攻擊的俄羅斯貨船持續燃燒，救援人員徹夜設法滅火，仍未能將火勢撲滅。</p>
   
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://www.bbc.co.uk/news/articles/cw3dgk29d37no?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">South Korea education minister resigns over exam cheating scandal</a></h3>
-  
-  <p class="article-meta">BBC World · 11/22 17:20</p>
-  <p class="article-excerpt">Choi Kyo-jin admits last-minute measures to stop AI-assisted cheating during the college entrance exam caused chaos.</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 南韓教育部長崔教振（Choi Kyo-jin）因大學入學考試作弊風波請辭。他承認，為防堵運用人工智慧（AI）作弊而在最後一刻採取的措施，造成考場混亂。</p>
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://www.cna.com.tw/news/aopl/202611220139.aspx" target="_blank" rel="noopener noreferrer">美國會迎新局　民主黨非裔新議員人數創30多年最多</a></h3>
-  
-  <p class="article-meta">中央社 國際 · 11/22 17:16</p>
-  <p class="article-excerpt">（中央社華盛頓21日綜合外電報導）根據路透社分析，美國11月期中選舉後，明年1月將迎來30多年來最多新任非裔民主黨籍國會議員，即便共和黨主導選區重劃。</p>
-  
-</article>
-<article class="article">
-  <h3 class="article-title"><a href="https://www.aljazeera.com/video/newsfeed/2026/11/22/trumps-exit-strategy-may-depend-on-quietly-lifting-iran?traffic_source=rss" target="_blank" rel="noopener noreferrer">‘Trump’s exit strategy may depend on quietly lifting Iran blockade’</a></h3>
-  
-  <p class="article-meta">Al Jazeera · 11/22 17:06</p>
-  <p class="article-excerpt">US President Donald Trump will have to ease the naval blockade on Iran if he wants the war to wind down, says analyst.</p>
-  <p class="article-summary"><span class="summary-label">中文摘要</span> 一名分析師表示，美國總統川普若想讓對伊朗的戰事逐步降溫，必須放寬對伊朗的海上封鎖，其退場策略可能取決於悄悄解除封鎖。</p>
 </article>
   </div>
     </div>
