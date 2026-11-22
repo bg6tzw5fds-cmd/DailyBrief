@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "test": "tsx --test lib/ai/*.test.ts lib/ai/backends/*.test.ts scripts/*.test.mjs",
+    "test": "tsx --test lib/ai/*.test.ts lib/trading/*.test.ts lib/ai/backends/*.test.ts scripts/*.test.mjs",
     "dry-run": "node scripts/run-tsx.mjs scripts/dry-run.ts",
     "daily": "node scripts/run-tsx.mjs scripts/daily.ts",
     "render": "tsx scripts/render.ts",

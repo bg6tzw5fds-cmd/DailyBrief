@@ -302,7 +302,7 @@ async function main() {
     margin = await fetchTwseMargin();
     console.log(
       margin
-        ? `[daily] TWSE margin ${margin.date}: 融資 ${(margin.marginAmount / 100000).toFixed(1)} 億, ${margin.stocks.length} watchlist stocks`
+        ? `[daily] TWSE margin ${margin.date}: 融資 ${(margin.marginAmount / 100000).toFixed(1)} 億, ${margin.stocks.length} ETFs, ${margin.history?.length ?? 0} history days`
         : `[daily] TWSE margin: no data (non-fatal)`,
     );
   } catch (e) {

@@ -88,8 +88,19 @@ const TEXTS_ZH = {
   snapshot1d: "日漲跌",
   snapshot5d: "5 日",
   digestFinance: "財經與總經重點",
-  marginTitle: "台股信用交易（上市）",
-  marginNote: "資料來源：臺灣證券交易所；為前一交易日資料，張數為交易單位",
+  marginTitle: "台股信用交易",
+  marginNote: "資料來源：臺灣證券交易所臺股儀表板；為前一交易日資料。融資餘額為上市（含 ETF）；擔保維持率、追繳為上市＋上櫃全市場；追繳戶數指整戶擔保維持率低於 130% 之戶數",
+  marginKeepRate: "全市場擔保維持率",
+  marginCallAcc: "追繳戶數",
+  marginCallAmt: "追繳金額",
+  marginHistory: "近 5 個交易日",
+  marginDate: "日期",
+  marginIndex: "加權指數",
+  marginPct: "漲跌%",
+  marginAmtYi: "融資餘額(億)",
+  marginAmtChg: "增減(億)",
+  marginCallAmtYi: "追繳金額(億)",
+  marginEtf: "ETF 融資融券（張）",
   marginAmount: "融資餘額",
   marginUnits: "融資（張）",
   marginShort: "融券（張）",
@@ -167,8 +178,19 @@ const TEXTS_EN: typeof TEXTS_ZH = {
   snapshot1d: "1D",
   snapshot5d: "5D",
   digestFinance: "Finance & Macro",
-  marginTitle: "TWSE Margin Trading",
-  marginNote: "Source: TWSE; previous trading day; units in lots",
+  marginTitle: "Taiwan Margin Trading",
+  marginNote: "Source: TWSE dashboard; previous trading day. Margin balance is TWSE-listed (incl. ETFs); maintenance ratio and margin calls cover TWSE + TPEx; call accounts = accounts below 130%",
+  marginKeepRate: "Market maint. ratio",
+  marginCallAcc: "Margin-call accts",
+  marginCallAmt: "Margin-call amount",
+  marginHistory: "Last 5 trading days",
+  marginDate: "Date",
+  marginIndex: "TAIEX",
+  marginPct: "Chg%",
+  marginAmtYi: "Margin (100M)",
+  marginAmtChg: "Chg (100M)",
+  marginCallAmtYi: "Calls (100M)",
+  marginEtf: "ETF margin / short (lots)",
   marginAmount: "Margin balance",
   marginUnits: "Margin (lots)",
   marginShort: "Short (lots)",
@@ -1282,6 +1304,9 @@ export function renderHtml(
   .margin-stats .widget-label { font-size: 0.72rem; color: var(--muted); }
   .margin-stats .widget-sub { font-size: 0.78rem; font-variant-numeric: tabular-nums; }
   .margin-code { color: var(--muted); font-size: 0.75rem; }
+  .margin-sub { font-size: 0.78rem; color: var(--muted); font-weight: 600; margin: 0.9rem 0 0.3rem; }
+  .margin-scroll { overflow-x: auto; }
+  .margin-scroll .snapshot-table { min-width: 560px; }
   @media (max-width: 520px) {
     .snapshot-table { font-size: 0.8rem; }
     .snapshot-table td, .snapshot-table th { padding: 0.28rem 0.25rem; }
@@ -1672,28 +1697,74 @@ function fmtSignedInt(n: number): string {
 
 function renderMargin(m: MarginSnapshot | undefined): string {
   if (!m) return "";
-  const yi = (k: number) => (k / 100000).toFixed(1); // 仟元 → 億元
+  const yi = (k: number) => (k / 100000).toFixed(2); // 仟元 → 億元
+  const yiY = (y: number) => (y / 1e8).toFixed(2); // 元 → 億元
   const cls = (n: number) => (n >= 0 ? "positive" : "negative");
+  const signed = (s: string, n: number) => (n >= 0 ? "+" : "") + s;
+  const dash = "—";
+  const hist = m.history ?? [];
+  const last = hist[hist.length - 1];
+  const prev = hist[hist.length - 2];
   const amtChg = m.marginAmountChange;
-  const stockRows = m.stocks
+
+  const stat = (label: string, value: string, sub = "", subCls = "") =>
+    `<div><div class="widget-label">${label}</div><div class="widget-value">${value}</div>${sub ? `<div class="widget-sub ${subCls}">${sub}</div>` : ""}</div>`;
+
+  const stats: string[] = [];
+  if (m.marginAmount) stats.push(stat(STR.marginAmount, `${yi(m.marginAmount)} 億`, `${signed(yi(amtChg), amtChg)} 億`, cls(amtChg)));
+  if (last?.keepRate != null) {
+    const d = prev?.keepRate != null ? last.keepRate - prev.keepRate : null;
+    stats.push(stat(STR.marginKeepRate, `${last.keepRate.toFixed(2)}%`, d != null ? `${signed(d.toFixed(2), d)}%` : "", d != null ? cls(d) : ""));
+  }
+  if (last?.callAccounts != null) {
+    const d = prev?.callAccounts != null ? last.callAccounts - prev.callAccounts : null;
+    stats.push(stat(STR.marginCallAcc, `${fmtInt(last.callAccounts)} 戶`, d != null ? fmtSignedInt(d) : ""));
+  }
+  if (last?.callAmount != null) stats.push(stat(STR.marginCallAmt, `${yiY(last.callAmount)} 億`));
+  if (m.marginUnits) stats.push(stat(STR.marginUnits, fmtInt(m.marginUnits), fmtSignedInt(m.marginUnitsChange), cls(m.marginUnitsChange)));
+  if (m.shortUnits) stats.push(stat(STR.marginShort, fmtInt(m.shortUnits), fmtSignedInt(m.shortUnitsChange), cls(m.shortUnitsChange)));
+  if (m.marginUnits) stats.push(stat(STR.marginRatio, `${m.shortToMarginRatio.toFixed(2)}%`));
+
+  const histRows = [...hist]
+    .reverse()
+    .map(
+      (d) =>
+        `<tr><td class="snap-name">${escapeHtml(d.date.slice(5).replace("-", "/"))}</td>` +
+        `<td class="snap-num">${d.indexClose != null ? d.indexClose.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : dash}</td>` +
+        `<td class="snap-num ${d.indexPct != null ? cls(d.indexPct) : ""}">${d.indexPct != null ? signed(d.indexPct.toFixed(2), d.indexPct) + "%" : dash}</td>` +
+        `<td class="snap-num">${d.marginAmount != null ? yi(d.marginAmount) : dash}</td>` +
+        `<td class="snap-num ${d.marginAmountChange != null ? cls(d.marginAmountChange) : ""}">${d.marginAmountChange != null ? signed(yi(d.marginAmountChange), d.marginAmountChange) : dash}</td>` +
+        `<td class="snap-num">${d.keepRate != null ? d.keepRate.toFixed(2) + "%" : dash}</td>` +
+        `<td class="snap-num">${d.callAccounts != null ? fmtInt(d.callAccounts) : dash}</td>` +
+        `<td class="snap-num">${d.callAmount != null ? yiY(d.callAmount) : dash}</td></tr>`,
+    )
+    .join("");
+
+  const etfRows = m.stocks
     .map(
       (s) =>
         `<tr><td class="snap-name">${escapeHtml(s.name)} <span class="margin-code">${escapeHtml(s.code)}</span></td><td class="snap-num">${fmtInt(s.marginToday)}</td><td class="snap-num ${cls(s.marginChange)}">${fmtSignedInt(s.marginChange)}</td><td class="snap-num">${fmtInt(s.shortToday)}</td><td class="snap-num ${cls(s.shortChange)}">${fmtSignedInt(s.shortChange)}</td></tr>`,
     )
     .join("");
+
   return `<section class="snapshot-card margin-card">
     <span class="eyebrow">${STR.marginTitle} · ${escapeHtml(m.date)}</span>
-    <div class="margin-stats">
-      <div><div class="widget-label">${STR.marginAmount}</div><div class="widget-value">${yi(m.marginAmount)} 億</div><div class="widget-sub ${cls(amtChg)}">${amtChg >= 0 ? "+" : ""}${yi(amtChg)} 億</div></div>
-      <div><div class="widget-label">${STR.marginUnits}</div><div class="widget-value">${fmtInt(m.marginUnits)}</div><div class="widget-sub ${cls(m.marginUnitsChange)}">${fmtSignedInt(m.marginUnitsChange)}</div></div>
-      <div><div class="widget-label">${STR.marginShort}</div><div class="widget-value">${fmtInt(m.shortUnits)}</div><div class="widget-sub ${cls(m.shortUnitsChange)}">${fmtSignedInt(m.shortUnitsChange)}</div></div>
-      <div><div class="widget-label">${STR.marginRatio}</div><div class="widget-value">${m.shortToMarginRatio.toFixed(2)}%</div></div>
-    </div>
+    ${stats.length ? `<div class="margin-stats">${stats.join("")}</div>` : ""}
     ${
-      stockRows
-        ? `<table class="snapshot-table">
-      <thead><tr><th>${STR.marginStock}</th><th>${STR.marginUnits}</th><th>${STR.marginChange}</th><th>${STR.marginShort}</th><th>${STR.marginChange}</th></tr></thead>
-      <tbody>${stockRows}</tbody>
+      histRows
+        ? `<div class="margin-sub">${STR.marginHistory}</div>
+    <div class="margin-scroll"><table class="snapshot-table">
+      <thead><tr><th>${STR.marginDate}</th><th>${STR.marginIndex}</th><th>${STR.marginPct}</th><th>${STR.marginAmtYi}</th><th>${STR.marginAmtChg}</th><th>${STR.marginKeepRate}</th><th>${STR.marginCallAcc}</th><th>${STR.marginCallAmtYi}</th></tr></thead>
+      <tbody>${histRows}</tbody>
+    </table></div>`
+        : ""
+    }
+    ${
+      etfRows
+        ? `<div class="margin-sub">${STR.marginEtf}</div>
+    <table class="snapshot-table">
+      <thead><tr><th>ETF</th><th>${STR.marginUnits}</th><th>${STR.marginChange}</th><th>${STR.marginShort}</th><th>${STR.marginChange}</th></tr></thead>
+      <tbody>${etfRows}</tbody>
     </table>`
         : ""
     }

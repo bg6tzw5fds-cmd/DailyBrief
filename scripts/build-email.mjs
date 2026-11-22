@@ -55,14 +55,41 @@ ${rows.map((t) => `<tr><td ${td}>${esc(t.displayName)}</td><td ${tdr}>${price(t.
 
   const m = report.margin;
   if (m) {
-    const yi = (k) => (k / 100000).toFixed(1);
-    parts.push(h2(`台股信用交易（上市 · ${esc(m.date)}）`));
-    parts.push(`<p style="font-size:14px;line-height:1.8;margin:0;">融資餘額 <b>${yi(m.marginAmount)} 億元</b>（<span style="color:${color(m.marginAmountChange)}">${m.marginAmountChange >= 0 ? "+" : ""}${yi(m.marginAmountChange)} 億</span>）・融資 ${int(m.marginUnits)} 張（<span style="color:${color(m.marginUnitsChange)}">${sint(m.marginUnitsChange)}</span>）・融券 ${int(m.shortUnits)} 張（<span style="color:${color(m.shortUnitsChange)}">${sint(m.shortUnitsChange)}</span>）・券資比 ${m.shortToMarginRatio.toFixed(2)}%</p>`);
+    const yi = (k) => (k / 100000).toFixed(2); // 仟元 → 億元
+    const yiY = (y) => (y / 1e8).toFixed(2); // 元 → 億元
+    const sgn = (s, n) => (n >= 0 ? "+" : "") + s;
+    const hist = m.history ?? [];
+    const last = hist[hist.length - 1];
+    const th = (t, right = true) => `<th ${(right ? tdr : td).replace("font-size:14px;", "font-size:12px;color:#71717a;" + (right ? "" : "text-align:left;"))}>${t}</th>`;
+    const tds = 'style="padding:5px 6px;border-bottom:1px solid #eee;font-size:13px;text-align:right;white-space:nowrap;"';
+    const cell = (v, n) => `<td ${n == null ? tds : tds.replace('style="', `style="color:${color(n)};`)}>${v ?? "—"}</td>`;
+
+    parts.push(h2(`台股信用交易（${esc(m.date)}）`));
+    const head = [];
+    if (m.marginAmount) head.push(`上市融資餘額 <b>${yi(m.marginAmount)} 億元</b>（<span style="color:${color(m.marginAmountChange)}">${sgn(yi(m.marginAmountChange), m.marginAmountChange)} 億</span>）`);
+    if (last?.keepRate != null) head.push(`全市場擔保維持率 <b>${last.keepRate.toFixed(2)}%</b>`);
+    if (last?.callAccounts != null) head.push(`追繳 <b>${int(last.callAccounts)} 戶</b>${last.callAmount != null ? `／${yiY(last.callAmount)} 億元` : ""}`);
+    if (m.marginUnits) head.push(`券資比 ${m.shortToMarginRatio.toFixed(2)}%`);
+    if (head.length) parts.push(`<p style="font-size:14px;line-height:1.8;margin:0 0 8px;">${head.join("・")}</p>`);
+
+    if (hist.length) {
+      parts.push(`<table cellspacing="0" cellpadding="0" style="width:100%;border-collapse:collapse;">
+<tr>${th("日期", false)}${th("加權指數")}${th("漲跌%")}${th("融資(億)")}${th("增減(億)")}${th("維持率")}${th("追繳戶")}${th("追繳(億)")}</tr>
+${[...hist]
+  .reverse()
+  .map(
+    (d) =>
+      `<tr><td ${td.replace("font-size:14px;", "font-size:13px;")}>${esc(d.date.slice(5).replace("-", "/"))}</td>${cell(d.indexClose != null ? price(d.indexClose) : null)}${cell(d.indexPct != null ? pct(d.indexPct) : null, d.indexPct)}${cell(d.marginAmount != null ? yi(d.marginAmount) : null)}${cell(d.marginAmountChange != null ? sgn(yi(d.marginAmountChange), d.marginAmountChange) : null, d.marginAmountChange)}${cell(d.keepRate != null ? d.keepRate.toFixed(2) + "%" : null)}${cell(d.callAccounts != null ? int(d.callAccounts) : null)}${cell(d.callAmount != null ? yiY(d.callAmount) : null)}</tr>`,
+  )
+  .join("\n")}
+</table>`);
+    }
     if (m.stocks?.length) {
-      parts.push(`<p style="font-size:13px;line-height:1.8;color:#3f3f46;margin:6px 0 0;">${m.stocks
-        .map((s) => `${esc(s.name)}：融資 ${int(s.marginToday)}（<span style="color:${color(s.marginChange)}">${sint(s.marginChange)}</span>）／融券 ${int(s.shortToday)}（<span style="color:${color(s.shortChange)}">${sint(s.shortChange)}</span>）`)
+      parts.push(`<p style="font-size:13px;line-height:1.8;color:#3f3f46;margin:8px 0 0;"><b>ETF 融資融券（張）</b><br>${m.stocks
+        .map((s) => `${esc(s.name)} ${esc(s.code)}：融資 ${int(s.marginToday)}（<span style="color:${color(s.marginChange)}">${sint(s.marginChange)}</span>）／融券 ${int(s.shortToday)}（<span style="color:${color(s.shortChange)}">${sint(s.shortChange)}</span>）`)
         .join("<br>")}</p>`);
     }
+    parts.push(`<p style="font-size:11px;color:#a1a1aa;margin:6px 0 0;">融資餘額為上市（含 ETF）；擔保維持率、追繳為上市＋上櫃全市場。資料來源：臺灣證券交易所。</p>`);
   }
 
   const briefs = (title, list) => {
