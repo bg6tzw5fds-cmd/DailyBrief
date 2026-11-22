@@ -346,7 +346,10 @@ async function main() {
   console.log(`[daily] done.`);
 }
 
-main().catch((e) => {
+// 明確結束程序：避免殘留的網路連線讓 GitHub Actions 卡住直到逾時
+main()
+  .then(() => process.exit(0))
+  .catch((e) => {
   console.error(`[daily] FAILED:`, e);
   process.exit(1);
 });
