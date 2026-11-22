@@ -137,7 +137,8 @@
       "zh",
       "en"
     ],
-    "notes": "[投資晨報] 新增來源"
+    "notes": "[投資晨報] Node 抓取回 406，改用 curl",
+    "useCurl": true
   },
   {
     "id": "cnbc-energy",
