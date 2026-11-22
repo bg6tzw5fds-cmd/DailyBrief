@@ -70,7 +70,7 @@ const FINANCE_SYSTEM_PROMPT_ZH = `你是一名台灣財經編輯，為英文／�
 輸出嚴格 JSON 物件，不要 markdown 包裹：
 {
   "summaries": [
-    { "url": "<原 url，從輸入中精確複製>", "summary": "<50-100 字繁體中文摘要>" },
+    { "url": "<原 url，從輸入中精確複製>", "summary": "<50-100 字繁體中文摘要>", "title_zh": "<只有原標題是簡體中文時才提供：改寫成繁體中文的標題，≤30 字；其他情況省略此欄位>" },
     ...
   ]
 }
@@ -218,11 +218,17 @@ const PROMPTS =
 const USER_PROMPT_HEADER =
   REPORT_LOCALE === "en"
     ? (n: number) => `Candidate items (${n} entries, JSON array):`
-    : (n: number) => `候选条目（共 ${n} 条，JSON 数组）：`;
+    : (n: number) => `候選條目（共 ${n} 則，JSON 陣列）：`;
 const USER_PROMPT_FOOTER =
   REPORT_LOCALE === "en"
     ? `Output \`{"summaries": [{"url": ..., "summary": ...}, ...]}\` — url must be copied exactly from input.`
-    : `请输出 {"summaries": [{"url": ..., "summary": ...}, ...]}，url 必须精确回填输入值。`;
+    : `請輸出 {"summaries": [{"url": ..., "summary": ..., "title_zh": ...}, ...]}，url 必須精確回填輸入值；title_zh 只在原標題是簡體中文時提供。`;
+
+/**
+ * 投資晨報：簡體中文來源（如華爾街見聞）的繁體標題，url → 標題。
+ * 由 enrichment 順帶產生，daily.ts 會用它取代原始簡體標題。
+ */
+export const translatedTitles = new Map<string, string>();
 
 async function runEnrichment(
   payload: unknown[],
@@ -236,7 +242,7 @@ async function runEnrichment(
   const langHeader =
     REPORT_LOCALE === "en"
       ? "**Output language: ENGLISH ONLY.** Every summary string must be written entirely in English, even if the input title or description contains Chinese."
-      : "**输出语言：仅中文。** 每个 summary 字段必须全部是中文，即使输入条目是英文。";
+      : "**輸出語言：僅限繁體中文（台灣用語）。** 每個 summary 欄位都必須是繁體中文，即使輸入是英文或簡體中文。";
   const userPrompt = [
     langHeader,
     "",
@@ -256,7 +262,7 @@ async function runEnrichment(
     });
     const cleaned = extractJson(text);
 
-    let parsed: { summaries?: Array<{ url?: string; summary?: string }> };
+    let parsed: { summaries?: Array<{ url?: string; summary?: string; title_zh?: string }> };
     try {
       parsed = JSON.parse(cleaned);
     } catch {
@@ -265,6 +271,7 @@ async function runEnrichment(
 
     for (const s of parsed.summaries ?? []) {
       if (s.url && s.summary) result.set(s.url, s.summary.trim());
+      if (s.url && s.title_zh?.trim()) translatedTitles.set(s.url, s.title_zh.trim());
     }
 
     // Diagnostic: if we got back substantially fewer entries than asked for,

@@ -56,6 +56,19 @@
     "notes": "[投資晨報] 新增來源"
   },
   {
+    "id": "wallstreetcn",
+    "name": "華爾街見聞",
+    "type": "api",
+    "url": "https://wallstreetcn.com/",
+    "category": "finance",
+    "subcategory": "wscn",
+    "enabled": true,
+    "locales": [
+      "zh"
+    ],
+    "notes": "[投資晨報] 使用者指定新增；官方 JSON API，簡體內容由 AI 摘要轉為繁體"
+  },
+  {
     "id": "fed-press",
     "name": "Fed 新聞稿",
     "type": "rss",
@@ -853,18 +866,6 @@
     "name": "人民网财经",
     "type": "rss",
     "url": "http://www.people.com.cn/rss/finance.xml",
-    "category": "finance",
-    "subcategory": "news",
-    "enabled": false,
-    "locales": [
-      "zh"
-    ]
-  },
-  {
-    "id": "wallstreetcn",
-    "name": "华尔街见闻",
-    "type": "rss",
-    "url": "https://rsshub.app/wallstreetcn/news/global",
     "category": "finance",
     "subcategory": "news",
     "enabled": false,

@@ -5,6 +5,7 @@ import { fetchHuggingfacePapers } from "./huggingface-papers";
 import { fetchLinuxDo } from "./linuxdo";
 import { fetchRss } from "./rss";
 import { fetchV2ex } from "./v2ex";
+import { fetchWallstreetcn } from "./wallstreetcn";
 import type { RawArticle, SourceDef } from "./types";
 
 /**
@@ -16,6 +17,7 @@ export async function fetchSource(source: SourceDef): Promise<RawArticle[]> {
   if (source.id === "github-trending") return fetchGithubTrending(source.id);
   if (source.id === "v2ex-hot") return fetchV2ex(source.id);
   if (source.id === "linuxdo") return fetchLinuxDo(source.id);
+  if (source.id === "wallstreetcn") return fetchWallstreetcn(source.id);
   if (source.id === "attentionvc-ai") return fetchAttentionVc(source.id);
   if (source.id === "huggingface-papers") return fetchHuggingfacePapers(source.id, source.keywords);
   return fetchRss(source.id, source.url, source.category, {

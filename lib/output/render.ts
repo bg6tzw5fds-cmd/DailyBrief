@@ -10,6 +10,7 @@ import { getReportTz } from "../utils";
 import type { Category, SourceDef } from "../sources/types";
 import { V2EX_OFF_TOPIC_RE } from "../sources/v2ex";
 import type { TickerAnalysis } from "../trading/signals";
+import type { MarginSnapshot } from "../trading/twse-margin";
 import {
   getAssetGroupLabels,
   ASSET_GROUP_ORDER,
@@ -38,6 +39,7 @@ const TEXTS_ZH = {
   subTwMarket: "台灣財經",
   subCentralBank: "央行與總經",
   subEnergy: "能源與原物料",
+  subWscn: "華爾街見聞",
   subTrendingPapers: "熱門論文",
   subXViral: "X 推文",
   subBlogWeekly: "部落格",
@@ -86,6 +88,14 @@ const TEXTS_ZH = {
   snapshot1d: "日漲跌",
   snapshot5d: "5 日",
   digestFinance: "財經與總經重點",
+  marginTitle: "台股信用交易（上市）",
+  marginNote: "資料來源：臺灣證券交易所；為前一交易日資料，張數為交易單位",
+  marginAmount: "融資餘額",
+  marginUnits: "融資（張）",
+  marginShort: "融券（張）",
+  marginRatio: "券資比",
+  marginStock: "個股",
+  marginChange: "增減",
   digestTech: "AI 與半導體重點",
   digestPolitics: "國際與地緣重點",
   digestEditorNote: "編輯觀點",
@@ -147,6 +157,7 @@ const TEXTS_EN: typeof TEXTS_ZH = {
   subTwMarket: "Taiwan Markets",
   subCentralBank: "Central Banks & Macro",
   subEnergy: "Energy & Materials",
+  subWscn: "WallstreetCN",
   digestHeadline: "Headline",
   digestOverview: "Overview",
   digestSnapshot: "Market Snapshot",
@@ -156,6 +167,14 @@ const TEXTS_EN: typeof TEXTS_ZH = {
   snapshot1d: "1D",
   snapshot5d: "5D",
   digestFinance: "Finance & Macro",
+  marginTitle: "TWSE Margin Trading",
+  marginNote: "Source: TWSE; previous trading day; units in lots",
+  marginAmount: "Margin balance",
+  marginUnits: "Margin (lots)",
+  marginShort: "Short (lots)",
+  marginRatio: "Short/Margin",
+  marginStock: "Stock",
+  marginChange: "Chg",
   digestTech: "AI & Semis",
   digestPolitics: "World & Geopolitics",
   digestEditorNote: "Editor's Note",
@@ -213,7 +232,7 @@ const SUBCATEGORY_ORDER: Partial<Record<Category, string[]>> = {
   // zh mode keeps cn-community (V2EX / LinuxDo); en mode keeps
   // overseas-community (Hacker News / r/stocks).
   tech: ["semis", "ai-news", "tw-tech", "github-trending", "trending-papers", "x-viral", "cn-community", "overseas-community"],
-  finance: ["tw-market", "news", "central-bank", "energy"],
+  finance: ["tw-market", "news", "wscn", "central-bank", "energy"],
   politics: ["world"],
 };
 
@@ -235,6 +254,7 @@ const SUBCATEGORY_LABELS: Record<string, string> = {
   "tw-market": STR.subTwMarket,
   "central-bank": STR.subCentralBank,
   energy: STR.subEnergy,
+  wscn: STR.subWscn,
 };
 
 /**
@@ -290,6 +310,7 @@ export const MERGED_SUBGROUP_LIMITS: Record<string, number> = {
   "tech:tw-tech": 12,
   "finance:tw-market": 15,
   "finance:news": 15,
+  "finance:wscn": 15,
   "finance:central-bank": 10,
   "finance:energy": 10,
   "politics:world": 12,
@@ -1252,6 +1273,15 @@ export function renderHtml(
   .snap-num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
   .snapshot-note { margin: 0.45rem 0 0; font-size: 0.72rem; color: var(--muted); }
   .digest-category { margin-top: 1.2rem; }
+  .margin-stats {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.6rem; margin: 0.2rem 0 0.8rem;
+  }
+  @media (max-width: 520px) { .margin-stats { grid-template-columns: repeat(2, 1fr); } }
+  .margin-stats > div { background: var(--card); border-radius: 0.4rem; padding: 0.5rem 0.7rem; }
+  .margin-stats .widget-value { font-size: 1.05rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .margin-stats .widget-label { font-size: 0.72rem; color: var(--muted); }
+  .margin-stats .widget-sub { font-size: 0.78rem; font-variant-numeric: tabular-nums; }
+  .margin-code { color: var(--muted); font-size: 0.75rem; }
   @media (max-width: 520px) {
     .snapshot-table { font-size: 0.8rem; }
     .snapshot-table td, .snapshot-table th { padding: 0.28rem 0.25rem; }
@@ -1633,6 +1663,44 @@ function renderSnapshot(trading: TradingSection | undefined): string {
   </section>`;
 }
 
+function fmtInt(n: number): string {
+  return Math.round(n).toLocaleString("en-US");
+}
+function fmtSignedInt(n: number): string {
+  return (n >= 0 ? "+" : "") + fmtInt(n);
+}
+
+function renderMargin(m: MarginSnapshot | undefined): string {
+  if (!m) return "";
+  const yi = (k: number) => (k / 100000).toFixed(1); // 仟元 → 億元
+  const cls = (n: number) => (n >= 0 ? "positive" : "negative");
+  const amtChg = m.marginAmountChange;
+  const stockRows = m.stocks
+    .map(
+      (s) =>
+        `<tr><td class="snap-name">${escapeHtml(s.name)} <span class="margin-code">${escapeHtml(s.code)}</span></td><td class="snap-num">${fmtInt(s.marginToday)}</td><td class="snap-num ${cls(s.marginChange)}">${fmtSignedInt(s.marginChange)}</td><td class="snap-num">${fmtInt(s.shortToday)}</td><td class="snap-num ${cls(s.shortChange)}">${fmtSignedInt(s.shortChange)}</td></tr>`,
+    )
+    .join("");
+  return `<section class="snapshot-card margin-card">
+    <span class="eyebrow">${STR.marginTitle} · ${escapeHtml(m.date)}</span>
+    <div class="margin-stats">
+      <div><div class="widget-label">${STR.marginAmount}</div><div class="widget-value">${yi(m.marginAmount)} 億</div><div class="widget-sub ${cls(amtChg)}">${amtChg >= 0 ? "+" : ""}${yi(amtChg)} 億</div></div>
+      <div><div class="widget-label">${STR.marginUnits}</div><div class="widget-value">${fmtInt(m.marginUnits)}</div><div class="widget-sub ${cls(m.marginUnitsChange)}">${fmtSignedInt(m.marginUnitsChange)}</div></div>
+      <div><div class="widget-label">${STR.marginShort}</div><div class="widget-value">${fmtInt(m.shortUnits)}</div><div class="widget-sub ${cls(m.shortUnitsChange)}">${fmtSignedInt(m.shortUnitsChange)}</div></div>
+      <div><div class="widget-label">${STR.marginRatio}</div><div class="widget-value">${m.shortToMarginRatio.toFixed(2)}%</div></div>
+    </div>
+    ${
+      stockRows
+        ? `<table class="snapshot-table">
+      <thead><tr><th>${STR.marginStock}</th><th>${STR.marginUnits}</th><th>${STR.marginChange}</th><th>${STR.marginShort}</th><th>${STR.marginChange}</th></tr></thead>
+      <tbody>${stockRows}</tbody>
+    </table>`
+        : ""
+    }
+    <p class="snapshot-note">${STR.marginNote}</p>
+  </section>`;
+}
+
 function renderDigestPanel(report: DailyReport): string {
   const hasDigest =
     !!report.hero_headline ||
@@ -1652,6 +1720,7 @@ function renderDigestPanel(report: DailyReport): string {
     </section>`);
   }
   parts.push(renderSnapshot(report.trading));
+  parts.push(renderMargin(report.margin));
   parts.push(renderBriefSection(STR.digestFinance, report.finance_briefs));
   parts.push(renderBriefSection(STR.digestTech, report.tech_briefs));
   parts.push(renderBriefSection(STR.digestPolitics, report.politics_briefs));

@@ -27,9 +27,12 @@ export interface DailyReport {
   keywords: string[];
   /** Optional trading-signals section, present when scripts/daily.ts ran successfully. */
   trading?: TradingSection;
+  /** 台股上市融資融券（前一交易日），抓不到時省略。 */
+  margin?: MarginSnapshot;
 }
 
 import type { TickerAnalysis } from "../trading/signals";
+import type { MarginSnapshot } from "../trading/twse-margin";
 import type { CryptoGlobalStats } from "../trading/coingecko";
 import type { FearGreedSnapshot } from "../trading/fear-greed";
 import type { TradingCommentary } from "./trading-commentary";

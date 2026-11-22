@@ -15,6 +15,7 @@ import {
   enrichGithubTrendingSummaries,
   enrichTrendingPapersSummaries,
   enrichXViralSummaries,
+  translatedTitles,
 } from "../lib/ai/enrich";
 import {
   groupRaw,
@@ -29,6 +30,7 @@ import { fetchCryptoGlobal } from "../lib/trading/coingecko";
 import { generateTradingCommentary } from "../lib/ai/trading-commentary";
 import type { TradingSection } from "../lib/ai/pipeline";
 import { todayKey } from "../lib/utils";
+import { fetchTwseMargin, marginToPromptText, type MarginSnapshot } from "../lib/trading/twse-margin";
 import { getAssetGroupLabels, type AssetGroup } from "../lib/trading/watchlist";
 
 const OUTPUT_DIR = "daily_reports";
@@ -193,6 +195,8 @@ async function enrichMergedSubgroup(
   for (const a of toEnrich) {
     const s = summaries.get(a.url);
     if (s) a.summary = s;
+    const t = translatedTitles.get(a.url);
+    if (t) a.title = t;
   }
   console.log(
     `[daily] enrichment done in ${((Date.now() - t0) / 1000).toFixed(1)}s, matched ${summaries.size}/${toEnrich.length}`,
@@ -293,14 +297,29 @@ async function main() {
     console.warn(`[daily] trading section failed: ${msg}`);
   }
 
+  let margin: MarginSnapshot | null = null;
+  try {
+    margin = await fetchTwseMargin();
+    console.log(
+      margin
+        ? `[daily] TWSE margin ${margin.date}: 融資 ${(margin.marginAmount / 100000).toFixed(1)} 億, ${margin.stocks.length} watchlist stocks`
+        : `[daily] TWSE margin: no data (non-fatal)`,
+    );
+  } catch (e) {
+    console.warn(`[daily] TWSE margin failed (non-fatal): ${e instanceof Error ? e.message : String(e)}`);
+  }
+
   console.log(`[daily] generating digest with ${getModelTag()}…`);
   const t0 = Date.now();
   const { report } = await generateDailyReport(
     articles,
     undefined,
-    trading ? buildMarketSnapshot(trading) : "",
+    [trading ? buildMarketSnapshot(trading) : "", margin ? marginToPromptText(margin) : ""]
+      .filter(Boolean)
+      .join("\n\n"),
   );
   if (trading) report.trading = trading;
+  if (margin) report.margin = margin;
   console.log(`[daily] digest ready in ${((Date.now() - t0) / 1000).toFixed(1)}s`);
 
   const dateDir = path.join(OUTPUT_DIR, date);

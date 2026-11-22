@@ -183,6 +183,9 @@ jobs:
     if: needs.gate.outputs.should-run == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 25
+    env:
+      # 投資晨報 Email：三個 Secrets 都設定才會寄信（MAIL_USERNAME / MAIL_PASSWORD / MAIL_TO）
+      MAIL_USERNAME: ${{ secrets.MAIL_USERNAME }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -257,3 +260,25 @@ jobs:
           publish_branch: gh-pages
           keep_files: false  # we restored everything above, so a clean publish is fine
           commit_message: 'daily: report for ${{ github.run_id }}'
+
+      - name: Build email
+        id: email
+        if: env.MAIL_USERNAME != ''
+        env:
+          PAGES_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
+        run: node scripts/build-email.mjs
+
+      - name: Send email
+        if: env.MAIL_USERNAME != ''
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: ${{ vars.MAIL_SERVER || 'smtp.gmail.com' }}
+          server_port: ${{ vars.MAIL_PORT || '465' }}
+          secure: true
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: ${{ steps.email.outputs.subject }}
+          to: ${{ secrets.MAIL_TO }}
+          from: 投資晨報 <${{ secrets.MAIL_USERNAME }}>
+          html_body: file://email/brief.html
+          convert_markdown: false
