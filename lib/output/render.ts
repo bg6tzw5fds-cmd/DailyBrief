@@ -101,6 +101,7 @@ const TEXTS_ZH = {
   marginAmtChg: "增減(億)",
   marginCallAmtYi: "追繳金額(億)",
   marginEtf: "ETF 融資融券（張）",
+  marginWantgoo: "玩股網：扣除 ETF 融資餘額與融資維持率 →",
   marginAmount: "融資餘額",
   marginUnits: "融資（張）",
   marginShort: "融券（張）",
@@ -191,6 +192,7 @@ const TEXTS_EN: typeof TEXTS_ZH = {
   marginAmtChg: "Chg (100M)",
   marginCallAmtYi: "Calls (100M)",
   marginEtf: "ETF margin / short (lots)",
+  marginWantgoo: "Wantgoo: margin balance & ratio excl. ETFs →",
   marginAmount: "Margin balance",
   marginUnits: "Margin (lots)",
   marginShort: "Short (lots)",
@@ -1306,6 +1308,9 @@ export function renderHtml(
   .margin-code { color: var(--muted); font-size: 0.75rem; }
   .margin-sub { font-size: 0.78rem; color: var(--muted); font-weight: 600; margin: 0.9rem 0 0.3rem; }
   .margin-scroll { overflow-x: auto; }
+  .margin-link { margin: 0.8rem 0 0.2rem; font-size: 0.85rem; }
+  .margin-link a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .margin-link a:hover { text-decoration: underline; }
   .margin-scroll .snapshot-table { min-width: 560px; }
   @media (max-width: 520px) {
     .snapshot-table { font-size: 0.8rem; }
@@ -1695,6 +1700,8 @@ function fmtSignedInt(n: number): string {
   return (n >= 0 ? "+" : "") + fmtInt(n);
 }
 
+const WANTGOO_MARGIN_URL = "https://www.wantgoo.com/stock/margin-trading/exclude-etf/taiex";
+
 function renderMargin(m: MarginSnapshot | undefined): string {
   if (!m) return "";
   const yi = (k: number) => (k / 100000).toFixed(2); // 仟元 → 億元
@@ -1768,6 +1775,7 @@ function renderMargin(m: MarginSnapshot | undefined): string {
     </table>`
         : ""
     }
+    <p class="margin-link"><a href="${WANTGOO_MARGIN_URL}" target="_blank" rel="noopener">${STR.marginWantgoo}</a></p>
     <p class="snapshot-note">${STR.marginNote}</p>
   </section>`;
 }

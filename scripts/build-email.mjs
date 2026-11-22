@@ -89,6 +89,7 @@ ${[...hist]
         .map((s) => `${esc(s.name)} ${esc(s.code)}：融資 ${int(s.marginToday)}（<span style="color:${color(s.marginChange)}">${sint(s.marginChange)}</span>）／融券 ${int(s.shortToday)}（<span style="color:${color(s.shortChange)}">${sint(s.shortChange)}</span>）`)
         .join("<br>")}</p>`);
     }
+    parts.push(`<p style="font-size:14px;margin:10px 0 0;"><a href="https://www.wantgoo.com/stock/margin-trading/exclude-etf/taiex" style="color:#2563eb;text-decoration:none;font-weight:600;">玩股網：扣除 ETF 融資餘額與融資維持率 →</a></p>`);
     parts.push(`<p style="font-size:11px;color:#a1a1aa;margin:6px 0 0;">融資餘額為上市（含 ETF）；擔保維持率、追繳為上市＋上櫃全市場。資料來源：臺灣證券交易所。</p>`);
   }
 
