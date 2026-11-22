@@ -19,3 +19,5 @@ jobs:
         env:
           REPORT_TZ: Asia/Taipei
         run: npm run dry-run
+      - name: Check 24h-asset alignment to US close
+        run: npx tsx scripts/check-alignment.ts

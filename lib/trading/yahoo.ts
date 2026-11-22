@@ -98,3 +98,25 @@ export async function fetchTickerData(
     candles,
   };
 }
+
+/**
+ * Intraday bars (30-minute, last ~5 days) — used to read a 24-hour asset's
+ * price at the exact moment the US equity market closed.
+ */
+export async function fetchIntradayCloses(
+  symbol: string,
+): Promise<{ t: number; close: number }[]> {
+  const url = `https://query2.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?range=5d&interval=30m`;
+  const res = await fetch(url, { headers: HEADERS, signal: AbortSignal.timeout(15000) });
+  if (!res.ok) return [];
+  const data = (await res.json()) as YahooChartResp;
+  const r = data.chart?.result?.[0];
+  const ts = r?.timestamp ?? [];
+  const closes = r?.indicators?.quote?.[0]?.close ?? [];
+  const out: { t: number; close: number }[] = [];
+  for (let i = 0; i < ts.length; i++) {
+    const c = closes[i];
+    if (c != null && Number.isFinite(c)) out.push({ t: ts[i] * 1000, close: c });
+  }
+  return out;
+}
