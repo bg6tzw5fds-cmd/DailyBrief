@@ -82,7 +82,7 @@ const TEXTS_ZH = {
   digestHeadline: "今日頭條",
   digestOverview: "晨報總覽",
   digestSnapshot: "收盤快照",
-  digestSnapshotNote: "前一交易日收盤；黃金、原油、匯率、美元指數等 24 小時交易的資產，統一取美股收盤（紐約 16:00）時的價格，與股市同一時點比較。殖利率單位為 %，紅漲綠跌",
+  digestSnapshotNote: "前一交易日收盤；黃金、原油等期貨取同一交易日的官方結算價；匯率與美元指數取美股收盤（紐約 16:00）時點價格，都不含亞洲盤新交易日。殖利率單位為 %，紅漲綠跌",
   snapshotName: "標的",
   snapshotLast: "最新",
   snapshot1d: "日漲跌",

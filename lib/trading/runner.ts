@@ -129,11 +129,16 @@ export async function analyzeWatchlist(
     if (!raw || refClose == null || !isAroundTheClock(def.symbol)) return raw;
     // Only meaningful once the US session has actually closed.
     if (Date.now() < refClose) return raw;
+    // Futures (=F) have an official daily settlement for each trading day —
+    // keep it (intraday bars can mix contract months around a roll).
+    // FX / DXY have no official close, so read the price at 16:00 New York.
     let intraday: { t: number; close: number }[] = [];
-    try {
-      intraday = await fetchIntradayCloses(def.symbol);
-    } catch {
-      /* daily-only alignment still applies */
+    if (!def.symbol.endsWith("=F")) {
+      try {
+        intraday = await fetchIntradayCloses(def.symbol);
+      } catch {
+        /* daily-only alignment still applies */
+      }
     }
     const out = alignToClose(raw, refClose, prevRefClose, intraday);
     if (out.regularMarketPrice !== raw.regularMarketPrice) {
