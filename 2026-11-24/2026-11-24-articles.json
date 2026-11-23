@@ -183,6 +183,15 @@
     },
     {
       "sourceId": "ltn-business",
+      "title": "黃仁勳震撼回歸輝達！ 個人淨資產暴增337億美元",
+      "url": "https://ec.ltn.com.tw/article/breakingnews/5651142",
+      "excerpt": "輝達（Nvidia）董事會23日宣布黃仁勳回歸擔執行長，引起全球關注，《富比士》估計，黃仁勳的個人資產持續飆升，淨資產單日增長約337億美元（約新台幣1兆1077億）。 根...…",
+      "publishedAt": "2026-11-23T23:44:09.000Z",
+      "category": "finance",
+      "source": "自由時報 財經"
+    },
+    {
+      "sourceId": "ltn-business",
       "title": "台灣成為美國「兩大城市」最大出口買家 半導體實力串聯兩國",
       "url": "https://ec.ltn.com.tw/article/breakingnews/5651037",
       "excerpt": "初次上稿11-23 22:10 更新時間11-24 07：24 〔財經頻道／綜合報導〕美國城市出口產品的最大買家是誰？加拿大和墨西哥是美國50個最大都市出口市場中35個的主要出口目的地；...…",
@@ -219,7 +228,7 @@
     },
     {
       "sourceId": "ltn-business",
-      "title": "LTN經濟通》「中國鷹派」黃仁勳因他黯然離去？",
+      "title": "LTN經濟通》「中國鷹派」黃仁勳風暴因他而起？",
       "url": "https://ec.ltn.com.tw/article/breakingnews/5647722",
       "excerpt": "魯比歐機密備忘錄 揭開華府對中鷹派角力 〔財經頻道／綜合報導〕美國國務卿兼國家安全顧問魯比歐（Marco Rubio）近期成為華府政治與科技圈的焦點，因為輝達（NVIDIA）創辦人黃仁勳11...…",
       "publishedAt": "2026-11-23T23:00:00.000Z",
@@ -443,13 +452,22 @@
       "source": "自由時報 財經"
     },
     {
-      "sourceId": "ltn-business",
-      "title": "黃仁勳「迫不及待重返工作」見證輝達是全球經濟趨動力",
-      "url": "https://ec.ltn.com.tw/article/breakingnews/5651074",
-      "excerpt": "〔財經頻道／綜合報導〕輝達董事會周一宣布黃仁勳重掌執行長，黃仁勳23日表示，能在新一輪工業革命開端重返輝達、領導全球重要科技公司，讓他深感榮幸，並承諾將以謙遜態度及重新投入的決心承擔責任，最後更...…",
-      "publishedAt": "2026-11-23T14:42:12.000Z",
+      "sourceId": "yahoo-tw-market",
+      "title": "黃仁勳重返輝達股價暴漲31%! 美股費半飆漲1179點、台積電ADR勁揚14%",
+      "url": "https://tw.news.yahoo.com/%E9%BB%83%E4%BB%81%E5%8B%B3%E9%87%8D%E8%BF%94%E8%BC%9D%E9%81%94%E8%82%A1%E5%83%B9%E6%9A%B4%E6%BC%B231-%E7%BE%8E%E8%82%A1%E8%B2%BB%E5%8D%8A%E9%A3%86%E6%BC%B21179%E9%BB%9E-%E5%8F%B0%E7%A9%8D%E9%9B%BBadr%E5%8B%81%E6%8F%9A14-232619704.html",
+      "excerpt": "[Newtalk新聞] AI（人工智慧）晶片大廠輝達（NVIDIA）執行長黃仁勳閃電復職，震撼科技界和金融市場。輝達23日宣布，董事會一致投票通過，即日起恢復黃仁勳擔任公司總裁、執行長及董事職務，重新",
+      "publishedAt": "2026-11-23T23:26:19.000Z",
       "category": "finance",
-      "source": "自由時報 財經"
+      "source": "Yahoo 股市 台股"
+    },
+    {
+      "sourceId": "yahoo-tw-market",
+      "title": "黃仁勳復職，台股權值股帶頭、ABF、被動元件、光纖及設備股輪彈",
+      "url": "https://tw.stock.yahoo.com/news/%E9%BB%83%E4%BB%81%E5%8B%B3%E5%BE%A9%E8%81%B7-%E5%8F%B0%E8%82%A1%E6%AC%8A%E5%80%BC%E8%82%A1%E5%B8%B6%E9%A0%AD-abf-%E8%A2%AB%E5%8B%95%E5%85%83%E4%BB%B6-%E5%85%89%E7%BA%96%E5%8F%8A%E8%A8%AD%E5%82%99%E8%82%A1%E8%BC%AA%E5%BD%88-232423428.html",
+      "excerpt": "【財訊快報／方亞申】近期美股出現大震盪，美國國會選舉，較反對大幅興建資料中心的民主黨大獲全勝，股價持續下跌。再來就是12日黃仁勳意外請辭，不論是婚外情或是偷賣晶片至中國，造成股價更大震撼，股市加速下跌",
+      "publishedAt": "2026-11-23T23:24:23.000Z",
+      "category": "finance",
+      "source": "Yahoo 股市 台股"
     },
     {
       "sourceId": "yahoo-tw-market",
@@ -466,6 +484,15 @@
       "url": "https://tw.news.yahoo.com/%E5%8F%B0%E8%82%A1%E6%9A%B4%E8%B7%8C2393%E9%BB%9E%E7%9C%BE%E4%BA%BA%E5%BF%99%E5%81%9C%E6%90%8D-00406a%E5%8D%BB%E7%8B%82%E6%8E%83%E9%87%91%E5%83%8F%E9%9B%BB-%E5%8F%B0%E5%85%89%E9%9B%BB%E5%85%A9%E5%A4%A9%E5%A4%A7%E8%B3%BA%E8%BF%911%E6%88%90-231101150.html",
       "excerpt": "00406A在20日當天卻大幅買進聯電，至少也買了1500張，保守估計沒買到跌...",
       "publishedAt": "2026-11-23T23:11:01.000Z",
+      "category": "finance",
+      "source": "Yahoo 股市 台股"
+    },
+    {
+      "sourceId": "yahoo-tw-market",
+      "title": "黃仁勳回來了！美股收盤勁揚　台積電ADR飆漲14%",
+      "url": "https://tw.news.yahoo.com/%E9%BB%83%E4%BB%81%E5%8B%B3%E5%9B%9E%E4%BE%86%E4%BA%86-%E7%BE%8E%E8%82%A1%E6%94%B6%E7%9B%A4%E5%8B%81%E6%8F%9A-%E5%8F%B0%E7%A9%8D%E9%9B%BBadr%E9%A3%86%E6%BC%B214-230311253.html",
+      "excerpt": "人工智慧（AI）晶片巨擘輝達重新任命黃仁勳為執行長，推動投資人搶進上週暴跌的AI類股，美股主要指數週一（23日）全面收紅，費城半導體指數勁揚14%，台積電ADR飆漲44.89美元或14.08%，收在3",
+      "publishedAt": "2026-11-23T23:03:11.000Z",
       "category": "finance",
       "source": "Yahoo 股市 台股"
     },
@@ -695,33 +722,6 @@
       "source": "Yahoo 股市 台股"
     },
     {
-      "sourceId": "yahoo-tw-market",
-      "title": "輝達董事會宣布黃仁勳復職　川普表示歡迎　台指期夜盤、台積電期貨飆漲停",
-      "url": "https://tw.news.yahoo.com/%E8%BC%9D%E9%81%94%E8%91%A3%E4%BA%8B%E6%9C%83%E5%AE%A3%E5%B8%83%E9%BB%83%E4%BB%81%E5%8B%B3%E5%BE%A9%E8%81%B7-%E5%B7%9D%E6%99%AE%E8%A1%A8%E7%A4%BA%E6%AD%A1%E8%BF%8E-%E5%8F%B0%E6%8C%87%E6%9C%9F%E5%A4%9C%E7%9B%A4-%E5%8F%B0%E7%A9%8D%E9%9B%BB%E6%9C%9F%E8%B2%A8%E9%A3%86%E6%BC%B2%E5%81%9C-161054906.html",
-      "excerpt": "輝達董事會在官網聲明中稱，恢復黃仁勳職位的決定經全體一致投票通過；在作出決定的過程中，董事...",
-      "publishedAt": "2026-11-23T16:10:54.000Z",
-      "category": "finance",
-      "source": "Yahoo 股市 台股"
-    },
-    {
-      "sourceId": "yahoo-tw-market",
-      "title": "台指數漲停！阮慕驊激動發文「外資被幹掉700億」　網友開嗨：台股漲三天慶祝",
-      "url": "https://tw.stock.yahoo.com/news/%E5%8F%B0%E6%8C%87%E6%95%B8%E6%BC%B2%E5%81%9C-%E9%98%AE%E6%85%95%E9%A9%8A%E6%BF%80%E5%8B%95%E7%99%BC%E6%96%87-%E5%A4%96%E8%B3%87%E8%A2%AB%E5%B9%B9%E6%8E%89700%E5%84%84-%E7%B6%B2%E5%8F%8B%E9%96%8B%E5%97%A8-%E5%8F%B0%E8%82%A1%E6%BC%B2%E4%B8%89%E5%A4%A9%E6%85%B6%E7%A5%9D-152000988.html",
-      "excerpt": "[FTNN新聞網]記者周雅琦／綜合報導台指期夜盤今（23）日上演史詩級暴漲行情！盤面原本走勢疲弱，早盤一度下探3萬6280點，未料市場傳出輝達（NVIDIA）董事會全...",
-      "publishedAt": "2026-11-23T15:20:00.000Z",
-      "category": "finance",
-      "source": "Yahoo 股市 台股"
-    },
-    {
-      "sourceId": "yahoo-tw-market",
-      "title": "黃仁勳回任！郭哲榮：我早就說了　大喊「台股上看5萬點」",
-      "url": "https://tw.news.yahoo.com/%E9%BB%83%E4%BB%81%E5%8B%B3%E5%9B%9E%E4%BB%BB-%E9%83%AD%E5%93%B2%E6%A6%AE-%E6%88%91%E6%97%A9%E5%B0%B1%E8%AA%AA%E4%BA%86-%E5%A4%A7%E5%96%8A-%E5%8F%B0%E8%82%A1%E4%B8%8A%E7%9C%8B5%E8%90%AC%E9%BB%9E-151900938.html",
-      "excerpt": "輝達創辦人黃仁勳驚傳回任，激勵台指期夜盤飆漲3,665點突破4萬點。分析師郭哲榮發文喊出「1121多頭歸隊」，並重申台股上看5萬點、台積電挑戰3,000元。市場雖迎來戲劇性反轉，但分析師仍提醒投資人留",
-      "publishedAt": "2026-11-23T15:19:00.000Z",
-      "category": "finance",
-      "source": "Yahoo 股市 台股"
-    },
-    {
       "sourceId": "udn-money",
       "title": "OpenAI 提 AI 規範助益產業鏈 有利台積、緯創等做大市場規模",
       "url": "https://money.udn.com/money/story/5612/9897320",
@@ -903,23 +903,23 @@
     },
     {
       "sourceId": "wallstreetcn",
-      "title": "黃仁勳重掌輝達帥印！股價暴漲31%，市值單日增加近萬億",
+      "title": "黃仁勳重掌輝達，股價單日暴漲31%",
       "url": "https://wallstreetcn.com/articles/3786536",
       "excerpt": "黄仁勋重返英伟达，结束数周高层动荡。消息公布后，股价单日暴涨逾31%，市值一日增加9520亿美元，创历史纪录。值得关注的是，据彭博报道，董事会在作出这一重大决定时，全程未征求公司高层意见，包括临时CEO在内的核心高管均在最后一刻才获通知。",
       "publishedAt": "2026-11-23T23:15:01.000Z",
       "category": "finance",
       "source": "華爾街見聞",
-      "summary": "黃仁勳重返輝達執掌帥印，消息公布後股價單日大漲逾31%，市值一日增加9,520億美元，創歷史紀錄。據彭博報導，董事會作出決定時未徵詢高層意見，包括臨時執行長在內的核心高管皆於最後一刻才獲通知。"
+      "summary": "黃仁勳重返輝達，結束數週高層動盪。消息公布後，輝達股價單日大漲逾31%，市值一日增加9,520億美元，創歷史紀錄。據彭博報導，董事會作出決定時未徵詢高層意見，包括臨時執行長在內的核心主管都在最後一刻才獲通知。"
     },
     {
       "sourceId": "wallstreetcn",
-      "title": "黃仁勳稱「第二次擔任執行長會做得更好」，重返輝達總部獲數百員工夾道歡迎",
+      "title": "黃仁勳稱第二次當執行長會做得更好",
       "url": "https://wallstreetcn.com/articles/3786546",
       "excerpt": "据媒体披露的现场视频，黄仁勋抵达英伟达位于加利福尼亚州圣克拉拉的总部后，迅速受到数百名员工的热烈迎接。他在现场公开表示：\"我第二次担任CEO，会做得更好\"。本周，黄仁勋还将赴国会出席听证，围绕英伟达的调查仍在推进中。",
       "publishedAt": "2026-11-23T23:12:04.000Z",
       "category": "finance",
       "source": "華爾街見聞",
-      "summary": "黃仁勳抵達輝達位於加州聖塔克拉拉的總部，受到數百名員工夾道歡迎。他公開表示「我第二次擔任執行長，會做得更好」。本週他還將赴國會出席聽證，針對輝達的調查仍在進行中。"
+      "summary": "黃仁勳抵達輝達位於加州聖塔克拉拉的總部後，受到數百名員工熱烈迎接。他公開表示「我第二次擔任執行長，會做得更好」。本週他還將赴國會出席聽證，針對輝達的調查仍在進行中。"
     },
     {
       "sourceId": "wallstreetcn",
@@ -929,47 +929,47 @@
       "publishedAt": "2026-11-23T23:03:10.000Z",
       "category": "finance",
       "source": "華爾街見聞",
-      "summary": "華爾街見聞發布2026年11月24日的財經早餐音訊節目，定位為五分鐘掌握全球市場動態。原文僅提供節目簡介，未列出具體市場內容。"
+      "summary": "華爾街見聞發布2026年11月24日的財經早餐音訊節目，主打五分鐘掌握全球市場動態。原文摘要未提供具體市場數據或內容細節。"
     },
     {
       "sourceId": "wallstreetcn",
-      "title": "聯準會監管副主席鮑曼遭罕見調查，被指違反「靜默期」規定，鮑曼否認",
+      "title": "Fed 監理副主席鮑曼遭罕見調查，被指違反靜默期規定",
       "url": "https://wallstreetcn.com/articles/3786556",
       "excerpt": "鲍曼2018年由特朗普任命。据媒体报道，其今年6月17日出席一场美国银行私人晚宴，时间恰在美联储政策会议结束数小时后，彼时官员们仍处于禁止就经济或货币政策向公众发表评论的静默期内。美联储监察长办公室近期已寻求约谈，鲍曼否认存在任何违规行为。",
       "publishedAt": "2026-11-23T22:58:37.000Z",
       "category": "finance",
       "source": "華爾街見聞",
-      "summary": "聯準會負責監管的副主席鮑曼遭罕見調查，被指違反靜默期規定。報導稱她6月17日出席美國銀行私人晚宴，時間在聯準會政策會議結束數小時後。聯準會監察長辦公室近期尋求約談，鮑曼否認違規。"
+      "summary": "Fed 負責監理的副主席鮑曼（2018年由川普任命）遭罕見調查，被指違反「靜默期」規定。報導稱她6月17日出席美國銀行私人晚宴，時間在政策會議結束數小時後。Fed 監察長辦公室已尋求約談，鮑曼否認有任何違規。"
     },
     {
       "sourceId": "wallstreetcn",
-      "title": "聯準會「三號人物」：通膨仍未達標，需逐步採取行動，不排除連續升息",
+      "title": "Fed 理事 Williams：通膨未達標，不排除連續升息",
       "url": "https://wallstreetcn.com/articles/3786554",
       "excerpt": "美联储“三把手”、纽约联储主席Williams表示，在实现通胀目标的道路上\"仍有工作要做\"，强调必须“随时间推移采取行动”，不排除连续加息的可能。其还指出，数据决定行动的时机和步伐，金融条件变化可能会影响需求，对增长前景乐观。目前市场已基本消化12月加息25基点，并预计明年1月继续加息25基点。",
       "publishedAt": "2026-11-23T22:28:18.000Z",
       "category": "finance",
       "source": "華爾街見聞",
-      "summary": "紐約聯邦準備銀行總裁威廉斯表示，要實現通膨目標仍有工作要做，必須隨時間推移採取行動，且不排除連續升息。市場已大致消化12月升息25基點，並預期明年1月再升25基點。"
+      "summary": "紐約聯邦準備銀行總裁 Williams 表示，要達成通膨目標「仍有工作要做」，必須隨時間推移採取行動，且不排除連續升息。他指出數據決定行動的時機與步伐，並對成長前景樂觀。市場已大致消化12月升息25基點，並預期明年1月再升25基點。"
     },
     {
       "sourceId": "wallstreetcn",
-      "title": "黃仁勳回歸引爆美股空頭回補，輝達暴漲31%，晶片指數飆漲14%，黃金反彈近3%",
+      "title": "黃仁勳回歸引爆空頭回補，輝達漲31%、費半漲14%",
       "url": "https://wallstreetcn.com/articles/3786472",
       "excerpt": "特斯拉涨11.6%，Meta和谷歌涨超6%。芯片股美光科技涨19%，Arm涨16%。云服务商CoreWeave涨22%，服务器厂商超微电脑涨13%。10年期美债收益率一度下行约3.7基点。美元指数涨0.5%。现货黄金涨约2.9%，白银同步上涨4.7%。WTI原油跌4%，创约13周新低。美国天然气期货盘中跌9.1%。",
       "publishedAt": "2026-11-23T22:28:18.000Z",
       "category": "finance",
       "source": "華爾街見聞",
-      "summary": "黃仁勳回歸帶動美股空頭回補，輝達大漲31%、晶片指數漲14%，美光漲19%、Arm漲16%、CoreWeave漲22%。10年期美債殖利率一度下行約3.7基點，現貨黃金漲約2.9%，WTI原油跌4%，創約13週新低。"
+      "summary": "黃仁勳回歸帶動美股空頭回補：輝達漲31%、費半指數漲14%，特斯拉漲11.6%，美光漲19%，Arm漲16%，CoreWeave漲22%。10年期美債殖利率一度下行約3.7基點，美元指數漲0.5%，現貨黃金漲約2.9%，WTI原油跌4%，創約13週新低。"
     },
     {
       "sourceId": "wallstreetcn",
-      "title": "利比亞輸油管道重啟疊加中東供應回升，布油收跌3.5%至三個月低點",
+      "title": "利比亞輸油管重啟，布油收跌3.5%至三個月低點",
       "url": "https://wallstreetcn.com/articles/3786553",
       "excerpt": "利比亚国家石油公司董事长周一表示，该国Sharara输油管道已恢复运营，原油开始流入扎维耶Akakus设施的储油罐。摩根大通预计，受供应过剩格局影响，布伦特原油期货将在2027年上半年回落至70美元高位区间。尽管目前中东冲突持续，但市场对地缘风险溢价的定价正在降温。",
       "publishedAt": "2026-11-23T22:27:36.000Z",
       "category": "finance",
       "source": "華爾街見聞",
-      "summary": "利比亞國家石油公司董事長表示，Sharara輸油管道已恢復運作，原油開始流入札維耶Akakus設施儲槽。布蘭特原油收跌3.5%至三個月低點。摩根大通預期供過於求，布蘭特2027年上半年將回落至70美元高位區間。"
+      "summary": "利比亞國家石油公司董事長表示，Sharara 輸油管道已恢復運作，原油開始流入札維耶 Akakus 設施的儲油槽。布蘭特原油收跌3.5%至三個月低點。摩根大通預期，因供應過剩，布油2027年上半年將回落至70美元高位區間。"
     },
     {
       "sourceId": "wallstreetcn",
@@ -979,37 +979,37 @@
       "publishedAt": "2026-11-23T21:47:58.000Z",
       "category": "finance",
       "source": "華爾街見聞",
-      "summary": "華爾街見聞會員文章評論黃仁勳重返輝達一事，以「走的時候偷偷笑，回來的時候偷偷哭」形容其處境。原文摘要未提供更多具體資訊。"
+      "summary": "這是一篇會員專屬文章，標題提到黃仁勳回歸後可能成為「背鍋俠」。原文摘要僅有一句評論性文字，未提供具體事實或數據。"
     },
     {
       "sourceId": "wallstreetcn",
-      "title": "時隔多年重啟公益聯名，蘋果擬推（RED）特別版HomePod mini 2與AirPods Max 2",
+      "title": "蘋果擬重啟公益聯名，推 RED 版 HomePod mini 2 與 AirPods Max 2",
       "url": "https://wallstreetcn.com/articles/3786551",
       "excerpt": "这将是苹果自2023年Apple Watch Series 9之后，时隔两年多再度推出Product(RED)硬件产品。HomePod mini 2将采用红色网状外观，整体设计与现有版本保持一致，仅在配色上有所区别。AirPods Max 2 则将回归银色机身，搭配白色网状耳罩、白色头带以及一枚红色的多功能控制旋钮。",
       "publishedAt": "2026-11-23T21:47:39.000Z",
       "category": "finance",
       "source": "華爾街見聞",
-      "summary": "蘋果擬推出Product(RED)特別版HomePod mini 2與AirPods Max 2，為自2023年Apple Watch Series 9後再度推出此系列硬體。HomePod mini 2僅配色改為紅色網布；AirPods Max 2為銀色機身搭配白色耳罩與紅色旋鈕。"
+      "summary": "蘋果據報擬推出 Product(RED) 特別版 HomePod mini 2 與 AirPods Max 2，為2023年 Apple Watch Series 9 之後相隔兩年多再推 RED 硬體。HomePod mini 2 採紅色網狀外觀，AirPods Max 2 為銀色機身搭配白色耳罩，並有紅色旋鈕。"
     },
     {
       "sourceId": "wallstreetcn",
-      "title": "Anthropic向企業交出AI資料控制權，Claude Ship同步上線",
+      "title": "Anthropic 讓企業掌控 AI 資料，Claude Ship 同步上線",
       "url": "https://wallstreetcn.com/articles/3786547",
       "excerpt": "Anthropic推出企业前沿安全防护系统公测版，允许企业客户将AI交互数据存储于自有云平台，客户自持加密密钥，Anthropic仅进行定期自动扫描。此举回应了今年6月强制数据留存政策引发的企业反弹。同步推出的Claude Ship新增PR Steward与Claude Approvals两款代码协作代理工具。",
       "publishedAt": "2026-11-23T21:11:57.000Z",
       "category": "finance",
       "source": "華爾街見聞",
-      "summary": "Anthropic推出企業前沿安全防護系統公測版，讓企業客戶將AI互動資料存放於自有雲端，並自行持有加密金鑰，Anthropic僅做定期自動掃描。此舉回應6月強制資料保留政策引發的企業反彈。同步推出的Claude Ship新增PR Steward與Claude Approvals兩款程式碼協作代理工具。"
+      "summary": "Anthropic 推出企業前沿安全防護系統公測版，企業可將 AI 互動資料存放在自有雲端並自持加密金鑰，Anthropic 僅做定期自動掃描，回應今年6月強制資料留存政策引發的企業反彈。同步推出的 Claude Ship 新增 PR Steward 與 Claude Approvals 兩款程式碼協作代理工具。"
     },
     {
       "sourceId": "wallstreetcn",
-      "title": "黃仁勳戲劇性重掌輝達，躋身美國企業界「回力鏢」執行長名單",
+      "title": "黃仁勳重掌輝達，躋身美國「回力鏢」執行長名單",
       "url": "https://wallstreetcn.com/articles/3786550",
       "excerpt": "这份名单还包括：OpenAI的奥特曼、苹果的乔布斯、戴尔的迈克尔·戴尔、迪士尼的罗伯特·艾格、星巴克的霍华德·舒尔茨和推特的杰克·多西。",
       "publishedAt": "2026-11-23T20:52:00.000Z",
       "category": "finance",
       "source": "華爾街見聞",
-      "summary": "黃仁勳戲劇性重掌輝達，躋身美國企業界「回力鏢」執行長名單。名單還包括OpenAI的奧特曼、蘋果的賈伯斯、戴爾的麥可·戴爾、迪士尼的羅伯特·艾格、星巴克的霍華德·舒茲及推特的傑克·多西。"
+      "summary": "黃仁勳戲劇性重掌輝達，使他躋身美國企業界「回力鏢」執行長之列。名單還包括 OpenAI 的奧特曼、蘋果的賈伯斯、戴爾的麥可·戴爾、迪士尼的艾格、星巴克的舒茲與推特的多爾西。"
     },
     {
       "sourceId": "wallstreetcn",
@@ -1019,37 +1019,37 @@
       "publishedAt": "2026-11-23T20:51:49.000Z",
       "category": "finance",
       "source": "華爾街見聞",
-      "summary": "11月24日會員早報重點包括：黃仁勳憑白宮擔保重掌輝達，其復職遭兩黨議員質疑；另外，美國11月綜合PMI降至四個月低點。"
+      "summary": "會員早報標題指出，黃仁勳憑白宮擔保重掌輝達，其復職遭兩黨議員質疑。摘要另提到美國11月綜合 PMI 降至四個月低點，其餘細節未提供。"
     },
     {
       "sourceId": "wallstreetcn",
-      "title": "美共和黨第四季突擊立法與政策民粹化，歐洲能源與財政風險壓制歐元，中俄美宣言達四點共識——1123宏觀脫水",
+      "title": "美共和黨Q4突擊立法，歐洲能源與財政風險壓制歐元",
       "url": "https://wallstreetcn.com/member/articles/3786526",
       "excerpt": "11月中期选举后市场已基本定价民主党政策思路，后续或开始定价共和党政策变化。共和党存在两个层面变化，...",
       "publishedAt": "2026-11-23T20:51:35.000Z",
       "category": "finance",
       "source": "華爾街見聞",
-      "summary": "這份宏觀報告指出，11月期中選舉後，市場已大致定價民主黨的政策思路，後續可能開始定價共和黨的政策變化。標題另提及歐洲能源與財政風險壓抑歐元，以及中俄美宣言達成四點共識。"
+      "summary": "文章指出，11月期中選舉後市場已大致定價民主黨的政策思路，後續可能開始定價共和黨的政策變化。標題另提及共和黨第四季突擊立法、歐洲能源與財政風險壓抑歐元，以及中俄美宣言達成四點共識，詳細內容未提供。"
     },
     {
       "sourceId": "wallstreetcn",
-      "title": "禮來併購負責人：全力押注癌症領域，未來五年八款抗癌新藥有望上市",
+      "title": "禮來全力押注癌症領域，五年內八款抗癌新藥有望上市",
       "url": "https://wallstreetcn.com/articles/3786549",
       "excerpt": "礼来业务拓展与肿瘤部门负责人Jake Van Naarden介绍，\"肿瘤可能是下一支柱\"。公司目前有八款肿瘤药物处于或即将进入晚期临床开发阶段，有望在未来五年内陆续上市，其中三款药物预计明年获得晚期临床试验结果。其表示，战略目标是在2030年代到来之前，为届时可能趋缓的肥胖症业务增长提前储备接力动能。",
       "publishedAt": "2026-11-23T20:29:54.000Z",
       "category": "finance",
       "source": "華爾街見聞",
-      "summary": "禮來業務拓展與腫瘤部門負責人Jake Van Naarden表示，腫瘤可能是下一支柱。公司有八款腫瘤藥物處於或即將進入晚期臨床開發，預計五年內陸續上市，其中三款明年可望公布晚期試驗結果。目標是為2030年代可能趨緩的肥胖症業務儲備成長動能。"
+      "summary": "禮來業務拓展與腫瘤部門主管 Jake Van Naarden 表示「腫瘤可能是下一支柱」。公司有八款腫瘤藥物處於或即將進入後期臨床開發，未來五年有望陸續上市，其中三款預計明年公布後期試驗結果，目的是為2030年代肥胖症業務可能趨緩預作準備。"
     },
     {
       "sourceId": "wallstreetcn",
-      "title": "川普力促黃仁勳復職、范斯介入給出保證，輝達董事會「週日提前告知白宮」",
+      "title": "川普力促黃仁勳復職，范斯介入給出保證",
       "url": "https://wallstreetcn.com/articles/3786540",
       "excerpt": "特朗普上周决定尽可能帮助黄仁勋重新掌舵英伟达，并在周末要求副总统万斯直接与黄仁勋沟通，同时与英伟达董事会协调解决相关问题。万斯随后与黄仁勋进行了私下交谈，并帮助董事会获得特朗普政府方面的保证，即政府不认为黄仁勋本人构成国家安全威胁。周日晚间，英伟达董事会通知政府，将在周一美股开盘前宣布恢复黄仁勋职务。特朗普据称对整个复职安排没有泄露消息感到满意。",
       "publishedAt": "2026-11-23T19:06:08.000Z",
       "category": "finance",
       "source": "華爾街見聞",
-      "summary": "川普上週決定盡力協助黃仁勳重新掌舵輝達，並要求副總統范斯與黃仁勳溝通。范斯協助董事會取得政府保證，即不認為黃仁勳本人構成國安威脅。周日晚間輝達董事會通知政府，將在週一美股開盤前宣布復職。"
+      "summary": "川普上週決定盡力協助黃仁勳重掌輝達，並要求副總統范斯直接與黃仁勳溝通。范斯協助董事會取得政府保證，即不認為黃仁勳本人構成國安威脅。輝達董事會週日晚間通知政府，將於週一美股開盤前宣布黃仁勳復職。"
     },
     {
       "sourceId": "wallstreetcn",
@@ -1203,7 +1203,7 @@
       "publishedAt": "2026-11-20T21:15:00.000Z",
       "category": "finance",
       "source": "Fed 新聞稿",
-      "summary": "聯準會（Fed）公布大學生 Fed 挑戰賽（College Fed Challenge）的得獎隊伍。原始資料僅提供標題，未載明得獎學校與競賽細節。"
+      "summary": "聯準會（Fed）宣布「大學生 Fed 挑戰賽」（College Fed Challenge）的得獎隊伍。原文未提供得獎名單等細節。"
     },
     {
       "sourceId": "fed-press",
@@ -1213,7 +1213,7 @@
       "publishedAt": "2026-11-20T15:00:00.000Z",
       "category": "finance",
       "source": "Fed 新聞稿",
-      "summary": "聯準會理事會公布針對銀行高階財務主管的問卷調查結果，內容涉及銀行管理準備金餘額的策略與作法。原始資料未提供具體調查數據。"
+      "summary": "聯準會理事會公布對銀行資深財務主管的調查結果，內容涉及銀行管理準備金餘額的策略與做法。原文未提供具體調查數據。"
     },
     {
       "sourceId": "fed-press",
@@ -1385,7 +1385,7 @@
       "publishedAt": "2026-11-23T14:30:00.000Z",
       "category": "finance",
       "source": "ECB 新聞稿",
-      "summary": "歐洲央行（ECB）發布菲利普·連恩（Philip R. Lane）的演說，主題為氣候變遷與貨幣政策。原始資料未提供內文摘要，詳細論點與數據不明。"
+      "summary": "歐洲央行（ECB）發布理事會成員雷恩（Philip R. Lane）以「氣候變遷與貨幣政策」為題的演說文件。原文未提供摘要內容，具體論點需參閱全文。"
     },
     {
       "sourceId": "ecb-press",
@@ -1395,7 +1395,7 @@
       "publishedAt": "2026-11-23T10:00:00.000Z",
       "category": "finance",
       "source": "ECB 新聞稿",
-      "summary": "歐洲央行宣布擴大接受以分散式帳本技術（DLT）為基礎的資產，作為歐元體系（Eurosystem）合格擔保品。原始資料未提供更多細節，實施時程與適用範圍不明。"
+      "summary": "歐洲央行宣布擴大接受以分散式帳本技術（DLT）為基礎的資產，作為歐元體系合格擔保品。原文未提供實施日期與細節，需參閱央行新聞稿。"
     },
     {
       "sourceId": "ecb-press",
@@ -1405,7 +1405,7 @@
       "publishedAt": "2026-11-20T08:30:00.000Z",
       "category": "finance",
       "source": "ECB 新聞稿",
-      "summary": "歐洲央行總裁拉加德（Christine Lagarde）發表演說，題為「Acting in time」（及時行動）。原始資料未提供內文，具體談話內容與政策訊息不明。"
+      "summary": "歐洲央行總裁拉加德（Christine Lagarde）發表題為「及時行動」（Acting in time）的演說。原文未提供內容摘要，具體論點需參閱全文。"
     },
     {
       "sourceId": "ecb-press",
@@ -1517,13 +1517,23 @@
     },
     {
       "sourceId": "boj-whatsnew",
+      "title": "Statistics on Securities Financing Transactions in Japan",
+      "url": "http://www.boj.or.jp/en/statistics/bis/repo/index.htm",
+      "excerpt": "",
+      "publishedAt": "2026-11-23T23:50:00.000Z",
+      "category": "finance",
+      "source": "日本央行",
+      "summary": "日本央行在官網提供日本證券融資交易（如附買回交易）的統計資料頁面。原文未附具體數據或內容說明，細節需參閱該頁面。"
+    },
+    {
+      "sourceId": "boj-whatsnew",
       "title": "Monetary and Economic Studies (2026)",
       "url": "http://www.boj.or.jp/en/research/imes/mes/mes26.htm",
       "excerpt": "",
       "publishedAt": "2026-11-20T02:00:00.000Z",
       "category": "finance",
       "source": "日本央行",
-      "summary": "日本央行公布 2026 年《貨幣與經濟研究》（Monetary and Economic Studies）頁面。原始資料未提供內容摘要，收錄的具體論文與主題不明。"
+      "summary": "日本央行公布 2026 年《貨幣與經濟研究》（Monetary and Economic Studies）期刊頁面，收錄該年度研究論文。原文未提供具體篇目或內容。"
     },
     {
       "sourceId": "boj-whatsnew",
@@ -1778,23 +1788,13 @@
       "source": "日本央行"
     },
     {
-      "sourceId": "boj-whatsnew",
-      "title": "Monetary Base (Oct.)",
-      "url": "http://www.boj.or.jp/en/statistics/boj/other/mb/mb.htm",
-      "excerpt": "",
-      "publishedAt": "2026-11-03T23:50:00.000Z",
-      "category": "finance",
-      "source": "日本央行"
-    },
-    {
       "sourceId": "cnbc-economy",
       "title": "Peterson: Here’s what Bessent’s about-face on Jensen Huang reveals about Trump and China",
       "url": "https://www.cnbc.com/2026/11/23/nvidia-jensen-huang-trump-bessent-china.html",
       "excerpt": "Treasury Secretary Scott Bessent was becoming the face of an emerging harder line on Nvidia— until he reversed course",
       "publishedAt": "2026-11-23T21:00:59.000Z",
       "category": "finance",
-      "source": "CNBC Economy",
-      "summary": "CNBC 評論指出，美國財政部長貝森特（Scott Bessent）原本逐漸成為對輝達（Nvidia）採取較強硬立場的代表人物，後來卻改變態度。文章藉此探討此一轉向反映出川普政府對中國政策的哪些特點。"
+      "source": "CNBC Economy"
     },
     {
       "sourceId": "cnbc-economy",
@@ -1804,7 +1804,7 @@
       "publishedAt": "2026-11-21T15:04:56.000Z",
       "category": "finance",
       "source": "CNBC Economy",
-      "summary": "近期多起科技服務中斷事件，使部分民眾擔憂人工智慧（AI）驅動的網路攻擊及美國電網安全。CNBC 報導，相關擔憂推升緊急應變物資等「末日經濟」需求持續升溫。"
+      "summary": "CNBC 報導，近期科技服務中斷事件使部分民眾擔憂 AI 驅動的網路攻擊及美國電網安全，帶動緊急應變物資等「末日經濟」相關支出升溫。"
     },
     {
       "sourceId": "cnbc-economy",
@@ -1813,8 +1813,7 @@
       "excerpt": "The core inflation figure — which strips out prices of food — was lower than the 2.3% expected by Reuters-polled economists.",
       "publishedAt": "2026-11-20T01:49:03.000Z",
       "category": "finance",
-      "source": "CNBC Economy",
-      "summary": "日本 10 月核心通膨升至今年最高，主因能源補貼到期推升消費者物價。不過，剔除生鮮食品的核心通膨數據低於路透調查經濟學家預期的 2.3%。"
+      "source": "CNBC Economy"
     },
     {
       "sourceId": "cnbc-economy",
@@ -1860,7 +1859,7 @@
       "publishedAt": "2026-11-20T21:07:08.000Z",
       "category": "finance",
       "source": "CNBC Economy",
-      "summary": "CNBC 評論指出，聯準會主席凱文·華許（Kevin Warsh）認為 AI 正處於轉折點。他須面對 AI 對就業與利率政策影響的難題，包括生產力提升可能帶來的政策意涵。"
+      "summary": "CNBC 評論指出，聯準會主席華許（Kevin Warsh）認為 AI 正處於轉折點，但他須面對 AI 對就業、生產力與利率政策影響的難題。"
     },
     {
       "sourceId": "cnbc-economy",
@@ -2068,7 +2067,7 @@
       "publishedAt": "2026-11-23T23:00:00.000Z",
       "category": "finance",
       "source": "OilPrice.com",
-      "summary": "文章指出，量子運算有望在先進材料開發、工業工程及大型能源網路最佳化等領域帶來重大變革，並可能開始解決電網最佳化與新化學材料等實際能源問題，進而加速能源轉型。"
+      "summary": "文章指出，量子運算有望在先進材料開發、工業工程及大型能源網路最佳化等領域帶來突破，並可能開始解決電網最佳化與新化學材料等實際能源問題，進而加速能源轉型。"
     },
     {
       "sourceId": "oilprice",
@@ -2078,7 +2077,7 @@
       "publishedAt": "2026-11-23T22:00:00.000Z",
       "category": "finance",
       "source": "OilPrice.com",
-      "summary": "文章指出，聯準會（Fed）幾乎確定將於12月9日升息，且決策時尚無法參考勞工統計局排定於隔日上午8點30分公布的11月通膨報告。文章並以此為背景，探討五檔能源類股可承受升息的因素。"
+      "summary": "文章指出，聯準會（Fed）幾乎確定在12月9日升息，且決策前不會看到11月通膨報告，該報告由美國勞工統計局排定於隔天上午8點30分公布。文章並介紹5檔能源股，認為其可承受升息衝擊。"
     },
     {
       "sourceId": "oilprice",
@@ -2088,7 +2087,7 @@
       "publishedAt": "2026-11-23T21:00:00.000Z",
       "category": "finance",
       "source": "OilPrice.com",
-      "summary": "文章從電力市場的「鴨子曲線」談起：白天充沛的太陽能取代較高成本的發電方式，使電價走勢圖形似鴨子的腹部與頸部。文章進一步探討電池儲能是否會取代資料中心使用的燃氣渦輪機。"
+      "summary": "文章從電力市場的「鴨子曲線」談起：白天豐沛的太陽能擠壓較高成本的發電方式，使電價走勢圖呈現鴨子形狀。文章進一步探討電池儲能是否會取代資料中心使用的燃氣渦輪機。"
     },
     {
       "sourceId": "oilprice",
@@ -2098,7 +2097,7 @@
       "publishedAt": "2026-11-23T20:00:00.000Z",
       "category": "finance",
       "source": "OilPrice.com",
-      "summary": "文章指出，美國與以色列若再度攻擊伊朗，將為中亞帶來經濟衝擊、安全風險與地緣政治重組。中亞五國雖希望避免捲入，但受地理位置限制，難以完全隔絕衝突影響。"
+      "summary": "文章分析，若美國與以色列再度攻擊伊朗，將為中亞帶來經濟干擾、安全風險與地緣政治重組。中亞五國希望避免涉入衝突，但受地理位置限制，難以完全隔絕影響，伊朗對該地區具重要性。"
     },
     {
       "sourceId": "oilprice",
@@ -2108,7 +2107,7 @@
       "publishedAt": "2026-11-23T19:30:00.000Z",
       "category": "finance",
       "source": "OilPrice.com",
-      "summary": "Vaar Energi 週一表示，同意以44.3億美元收購康菲石油（ConocoPhillips）在挪威的業務，包含開啟挪威石油時代的Ekofisk油田，以及該國部分大型天然氣田的權益，涵蓋13項生產資產權益，康菲將退出挪威。"
+      "summary": "Vaar Energi週一表示，同意以44.3億美元收購康菲石油（ConocoPhillips）在挪威的業務，包括挪威石油時代起點的Ekofisk油田，以及部分大型天然氣田權益，共涉及13項生產資產權益，康菲將退出挪威市場。"
     },
     {
       "sourceId": "oilprice",
@@ -2118,7 +2117,7 @@
       "publishedAt": "2026-11-23T19:00:00.000Z",
       "category": "finance",
       "source": "OilPrice.com",
-      "summary": "文章探討以地球工程減緩或逆轉氣候變遷的構想，指出外界常認為這類計畫由大學與政府研究機構主導、由政府執行，並以此切入討論遮蔽陽光是否足以解決氣候危機。"
+      "summary": "文章指出，一般人談到以地球工程減緩或逆轉氣候變遷時，多聯想到大學與政府研究機構，且因規模與重要性，似乎理應由政府主導執行。文章論點認為，遮蔽陽光無法解決氣候危機。"
     },
     {
       "sourceId": "oilprice",
@@ -2128,7 +2127,7 @@
       "publishedAt": "2026-11-23T18:30:00.000Z",
       "category": "finance",
       "source": "OilPrice.com",
-      "summary": "巴基斯坦媒體Business Recorder週一引述知情人士報導，巴基斯坦與伊朗接近成立聯合工作小組，以強化能源合作，重點放在電力供應與輸電計畫。"
+      "summary": "巴基斯坦媒體Business Recorder週一引述知情人士報導，巴基斯坦與伊朗即將成立聯合工作小組，以加強能源合作，重點為電力供應與輸電計畫。"
     },
     {
       "sourceId": "oilprice",
@@ -2138,7 +2137,7 @@
       "publishedAt": "2026-11-23T18:00:00.000Z",
       "category": "finance",
       "source": "OilPrice.com",
-      "summary": "文章指出，外界常將能源轉型描述為從煤炭與石油開採轉向鋰、銅、鎳等金屬的大量開採，這種說法有部分道理。文章並探討能源轉型需要更多金屬，卻應減少開採的論點。"
+      "summary": "文章指出，外界常將能源轉型描述為由一種開採產業轉向另一種，即由煤炭與石油轉為大量開採鋰、銅與鎳，這種說法有部分道理。文章主張，能源轉型需要更多金屬，但應減少開採。"
     },
     {
       "sourceId": "oilprice",
@@ -2148,7 +2147,7 @@
       "publishedAt": "2026-11-23T17:30:00.000Z",
       "category": "finance",
       "source": "OilPrice.com",
-      "summary": "日本電力現貨價格週一升至2022年8月以來最高水準。受降雪與氣溫轉冷預期影響，天然氣需求預料增加，中部與北海道地區的用氣需求尤其受到關注。"
+      "summary": "日本現貨電價週一升至2022年8月以來最高水準，因預期降雪與氣溫轉冷，天然氣需求將增加。中部與北海道地區的燃氣需求預期上升，天然氣價格也處於高點。"
     },
     {
       "sourceId": "oilprice",
@@ -2158,7 +2157,7 @@
       "publishedAt": "2026-11-23T17:00:00.000Z",
       "category": "finance",
       "source": "OilPrice.com",
-      "summary": "科珀斯克里斯蒂港（Port of Corpus Christi）執行長Kent Britton告訴英國《金融時報》，該港是美國最大原油出口港，每天面臨「數百甚至數千次」入侵系統的嘗試，駭客正加強針對美國港口與貨運的攻擊行動。"
+      "summary": "科珀斯克里斯蒂港（Port of Corpus Christi）執行長Kent Britton對英國《金融時報》表示，該港每天面臨「數百甚至數千次」入侵系統的嘗試。該港輸出美國大部分原油，駭客近期正加強對美國港口的攻勢。"
     },
     {
       "sourceId": "oilprice",
@@ -2763,7 +2762,7 @@
       "publishedAt": "2026-11-23T21:34:45.000Z",
       "category": "tech",
       "source": "Semiconductor Engineering",
-      "summary": "德國 AMO GmbH 與亞琛工業大學（RWTH Aachen）研究人員發表論文，探討以電子束微影製作 SOI 波導時，場拼接（field stitching）誤差對光學損耗的影響。電子束微影廣泛用於光子積體電路的原型製作。"
+      "summary": "德國 AMO GmbH 與亞琛工業大學（RWTH Aachen）研究人員發表論文，探討以電子束微影製作 SOI 波導時，場拼接（field stitching）誤差對光學損耗的影響。電子束微影常用於光子積體電路的原型製作。"
     },
     {
       "sourceId": "semiengineering",
@@ -2773,7 +2772,7 @@
       "publishedAt": "2026-11-23T21:19:13.000Z",
       "category": "tech",
       "source": "Semiconductor Engineering",
-      "summary": "Lucid Motors 與 EYL Inc. 研究人員發表論文，探討大型語言模型代理人生成後量子密碼硬體的 RTL 設計時，測試與審查所遺漏的驗證缺口。研究指出，當代理人同時生成設計與驗證內容，自我生成的驗證可能存在盲點。"
+      "summary": "Lucid Motors 與 EYL Inc. 研究人員發表論文，探討以大型語言模型（LLM）代理從 FIPS 標準生成後量子密碼 FPGA 硬體時，測試與審查所遺漏的驗證缺口。研究聚焦於 LLM 同時生成 RTL 與其測試、審查的情況。"
     },
     {
       "sourceId": "semiengineering",
@@ -2846,7 +2845,7 @@
       "publishedAt": "2026-11-23T18:17:02.000Z",
       "category": "tech",
       "source": "EE Times",
-      "summary": "輝達董事會恢復黃仁勳的執行長職務。據 EE Times 報導，黃仁勳辭職一週後復職，輝達隨後回到正常營運狀態。"
+      "summary": "輝達董事會恢復黃仁勳的執行長職務。黃仁勳辭職一週後復職，公司隨即回到正常營運狀態。"
     },
     {
       "sourceId": "eetimes",
@@ -2937,7 +2936,7 @@
       "publishedAt": "2026-11-23T22:00:00.000Z",
       "category": "tech",
       "source": "Tom's Hardware",
-      "summary": "TP-Link 推出三頻 Wi-Fi 7 路由器促銷，價格低於 90 美元。依標題，這款 Archer BE9500 折扣達 55%，配備 10 GbE WAN 埠與兩個 2.5 GbE LAN 埠，主打高性價比。"
+      "summary": "TP-Link 的三頻 Wi-Fi 7 路由器 Archer BE9500 目前折扣約 55%，售價低於 90 美元。標題指出該機配備 10 GbE WAN 埠與兩個 2.5 GbE LAN 埠，主打高性價比。"
     },
     {
       "sourceId": "tomshardware",
@@ -2947,7 +2946,7 @@
       "publishedAt": "2026-11-23T21:09:03.000Z",
       "category": "tech",
       "source": "Tom's Hardware",
-      "summary": "蘋果 MacBook Neo 256GB 柚橙色款在亞馬遜黑色星期五促銷中降至 599 美元的歷史新低，與今年稍早的原始發售價相同。標題更新指出，價格目前為 649 美元。"
+      "summary": "蘋果 MacBook Neo 256GB 柚橙色款在 Amazon 黑色星期五促銷中降至 599 美元，創歷史新低，與今年稍早的上市價相同。標題更新指出價格後來已調整為 649 美元。"
     },
     {
       "sourceId": "tomshardware",
@@ -2957,7 +2956,7 @@
       "publishedAt": "2026-11-23T21:00:00.000Z",
       "category": "tech",
       "source": "Tom's Hardware",
-      "summary": "根據社群媒體流傳的影片，黃仁勳在恢復輝達（Nvidia）執行長職務後返回公司總部，受到員工歡呼迎接。標題另提到，據報導部分員工對其回歸感到不滿。"
+      "summary": "根據社群媒體流傳的影片，黃仁勳在恢復執行長職務後重返輝達總部，受到員工鼓掌歡迎。標題另提到，有部分員工據報對其回歸感到不滿。"
     },
     {
       "sourceId": "tomshardware",
@@ -2967,7 +2966,7 @@
       "publishedAt": "2026-11-23T19:58:02.000Z",
       "category": "tech",
       "source": "Tom's Hardware",
-      "summary": "近期 RTX 5070 Ti 顯示卡售價接近建議售價的兩倍。華碩 Prime RTX 5070 Ti 目前在 Best Buy 以 1,199 美元販售，是本次黑色星期五檔期中該媒體所見的最低價。"
+      "summary": "近期 RTX 5070 Ti 顯示卡售價常接近建議售價的兩倍。華碩 Prime 款目前在 Best Buy 以 1,199 美元販售，為本次黑色星期五檔期中所見最低價。"
     },
     {
       "sourceId": "tomshardware",
@@ -2977,7 +2976,7 @@
       "publishedAt": "2026-11-23T19:24:52.000Z",
       "category": "tech",
       "source": "Tom's Hardware",
-      "summary": "英特爾 Core Ultra 7 270K Plus 處理器在亞馬遜重新有貨，售價 232 美元，創歷史新低，較平均售價低逾 80 美元，折扣約 25%。該產品屬於 Arrow Lake Refresh 系列。"
+      "summary": "英特爾 Core Ultra 7 270K Plus 在 Amazon 恢復供貨，價格降至 232 美元，折扣約 25%，較平均售價低逾 80 美元，創 Arrow Lake Refresh 產品的歷史新低。"
     },
     {
       "sourceId": "tomshardware",
@@ -2987,7 +2986,7 @@
       "publishedAt": "2026-11-23T18:11:09.000Z",
       "category": "tech",
       "source": "Tom's Hardware",
-      "summary": "十銓科技（Team Group）在黑色星期五前夕調降 4TB T-Force G50 Evo SSD 價格，每 GB 約 0.10 美元。這是入門級 PCIe 4.0 固態硬碟，主打大容量與堪用的效能。"
+      "summary": "十銓科技（Team Group）4TB T-Force G50 Evo 固態硬碟在黑色星期五前夕降價，每 GB 約 0.10 美元。該產品為入門級 PCIe 4.0 SSD，主打容量大與效能尚可。"
     },
     {
       "sourceId": "tomshardware",
@@ -2997,7 +2996,7 @@
       "publishedAt": "2026-11-23T18:07:53.000Z",
       "category": "tech",
       "source": "Tom's Hardware",
-      "summary": "Crucial 1TB P310 固態硬碟在英國亞馬遜黑色星期五促銷中降至 122 英鎊。這款 SSD 可用於個人電腦或 PlayStation 5 的儲存空間擴充。"
+      "summary": "Crucial 1TB P310 固態硬碟在 Amazon 英國黑色星期五促銷中降至 122 英鎊，適用於 PC 或 PlayStation 5 的儲存擴充。"
     },
     {
       "sourceId": "tomshardware",
@@ -3007,7 +3006,7 @@
       "publishedAt": "2026-11-23T18:00:00.000Z",
       "category": "tech",
       "source": "Tom's Hardware",
-      "summary": "Penguin Solutions 在 SC26 展示外接記憶體盒，內含最高 576GB 的 HBM3E 與 16TB 的 DDR5，透過光學連結與主機相連，可擴充 AI 加速器記憶體容量。客戶樣品預計 2027 年提供，但似乎不支援現有伺服器與加速器。"
+      "summary": "Penguin Solutions 在 SC26 展示外接記憶體盒，內含最多 576GB HBM3E 與 16TB DDR5，透過光學連結連接主機，客戶樣品預計 2027 年提供。但該產品似乎不支援現有伺服器與加速器。"
     },
     {
       "sourceId": "tomshardware",
@@ -3485,7 +3484,7 @@
       "publishedAt": "2026-11-23T22:05:50.000Z",
       "category": "tech",
       "source": "TechCrunch AI",
-      "summary": "Anthropic 推出新的開發者工具 Claude Ship，讓 AI 代理人能審查、修正並核准程式碼變更。隨著 AI 生成的程式碼持續增加，此工具旨在讓代理人處理例行核准作業，以消除另一個開發流程的瓶頸。"
+      "summary": "Anthropic 推出新的開發者工具 Claude Ship，讓 AI 代理程式能審查、修正並核准程式碼變更。隨著 AI 生成的程式碼持續增加，該工具希望由代理程式處理例行核准作業，以減少開發流程中的另一個瓶頸。"
     },
     {
       "sourceId": "techcrunch-ai",
@@ -3495,7 +3494,7 @@
       "publishedAt": "2026-11-23T22:02:05.000Z",
       "category": "tech",
       "source": "TechCrunch AI",
-      "summary": "新創公司 Supertake 募得 2,000 萬美元，提供 AI 代理人服務，讓使用者輸入自己對市場走向的看法，由系統將這些預測轉換為股票投資組合，使用者無須自行挑選個股。"
+      "summary": "新創公司 Supertake 募得 2,000 萬美元資金。該平台讓使用者提出自己對市場走向的看法，再由 AI 代理程式將這些預測轉化為股票投資組合，使用者無需自行挑選個股。"
     },
     {
       "sourceId": "techcrunch-ai",
@@ -3505,7 +3504,7 @@
       "publishedAt": "2026-11-23T21:47:41.000Z",
       "category": "tech",
       "source": "TechCrunch AI",
-      "summary": "輝達（Nvidia）在爭議之中恢復黃仁勳的執行長職務。馬斯克（Elon Musk）等人公開表示歡迎，馬斯克在社群上留言稱「錯誤已被糾正」。"
+      "summary": "輝達（Nvidia）在爭議之中宣布黃仁勳復職。馬斯克（Elon Musk）等人公開表示歡迎，馬斯克稱「錯誤已被糾正」。"
     },
     {
       "sourceId": "techcrunch-ai",
@@ -3515,7 +3514,7 @@
       "publishedAt": "2026-11-23T21:25:42.000Z",
       "category": "tech",
       "source": "TechCrunch AI",
-      "summary": "身處黃仁勳爭議核心的 Megaspeed 似乎將被列入美國黑名單。該公司先前由 Alice Huang 領導，若列入名單，除非美國企業取得聯邦政府的特別許可，否則將不得與其進行交易。"
+      "summary": "成為黃仁勳爭議核心的 Megaspeed 似乎將被列入美國黑名單。該公司先前由 Alice Huang 領導，一旦列管，除非美國企業取得聯邦政府的特別許可，否則將不得與其進行交易。"
     },
     {
       "sourceId": "techcrunch-ai",
@@ -3525,7 +3524,7 @@
       "publishedAt": "2026-11-23T20:38:53.000Z",
       "category": "tech",
       "source": "TechCrunch AI",
-      "summary": "黃仁勳返回輝達總部，員工以英雄式的歡迎迎接他。黃仁勳對員工表示，自己第二次擔任執行長時「會做得更好」。"
+      "summary": "黃仁勳返回輝達總部時，受到員工熱烈歡迎。他向員工表示，自己「第二次擔任執行長，會做得更好」。"
     },
     {
       "sourceId": "techcrunch-ai",
@@ -3535,7 +3534,7 @@
       "publishedAt": "2026-11-23T19:14:46.000Z",
       "category": "tech",
       "source": "TechCrunch AI",
-      "summary": "Google 將搜尋 AI 模式中的「個人智慧」（Personal Intelligence）功能擴展至 Drive、Wallet 與 Gemini 應用程式，運用其生態系內既有的使用者資料，提供更個人化的回應。"
+      "summary": "Google 將 AI Mode 中的 Personal Intelligence 功能擴展至 Drive、Wallet 與 Gemini 應用程式，使搜尋回應能運用使用者在 Google 生態系內已有的資料，提供更個人化的內容。"
     },
     {
       "sourceId": "techcrunch-ai",
@@ -3545,7 +3544,7 @@
       "publishedAt": "2026-11-23T18:12:22.000Z",
       "category": "tech",
       "source": "TechCrunch AI",
-      "summary": "黃仁勳在恢復輝達執行長職務後，預定於下週出席美國參議院作證。公開聽證會源於兩黨議員要求他說明與一名疑似中國間諜之間的關係。"
+      "summary": "黃仁勳在復任輝達執行長後，預定於下週出席美國參議院公開聽證會作證。兩黨議員先前呼籲他就與一名疑似中國間諜的關係說明相關情況。"
     },
     {
       "sourceId": "techcrunch-ai",
@@ -3555,7 +3554,7 @@
       "publishedAt": "2026-11-23T17:14:23.000Z",
       "category": "tech",
       "source": "TechCrunch AI",
-      "summary": "據報導，亞馬遜將以 75 億美元收購 Decart 的 AI 優化技術與研究團隊，此舉正值亞馬遜準備對外銷售自家 Trainium 晶片之際。"
+      "summary": "據報導，亞馬遜（Amazon）將以 75 億美元收購 Decart 的 AI 最佳化技術及研究團隊。亞馬遜同時正準備對外銷售自家的 Trainium 晶片。"
     },
     {
       "sourceId": "techcrunch-ai",
@@ -3667,6 +3666,33 @@
     },
     {
       "sourceId": "technews-tw",
+      "title": "美國管制與非紅供應鏈成趨勢，未來 AI 產業走向的幾點觀察",
+      "url": "https://technews.tw/2026/11/24/key-observations-factors-influencing-future-ai-industry-demand/",
+      "excerpt": "美國期中選舉後，美國人工智慧（AI）產業發展會否因美國國會重組而產生變化，已引起金融市場波動，但期中選舉反應的 […]",
+      "publishedAt": "2026-11-23T23:50:00.000Z",
+      "category": "tech",
+      "source": "科技新報"
+    },
+    {
+      "sourceId": "technews-tw",
+      "title": "AI 成網攻加速器：零時差漏洞翻倍、平均 11 天遭駭，雲端系統恐 3 小時內淪陷",
+      "url": "https://infosecu.technews.tw/2026/11/24/latest-battlefront-ai-cybersecurity/",
+      "excerpt": "最新資安觀察顯示，人工智慧（AI）正成為網路攻擊的「加速器」。綜合多份於 11 月 21 日至 22 日發布的 […]",
+      "publishedAt": "2026-11-23T23:40:57.000Z",
+      "category": "tech",
+      "source": "科技新報"
+    },
+    {
+      "sourceId": "technews-tw",
+      "title": "雲端「算力」也逃不掉！美晶片禁令再升級，防堵中企藉由第三國「洗產地」",
+      "url": "https://technews.tw/2026/11/24/chip-sales-singapore-permit-overseas-data-centers-china-computing-power-regulated-us-congressional-bills-intensify/",
+      "excerpt": "美國近日收緊晶片出口管制，將新加坡、馬來西亞等五國列為轉運高風險國，出口先進晶片須先取得許可，並限制海外資料中 […]",
+      "publishedAt": "2026-11-23T23:30:30.000Z",
+      "category": "tech",
+      "source": "科技新報"
+    },
+    {
+      "sourceId": "technews-tw",
       "title": "港中大雙臂內視鏡手術機器人進入人體實驗，腫瘤切除時間有望縮短一半",
       "url": "https://technews.tw/2026/11/24/how-2-tiny-robot-arms-could-halve-digestive-cancer-surgery-time/",
       "excerpt": "香港中文大學（港中大）團隊研發的一款雙臂內視鏡手術機器人，已正式進入人體臨床試驗階段。研究人員希望，這項新技術 […]",
@@ -3705,7 +3731,7 @@
       "sourceId": "technews-tw",
       "title": "Google 打造「鏡像維度」模擬網路，為 Chrome Agent 建立安全訓練沙盒",
       "url": "https://infosecu.technews.tw/2026/11/23/google-chrome-introduces-mirror-dimension-to-safely-test-ai-agents/",
-      "excerpt": "Google 日前公開一套名為「鏡像維度」（Mirror Dimension）的隔離式合成網路，作為 Chro […]",
+      "excerpt": "Google 日前公開一套名為「鏡像維度」（Mirror Dimension）的隔離式合成網路，做為 Chro […]",
       "publishedAt": "2026-11-23T13:04:16.000Z",
       "category": "tech",
       "source": "科技新報"
@@ -3905,33 +3931,6 @@
       "url": "https://finance.technews.tw/2026/11/23/economic-monitoring-indicator-stays-red-for-10-straight-months-a-record/",
       "excerpt": "行政院長卓榮泰今天表示，台灣景氣燈號連 10 個月紅燈創史上最長紀錄，顯示目前整體景氣呈現穩定、樂觀態勢，且出 […]",
       "publishedAt": "2026-11-23T06:40:56.000Z",
-      "category": "tech",
-      "source": "科技新報"
-    },
-    {
-      "sourceId": "technews-tw",
-      "title": "AI 助攻星系模擬提速 20 倍，日本研發「PHEASANT」系統首創單一恆星解析度",
-      "url": "https://technews.tw/2026/11/23/ai-galaxy-simulation/",
-      "excerpt": "日本東京大學與理化學研究所（RIKEN）等研究人員開發出名為「PHEASANT」的星系模擬系統，透過 AI 模 […]",
-      "publishedAt": "2026-11-23T06:30:19.000Z",
-      "category": "tech",
-      "source": "科技新報"
-    },
-    {
-      "sourceId": "technews-tw",
-      "title": "多角化布局開花結果！高通汽車晶片營收上看 80 億美元，挑戰英飛凌、恩智浦",
-      "url": "https://technews.tw/2026/11/23/qualcomm-automotive-chip-business/",
-      "excerpt": "高通近年致力於擺脫過度依賴景氣波動的智慧手機市場，根據最新產業數據顯示，高通近年的多角化布局正逐漸開花結果。 […]",
-      "publishedAt": "2026-11-23T06:28:19.000Z",
-      "category": "tech",
-      "source": "科技新報"
-    },
-    {
-      "sourceId": "technews-tw",
-      "title": "三星 SDI 進攻 AI 資料中心，儲能、UPS、BBU 三路並進",
-      "url": "https://technews.tw/2026/11/23/samsung-sdi-targets-ai-data-centers-three-pronged-approach-energy-storage-ups-bbu/",
-      "excerpt": "AI 資料中心電力需求持續攀升，帶動儲能及備援電池市場發展。韓國電池大廠三星 SDI 於北美能源展 RE+ 2 […]",
-      "publishedAt": "2026-11-23T06:22:51.000Z",
       "category": "tech",
       "source": "科技新報"
     },
@@ -4303,7 +4302,7 @@
       "publishedAt": "2026-11-23T21:20:00.000Z",
       "category": "tech",
       "source": "OpenAI News",
-      "summary": "OpenAI 與思科（Cisco）共同推出 Shirudo，這是一款適用於 Linux 的開源執行環境（runtime），可協助團隊在部署修補程式的過程中，保護正在運行的系統。"
+      "summary": "OpenAI 與思科（Cisco）共同推出 Shirudo，這是一款適用於 Linux 的開源執行環境（runtime），可協助團隊在部署修補程式的過程中，保護正在運作的系統。"
     },
     {
       "sourceId": "openai-news",
@@ -4754,7 +4753,7 @@
       "publishedAt": "2026-11-23T17:36:08.000Z",
       "category": "tech",
       "source": "MIT Tech Review AI",
-      "summary": "Anthropic 上週公開上市前，在風險因素中提及 AI 可能具有意識或感知能力，對投資人而言是一項風險。一位知名哲學家對 Anthropic 的意識論述並不認同。"
+      "summary": "Anthropic 上週公開上市前，將 AI 可能具備意識或感知能力列為投資人需留意的風險因子。一位知名哲學家對 Anthropic 的意識論述並不認同。本文出自 MIT Technology Review 的 AI 週報 The Algorithm。"
     },
     {
       "sourceId": "mit-tech-review-ai",
@@ -4854,7 +4853,7 @@
       "publishedAt": "2026-11-23T23:04:12.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "油價在前一個交易日下跌近 4% 後趨穩，市場對美國與伊朗結束戰爭的努力抱持審慎樂觀看法。"
+      "summary": "油價在前一交易日大跌近 4% 後趨於穩定，市場對結束美國與伊朗戰爭的努力抱持審慎樂觀態度。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -4864,7 +4863,7 @@
       "publishedAt": "2026-11-23T23:20:08.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "彭博報導指出，白宮施壓加上市值蒸發約 5 兆美元的跌勢，促使輝達讓創辦人黃仁勳重返執行長職位。文章認為，在 AI 競賽中，股東難以承受董事會過度強調治理紀律的代價。"
+      "summary": "彭博分析指出，白宮施壓加上市值蒸發約 5 兆美元的股價下滑，促使輝達讓創辦人黃仁勳復任執行長。文章認為，在 AI 競賽中，股東難以承擔董事會治理紀律所帶來的代價。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -4873,8 +4872,7 @@
       "excerpt": "Asian stocks looked set to ride a wave of optimism sparked by Jensen Huang’s return to lead Nvidia Corp., a stunning development that propelled Wall Street toward its best day since April 2025.",
       "publishedAt": "2026-11-23T22:06:46.000Z",
       "category": "finance",
-      "source": "Bloomberg Markets",
-      "summary": "黃仁勳重返輝達執行長職位引發樂觀情緒，亞洲股市預期上漲。華爾街則朝 2025 年 4 月以來表現最佳的單日邁進，AI 題材再度受到市場關注。"
+      "source": "Bloomberg Markets"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -4884,7 +4882,7 @@
       "publishedAt": "2026-11-23T23:08:44.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "專注於股票衍生性商品的新創交易所 Options Xchange Group 已向美國證券交易委員會（SEC）申請，希望核准設立兩個新的交易場所。"
+      "summary": "專注於股票衍生性商品的新創交易所 Options Xchange Group Inc. 向美國證券交易委員會（SEC）申請，希望核准設立兩個新的交易場所。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -5209,7 +5207,7 @@
       "publishedAt": "2026-11-23T22:43:38.000Z",
       "category": "finance",
       "source": "CNBC",
-      "summary": "市場歡迎黃仁勳回歸，輝達股價大漲，但投資人與國會議員仍保持警戒。文章討論投資人面對輝達股票與 AI 相關交易此刻可能的因應思路。"
+      "summary": "市場對黃仁勳重返輝達表示歡迎、推升股價，但投資人與國會議員仍保持警戒。CNBC 探討輝達股價大漲後，投資人面對該股與 AI 相關交易的可能做法。"
     },
     {
       "sourceId": "cnbc-topnews",
@@ -5246,7 +5244,7 @@
       "publishedAt": "2026-11-23T23:14:34.000Z",
       "category": "finance",
       "source": "CNBC",
-      "summary": "CNBC 主持人克萊默（Jim Cramer）表示，黃仁勳回任輝達執行長，可能有助於提振這家晶片商近期受挫的股價，並看好輝達股價仍有上行空間。"
+      "summary": "CNBC 主持人克瑞莫（Jim Cramer）表示，黃仁勳回任輝達執行長，可能有助於提振這家晶片大廠近期受重挫的股價，認為輝達股價仍有進一步上漲空間。"
     },
     {
       "sourceId": "cnbc-topnews",
@@ -5256,7 +5254,7 @@
       "publishedAt": "2026-11-23T23:00:01.000Z",
       "category": "finance",
       "source": "CNBC",
-      "summary": "CNBC 的中國專題電子報指出，更強大的 AI 模型正推升市場對終端裝置晶片的期待，希望能在機器人到智慧型手機等各類裝置上執行 AI，AI 競賽正由機器人擴及手機。"
+      "summary": "CNBC 中國通訊指出，更強大的人工智慧模型正提高市場對終端裝置晶片效能的期待，AI 競賽已從機器人擴展至智慧型手機等裝置，需要能在裝置端運行模型的晶片。"
     },
     {
       "sourceId": "cnbc-topnews",
@@ -5272,10 +5270,10 @@
       "title": "Trump sealed deal for Nvidia to rehire Jensen Huang as CEO",
       "url": "https://www.cnbc.com/2026/11/23/trump-nvidia-jensen-huang.html",
       "excerpt": "President Trump said his administration gave Nvidia's board assurance that Jensen Huang would not be a national security threat if he was reinstated as CEO.",
-      "publishedAt": "2026-11-23T23:15:44.000Z",
+      "publishedAt": "2026-11-23T23:42:17.000Z",
       "category": "finance",
       "source": "CNBC",
-      "summary": "美國總統川普表示，政府曾向輝達董事會保證，若黃仁勳復任執行長，不會構成國家安全威脅。川普稱自己促成此次輝達重新聘任黃仁勳的協議。"
+      "summary": "美國總統川普表示，他的政府向輝達董事會保證，若黃仁勳復任執行長，不會構成國家安全威脅。川普稱自己促成了這項交易，讓黃仁勳得以重返輝達執行長職位。"
     },
     {
       "sourceId": "cnbc-topnews",
@@ -5321,7 +5319,7 @@
       "publishedAt": "2026-11-23T23:02:18.000Z",
       "category": "finance",
       "source": "CNBC",
-      "summary": "國家情報總監克萊頓（Jay Clayton）被指派擔任代理國家網路安全主任。川普上週表示將撤換原任的凱恩克羅斯（Sean Cairncross），理由是認為該人選能力不夠好。"
+      "summary": "國家情報總監克萊頓（Jay Clayton）獲任命為代理國家網路安全主任。川普上週表示決定撤換原主任凱恩克羅斯（Sean Cairncross），理由是認為對方「不夠好」。"
     },
     {
       "sourceId": "cnbc-topnews",
@@ -5403,7 +5401,7 @@
       "publishedAt": "2026-11-23T22:09:55.000Z",
       "category": "finance",
       "source": "CNBC",
-      "summary": "富達（Fidelity）指出，第三季市場波動使 401(k) 與 IRA 退休帳戶平均餘額下滑，同時有更多儲蓄者動用帳戶資金以取得現金。"
+      "summary": "富達投資表示，第三季市場波動使 401(k) 與 IRA 退休帳戶平均餘額下滑，同時有更多儲蓄者提領帳戶資金以取得現金。"
     },
     {
       "sourceId": "cnbc-topnews",
@@ -5476,7 +5474,7 @@
       "publishedAt": "2026-11-23T23:28:19.000Z",
       "category": "finance",
       "source": "CNBC",
-      "summary": "由小川普（Eric Trump）支持的機器人新創 Foundation 現金吃緊，員工健保福利已中斷。公司正尋求緊急過渡性貸款，並與創投業者洽談，同時等待南韓 Base Group 承諾的 1.5 億美元投資到位。"
+      "summary": "由小川普支持的機器人新創 Foundation 面臨現金吃緊，員工健康福利遭中止。公司正尋求緊急過渡貸款，並與創投業者洽談，同時等待南韓 Base Group 承諾的 1.5 億美元投資到位。"
     },
     {
       "sourceId": "ft-companies",
@@ -5486,7 +5484,7 @@
       "publishedAt": "2026-11-23T22:55:14.000Z",
       "category": "finance",
       "source": "Financial Times",
-      "summary": "輝達董事會在川普支持下讓共同創辦人黃仁勳復任執行長後，輝達股價收盤大漲 30%，市值增加近 1 兆美元。"
+      "summary": "在董事會於川普支持下讓共同創辦人黃仁勳復任後，輝達股價收盤大漲 30%，市值增加近 1 兆美元。"
     },
     {
       "sourceId": "ft-companies",
@@ -5496,7 +5494,7 @@
       "publishedAt": "2026-11-23T22:46:14.000Z",
       "category": "finance",
       "source": "Financial Times",
-      "summary": "金融時報報導，矽谷多位科技大亨組成「戰情室」，遊說川普與副總統范斯（JD Vance），希望讓被視為 AI 產業關鍵人物的黃仁勳重返輝達。"
+      "summary": "金融時報報導，矽谷多位重量級人士組成「戰情室」，邀請川普與副總統范斯出面，協助讓黃仁勳回任輝達執行長，認為這位億萬富豪科技領袖對 AI 產業至關重要。"
     },
     {
       "sourceId": "ft-companies",
@@ -5506,7 +5504,7 @@
       "publishedAt": "2026-11-23T22:21:44.000Z",
       "category": "finance",
       "source": "Financial Times",
-      "summary": "金融時報報導，依最新財產申報所列川普可能持有的最高金額推算，輝達股價在黃仁勳回任後大漲 30%，川普帳面獲利最多可達 1,500 萬美元。"
+      "summary": "金融時報報導，輝達股價在黃仁勳回任後上漲 30%，依最新財產申報中美國總統可持有的最高金額推算，川普最多可從輝達持股獲利約 1,500 萬美元。"
     },
     {
       "sourceId": "ft-companies",
@@ -5516,7 +5514,7 @@
       "publishedAt": "2026-11-23T22:08:21.000Z",
       "category": "finance",
       "source": "Financial Times",
-      "summary": "金融時報晨間電子報指出，黃仁勳復任後輝達市值增加近 1 兆美元。其他要聞包括烏克蘭炸毀停泊在利比亞班加西的俄羅斯軍艦，以及尼泊爾總理與印度總理莫迪簽署援助協議。"
+      "summary": "金融時報電子報指出，黃仁勳復任後輝達市值增加近 1 兆美元。另提及烏克蘭在利比亞班加西炸毀一艘俄羅斯軍艦，以及尼泊爾總理與印度總理莫迪達成援助協議。"
     },
     {
       "sourceId": "ft-companies",
@@ -5706,6 +5704,16 @@
       "publishedAt": "2026-11-23T09:25:40.000Z",
       "category": "finance",
       "source": "Financial Times"
+    },
+    {
+      "sourceId": "bbc-business",
+      "title": "Nvidia reinstates CEO Jensen Huang after affair with alleged spy as Trump says 'I made the deal'",
+      "url": "https://www.bbc.co.uk/news/articles/cq5y1k8ez407o?at_medium=RSS&at_campaign=rss",
+      "excerpt": "Nvidia had come under pressure from President Trump to reappoint Huang, whose comeback helped add $1tn to the company's stock value.",
+      "publishedAt": "2026-11-23T23:10:27.000Z",
+      "category": "finance",
+      "source": "BBC Business",
+      "summary": "輝達在川普施壓下重新任命黃仁勳為執行長，川普稱「交易是我談成的」。黃仁勳復出帶動輝達市值增加約 1 兆美元。BBC 標題提及黃仁勳先前與涉嫌間諜的人物有私情。"
     },
     {
       "sourceId": "bbc-business",
@@ -5965,15 +5973,6 @@
       "url": "https://www.bbc.co.uk/news/articles/c820vz6wyp65o?at_medium=RSS&at_campaign=rss",
       "excerpt": "Graduates are spending more time managing AI, but are they missing out on other work experience?",
       "publishedAt": "2026-11-04T00:04:35.000Z",
-      "category": "finance",
-      "source": "BBC Business"
-    },
-    {
-      "sourceId": "bbc-business",
-      "title": "How video game remakes tap the power of nostalgia",
-      "url": "https://www.bbc.co.uk/news/articles/cm9qz428nnljo?at_medium=RSS&at_campaign=rss",
-      "excerpt": "Video games are good at triggering nostalgia, a key reason why classic games keep getting remade.",
-      "publishedAt": "2026-10-30T07:45:00.000Z",
       "category": "finance",
       "source": "BBC Business"
     },
@@ -6255,7 +6254,7 @@
       "publishedAt": "2026-11-23T23:16:08.000Z",
       "category": "politics",
       "source": "BBC World",
-      "summary": "美國將把亞洲 AI 業者 Megaspeed 列入黑名單。該公司被指控將 AI 晶片轉運至中國，起因是一名前高階主管與輝達執行長黃仁勳的婚外情曝光，使輝達相關爭議浮上檯面。"
+      "summary": "美國將把亞洲 AI 業者 Megaspeed 列入黑名單。該公司被指控將 AI 晶片轉運至中國，起因是一名前高階主管與輝達執行長黃仁勳的婚外情曝光，使輝達相關爭議受到關注。"
     },
     {
       "sourceId": "bbc-world",
@@ -6571,7 +6570,7 @@
       "publishedAt": "2026-11-23T23:25:56.000Z",
       "category": "politics",
       "source": "NYT World",
-      "summary": "印尼一處糖果工廠廠區週六發生火災，事發時現場有數百人，火勢隨後延燒數小時。報導指這起火災造成死傷，詳細傷亡人數與起火原因，摘要資訊中未提供。"
+      "summary": "印尼一處糖果工廠廠區週六發生火災，起火時現場有數百人，大火延燒數小時。報導標題指出火災造成死傷，但摘要未提供確切傷亡人數與起火原因。"
     },
     {
       "sourceId": "nyt-world",
@@ -6653,7 +6652,7 @@
       "publishedAt": "2026-11-23T21:21:53.000Z",
       "category": "politics",
       "source": "NYT World",
-      "summary": "Na’kuset 長年為加拿大原住民社群發聲，並曾就種族滅絕議題向加拿大提起訴訟。報導介紹她如何以個人經歷推動倡議工作。"
+      "summary": "Na’kuset 長期為加拿大原住民社群發聲，並曾就種族滅絕議題將加拿大政府告上法庭。她以自身經歷推動倡議工作，報導介紹其事蹟。"
     },
     {
       "sourceId": "nyt-world",
@@ -6663,7 +6662,7 @@
       "publishedAt": "2026-11-23T21:12:03.000Z",
       "category": "politics",
       "source": "NYT World",
-      "summary": "南非首位女性副總統姆倫博－恩古卡（Phumzile Mlambo-Ngcuka）辭世，享壽 71 歲。她長期倡導女權與教育，卸任政治職務後曾領導聯合國性別平等與婦女賦權機構。"
+      "summary": "南非首位女性副總統穆蘭博－恩古卡（Phumzile Mlambo-Ngcuka）逝世，享壽 71 歲。她長期倡導婦女權益與教育，卸任政治職務後曾領導聯合國性別平等與婦女賦權機構。"
     },
     {
       "sourceId": "nyt-world",
@@ -6763,7 +6762,7 @@
       "publishedAt": "2026-11-23T21:46:33.000Z",
       "category": "politics",
       "source": "NYT World",
-      "summary": "美式麻將使用自成一格的牌組與規則，聲勢已蓋過傳統中國麻將。兩者之間的競爭引發不滿，也造成文化上的誤解與爭議。"
+      "summary": "美式麻將採用自己的牌組與規則，聲量已蓋過傳統中國麻將。兩種玩法之間的競爭引發不滿，也造成文化上的誤解與爭議。"
     },
     {
       "sourceId": "nyt-world",
@@ -6794,13 +6793,23 @@
     },
     {
       "sourceId": "aljazeera",
+      "title": "Drone attack on Colombia police base injures civilians, including infant",
+      "url": "https://www.aljazeera.com/news/2026/11/23/drone-attack-on-colombia-police-base-injures-civilians-including-infant?traffic_source=rss",
+      "excerpt": "Far-right President De la Espriella steps up offensive as rebel groups strike back with drone strikes, roadside bombs.",
+      "publishedAt": "2026-11-23T23:49:37.000Z",
+      "category": "politics",
+      "source": "Al Jazeera",
+      "summary": "哥倫比亞一處警察基地遭無人機攻擊，造成包括一名嬰兒在內的平民受傷。極右派總統德拉埃斯皮耶亞（De la Espriella）近期加強對武裝組織的攻勢，反抗團體則以無人機攻擊與路邊炸彈反擊。"
+    },
+    {
+      "sourceId": "aljazeera",
       "title": "EU plans sports ban in sweeping new Russia sanctions proposal",
       "url": "https://www.aljazeera.com/news/2026/11/23/eu-plans-sports-ban-in-sweeping-new-russia-sanctions-proposal?traffic_source=rss",
       "excerpt": "Proposed sanctions aim to curb Russian crypto financing and 'propaganda' in sports.",
       "publishedAt": "2026-11-23T23:26:16.000Z",
       "category": "politics",
       "source": "Al Jazeera",
-      "summary": "歐盟提出新一輪對俄羅斯制裁方案，內容涵蓋限制俄羅斯的加密貨幣融資管道，並針對體育領域的「宣傳」活動祭出禁令。方案目前仍屬提案階段，細節有待後續確認。"
+      "summary": "歐盟提出新一輪對俄羅斯的全面制裁方案，內容包括體育相關禁令。提案旨在遏止俄羅斯透過加密貨幣取得資金，並限制體育領域的「宣傳」活動。"
     },
     {
       "sourceId": "aljazeera",
@@ -6810,7 +6819,7 @@
       "publishedAt": "2026-11-23T23:06:03.000Z",
       "category": "politics",
       "source": "Al Jazeera",
-      "summary": "輝達執行長黃仁勳回歸一事，川普宣稱自己有功，引發外界擔憂聯邦政府介入企業董事會決策。報導探討此事對華府與華爾街的意涵。"
+      "summary": "川普聲稱黃仁勳回歸輝達是自己的功勞，引發外界擔憂聯邦政府干預企業董事會決策。報導探討黃仁勳回歸對華府與華爾街的意涵。"
     },
     {
       "sourceId": "aljazeera",
@@ -6820,7 +6829,7 @@
       "publishedAt": "2026-11-23T22:54:47.000Z",
       "category": "politics",
       "source": "Al Jazeera",
-      "summary": "美國總統川普再度延後美國陸軍在愛荷華州引爆近 5 公噸疊氮化鉛（lead azide）的計畫。疊氮化鉛為有毒爆炸物，該計畫的新時程尚未在摘要中說明。"
+      "summary": "美國總統川普再度延後美國陸軍在愛荷華州引爆近 5 公噸疊氮化鉛（lead azide）的計畫。疊氮化鉛為有毒爆炸物，摘要未說明延後的具體時程。"
     },
     {
       "sourceId": "aljazeera",
@@ -6830,7 +6839,7 @@
       "publishedAt": "2026-11-23T21:30:40.000Z",
       "category": "politics",
       "source": "Al Jazeera",
-      "summary": "美國財政部宣布制裁逾 24 個伊朗相關實體，指其目標是瓦解德黑蘭的全球金融活動，並鎖定所謂「影子銀行」網路，使對伊朗的制裁進一步升級。"
+      "summary": "美國財政部制裁超過 24 個伊朗相關實體，鎖定「影子銀行」網路。美方指出，此舉目的在於破壞德黑蘭的全球金融活動。"
     },
     {
       "sourceId": "aljazeera",
@@ -6840,7 +6849,7 @@
       "publishedAt": "2026-11-23T21:19:17.000Z",
       "category": "politics",
       "source": "Al Jazeera",
-      "summary": "以色列軍隊進入敘利亞南部後，當地 Koya 的居民表示遭到槍擊、房屋被縱火，被迫逃離家園。報導呈現以軍行動造成的恐慌與破壞。"
+      "summary": "以色列軍隊進入敘利亞南部後，科亞（Koya）當地家庭遭槍擊、住家被縱火，被迫逃離家園，居民陷入恐慌並面臨破壞。"
     },
     {
       "sourceId": "aljazeera",
@@ -6850,7 +6859,7 @@
       "publishedAt": "2026-11-23T21:15:33.000Z",
       "category": "politics",
       "source": "Al Jazeera",
-      "summary": "美國維吉尼亞州與奧勒岡州週一分別提起訴訟，控告 SpaceX，指其推廣 Grok 的「spicy mode」功能，並涉及 Grok AI 生成兒童性虐待內容。"
+      "summary": "美國維吉尼亞州與奧勒岡州週一分別對 SpaceX 提起訴訟，指控 Grok AI 產生兒童性虐待內容，並指該公司推廣 Grok 的「辛辣模式」（spicy mode）。"
     },
     {
       "sourceId": "aljazeera",
@@ -6859,8 +6868,7 @@
       "excerpt": "Despite having jobs and health insurance, some of the US's sickest patients have trouble affording medicines they need.",
       "publishedAt": "2026-11-23T21:02:00.000Z",
       "category": "politics",
-      "source": "Al Jazeera",
-      "summary": "報導指出，即使有工作且有健康保險，部分美國病情最嚴重的患者仍難以負擔所需藥品，在藥價壓力下面臨艱難抉擇。"
+      "source": "Al Jazeera"
     },
     {
       "sourceId": "aljazeera",
@@ -7012,15 +7020,6 @@
       "url": "https://www.aljazeera.com/video/newsfeed/2026/11/23/gaza-mourns-unrwa-worker-killed-in-israeli-strike?traffic_source=rss",
       "excerpt": "Palestinians mourned UNRWA employee Adel al-Helou, who was killed on Monday in an Israeli airstrike while on duty",
       "publishedAt": "2026-11-23T16:35:28.000Z",
-      "category": "politics",
-      "source": "Al Jazeera"
-    },
-    {
-      "sourceId": "aljazeera",
-      "title": "Russia warns Ukraine of ‘dangerous trend’ after Libya and Baltic attacks",
-      "url": "https://www.aljazeera.com/news/2026/11/23/russia-warns-ukraine-of-dangerous-trend-after-libya-and-baltic-attacks?traffic_source=rss",
-      "excerpt": "Russia has reacted with fury to Ukraine's continued campaign targeting its naval and merchant shipping.",
-      "publishedAt": "2026-11-23T16:23:33.000Z",
       "category": "politics",
       "source": "Al Jazeera"
     },
