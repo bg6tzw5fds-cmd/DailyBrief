@@ -11,6 +11,12 @@ import { getDisplayName, type TickerDef } from "./watchlist";
 import { REPORT_LOCALE } from "../sources/registry";
 
 export type SignalType =
+  | "sma20-cross-up-50" // SMA20 上穿 SMA50 — 短線轉強
+  | "sma20-cross-down-50" // SMA20 下穿 SMA50 — 短線轉弱
+  | "sma50-cross-up-100" // SMA50 上穿 SMA100 — 中期轉強
+  | "sma50-cross-down-100" // SMA50 下穿 SMA100 — 中期轉弱
+  | "price-cross-up-200" // 收盤站上 SMA200
+  | "price-cross-down-200" // 收盤跌破 SMA200
   | "golden-cross" // SMA50 crosses above SMA200 — bullish trend confirmation
   | "death-cross" // SMA50 crosses below SMA200 — bearish trend confirmation
   | "macd-bull-cross" // MACD crosses above signal — momentum turning up
@@ -41,6 +47,7 @@ export interface TickerAnalysis {
   pct52WeekLow: number; // positive = above low
   sma20: number | null;
   sma50: number | null;
+  sma100: number | null;
   sma200: number | null;
   rsi14: number | null;
   macd: number | null;
@@ -52,8 +59,14 @@ export interface TickerAnalysis {
 }
 
 const SIGNAL_LABELS: Record<SignalType, string> = {
-  "golden-cross": "黃金交叉(SMA50↑SMA200)",
-  "death-cross": "死亡交叉(SMA50↓SMA200)",
+  "sma20-cross-up-50": "SMA20 上穿 SMA50（短線上行訊號）",
+  "sma20-cross-down-50": "SMA20 下穿 SMA50（短線下行訊號）",
+  "sma50-cross-up-100": "SMA50 上穿 SMA100（中期上行訊號）",
+  "sma50-cross-down-100": "SMA50 下穿 SMA100（中期下行訊號）",
+  "price-cross-up-200": "站上 SMA200（長期上行訊號）",
+  "price-cross-down-200": "跌破 SMA200（長期下行訊號）",
+  "golden-cross": "黃金交叉 SMA50 上穿 SMA200（長期上行訊號）",
+  "death-cross": "死亡交叉 SMA50 下穿 SMA200（長期下行訊號）",
   "macd-bull-cross": "MACD 黃金交叉",
   "macd-bear-cross": "MACD 死亡交叉",
   "rsi-overbought": "RSI 超買",
@@ -85,12 +98,14 @@ export function analyzeTicker(
 
   const sma20arr = sma(closes, 20);
   const sma50arr = sma(closes, 50);
+  const sma100arr = sma(closes, 100);
   const sma200arr = sma(closes, 200);
   const rsiArr = rsiFn(closes, 14);
   const m = macdFn(closes);
 
   const sma20Val = last(sma20arr) ?? null;
   const sma50Val = last(sma50arr) ?? null;
+  const sma100Val = last(sma100arr) ?? null;
   const sma200Val = last(sma200arr) ?? null;
   const rsi14 = last(rsiArr) ?? null;
   const macdVal = last(m.macd) ?? null;
@@ -116,6 +131,28 @@ export function analyzeTicker(
       : "normal";
 
   const signals: Signal[] = [];
+
+  /** Cross of fast over slow within `lookback` sessions (arrays end at the latest bar). */
+  const pushCross = (
+    fast: number[],
+    slow: number[],
+    lookback: number,
+    up: SignalType,
+    down: SignalType,
+  ) => {
+    if (!fast.length || !slow.length) return;
+    const len = Math.min(fast.length, slow.length);
+    const cross = detectRecentCross(fast.slice(fast.length - len), slow.slice(slow.length - len), lookback);
+    if (cross) {
+      const type = cross.direction === "up" ? up : down;
+      signals.push({ type, label: SIGNAL_LABELS[type], daysAgo: cross.daysAgo });
+    }
+  };
+
+  // Moving-average crosses, short → long term
+  pushCross(sma20arr, sma50arr, 5, "sma20-cross-up-50", "sma20-cross-down-50");
+  pushCross(sma50arr, sma100arr, 10, "sma50-cross-up-100", "sma50-cross-down-100");
+  pushCross(closes, sma200arr, 5, "price-cross-up-200", "price-cross-down-200");
 
   // SMA50 / SMA200 cross (golden / death)
   if (sma50arr.length && sma200arr.length) {
@@ -199,6 +236,7 @@ export function analyzeTicker(
     pct52WeekLow,
     sma20: sma20Val,
     sma50: sma50Val,
+    sma100: sma100Val,
     sma200: sma200Val,
     rsi14,
     macd: macdVal,

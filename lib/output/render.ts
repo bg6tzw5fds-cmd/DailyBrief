@@ -1229,6 +1229,8 @@ export function renderHtml(
   .ticker-indicators > div { display: flex; gap: 0.4rem; align-items: baseline; min-width: 0; }
   .ticker-indicators dt { color: var(--muted); font-size: 0.74rem; margin: 0; white-space: nowrap; }
   .ticker-indicators dd { margin: 0; font-variant-numeric: tabular-nums; font-weight: 500; color: var(--fg); }
+  .ticker-indicators dd.positive { color: #dc2626; }
+  .ticker-indicators dd.negative { color: #16a34a; }
   .trend-bullish { color: #dc2626; }
   .trend-bearish { color: #16a34a; }
   .trend-neutral { color: var(--muted); }
@@ -1425,6 +1427,12 @@ export function renderHtml(
 // ----- trading panel -----
 
 const SIGNAL_TONE: Record<string, "bull" | "bear" | "caution"> = {
+  "sma20-cross-up-50": "bull",
+  "sma50-cross-up-100": "bull",
+  "price-cross-up-200": "bull",
+  "sma20-cross-down-50": "bear",
+  "sma50-cross-down-100": "bear",
+  "price-cross-down-200": "bear",
   "golden-cross": "bull",
   "macd-bull-cross": "bull",
   "above-sma50-sma200": "bull",
@@ -1483,6 +1491,12 @@ function renderPickCard(p: WatchlistPick): string {
   </article>`;
 }
 
+/** Price above the average → red (台股慣例), below → green. */
+function smaCls(price: number, avg: number | null | undefined): string {
+  if (avg == null || !Number.isFinite(avg)) return "";
+  return price >= avg ? "positive" : "negative";
+}
+
 function renderTickerCard(t: TickerAnalysis): string {
   const trendCls = t.trend;
   const priceCls = t.pct1Day >= 0 ? "positive" : "negative";
@@ -1514,7 +1528,10 @@ function renderTickerCard(t: TickerAnalysis): string {
       <div><dt>${STR.tickerVs52wHigh}</dt><dd>${fmtPct(t.pct52WeekHigh, 1)}</dd></div>
       <div><dt>RSI(14)</dt><dd class="rsi-${t.rsiState}">${fmtNum(t.rsi14, 1)}</dd></div>
       <div><dt>${STR.tickerTrend}</dt><dd class="trend-${trendCls}">${TREND_LABEL[t.trend]}</dd></div>
-      <div><dt>SMA 20 / 50 / 200</dt><dd>${fmtNum(t.sma20)} / ${fmtNum(t.sma50)} / ${fmtNum(t.sma200)}</dd></div>
+      <div><dt>SMA20</dt><dd class="${smaCls(t.currentPrice, t.sma20)}">${fmtNum(t.sma20)}</dd></div>
+      <div><dt>SMA50</dt><dd class="${smaCls(t.currentPrice, t.sma50)}">${fmtNum(t.sma50)}</dd></div>
+      <div><dt>SMA100</dt><dd class="${smaCls(t.currentPrice, t.sma100)}">${fmtNum(t.sma100)}</dd></div>
+      <div><dt>SMA200</dt><dd class="${smaCls(t.currentPrice, t.sma200)}">${fmtNum(t.sma200)}</dd></div>
       <div><dt>${STR.tickerMacd}</dt><dd>${fmtNum(t.macd, 3)} / ${fmtNum(t.macdSignal, 3)}</dd></div>
     </dl>
     ${signals ? `<div class="ticker-signals">${signals}</div>` : ""}

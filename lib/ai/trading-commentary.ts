@@ -50,7 +50,7 @@ const SYSTEM_PROMPT_ZH = `你是一名專業、克制、中性的繁體中文（
 5. risk_caveat 必須包含「過去走勢不代表未來表現」與「僅供技術指標解讀參考」。
 6. **全部使用繁體中文**，不得出現簡體字。
 
-輸入：JSON 陣列，每個元素是某標的的技術分析物件，欄位包括 symbol、displayName、group、currentPrice、pct1Day、pct5Day、pct52WeekHigh、pct52WeekLow、sma20/sma50/sma200、rsi14、macd/macdSignal、trend、rsiState、signals。殖利率類標的（^IRX、^FVX、^TNX、^TYX）的 currentPrice 單位是百分比。
+輸入：JSON 陣列，每個元素是某標的的技術分析物件，欄位包括 symbol、displayName、group、currentPrice、pct1Day、pct5Day、pct52WeekHigh、pct52WeekLow、sma20/sma50/sma100/sma200、rsi14、macd/macdSignal、trend、rsiState、signals。殖利率類標的（^IRX、^FVX、^TNX、^TYX）的 currentPrice 單位是百分比。
 
 輸出嚴格 JSON 物件（不要 markdown、不要任何前後說明），三個欄位都**必填且不能為空**：
 {
@@ -82,7 +82,7 @@ const SYSTEM_PROMPT_EN = `You are a professional, restrained, neutral English-la
 4. market_overview must cover all 4 asset categories (US equity / crypto / China-HK equity / commodities-FX).
 5. risk_caveat MUST explicitly include "past performance does not guarantee future results" and "for technical-indicator interpretation only".
 
-Input: a JSON array of ticker analysis objects with fields symbol, displayName, group, currentPrice, pct1Day, pct5Day, pct52WeekHigh, pct52WeekLow, sma20/sma50/sma200, rsi14, macd/macdSignal/macdHistogram, trend, rsiState, signals.
+Input: a JSON array of ticker analysis objects with fields symbol, displayName, group, currentPrice, pct1Day, pct5Day, pct52WeekHigh, pct52WeekLow, sma20/sma50/sma100/sma200, rsi14, macd/macdSignal/macdHistogram, trend, rsiState, signals.
 
 Output STRICTLY a JSON object (no markdown, no prefix/suffix). All three fields must be **populated and non-empty**:
 {
@@ -125,6 +125,7 @@ export async function generateTradingCommentary(
     pct52WeekLow: round(a.pct52WeekLow, 2),
     sma20: roundNullable(a.sma20),
     sma50: roundNullable(a.sma50),
+    sma100: roundNullable(a.sma100),
     sma200: roundNullable(a.sma200),
     rsi14: roundNullable(a.rsi14, 1),
     macd: roundNullable(a.macd, 4),

@@ -70,6 +70,10 @@ export const WATCHLIST: TickerDef[] = [
   { symbol: "^KS11", displayName: "韓國綜合", displayNameEn: "KOSPI", group: "index" },
   { symbol: "^HSI", displayName: "恒生指數", displayNameEn: "Hang Seng", group: "index" },
   { symbol: "^STOXX50E", displayName: "歐洲 STOXX 50", displayNameEn: "Euro STOXX 50", group: "index" },
+  { symbol: "^STOXX", displayName: "歐洲 STOXX 600", displayNameEn: "STOXX Europe 600", group: "index" },
+  { symbol: "^BSESN", displayName: "印度 SENSEX", displayNameEn: "BSE Sensex", group: "index" },
+  { symbol: "000300.SS", displayName: "滬深 300", displayNameEn: "CSI 300", group: "index" },
+  { symbol: "399006.SZ", displayName: "創業板指", displayNameEn: "ChiNext", group: "index" },
 
   // === 台股 ===
   { symbol: "2330.TW", displayName: "台積電", displayNameEn: "TSMC", group: "taiwan" },
