@@ -183,6 +183,15 @@
     },
     {
       "sourceId": "ltn-business",
+      "title": "黃仁勳回歸？貝森特：他已是「外部人士」 待輝達調查",
+      "url": "https://ec.ltn.com.tw/article/breakingnews/5650033",
+      "excerpt": "輝達（NVIDIA）前執行長黃仁勳因坦承婚外情而辭職，美國財政部長貝森特（Scott Bessent）先前曾表示輝達董事會應該從外部尋找新執行長，貝森特22日接受《哥倫比亞廣播公...…",
+      "publishedAt": "2026-11-22T23:45:53.000Z",
+      "category": "finance",
+      "source": "自由時報 財經"
+    },
+    {
+      "sourceId": "ltn-business",
       "title": "深深影響台灣！黃仁勳下台掀全球股災 謝金河：世界不能沒有他",
       "url": "https://ec.ltn.com.tw/article/breakingnews/5650045",
       "excerpt": "財信傳媒董事長謝金河指出，輝達（Nvidia）前執行長黃仁勳下台後，全球金融市場遭遇猛烈修正，市值至少蒸發超過10兆美元，輝達股價更從243.37美元跌至124.5美元，市值縮水...…",
@@ -443,20 +452,20 @@
       "source": "自由時報 財經"
     },
     {
-      "sourceId": "ltn-business",
-      "title": "美股重挫！法人：「禁空令」不利台股流動性 建議觀望",
-      "url": "https://ec.ltn.com.tw/article/breakingnews/5649562",
-      "excerpt": "台股近期大幅波動，由於時差的關係、台灣時間週六凌晨收盤的「費城半導體指數」，單日暴跌10.73%，讓11月23日（週一）台股「挫咧等」！法人表示，以往金管會祭出限空令後，...…",
-      "publishedAt": "2026-11-22T07:17:40.000Z",
-      "category": "finance",
-      "source": "自由時報 財經"
-    },
-    {
       "sourceId": "yahoo-tw-market",
       "title": "油價連10不漲！中油累計吸收357億撐住油價",
       "url": "https://tw.stock.yahoo.com/news/%E6%9C%88%E9%85%8D%E5%B9%B4%E9%85%8D%E9%83%BD%E6%9C%89%EF%BC%81%E8%81%AF%E5%8D%9A%E9%A6%96%E5%89%B5etf%E5%82%98%E5%9E%8B%E5%9F%BA%E9%87%91%E9%96%8B%E5%8B%9F%E4%B8%AD-%E4%B8%AD%E5%9C%8B%E5%A4%A7%E9%99%B8%E8%B2%A1%E5%A0%B1%E5%AD%A3%EF%BC%81%E5%97%B6%E5%93%A9%E5%97%B6%E5%93%A9bili%E3%80%81%E7%90%86%E6%83%B3%E6%B1%BD%E8%BB%8Ali%E5%90%8C%E5%91%A8%E4%BA%A4%E5%8D%B7-dell%E8%B2%A1%E5%A0%B1%EF%BC%8Bpce%E5%90%8C%E5%A4%A9%E5%87%BA%E7%88%90-%E4%B8%AD%E6%B2%B9%E6%B2%B9%E5%83%B9%E9%80%A310%E4%B8%8D%E6%BC%B2%EF%BC%81%E4%B8%AD%E6%B2%B9%E7%B4%AF%E8%A8%88%E5%90%B8%E6%94%B6357%E5%84%84%E6%92%90%E4%BD%8F%E6%B2%B9%E5%83%B9%EF%BD%9C%E6%8A%95%E8%B3%87%E6%97%A9%E7%9F%A5%E9%81%93-043825129.html",
       "excerpt": "本周【投資早知道】聚焦在月配年配都有！聯博首創ETF傘型基金開募中，全球高息成長同步入袋；中國大陸財報季！嗶哩嗶哩BILI、理想汽車LI同周交卷；Dell財報＋PCE同天出爐！11月25日決定美股感恩",
       "publishedAt": "2026-11-22T04:38:25.000Z",
+      "category": "finance",
+      "source": "Yahoo 股市 台股"
+    },
+    {
+      "sourceId": "yahoo-tw-market",
+      "title": "再奪Google TPU大單！聯發科獲大摩高喊6188元目標價　前三季EPS衝47元",
+      "url": "https://tw.stock.yahoo.com/news/%E5%86%8D%E5%A5%AAgoogle-tpu%E5%A4%A7%E5%96%AE-%E8%81%AF%E7%99%BC%E7%A7%91%E7%8D%B2%E5%A4%A7%E6%91%A9%E9%AB%98%E5%96%8A6188%E5%85%83%E7%9B%AE%E6%A8%99%E5%83%B9-%E5%89%8D%E4%B8%89%E5%AD%A3eps%E8%A1%9D47%E5%85%83-234800689.html",
+      "excerpt": "[FTNN新聞網]記者陳献朋／綜合報導由於公司有機會再取得Google新一代TPU專案，摩根士丹利證券（大摩）將ASIC三雄之首聯發科（2454）評為大中華半導體族群的首...",
+      "publishedAt": "2026-11-22T23:48:00.000Z",
       "category": "finance",
       "source": "Yahoo 股市 台股"
     },
@@ -475,6 +484,15 @@
       "url": "https://tw.stock.yahoo.com/news/%E6%9C%AC%E9%80%B1%E6%81%90%E7%88%86%E6%96%B7%E9%A0%AD%E6%BD%AE-%E5%8F%B0%E8%82%A1%E8%9E%8D%E8%B3%87-%E8%BF%BD%E7%B9%B364%E5%84%84-%E5%89%B5%E6%96%B0%E9%AB%98-233000735.html",
       "excerpt": "財經中心／李明融報導台股近期連日重挫，讓不少開槓桿的「貸款超人」剉咧等，全市場融資追繳風暴持續擴大！根據最新統計，11月20日全市場融資追繳戶數暴增至6,462戶，追繳金額高達64.64億元，雙雙創下",
       "publishedAt": "2026-11-22T23:30:00.000Z",
+      "category": "finance",
+      "source": "Yahoo 股市 台股"
+    },
+    {
+      "sourceId": "yahoo-tw-market",
+      "title": "台股週崩7641點還沒完？費半、台積電ADR暴殺再補刀　7道鬼門關測底",
+      "url": "https://tw.news.yahoo.com/%E5%8F%B0%E8%82%A1%E9%80%B1%E5%B4%A97641%E9%BB%9E%E9%82%84%E6%B2%92%E5%AE%8C-%E8%B2%BB%E5%8D%8A-%E5%8F%B0%E7%A9%8D%E9%9B%BBadr%E6%9A%B4%E6%AE%BA%E5%86%8D%E8%A3%9C%E5%88%80-7%E9%81%93%E9%AC%BC%E9%96%80%E9%97%9C%E6%B8%AC%E5%BA%95-231800164.html",
+      "excerpt": "台股一週血洗7641點，今（23）日又迎戰美股費半崩跌10.73%、台指期夜盤重挫，股民連喘口氣都難！融資砍到見骨，0050也出現槓桿退潮，止跌曙光來了嗎？真正的底部不能靠猜，從籌碼、匯率到權值股與均",
+      "publishedAt": "2026-11-22T23:18:00.000Z",
       "category": "finance",
       "source": "Yahoo 股市 台股"
     },
@@ -678,7 +696,7 @@
     },
     {
       "sourceId": "yahoo-tw-market",
-      "title": "台股這周很硬！法人教戰國安基金御用窗口還有銀彈、這些別亂砍",
+      "title": "台股這周很硬法人教戰！國安基金御用窗口還有銀彈、這些股別亂砍",
       "url": "https://tw.news.yahoo.com/%E5%8F%B0%E8%82%A1%E9%80%99%E5%91%A8%E5%BE%88%E7%A1%AC-%E6%B3%95%E4%BA%BA%E6%95%99%E6%88%B0%E5%9C%8B%E5%AE%89%E5%9F%BA%E9%87%91%E5%BE%A1%E7%94%A8%E7%AA%97%E5%8F%A3%E9%82%84%E6%9C%89%E9%8A%80%E5%BD%88-%E9%80%99%E4%BA%9B%E5%88%A5%E4%BA%82%E7%A0%8D-163050682.html",
       "excerpt": "AI衰退風險引爆空頭來襲，費半血崩10%，台指期暴跌1881點，台股不僅摜破年線，等於股民一年白做工，三萬三大關更岌岌可危。國泰證期顧問表示，國安基金第二波限空令上路，政府一手限制空頭、一手掏錢接刀，",
       "publishedAt": "2026-11-22T16:30:50.000Z",
@@ -700,24 +718,6 @@
       "url": "https://tw.stock.yahoo.com/news/%E5%8F%B0%E8%82%A1%E9%A2%A8%E5%90%91%E7%90%83-%E9%80%A3%E7%92%B0%E5%A5%97%E8%B3%A3%E5%A3%93%E9%9C%80%E6%99%82%E9%96%93%E6%8F%9B%E7%A9%BA%E9%96%93-%E9%95%B7%E6%9C%9F%E6%8A%95%E8%B3%87%E4%BA%BA%E5%BF%83%E6%85%8B%E5%85%88%E7%A9%A9%E4%BD%8F-153430563.html",
       "excerpt": "台股一周重挫7641點、跌幅17.5%，金管會全面限空，台積電上周五最後一盤湧入逾1萬張買單護盤 法人指美股重挫與AI資本支出疑慮續壓盤，融資斷頭恐擴大殺出，短期籌碼不易沉澱 元大、永豐都建議降低槓桿",
       "publishedAt": "2026-11-22T15:34:30.000Z",
-      "category": "finance",
-      "source": "Yahoo 股市 台股"
-    },
-    {
-      "sourceId": "yahoo-tw-market",
-      "title": "台股震盪　卓榮泰23日邀金融、科技與工商產業公協會代表會面",
-      "url": "https://tw.news.yahoo.com/%E5%8F%B0%E8%82%A1%E9%9C%87%E7%9B%AA-%E5%8D%93%E6%A6%AE%E6%B3%B023%E6%97%A5%E9%82%80%E9%87%91%E8%9E%8D-%E7%A7%91%E6%8A%80%E8%88%87%E5%B7%A5%E5%95%86%E7%94%A2%E6%A5%AD%E5%85%AC%E5%8D%94%E6%9C%83%E4%BB%A3%E8%A1%A8%E6%9C%83%E9%9D%A2-152210814.html",
-      "excerpt": "（中央社記者楊堯茹台北22日電）台股近期劇烈震盪，行政院發言人李慧芝今天表示，行政院長卓榮泰明天下午將邀集國內金融業、科技及工商產業公協會代表會面，展現政府持續維護投資人對國內經濟發展信心。",
-      "publishedAt": "2026-11-22T15:22:10.000Z",
-      "category": "finance",
-      "source": "Yahoo 股市 台股"
-    },
-    {
-      "sourceId": "yahoo-tw-market",
-      "title": "台股明開盤心驚驚  卓揆將邀金融、科技、工商產業代表會面",
-      "url": "https://tw.news.yahoo.com/%E5%8F%B0%E8%82%A1%E6%98%8E%E9%96%8B%E7%9B%A4%E5%BF%83%E9%A9%9A%E9%A9%9A-%E5%8D%93%E6%8F%86%E5%B0%87%E9%82%80%E9%87%91%E8%9E%8D-%E7%A7%91%E6%8A%80-%E5%B7%A5%E5%95%86%E7%94%A2%E6%A5%AD%E4%BB%A3%E8%A1%A8%E6%9C%83%E9%9D%A2-151039112.html",
-      "excerpt": "台股上周創下史上單周最大跌點，行政院長卓榮泰繼21日上午召開專案會議並做出四點裁示外，為進一步穩定國內金融市場信心，卓榮泰明日下午3時將邀集國內金融業等公協會代表會面。",
-      "publishedAt": "2026-11-22T15:10:39.000Z",
       "category": "finance",
       "source": "Yahoo 股市 台股"
     },
@@ -909,7 +909,7 @@
       "publishedAt": "2026-11-22T23:00:28.000Z",
       "category": "finance",
       "source": "華爾街見聞",
-      "summary": "華爾街見聞發布2026年11月23日財經早餐節目，以五分鐘帶讀者掌握全球市場動態。內文僅提供節目簡介，未列出具體市場數據或事件細節。"
+      "summary": "華爾街見聞發布2026年11月23日財經早餐節目，內容為整理當日全球市場動態，供讀者在短時間內掌握重點。摘要未提供具體行情數據或事件細節。"
     },
     {
       "sourceId": "wallstreetcn",
@@ -919,37 +919,37 @@
       "publishedAt": "2026-11-22T13:12:56.000Z",
       "category": "finance",
       "source": "華爾街見聞",
-      "summary": "文章指《GTA 6》首日銷售額達37.9億美元，並稱華爾街更看重發行商R星背後的線上經濟。內容提到13年老遊戲約4%玩家，每年貢獻約5億美元收入；2027年《GTA 6》線上模式上線後，舊玩家存款是否清零或繼承引發討論。"
+      "summary": "文章指《GTA 6》首日銷售額達37.9億美元，並稱華爾街更看重發行商 R 星旗下線上模式的獲利能力。文中提到13年老遊戲靠約4%玩家每年創造約5億美元營收，並探討2027年《GTA 6》線上模式上線後舊玩家存款是否繼承。"
     },
     {
       "sourceId": "wallstreetcn",
-      "title": "目前紅利資產估值還有多少空間？",
+      "title": "當前高股息資產估值還有多少空間？",
       "url": "https://wallstreetcn.com/articles/3786465",
       "excerpt": "红利资产还能涨多少？广发策略从七大维度给出答案：通过DCF模型测算，家电、医药、汽车、部分城商行仍低于理论估值，而水电、国有大行已接近或超出理论值；若无风险利率从1.5%降至1.0%，相关资产仍有约15%抬升空间，但典型红利资产距估值上沿溢价空间仅剩6%至12%。",
       "publishedAt": "2026-11-22T12:21:29.000Z",
       "category": "finance",
       "source": "華爾街見聞",
-      "summary": "廣發策略從七大維度評估紅利資產估值。DCF模型顯示，家電、醫藥、汽車及部分城商行仍低於理論估值，水電與國有大行已接近或超出。若無風險利率由1.5%降至1.0%，相關資產仍有約15%上行空間，但典型紅利資產距估值上沿僅剩6%至12%溢價空間。"
+      "summary": "廣發策略從七大維度評估高股息資產估值。以現金流折現（DCF）模型測算，家電、醫藥、汽車及部分城商行仍低於理論估值，水電與國有大行已接近或超過理論值。若無風險利率由1.5%降至1.0%，相關資產仍有約15%上升空間，但典型高股息資產距估值上沿僅剩6%至12%溢價空間。"
     },
     {
       "sourceId": "wallstreetcn",
-      "title": "為馬斯克融資買GPU，高盛展現操作",
+      "title": "為馬斯克融資購買GPU，高盛展現操作",
       "url": "https://wallstreetcn.com/articles/3786456",
       "excerpt": "高盛联手阿波罗全球管理公司（Apollo Global Management），协助马斯克旗下的SpaceX完成了约320亿美元债券定价。这批兼具公司债与资产支持证券（ABS）特征的债券，是高盛耗时一年多交出的答卷——试图在不压垮企业资产负债表的前提下，为昂贵的AI芯片找到买单方案。",
       "publishedAt": "2026-11-22T12:11:23.000Z",
       "category": "finance",
       "source": "華爾街見聞",
-      "summary": "高盛與阿波羅全球管理公司協助馬斯克旗下SpaceX完成約320億美元債券定價。這批債券兼具公司債與資產支持證券（ABS）特徵，高盛耗時一年多設計，目的是在不壓垮企業資產負債表下，為昂貴的AI晶片籌措資金。"
+      "summary": "高盛與阿波羅全球管理公司（Apollo Global Management）協助馬斯克旗下SpaceX完成約320億美元債券定價。這批債券兼具公司債與資產支持證券（ABS）特徵，歷時一年多設計，目的是在不壓垮企業資產負債表下，為昂貴的AI晶片籌措資金。"
     },
     {
       "sourceId": "wallstreetcn",
-      "title": "登上熱搜！特斯拉推出FSD V15，「實景視圖」顯示鏡頭畫面疊加行駛規劃，中國市場準備中",
+      "title": "登上熱搜！特斯拉推出FSD V15，「實景視圖」可顯示鏡頭畫面疊加FSD行駛規劃，中國市場準備工作推進中",
       "url": "https://wallstreetcn.com/articles/3786464",
       "excerpt": "特斯拉FSD V15正式推送，安全关键场景处理能力提升25倍，全新Tesla Reality View实景视图功能引爆热搜。马斯克称12月将大规模推送，称其将带来\"特别的东西\"。北美新车FSD订阅率已超75%，全球活跃订阅用户达174万，同比暴增67%。",
       "publishedAt": "2026-11-22T12:07:12.000Z",
       "category": "finance",
       "source": "華爾街見聞",
-      "summary": "特斯拉開始推送FSD V15，稱安全關鍵場景處理能力提升25倍，並新增「實景視圖」功能，可顯示鏡頭畫面疊加行駛規劃。馬斯克表示12月將大規模推送。北美新車FSD訂閱率已超75%，全球活躍訂閱用戶達174萬，年增67%，中國市場準備工作持續推進。"
+      "summary": "特斯拉開始推送FSD V15，稱安全關鍵場景處理能力提升25倍，並新增「實景視圖」功能，可顯示鏡頭畫面疊加行駛規劃。馬斯克表示12月將大規模推送。北美新車FSD訂閱率超過75%，全球活躍訂閱用戶達174萬，年增67%；中國市場準備工作持續推進。"
     },
     {
       "sourceId": "wallstreetcn",
@@ -959,27 +959,27 @@
       "publishedAt": "2026-11-22T10:52:10.000Z",
       "category": "finance",
       "source": "華爾街見聞",
-      "summary": "滬深北三大交易所發布通知，調整融資保證金比例，將投資者融資買入證券的最低保證金比例由100%調降至80%。相關規則自2026年11月30日起施行。"
+      "summary": "上海、深圳、北京三家證券交易所發布通知，將投資人融資買入證券的最低保證金比例由100%調降至80%。相關規則調整自2026年11月30日起施行。"
     },
     {
       "sourceId": "wallstreetcn",
-      "title": "南韓準備啟動股市穩定基金，或為2008年來首次，並放寬公司回購限額3個月",
+      "title": "南韓「救市」！準備啟動股市穩定基金，或為2008年來首次，放寬公司回購限額3個月",
       "url": "https://wallstreetcn.com/articles/3786459",
       "excerpt": "2008年10月，韩国交易所等机构在全球金融危机期间筹设了规模为5150亿韩元的基金，同年11月开始按月入市，持续至2009年3月。此后，该基金分别在2020年及2022年进入激活准备程序，但两次均未实际入场。",
       "publishedAt": "2026-11-22T09:36:56.000Z",
       "category": "finance",
       "source": "華爾街見聞",
-      "summary": "南韓準備啟動股市穩定基金，可能是2008年以來首次，並放寬公司庫藏股回購限額3個月。該基金2008年10月在金融危機期間設立，規模5,150億韓元，同年11月起按月入市至2009年3月；2020年與2022年雖進入啟動準備程序，但均未實際入場。"
+      "summary": "南韓準備啟動股市穩定基金，可能是2008年以來首次，並放寬公司庫藏股回購限額3個月。該基金源於2008年10月全球金融危機期間，規模5,150億韓元，同年11月起按月入市，持續至2009年3月。2020年及2022年雖進入啟動準備程序，但均未實際入場。"
     },
     {
       "sourceId": "wallstreetcn",
-      "title": "風險遠未結束！矽谷大咖預警：我現在全面避險",
+      "title": "風險遠未結束！矽谷大咖預警：我現在全面避險！",
       "url": "https://wallstreetcn.com/charts/41960214",
       "excerpt": "硅谷知名投资人查马斯（Chamath Palihapitiya）在最新一期《All-In》播客中明确表示，自己当前整体处于避险模式（Risk-off），并指出市场面临三大下行风险： 1、宏观经济：后面仍有大量不确定性尚未释放； 2、AI 交易与“英伟达银行”：国会听证会尚未落幕，一旦英伟达的资金循环链条收紧或关闭，直接冲击仍未可知； 3、网络安全与现实动荡：黑客攻击频发、系统接连宕机，甚至已出现应急备灾提醒。 你认同查马斯的避险判断，还是觉得 AI 行情依然稳健？评论区聊聊~",
       "publishedAt": "2026-11-22T08:57:26.000Z",
       "category": "finance",
       "source": "華爾街見聞",
-      "summary": "矽谷投資人查馬斯（Chamath Palihapitiya）在《All-In》播客表示，自己目前處於避險模式。他指出三項下行風險：總體經濟仍有大量不確定性、AI交易與「輝達銀行」的資金循環鏈（國會聽證會尚未結束），以及駭客攻擊與系統宕機等網路安全問題。"
+      "summary": "矽谷投資人查馬斯（Chamath Palihapitiya）在《All-In》播客表示目前處於避險模式，並指出三大下行風險：總體經濟仍有大量不確定性未釋放；AI交易與「輝達銀行」相關的國會聽證會尚未落幕，資金循環鏈若收緊衝擊未知；網路安全事件頻傳、系統接連當機。"
     },
     {
       "sourceId": "wallstreetcn",
@@ -989,7 +989,7 @@
       "publishedAt": "2026-11-22T08:26:27.000Z",
       "category": "finance",
       "source": "華爾街見聞",
-      "summary": "文章稱2026年11月12日，執掌輝達33年的共同創辦人黃仁勳辭去總裁、執行長及董事職務，由財務長接任。文章探討此事件後美國對中國算力管制的走向，摘要內容僅有開頭段落，其餘細節不明。"
+      "summary": "文章提到，執掌輝達33年的共同創辦人黃仁勳於2026年11月12日辭去總裁、執行長及董事職務，由財務長接任。文章探討此事件後美國對中國的算力管制走向，摘要內容不完整，其餘細節未提供。"
     },
     {
       "sourceId": "wallstreetcn",
@@ -999,7 +999,7 @@
       "publishedAt": "2026-11-22T07:57:04.000Z",
       "category": "finance",
       "source": "華爾街見聞",
-      "summary": "交易商開始把美國銅運往中國，貿易流向逆轉。目前倫敦金屬交易所與芝加哥商品交易所倉庫中約94%的銅庫存位於美國，兩年前僅約20%。隨著關稅預期降溫，美國價格優勢消失，持續近兩年的「搶運入美」交易開始瓦解。"
+      "summary": "交易商開始把美國銅運往中國，貿易流向逆轉。目前倫敦金屬交易所與芝加哥商品交易所倉庫銅庫存約94%位於美國境內，兩年前僅約20%。隨關稅預期降溫，美國價格優勢消失，持續近兩年的「搶運入美」交易開始瓦解。"
     },
     {
       "sourceId": "wallstreetcn",
@@ -1009,37 +1009,37 @@
       "publishedAt": "2026-11-22T07:38:19.000Z",
       "category": "finance",
       "source": "華爾街見聞",
-      "summary": "文章分析黃金為何與科技股同步下跌，指黃金具備兩項變現特質：市場流動性極佳，且經過多頭行情後投資人持有可觀獲利。當風險資產難以脫手或虧損慘重時，賣出黃金成為籌措現金阻力最小的選擇。"
+      "summary": "文章指黃金具備兩項變現特質：市場流動性極佳，且歷經多頭行情後投資人仍有可觀帳面獲利。當風險資產難以出脫或虧損嚴重時，賣出黃金成為籌措現金阻力最小的選擇，因而出現與科技股同跌的現象。"
     },
     {
       "sourceId": "wallstreetcn",
-      "title": "猜想：AI泡沫破滅與金融市場危機",
+      "title": "猜想：AI泡沫破滅和金融市場危機",
       "url": "https://wallstreetcn.com/articles/3786452",
       "excerpt": "AI行业泡沫要破灭吗？GPU二手市场价格是最关键的信号之一。",
       "publishedAt": "2026-11-22T06:37:56.000Z",
       "category": "finance",
       "source": "華爾街見聞",
-      "summary": "文章探討AI產業泡沫是否會破滅，並指二手GPU市場價格是最關鍵的訊號之一。摘要僅提供簡短內容，未包含具體數據。"
+      "summary": "文章探討AI產業泡沫是否可能破滅，並指出GPU二手市場價格是最關鍵的訊號之一。摘要資訊有限，未提供具體數據或進一步論述。"
     },
     {
       "sourceId": "wallstreetcn",
-      "title": "AI顛覆市場調研？高露潔論文：讓AI「角色扮演」即可預測市場需求",
+      "title": "AI顛覆市場調研？高露潔發表論文：讓AI「角色扮演」就能預測市場需求",
       "url": "https://wallstreetcn.com/articles/3786451",
       "excerpt": "有市场观点据此认为，传统调研的商业模式正面临冲击——企业不必耗时数周招募受访者，即可在极短时间内完成上千次定向访谈模拟与定价A/B测试。喧嚣之外，论文作者与一线观察者却给出了更为审慎的判断。研究团队明确表示，合成消费者并非人类调研的全面替代品；社交平台X上的多位评论者也提醒，该方法生成的类人数据分布可能暗藏统计噪音。",
       "publishedAt": "2026-11-22T06:04:47.000Z",
       "category": "finance",
       "source": "華爾街見聞",
-      "summary": "高露潔發表論文，指讓AI「角色扮演」即可預測市場需求。有市場觀點認為傳統調研模式將受衝擊，企業可在短時間內完成上千次訪談模擬與定價A/B測試。但研究團隊表示合成消費者不能全面取代真人調查，社群平台X上也有評論提醒資料可能存在統計雜訊。"
+      "summary": "高露潔發表論文，讓AI「角色扮演」模擬消費者以預測市場需求。有市場觀點認為傳統調研模式面臨衝擊，企業可在短時間內完成上千次模擬訪談與定價A/B測試。但研究團隊強調合成消費者不能全面取代人類調研，社群平台X上也有評論提醒資料分布可能暗藏統計雜訊。"
     },
     {
       "sourceId": "wallstreetcn",
-      "title": "下週重磅日程：Fed最愛通膨指標、小米、美團、B站、戴爾財報",
+      "title": "下週重磅行程：「Fed最愛通膨指標」、小米、美團、B站、戴爾財報",
       "url": "https://wallstreetcn.com/charts/41960213",
       "excerpt": "美股三大指数周跌超8%后，下周迎来PCE、三季度GDP修正值与美联储褐皮书，此外因感恩节，美股全周交易不足4天。财报方面，小米、B站先放榜，美团、理想、戴尔接力。国内首批18只主动ETF集体上市，高交会在深圳启幕，中美约定月底前举行AI对话。韩国央行或加息25基点，西班牙大选压轴登场。",
       "publishedAt": "2026-11-22T05:41:33.000Z",
       "category": "finance",
       "source": "華爾街見聞",
-      "summary": "美股三大指數上週累計下跌逾8%，下週將公布PCE、第三季GDP修正值與Fed褐皮書，且因感恩節交易不足4天。財報方面，小米、B站先公布，美團、理想、戴爾接續。南韓央行可能升息25基點，西班牙大選登場，中美約定月底前舉行AI對話。"
+      "summary": "美股三大指數上週累計下跌逾8%。下週將公布PCE物價指數、第三季GDP修正值及Fed褐皮書，且因感恩節美股交易不足4天。財報方面，小米、B站先公布，美團、理想、戴爾接續。南韓央行可能升息25個基點，中美約定月底前舉行AI對話。"
     },
     {
       "sourceId": "wallstreetcn",
@@ -1049,7 +1049,7 @@
       "publishedAt": "2026-11-22T04:13:08.000Z",
       "category": "finance",
       "source": "華爾街見聞",
-      "summary": "美國總統川普表示，尋求與伊朗達成永久性協議。他稱並未考慮更迭伊朗政權，並表示「我從來不太在乎政權」。"
+      "summary": "美國總統川普表示，尋求與伊朗達成永久性協議，並稱沒有考慮伊朗政權更迭，「我從來不太在乎政權」。"
     },
     {
       "sourceId": "wallstreetcn",
@@ -1248,7 +1248,7 @@
       "publishedAt": "2026-11-20T21:15:00.000Z",
       "category": "finance",
       "source": "Fed 新聞稿",
-      "summary": "聯準會（Fed）公布大學生「College Fed Challenge」競賽的得獎隊伍。該項活動為聯準會舉辦的大學生貨幣政策競賽，新聞稿未提供更多細節。"
+      "summary": "聯準會（Fed）公布「大學生 Fed 挑戰賽」（College Fed Challenge）的得獎隊伍。新聞稿摘要未提供得獎學校名單與競賽細節。"
     },
     {
       "sourceId": "fed-press",
@@ -1258,7 +1258,7 @@
       "publishedAt": "2026-11-20T15:00:00.000Z",
       "category": "finance",
       "source": "Fed 新聞稿",
-      "summary": "聯準會理事會公布針對銀行高階財務主管的調查結果，內容涉及銀行管理準備金餘額的策略與作法。新聞稿摘要未提供具體數據。"
+      "summary": "聯準會理事會公布一項針對銀行資深財務主管的調查結果，內容涵蓋銀行管理準備金餘額的策略與作法。摘要未提供具體調查數據。"
     },
     {
       "sourceId": "fed-press",
@@ -1268,7 +1268,7 @@
       "publishedAt": "2026-11-19T16:00:00.000Z",
       "category": "finance",
       "source": "Fed 新聞稿",
-      "summary": "聯準會理事會對 First Security Bancorp 的一名前員工發布執法處分。新聞稿摘要未提供處分的具體內容或原因。"
+      "summary": "聯準會理事會對 First Security Bancorp 的一名前員工發布執法處分。摘要未提供處分的具體原因與內容。"
     },
     {
       "sourceId": "fed-press",
@@ -1431,7 +1431,7 @@
       "publishedAt": "2026-11-20T08:30:00.000Z",
       "category": "finance",
       "source": "ECB 新聞稿",
-      "summary": "歐洲央行（ECB）公布總裁拉加德（Christine Lagarde）的講話，題為「Acting in time」（及時行動）。目前僅有標題，未提供講話內容。"
+      "summary": "歐洲央行（ECB）公布總裁拉加德（Christine Lagarde）的演說，題為「Acting in time」（及時行動）。摘要未提供內文，具體內容不明。"
     },
     {
       "sourceId": "ecb-press",
@@ -1567,7 +1567,7 @@
       "publishedAt": "2026-11-20T02:00:00.000Z",
       "category": "finance",
       "source": "日本央行",
-      "summary": "日本央行網站列出 2026 年《貨幣與經濟研究》（Monetary and Economic Studies）期刊的相關文章頁面。目前僅有標題資訊，未提供具體內容。"
+      "summary": "日本央行列出 2026 年《貨幣與經濟研究》（Monetary and Economic Studies）的刊載頁面。摘要未提供具體論文內容。"
     },
     {
       "sourceId": "boj-whatsnew",
@@ -1577,7 +1577,7 @@
       "publishedAt": "2026-11-19T07:00:00.000Z",
       "category": "finance",
       "source": "日本央行",
-      "summary": "日本央行網站的「實質出口與實質進口動向」（Developments in Real Exports and Real Imports）資料頁面。目前僅有標題，未提供具體數據。"
+      "summary": "日本央行的研究資料頁面，提供「實質出口與實質進口動向」（Developments in Real Exports and Real Imports）相關資料。摘要未提供具體數據。"
     },
     {
       "sourceId": "boj-whatsnew",
@@ -1839,7 +1839,7 @@
       "publishedAt": "2026-11-21T15:04:56.000Z",
       "category": "finance",
       "source": "CNBC Economy",
-      "summary": "近期多起科技服務中斷事件，讓部分民眾擔憂 AI 驅動的網路攻擊，以及美國電網的穩定性。在此情況下，所謂「末日經濟」（緊急應變物資與準備相關消費）持續升溫。"
+      "summary": "近期科技服務中斷事件，讓部分民眾擔心 AI 驅動的網路攻擊，以及美國電網的穩定性。受此影響，與災難預備相關的「末日經濟」消費正在升溫。"
     },
     {
       "sourceId": "cnbc-economy",
@@ -1849,7 +1849,7 @@
       "publishedAt": "2026-11-20T01:49:03.000Z",
       "category": "finance",
       "source": "CNBC Economy",
-      "summary": "日本 10 月核心通膨升至今年最高，主因能源補貼到期推升消費者物價。不過扣除生鮮食品的核心通膨數據，低於路透調查經濟學家預期的 2.3%。"
+      "summary": "日本 10 月核心通膨升至今年最高，主因能源補貼到期推升消費者物價。不過，這項剔除生鮮食品的核心數據，低於路透調查經濟學家預期的 2.3%。"
     },
     {
       "sourceId": "cnbc-economy",
@@ -1895,7 +1895,7 @@
       "publishedAt": "2026-11-20T21:07:08.000Z",
       "category": "finance",
       "source": "CNBC Economy",
-      "summary": "CNBC 專欄指出，聯準會主席凱文·華許（Kevin Warsh）認為 AI 正處於轉折點。他面臨的難題是，AI 對就業與生產力的影響，將如何牽動利率政策的判斷。"
+      "summary": "CNBC 專欄指出，聯準會主席凱文．華許（Kevin Warsh）認為 AI 正處於轉折點。他接下來須面對 AI 對就業與利率走向影響的難題，包括如何評估生產力變化。"
     },
     {
       "sourceId": "cnbc-economy",
@@ -1950,7 +1950,7 @@
       "publishedAt": "2026-11-19T20:21:10.000Z",
       "category": "finance",
       "source": "CNBC Economy",
-      "summary": "CNBC 專欄指出，輝達（Nvidia）面臨領導層危機，考驗其作為「AI 中央銀行」的角色。該公司與其他企業的複雜關係網，使其一旦出問題，可能對經濟與金融體系造成廣泛衝擊。"
+      "summary": "CNBC 專欄指出，輝達（Nvidia）領導層面臨危機，考驗其作為「AI 中央銀行」的角色。該公司與其他企業的複雜關係網，使其可能對經濟與金融造成廣泛損害。"
     },
     {
       "sourceId": "cnbc-economy",
@@ -2113,7 +2113,7 @@
       "publishedAt": "2026-11-22T22:00:00.000Z",
       "category": "finance",
       "source": "OilPrice.com",
-      "summary": "美國原油、燃料與液化天然氣（LNG）出口今年創下歷史新高。原因包括美國油氣產量與出口能力提升，以及伊朗戰爭使全球能源貿易流向改變。文中提到自2016年LNG開始出口以來已逾十年。"
+      "summary": "美國原油、燃料與液化天然氣（LNG）出口今年創下歷史新高。原因包括美國油氣產量與出口能力提升，以及伊朗戰爭使全球能源貿易流向改變。文中回顧自2016年LNG開始出口以來的十年變化。"
     },
     {
       "sourceId": "oilprice",
@@ -2123,7 +2123,7 @@
       "publishedAt": "2026-11-22T20:00:00.000Z",
       "category": "finance",
       "source": "OilPrice.com",
-      "summary": "天然災害成本對公用事業造成沉重壓力，業者需加大投資強化輸電基礎設施，並提供災後復原的財務支援。在加州，因野火日益頻繁，多家公用事業的成本隨之增加。"
+      "summary": "天然災害成本對公用事業造成沉重負擔，業者須加大投資強化輸電基礎設施，並提供災後重建的資金支援。在加州，野火日益頻繁，已使多家公用事業的成本上升。"
     },
     {
       "sourceId": "oilprice",
@@ -2133,7 +2133,7 @@
       "publishedAt": "2026-11-22T18:00:00.000Z",
       "category": "finance",
       "source": "OilPrice.com",
-      "summary": "人工智慧時代的電力需求暴增，促使大型科技業採取多元發電策略。Google 支持俄勒岡州一項 50 MW 的超高溫地熱電力協議。AI 一方面帶動天然氣熱潮、延長化石燃料壽命，同時也挹注大量資金於其他能源。"
+      "summary": "人工智慧時代推升電力需求，大型科技業者轉向多元能源布局。報導指出，科技業一方面帶動天然氣熱潮、延長化石燃料壽命，另一方面也投入資金發展其他能源。Google 支持奧勒岡州一項50百萬瓦（MW）的超高溫地熱供電協議。"
     },
     {
       "sourceId": "oilprice",
@@ -2143,7 +2143,7 @@
       "publishedAt": "2026-11-22T16:00:00.000Z",
       "category": "finance",
       "source": "OilPrice.com",
-      "summary": "澳洲政府計畫發展水力發電與抽水蓄能（PHES），作為「Powering Australia」計畫的一環，目標是2030年再生能源占電力82%，2050年達成淨零排放。標題指相關發展面臨約250億美元的資金問題。"
+      "summary": "澳洲政府在「Powering Australia」計畫下，打算發展水力與抽蓄水力儲能（PHES），該計畫目標為2030年再生能源占電力82%、2050年達成淨零排放。報導標題指出此類發展面臨250億美元的資金問題。"
     },
     {
       "sourceId": "oilprice",
@@ -2153,7 +2153,7 @@
       "publishedAt": "2026-11-22T00:00:00.000Z",
       "category": "finance",
       "source": "OilPrice.com",
-      "summary": "資訊科技產業推動全球電力需求大幅成長，未來十年預計增加逾 10,000 TWh。為將電力送往需求中心，全球電網急需升級，核心問題在於由誰來負擔這筆龐大的投資。"
+      "summary": "資訊科技產業推動全球電力需求大幅成長，未來十年預計增加逾10,000 TWh。為將電力送至需求中心，全球電網急需升級，報導探討這筆龐大投資該由誰負擔。"
     },
     {
       "sourceId": "oilprice",
@@ -2163,7 +2163,7 @@
       "publishedAt": "2026-11-21T22:00:00.000Z",
       "category": "finance",
       "source": "OilPrice.com",
-      "summary": "能源智庫 Ember 的新報告指出，風力發電可使全天候太陽能供電的成本降低 18%。太陽能與電池儲能已在全球快速成長，風電擴張相對較慢，但報告顯示風電具備相當大的節省成本潛力。"
+      "summary": "能源智庫 Ember 最新報告指出，風電可使全天候太陽能供電成本降低18%。報告提到，太陽能與電池儲能在全球快速成長，風電擴張相對較慢，但其節省成本的潛力相當可觀。"
     },
     {
       "sourceId": "oilprice",
@@ -2173,7 +2173,7 @@
       "publishedAt": "2026-11-21T20:00:00.000Z",
       "category": "finance",
       "source": "OilPrice.com",
-      "summary": "美國總統川普上任近兩年來持續加碼支持化石燃料，包括煤炭。在許多燃煤電廠原本即將除役之際，他介入阻止其關閉。報導指出，此一煤炭復興政策讓美國民眾付出的成本高於預期。"
+      "summary": "美國總統川普上任近兩年來持續加碼支持化石燃料，包括煤炭。在許多燃煤電廠即將除役之際，川普出手阻止其關閉。報導指出，此舉讓美國民眾付出的成本高於預期。"
     },
     {
       "sourceId": "oilprice",
@@ -2183,7 +2183,7 @@
       "publishedAt": "2026-11-21T19:10:00.000Z",
       "category": "finance",
       "source": "OilPrice.com",
-      "summary": "美國汽油價格一個月內下跌近 60 美分，根據美國汽車協會（AAA）資料，週五全國平均價為每加侖 3.69 美元，低於約一個月前的 4.30 美元。但感恩節出遊的油價仍可能高於以往任何一年的感恩節。"
+      "summary": "美國汽油價格一個月內下跌近60美分，根據美國汽車協會（AAA）資料，週五全國平均價為每加侖3.69美元，低於一個月前約4.30美元。不過感恩節出遊的民眾加油成本，仍可能高於以往任何一年的感恩節。"
     },
     {
       "sourceId": "oilprice",
@@ -2526,7 +2526,7 @@
       "publishedAt": "2026-11-22T13:25:47.000Z",
       "category": "finance",
       "source": "CNBC Energy",
-      "summary": "沙烏地阿拉伯表示已擊落一架由伊朗支持的青賴派（胡塞武裝）所發射的無人機；巴林則表示一處工業設施遭伊朗發射的投射物擊中。伊朗稱仍願與美國達成協議。"
+      "summary": "沙烏地阿拉伯表示已擊落由伊朗支持的青年運動（胡塞武裝）發射的無人機；巴林則表示一處工業設施遭伊朗飛彈擊中。另一方面，伊朗表示仍願意與美國達成協議。"
     },
     {
       "sourceId": "cnbc-energy",
@@ -2536,7 +2536,7 @@
       "publishedAt": "2026-11-22T06:00:01.000Z",
       "category": "finance",
       "source": "CNBC Energy",
-      "summary": "量子運算業者正測試電網最佳化、太陽能材料與氫能催化劑等應用，尋求實際用途。報導指出，量子運算首個實際獲利領域可能在能源，而非藥物開發。"
+      "summary": "量子運算業者正測試電網最佳化、太陽能材料與氫能催化劑等應用，尋求實際用途。報導指出，量子運算首個實際獲利領域可能出現在能源，而非藥物開發。"
     },
     {
       "sourceId": "cnbc-energy",
@@ -2978,7 +2978,7 @@
       "publishedAt": "2026-11-22T21:32:16.000Z",
       "category": "tech",
       "source": "Tom's Hardware",
-      "summary": "海盜船（Corsair）14.5 吋 Xeneon Edge 觸控螢幕在黑色星期五促銷期間，五種顏色全數降價 50 美元，售價降至 199.99 美元，產品內建支架。"
+      "summary": "海盜船（Corsair）在黑色星期五促銷期間，14.5 吋 Xeneon Edge 觸控螢幕五種顏色全數折扣 50 美元，售價降至 199.99 美元，產品內建支架。"
     },
     {
       "sourceId": "tomshardware",
@@ -2988,7 +2988,7 @@
       "publishedAt": "2026-11-22T20:03:52.000Z",
       "category": "tech",
       "source": "Tom's Hardware",
-      "summary": "一項由社群開發的專案，為已終止支援的 Windows 7 加入非官方的 DirectX 12 與 Vulkan 1.4 支援，使輝達、超微與英特爾的新款顯示卡得以在這套已有 17 年歷史的作業系統上運作。"
+      "summary": "一項由社群開發的專案，為已停止支援的 Windows 7 加入非官方的 DirectX 12 與 Vulkan 1.4 支援，使輝達、AMD 與英特爾的新款顯示卡能在這套發布 17 年的作業系統上運作。"
     },
     {
       "sourceId": "tomshardware",
@@ -2998,7 +2998,7 @@
       "publishedAt": "2026-11-22T19:34:47.000Z",
       "category": "tech",
       "source": "Tom's Hardware",
-      "summary": "Cozoo 的桌下耳機掛架降價至 10 美元以下，配有兩個掛勾、可收納六條線材的凹槽，以及三個充電埠，總充電功率最高 20W。作者自 2023 年起便將其用於升降桌。"
+      "summary": "Cozoo 的桌下耳機掛架具備兩個吊鉤、可收納六條線材的凹槽，以及三個充電埠，總充電功率最高 20W，目前售價降至 10 美元以下。作者自 2023 年起搭配升降桌使用。"
     },
     {
       "sourceId": "tomshardware",
@@ -3008,7 +3008,7 @@
       "publishedAt": "2026-11-22T19:00:00.000Z",
       "category": "tech",
       "source": "Tom's Hardware",
-      "summary": "任天堂 Switch 2 在黑色星期五前的促銷中，含《瑪利歐賽車世界》的組合包折扣 50 美元，價格回到漲價前的水準，折扣幅度相當少見。"
+      "summary": "任天堂 Switch 2 在黑色星期五前的促銷中，內含主機與《瑪利歐賽車世界》的套組折扣 50 美元，價格回到漲價前的水準，折扣幅度相當少見。"
     },
     {
       "sourceId": "tomshardware",
@@ -3018,7 +3018,7 @@
       "publishedAt": "2026-11-22T18:17:53.000Z",
       "category": "tech",
       "source": "Tom's Hardware",
-      "summary": "雷蛇（Razer）Basilisk V3 電競滑鼠半價促銷，售價 32.99 美元。該滑鼠具備最高 26,000 DPI 靈敏度、可程式化按鍵、可調式滾輪與 RGB 燈效，適用於射擊、賽車與角色扮演等遊戲。"
+      "summary": "雷蛇（Razer）Basilisk V3 電競滑鼠推出半價優惠，售價 32.99 美元。該滑鼠提供 26,000 DPI 感應解析度、可程式化按鍵、可調整滾輪與 RGB 燈效，適用於射擊、賽車及角色扮演遊戲。"
     },
     {
       "sourceId": "tomshardware",
@@ -3028,7 +3028,7 @@
       "publishedAt": "2026-11-22T18:15:16.000Z",
       "category": "tech",
       "source": "Tom's Hardware",
-      "summary": "Keychron 全尺寸矮軸 K5 V2 無線機械式鍵盤在黑色星期五early促銷中降至 56 美元，創歷史新低。該鍵盤共 108 鍵，配備白色背光，支援藍牙或有線連線，並支援 QMK 韌體。"
+      "summary": "Keychron 全尺寸矮軸 K5 V2 無線機械式鍵盤在黑色星期五早期促銷中降至 56 美元，為歷來最低價。該鍵盤共 108 鍵，配備白色背光，支援藍牙或有線連線，並支援 QMK。"
     },
     {
       "sourceId": "tomshardware",
@@ -3038,7 +3038,7 @@
       "publishedAt": "2026-11-22T16:00:46.000Z",
       "category": "tech",
       "source": "Tom's Hardware",
-      "summary": "創作者 Sasa Karanovic 以 100 支 Noctua 電腦風扇打造出受《瘋狂麥斯》啟發的風扇牆，用來展示他新開發的開源 OpenFAN XL 風扇控制器，並對其進行壓力測試，控制器成本約 2,355 美元。"
+      "summary": "創作者 Sasa Karanovic 以 100 個 Noctua 風扇打造出受《瘋狂麥斯》啟發的風扇牆，目的是展示他新開發的開源 OpenFAN XL 風扇控制器，並對這款售價 2,355 美元的控制器進行壓力測試。"
     },
     {
       "sourceId": "tomshardware",
@@ -3048,7 +3048,7 @@
       "publishedAt": "2026-11-22T16:00:00.000Z",
       "category": "tech",
       "source": "Tom's Hardware",
-      "summary": "聯想 Pro 9n 搭載 18 核心 RTX Spark，相較 Surface Laptop Ultra 機身更輕，配備鮮豔的 OLED 面板與豐富連接埠，但與對手一樣存在電池續航力偏弱等缺點。"
+      "summary": "評測指出，聯想 Lenovo Pro 9n 搭載 18 核心 RTX Spark，機身較 Surface Laptop Ultra 輕巧，配備鮮豔的 OLED 面板與豐富連接埠，但與對手同樣有電池續航力不足的缺點。"
     },
     {
       "sourceId": "tomshardware",
@@ -3058,7 +3058,7 @@
       "publishedAt": "2026-11-22T15:45:00.000Z",
       "category": "tech",
       "source": "Tom's Hardware",
-      "summary": "百思買（Best Buy）黑色星期五促銷中，YubiKey 5C NFC 安全金鑰雙入組合包享 7 折優惠，每支約 37 美元。組合包內含 Type-A 與 Type-C 兩種版本。"
+      "summary": "百思買（Best Buy）在黑色星期五推出 YubiKey 5C NFC 安全金鑰優惠，購買兩支組合享 7 折，平均每支約 37 美元。組合包含 Type-A 與 Type-C 兩種規格。"
     },
     {
       "sourceId": "tomshardware",
@@ -3068,7 +3068,7 @@
       "publishedAt": "2026-11-22T14:49:48.000Z",
       "category": "tech",
       "source": "Tom's Hardware",
-      "summary": "一名 Neuralink 試驗參與者不再使用口含棒，改以腦機介面玩《GTA 6》。他透過想像點按手指、滑動手掌等動作，對應 PS5 控制器的操作指令，是目前以 Neuralink 操作的較複雜遊戲之一。"
+      "summary": "一名 Neuralink 試驗參與者不再使用口含棒，改以腦機介面玩《GTA 6》。系統將想像中的手指輕點與手部滑動動作，對應為 PS5 控制器指令，是目前以 Neuralink 操作的最複雜遊戲之一。"
     },
     {
       "sourceId": "tomshardware",
@@ -3078,7 +3078,7 @@
       "publishedAt": "2026-11-22T14:18:22.000Z",
       "category": "tech",
       "source": "Tom's Hardware",
-      "summary": "西班牙肯德基推出「The Replacement Disc」活動，GTA 6 玩家攜帶空的遊戲盒即可免費獲得圓盤造型炸雞。該遊戲已賣出約 37.9 億美元，但未推出實體光碟。"
+      "summary": "西班牙肯德基推出「替代光碟」活動，GTA 6 玩家攜帶空遊戲盒即可免費獲得光碟造型炸雞。報導指 Rockstar 在沒有實體光碟的情況下，GTA VI 已售出約 37.9 億美元。"
     },
     {
       "sourceId": "tomshardware",
@@ -3088,7 +3088,7 @@
       "publishedAt": "2026-11-22T13:51:18.000Z",
       "category": "tech",
       "source": "Tom's Hardware",
-      "summary": "烏克蘭以自行研發的抗干擾技術，讓 500 餘架因電子戰而停飛的美製 Puma AE 偵察無人機重新服役。升級後航程增為三倍，達 31 英里。"
+      "summary": "烏克蘭以自行研發的抗干擾技術升級 500 多架美製 Puma AE 偵察無人機，這些無人機先前因電子戰干擾而停飛。升級後航程提高至原來的三倍，達 31 英里。"
     },
     {
       "sourceId": "tomshardware",
@@ -3530,7 +3530,7 @@
       "publishedAt": "2026-11-22T21:14:07.000Z",
       "category": "tech",
       "source": "TechCrunch AI",
-      "summary": "OpenAI 首席科學家就如何限制 AI 發展提出看法，指出若要為 AI 發展設定「速度上限」，首先必須就如何衡量發展速度達成共識。"
+      "summary": "OpenAI 首席科學家針對如何限制 AI 發展提出看法，指出若要為 AI 發展設定「速度上限」，前提是各方必須先就如何衡量發展速度達成共識。"
     },
     {
       "sourceId": "techcrunch-ai",
@@ -3540,7 +3540,7 @@
       "publishedAt": "2026-11-22T18:08:43.000Z",
       "category": "tech",
       "source": "TechCrunch AI",
-      "summary": "記者帕里斯·馬克斯（Paris Marx）在新書《Hyperscale》中剖析資料中心為何成為外界對大型科技公司反彈的核心，並探討相關爭議。"
+      "summary": "記者 Paris Marx 在新書《Hyperscale》中剖析資料中心為何成為外界反彈大型科技公司的核心焦點，並接受 TechCrunch 訪談說明書中觀點。"
     },
     {
       "sourceId": "techcrunch-ai",
@@ -3550,7 +3550,7 @@
       "publishedAt": "2026-11-21T21:37:10.000Z",
       "category": "tech",
       "source": "TechCrunch AI",
-      "summary": "通訊軟體 Signal 在 Android 與 iOS 應用程式中限制使用者截圖功能，因應 AI 監控帶來的「生存威脅」。"
+      "summary": "加密通訊軟體 Signal 在 Android 與 iOS 版本中限制使用者截圖功能，因應其所稱 AI 監控帶來的「生存威脅」。"
     },
     {
       "sourceId": "techcrunch-ai",
@@ -3560,7 +3560,7 @@
       "publishedAt": "2026-11-21T21:07:42.000Z",
       "category": "tech",
       "source": "TechCrunch AI",
-      "summary": "輝達最新財報與多位科技業高層公開呼籲黃仁勳回歸的聲音，呈現出兩種截然不同的公司面貌。報導將兩者並列比較。"
+      "summary": "外界對 Nvidia 呈現兩種不同圖像：一是公司最新財報結果，另一是多位科技業高層公開呼籲黃仁勳回歸。報導對照兩者落差。"
     },
     {
       "sourceId": "techcrunch-ai",
@@ -3570,7 +3570,7 @@
       "publishedAt": "2026-11-21T17:00:00.000Z",
       "category": "tech",
       "source": "TechCrunch AI",
-      "summary": "TechCrunch 整理出可在簡訊中使用的主要 AI 代理清單，涵蓋一般型助理，以及專為家庭、旅遊與工作情境設計的代理服務。"
+      "summary": "TechCrunch 整理可在簡訊中使用的知名 AI 代理清單，涵蓋一般型助理，以及針對家庭、旅遊與工作情境設計的代理服務。"
     },
     {
       "sourceId": "techcrunch-ai",
@@ -3580,7 +3580,7 @@
       "publishedAt": "2026-11-21T16:00:00.000Z",
       "category": "tech",
       "source": "TechCrunch AI",
-      "summary": "一名演員將自己的臉部授權給微短劇新創公司製作 AI 版本，此做法在中國已相當流行。專家對這類趨勢若擴及好萊塢的長期後果提出質疑。"
+      "summary": "一名演員將自己的臉授權給微短劇新創公司製作 AI 版本，此做法在中國已相當流行。專家質疑若好萊塢也跟進，可能帶來長期後果。"
     },
     {
       "sourceId": "techcrunch-ai",
@@ -3590,7 +3590,7 @@
       "publishedAt": "2026-11-20T19:53:41.000Z",
       "category": "tech",
       "source": "TechCrunch AI",
-      "summary": "Spotify 創辦人丹尼爾·艾克（Daniel Ek）投資核融合發電新創公司 Europa Fusion，該公司由一名 AI 研究人員創立。報導介紹了這家新創正在打造的技術。"
+      "summary": "Spotify 創辦人 Daniel Ek 投資核融合發電新創 Europa Fusion，該公司由一名 AI 研究人員創立。報導介紹這家新創正在打造的技術內容。"
     },
     {
       "sourceId": "techcrunch-ai",
@@ -3600,7 +3600,7 @@
       "publishedAt": "2026-11-20T19:32:08.000Z",
       "category": "tech",
       "source": "TechCrunch AI",
-      "summary": "AI 宣稱解開已有 167 年歷史的黎曼猜想，令數學家震驚；同時也有人類提出了競爭性的解法。這項成果的有效性仍待檢驗。"
+      "summary": "AI 近日被宣稱解出已有 167 年歷史的黎曼猜想，令數學家相當震驚；同時也出現一份由人類提出的競爭解法。"
     },
     {
       "sourceId": "techcrunch-ai",
@@ -3709,6 +3709,15 @@
       "publishedAt": "2026-11-19T17:00:00.000Z",
       "category": "tech",
       "source": "TechCrunch AI"
+    },
+    {
+      "sourceId": "technews-tw",
+      "title": "養出 AI 駭客？OpenAI 被加州政府告上法院",
+      "url": "https://infosecu.technews.tw/2026/11/23/california-sues-openai/",
+      "excerpt": "當 AI 從「被動回答問題」進化為能夠自動規劃並執行任務的「AI 代理程式」（AI Agents）時，若演算法 […]",
+      "publishedAt": "2026-11-22T23:50:37.000Z",
+      "category": "tech",
+      "source": "科技新報"
     },
     {
       "sourceId": "technews-tw",
@@ -3968,15 +3977,6 @@
       "url": "https://technews.tw/2026/11/21/gta-6-easter-egg-sees-rockstar-poke-fun-at-its-long-development-process/",
       "excerpt": "〈GTA 6〉歷經多年開發終於正式推出。遊戲內藏有趣味彩蛋，既自嘲 Rockstar 開發本作歷時多年，也暗指 […]",
       "publishedAt": "2026-11-21T09:00:36.000Z",
-      "category": "tech",
-      "source": "科技新報"
-    },
-    {
-      "sourceId": "technews-tw",
-      "title": "研究發現太平洋錳結核內藏數千隻微型生物，深海採礦恐摧毀專屬棲地",
-      "url": "https://technews.tw/2026/11/21/deep-sea-mining-targets-rocks-that-are-habitats-inside-and-out/",
-      "excerpt": "一項最新研究顯示，太平洋海底被視為採礦目標的錳結核（Manganese nodules），不只是富含鎳、鈷與銅 […]",
-      "publishedAt": "2026-11-21T08:30:29.000Z",
       "category": "tech",
       "source": "科技新報"
     },
@@ -4348,7 +4348,7 @@
       "publishedAt": "2026-11-22T00:00:00.000Z",
       "category": "tech",
       "source": "OpenAI News",
-      "summary": "OpenAI 說明「困惑度」（perplexity）如何用來衡量 AI 模型的進展，並指出這項指標可協助開發者建立共同做法，以評估新興的模型能力。"
+      "summary": "OpenAI 文章探討「困惑度」（perplexity）如何衡量 AI 模型的進展，並指出這項指標可協助開發者建立共同做法，用來評估新興模型能力。"
     },
     {
       "sourceId": "openai-news",
@@ -4799,7 +4799,7 @@
       "publishedAt": "2026-11-20T18:15:15.000Z",
       "category": "tech",
       "source": "MIT Tech Review AI",
-      "summary": "AI 評測非營利組織 METR 發布更新報告，指出部分 AI 能力仍沿著指數軌跡成長，但模型在需要判斷力的任務上，表現不如程式設計任務。"
+      "summary": "AI 評測非營利組織 METR 發布新報告，指出部分 AI 能力仍沿指數軌跡進步，但模型在需要判斷力的任務上，表現不如程式撰寫任務。該報告為先前圖表的更新版。"
     },
     {
       "sourceId": "mit-tech-review-ai",
@@ -4899,7 +4899,7 @@
       "publishedAt": "2026-11-22T22:02:27.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "週五美股因人工智慧相關交易反轉而大幅下挫，美股指數期貨在亞洲early交易時段開高，買盤回流；美國公債期貨則下跌。"
+      "summary": "週五人工智慧相關交易反轉引發美股重挫後，美股指數期貨在亞洲早盤開高，買盤回流；美國公債期貨則下跌。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -4909,7 +4909,7 @@
       "publishedAt": "2026-11-22T23:06:06.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "油價下跌，交易員一方面評估原油出口強勁的跡象，另一方面關注中東衝突可能升級的風險。"
+      "summary": "油價下跌。交易員一方面評估原油出口強勁的跡象，另一方面關注中東敵對情勢可能升級的前景。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -4919,7 +4919,7 @@
       "publishedAt": "2026-11-22T23:04:42.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "在資金大幅撤出美股、由科技股帶動的劇烈下跌後，華爾街迎來新的交易週，市場承受高度壓力，投資人擔心後續是否還有更多跌幅。"
+      "summary": "在資金劇烈撤出美股後，華爾街迎來新的交易週，面臨高度壓力。投資人關注後市是否還會出現更多跌幅，市場預期波動可能持續。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -4929,7 +4929,17 @@
       "publishedAt": "2026-11-22T23:00:17.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "規模達5,770億美元的香港權證市場，被指出現人為墊高成交量的跡象。多名知情人士表示，市場存在不尋常的交易模式。"
+      "summary": "彭博報導指出，規模達5,770億美元的香港權證市場出現疑似人為墊高成交量的跡象。多名知情人士表示，該市場存在異常交易模式。"
+    },
+    {
+      "sourceId": "bloomberg-markets",
+      "title": "Gold Deluge Keeps China’s $1 Trillion Trade Surplus in Check",
+      "url": "https://www.bloomberg.com/news/articles/2026-11-22/gold-deluge-keeps-china-s-1-trillion-trade-surplus-in-check",
+      "excerpt": "China’s gold imports surged to a record $209 billion so far this year, in an unprecedented buying spree that followed a promise by top officials to make their country into the world’s marketplace instead of just its factory.",
+      "publishedAt": "2026-11-22T23:00:00.000Z",
+      "category": "finance",
+      "source": "Bloomberg Markets",
+      "summary": "中國今年迄今黃金進口額升至創紀錄的2,090億美元，湧入的黃金使其逾1兆美元的貿易順差受到抑制。此波買進發生在高層官員承諾讓中國成為全球市場而非僅是工廠之後。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -4939,7 +4949,7 @@
       "publishedAt": "2026-11-22T22:56:32.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "彭博即時報導追蹤亞太股市與匯市，在那斯達克與標普500指數先前下挫後的反應。原文未提供更多細節。"
+      "summary": "彭博即時報導亞太股市與匯市在那斯達克與標普500指數遭拋售後的反應。因原文未提供更多內容，細節不詳。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -4949,7 +4959,7 @@
       "publishedAt": "2026-11-22T21:16:37.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "分析師指出，澳幣兌紐幣本月跌幅逼近四年來最大單月跌幅，但可能出現反彈。澳洲通膨居高不下，削弱市場對該國降息的預期。"
+      "summary": "分析師表示，澳幣兌紐幣本月跌幅逼近四年來最大單月跌幅，但有望反彈。澳洲通膨居高不下，削弱市場對該國降息的押注。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -4959,7 +4969,7 @@
       "publishedAt": "2026-11-22T20:31:44.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "那斯達克100指數接近熊市。上週股市大跌期間基本面並無劇烈變化，且許多評價指標顯示股價偏低，逆勢買進的動機強烈，但逢低買盤仍態度猶豫。"
+      "summary": "上週股市大幅下挫，但基本面展望並無劇烈變化，多項估值指標顯示股價已相對便宜，逆向買進的意願偏強。不過逢低買家仍態度猶豫，那斯達克100指數接近熊市。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -4978,7 +4988,7 @@
       "publishedAt": "2026-11-22T20:00:00.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "華爾街正集中採用債市常見的交易策略，押注聯準會（Fed）將持續落實抑制通膨的承諾。不過股市下挫使經濟前景轉趨黯淡，也擾動了這項交易。"
+      "summary": "華爾街正集中採用債市常見的交易，押注聯準會將持續兌現抑制通膨的承諾。然而股市下跌使經濟前景轉暗，也擾動了這項交易。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -4988,7 +4998,7 @@
       "publishedAt": "2026-11-22T19:05:02.000Z",
       "category": "finance",
       "source": "Bloomberg Markets",
-      "summary": "高盛交易部門認為，上週的賣壓為買進美股創造了具吸引力的時機。不過該行也提醒，投資人整體部位仍偏高，可能缺乏帶動有意義反彈所需的全面投降式賣壓。"
+      "summary": "高盛交易部門認為，上週的拋售為買進美股創造出具吸引力的機會。但該行提醒，整體投資人部位仍偏高，可能尚未出現有意義反彈所需的全面投降式賣壓。"
     },
     {
       "sourceId": "bloomberg-markets",
@@ -5059,15 +5069,6 @@
       "url": "https://www.bloomberg.com/news/videos/2026-11-22/gta-vi-takes-over-thanksgiving-week-video",
       "excerpt": "On Bloomberg This Weekend, Bloomberg reporter Josyana Joshua tells host Lisa Mateo how the long-awaited release of Grand Theft Auto VI is becoming a cultural and workplace phenomenon, with gamers taking time off and preparing to play through Thanksgiving week. Joshua explains how the game’s 13-year ",
       "publishedAt": "2026-11-22T14:25:23.000Z",
-      "category": "finance",
-      "source": "Bloomberg Markets"
-    },
-    {
-      "sourceId": "bloomberg-markets",
-      "title": "Fed’s Inflation Fight May Require More Hikes",
-      "url": "https://www.bloomberg.com/news/videos/2026-11-22/fed-s-inflation-fight-may-require-more-hikes-video",
-      "excerpt": "Neil Dutta, head of US economic research at Renaissance Macro Research, tells Bloomberg This Weekend that the Federal Reserve made a mistake by holding rates steady in October and may need multiple hikes as inflation remains stubbornly above its 2% target. Speaking with hosts David Gura and Christin",
-      "publishedAt": "2026-11-22T14:19:26.000Z",
       "category": "finance",
       "source": "Bloomberg Markets"
     },
@@ -5268,7 +5269,7 @@
       "publishedAt": "2026-11-22T18:55:05.000Z",
       "category": "finance",
       "source": "CNBC",
-      "summary": "由川普之子艾瑞克．川普支持的機器人新創Foundation現金吃緊，員工失去健康福利。公司正尋求緊急過渡性貸款並與創投洽談，同時等待南韓Base Group承諾的1.5億美元投資。"
+      "summary": "由艾瑞克·川普支持的機器人新創Foundation現金吃緊，員工失去健康福利。該公司正尋求緊急過橋貸款，並與創投業者洽談，同時等待南韓Base Group承諾的1.5億美元投資。"
     },
     {
       "sourceId": "cnbc-topnews",
@@ -5430,8 +5431,7 @@
       "excerpt": "Reem Raouda, a conscious parenting coach who's worked with over 200 families, shares six habits worth reconsidering, like treating disagreement as disrespect.",
       "publishedAt": "2026-11-22T17:33:25.000Z",
       "category": "finance",
-      "source": "CNBC",
-      "summary": "曾與逾200個家庭合作的親子教養教練Reem Raouda分享六項值得重新檢視的教養習慣，例如把意見不合視為不尊重，以避免孩子長成討好型性格。"
+      "source": "CNBC"
     },
     {
       "sourceId": "cnbc-topnews",
@@ -5531,7 +5531,7 @@
       "publishedAt": "2026-11-22T19:25:06.000Z",
       "category": "finance",
       "source": "Financial Times",
-      "summary": "達美航空位於亞特蘭大樞紐的班機延誤，加深外界對美國航空系統的疑慮。美國聯邦航空總署（FAA）表示，該技術問題與本月稍早的全國性當機事件無關。"
+      "summary": "達美航空亞特蘭大樞紐發生班機延誤，加深外界對美國航空系統的疑慮。美國聯邦航空總署（FAA）表示，該樞紐的技術問題與本月稍早的全國性當機事件無關。"
     },
     {
       "sourceId": "ft-companies",
@@ -5541,7 +5541,7 @@
       "publishedAt": "2026-11-22T19:08:31.000Z",
       "category": "finance",
       "source": "Financial Times",
-      "summary": "美國財政部長貝森特未排除黃仁勳重返輝達的可能，稱要看「責任最終歸誰」。美國總統已呼籲讓這位前任執行長復職。"
+      "summary": "美國財政部長貝森特不排除黃仁勳重返輝達，稱這取決於「最終責任歸屬」。美國總統呼籲讓這位前執行長復職。"
     },
     {
       "sourceId": "ft-companies",
@@ -5551,7 +5551,7 @@
       "publishedAt": "2026-11-22T18:28:00.000Z",
       "category": "finance",
       "source": "Financial Times",
-      "summary": "市值430億英鎊的富時100成分股餐飲集團Compass，計劃將主要上市地移至紐約，最快可能於週二宣布。"
+      "summary": "富時100指數成分股、市值430億英鎊的餐飲服務巨頭Compass，計畫將主要上市地移至紐約，最快可能於週二宣布此意向。"
     },
     {
       "sourceId": "ft-companies",
@@ -6029,7 +6029,7 @@
       "publishedAt": "2026-11-22T19:44:21.000Z",
       "category": "finance",
       "source": "The Economist Finance",
-      "summary": "《經濟學人》探討AI交易還可能降溫多少，指出市場出現動盪並非沒有原因。原文摘要提供的資訊有限。"
+      "summary": "經濟學人探討AI相關交易還可能釋放多少泡沫，指出市場感到憂慮且有其理由。原文摘要提供的細節有限。"
     },
     {
       "sourceId": "economist-finance",
@@ -6327,7 +6327,7 @@
       "publishedAt": "2026-11-22T22:37:43.000Z",
       "category": "politics",
       "source": "BBC World",
-      "summary": "BBC記者蘭斯福德（Sarah Rainsford）從烏克蘭基輔州一棟倒塌的住宅大樓現場報導。俄羅斯空襲後，當地居民正搜尋失蹤者，並表示感覺危險與日俱增。"
+      "summary": "BBC 記者蘭斯福德（Sarah Rainsford）從烏克蘭基輔州一棟倒塌的住宅大樓現場報導。俄羅斯空襲後，當地民眾持續搜尋失蹤者，居民表示危險感似乎與日俱增。"
     },
     {
       "sourceId": "bbc-world",
@@ -6382,7 +6382,7 @@
       "publishedAt": "2026-11-22T21:22:40.000Z",
       "category": "politics",
       "source": "BBC World",
-      "summary": "美國歌手麥莉·希拉（Miley Cyrus）在加州舉行婚禮，與馬克斯·莫蘭多（Maxx Morando）結婚。兩人交往四年，並於2025年訂婚。"
+      "summary": "美國歌手麥莉希拉（Miley Cyrus）與馬克斯·莫蘭多（Maxx Morando）在加州舉行婚禮。兩人交往四年，並於 2025 年訂婚。"
     },
     {
       "sourceId": "bbc-world",
@@ -6527,7 +6527,7 @@
       "publishedAt": "2026-11-22T22:37:43.000Z",
       "category": "politics",
       "source": "BBC World",
-      "summary": "BBC記者蘭斯福德（Sarah Rainsford）從烏克蘭基輔州一棟倒塌的住宅大樓現場報導。俄羅斯空襲後，當地居民正搜尋失蹤者，並表示感覺危險與日俱增。"
+      "summary": "BBC 記者蘭斯福德（Sarah Rainsford）從烏克蘭基輔州一棟倒塌的住宅大樓現場報導。俄羅斯空襲後，當地民眾持續搜尋失蹤者，居民表示危險感似乎與日俱增。"
     },
     {
       "sourceId": "bbc-world",
@@ -6699,7 +6699,7 @@
       "publishedAt": "2026-11-22T20:35:19.000Z",
       "category": "politics",
       "source": "NYT World",
-      "summary": "聯合國法院對緬甸作出種族滅絕相關裁決，在國際法上樹立先例。這項裁決對針對以色列在加薩行動的類似案件，具有重要影響。"
+      "summary": "聯合國法院對緬甸作出種族滅絕相關裁決，為國際法樹立先例。這項裁決對另一起涉及以色列在加薩行動的類似案件，可能具有重要影響。"
     },
     {
       "sourceId": "nyt-world",
@@ -6844,7 +6844,7 @@
       "publishedAt": "2026-11-22T23:22:59.000Z",
       "category": "politics",
       "source": "Al Jazeera",
-      "summary": "自2017年起擔任民主黨領袖的舒默（Schumer），在爭取參議院多數黨領袖的過程中，面臨議員范霍倫（Chris Van Hollen）的挑戰。川普針對舒默發表批評，民主黨內也出現推動參議院領導層換人的聲音。"
+      "summary": "美國總統川普批評參議院民主黨領袖舒默，民主黨內同時出現換人呼聲。自 2017 年起領導民主黨的舒默，在爭取多數黨領袖職位時，面臨參議員范荷倫（Chris Van Hollen）的挑戰。"
     },
     {
       "sourceId": "aljazeera",
@@ -6854,7 +6854,7 @@
       "publishedAt": "2026-11-22T22:37:38.000Z",
       "category": "politics",
       "source": "Al Jazeera",
-      "summary": "川普將於週日舉行私人晚宴，招待持有最多$Trump迷因幣的投資人。這是針對該幣大戶舉辦的第三場活動，該幣在他就職前不久推出。"
+      "summary": "川普將於週日為其迷因幣 $Trump 的最大持有者舉辦私人晚宴。這是該幣持有大戶的第三場活動，$Trump 迷因幣於川普就職前不久發行。"
     },
     {
       "sourceId": "aljazeera",
@@ -6864,7 +6864,7 @@
       "publishedAt": "2026-11-22T22:19:47.000Z",
       "category": "politics",
       "source": "Al Jazeera",
-      "summary": "民主黨在北卡羅來納州拿下一席後，目前至少掌控美國眾議院258席，為1992年以來最大的眾議院多數。期中選舉仍有四個選區尚未決定結果。"
+      "summary": "民主黨在北卡羅來納州拿下一席後，美國眾議院至少有 258 席由民主黨掌握，為 1992 年以來最大的眾議院多數優勢。期中選舉仍有四個選區尚未分出勝負。"
     },
     {
       "sourceId": "aljazeera",
@@ -6874,7 +6874,7 @@
       "publishedAt": "2026-11-22T22:01:48.000Z",
       "category": "politics",
       "source": "Al Jazeera",
-      "summary": "利比亞班加西外海傳出第二起針對商船的攻擊，目標是一艘懸掛馬爾他旗的商業船隻。這是一系列海上無人機攻擊事件的一部分。"
+      "summary": "利比亞班加西外海傳出第二起商船遭攻擊事件，目標為一艘懸掛馬爾他旗的商用船舶。這是海上無人機系列攻擊的一部分，詳細傷亡與肇事者資訊原文未提供。"
     },
     {
       "sourceId": "aljazeera",
@@ -6884,7 +6884,7 @@
       "publishedAt": "2026-11-22T21:33:11.000Z",
       "category": "politics",
       "source": "Al Jazeera",
-      "summary": "以色列總理納坦雅胡（Netanyahu）所屬的利庫德集團（Likud）與艾森科特（Eisenkot）的Yashar黨結束組閣談判，雙方未達成協議。分歧在於下屆政府由誰領導，以及極右派部長班格維爾（Ben-Gvir）是否加入。"
+      "summary": "以色列總理納坦雅胡所屬的利庫德集團與艾森科特領導的 Yashar 結束聯合政府談判，雙方未達成協議。主要分歧在於下屆政府由誰領導，以及極右派部長班格維爾是否加入。"
     },
     {
       "sourceId": "aljazeera",
@@ -6894,7 +6894,7 @@
       "publishedAt": "2026-11-22T21:26:12.000Z",
       "category": "politics",
       "source": "Al Jazeera",
-      "summary": "在美國女子職業足球聯賽（NWSL）總冠軍賽中，堪薩斯市Current奪冠。華盛頓Spirit雖在主場球迷支持下出賽，仍連續第三年在決賽落敗。"
+      "summary": "美國女子足球職業聯賽（NWSL）總冠軍賽中，堪薩斯市電流隊（KC Current）奪冠。華盛頓精神隊在主場球迷熱烈加油下，仍連續第三年在決賽落敗。"
     },
     {
       "sourceId": "aljazeera",
@@ -6904,7 +6904,7 @@
       "publishedAt": "2026-11-22T20:29:01.000Z",
       "category": "politics",
       "source": "Al Jazeera",
-      "summary": "桑吉巴熱門旅遊地農圭（Nungwi）發生火災，大火燒毀六間飯店及數十間商店。"
+      "summary": "尚吉巴熱門旅遊景點嫩圭（Nungwi）發生火災，火勢波及六間飯店和數十間商店。傷亡及起火原因，原文摘要未提供。"
     },
     {
       "sourceId": "aljazeera",
