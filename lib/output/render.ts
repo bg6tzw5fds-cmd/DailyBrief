@@ -85,6 +85,7 @@ const TEXTS_ZH = {
   digestSnapshotNote: "前一交易日收盤；黃金、原油等期貨取同一交易日的官方結算價；匯率與美元指數取美股收盤（紐約 16:00）時點價格，都不含亞洲盤新交易日。殖利率單位為 %，紅漲綠跌",
   snapshotName: "標的",
   snapshotLast: "最新",
+  snapshotSmaNote: "　均線數字紅色＝價格在該均線之上，綠色＝在之下。",
   snapshot1d: "日漲跌",
   snapshot5d: "5 日",
   digestFinance: "財經與總經重點",
@@ -176,6 +177,7 @@ const TEXTS_EN: typeof TEXTS_ZH = {
   digestSnapshotNote: "Previous close; 24-hour assets (futures, FX, DXY) are taken at the US close (16:00 New York) so all rows cover the same window. Yields in %",
   snapshotName: "Asset",
   snapshotLast: "Last",
+  snapshotSmaNote: " SMA in red = price above that average, green = below.",
   snapshot1d: "1D",
   snapshot5d: "5D",
   digestFinance: "Finance & Macro",
@@ -1314,6 +1316,10 @@ export function renderHtml(
   .margin-link a { color: #2563eb; text-decoration: none; font-weight: 600; }
   .margin-link a:hover { text-decoration: underline; }
   .margin-scroll .snapshot-table { min-width: 560px; }
+  .snapshot-sma { min-width: 720px; }
+  .snapshot-sma td.snap-name { white-space: normal; }
+  .snap-signals { display: flex; flex-wrap: wrap; gap: 0.25rem; margin-top: 0.2rem; }
+  .snap-signals .signal-pill { font-size: 0.66rem; padding: 0.1rem 0.45rem; }
   @media (max-width: 520px) {
     .snapshot-table { font-size: 0.8rem; }
     .snapshot-table td, .snapshot-table th { padding: 0.28rem 0.25rem; }
@@ -1692,21 +1698,33 @@ function renderBriefSection(title: string, briefs: BriefItem[]): string {
 function renderSnapshot(trading: TradingSection | undefined): string {
   if (!trading || trading.tickers.length === 0) return "";
   const bySymbol = new Map(trading.tickers.map((t) => [t.symbol, t]));
+  const smaTd = (t: TickerAnalysis, v: number | null | undefined) =>
+    `<td class="snap-num ${smaCls(t.currentPrice, v)}">${fmtNum(v)}</td>`;
   const rows = SNAPSHOT_SYMBOLS.map((sym) => bySymbol.get(sym))
     .filter((t): t is TickerAnalysis => t !== undefined)
     .map((t) => {
       const c1 = t.pct1Day >= 0 ? "positive" : "negative";
       const c5 = t.pct5Day >= 0 ? "positive" : "negative";
-      return `<tr><td class="snap-name">${escapeHtml(t.displayName)}</td><td class="snap-num">${currencyPrefixFor(t)}${fmtNum(t.currentPrice)}</td><td class="snap-num ${c1}">${fmtPct(t.pct1Day)}</td><td class="snap-num ${c5}">${fmtPct(t.pct5Day)}</td></tr>`;
+      const pills = t.signals
+        .map((sg) => {
+          const tone = SIGNAL_TONE[sg.type] ?? "caution";
+          const age =
+            sg.daysAgo !== undefined
+              ? ` <span class="signal-age">(${sg.daysAgo === 0 ? STR.signalToday : `${sg.daysAgo} ${STR.signalDaysAgoSuffix}`})</span>`
+              : "";
+          return `<span class="signal-pill tone-${tone}">${escapeHtml(sg.label)}${age}</span>`;
+        })
+        .join("");
+      return `<tr><td class="snap-name">${escapeHtml(t.displayName)}${pills ? `<div class="snap-signals">${pills}</div>` : ""}</td><td class="snap-num">${currencyPrefixFor(t)}${fmtNum(t.currentPrice)}</td><td class="snap-num ${c1}">${fmtPct(t.pct1Day)}</td><td class="snap-num ${c5}">${fmtPct(t.pct5Day)}</td>${smaTd(t, t.sma20)}${smaTd(t, t.sma50)}${smaTd(t, t.sma100)}${smaTd(t, t.sma200)}</tr>`;
     });
   if (rows.length === 0) return "";
   return `<section class="snapshot-card">
     <span class="eyebrow">${STR.digestSnapshot}</span>
-    <table class="snapshot-table">
-      <thead><tr><th>${STR.snapshotName}</th><th>${STR.snapshotLast}</th><th>${STR.snapshot1d}</th><th>${STR.snapshot5d}</th></tr></thead>
+    <div class="margin-scroll"><table class="snapshot-table snapshot-sma">
+      <thead><tr><th>${STR.snapshotName}</th><th>${STR.snapshotLast}</th><th>${STR.snapshot1d}</th><th>${STR.snapshot5d}</th><th>SMA20</th><th>SMA50</th><th>SMA100</th><th>SMA200</th></tr></thead>
       <tbody>${rows.join("")}</tbody>
-    </table>
-    <p class="snapshot-note">${STR.digestSnapshotNote}</p>
+    </table></div>
+    <p class="snapshot-note">${STR.digestSnapshotNote}${STR.snapshotSmaNote}</p>
   </section>`;
 }
 

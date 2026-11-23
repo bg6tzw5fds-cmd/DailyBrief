@@ -46,11 +46,26 @@ export function buildEmail(report, date, pagesUrl = "") {
   const bySym = new Map(tickers.map((t) => [t.symbol, t]));
   const rows = SNAPSHOT.map((s) => bySym.get(s)).filter(Boolean);
   if (rows.length) {
+    const BULL = new Set(["golden-cross", "macd-bull-cross", "above-sma50-sma200", "near-52w-high", "sma20-cross-up-50", "sma50-cross-up-100", "price-cross-up-200"]);
+    const BEAR = new Set(["death-cross", "macd-bear-cross", "below-sma50-sma200", "near-52w-low", "sma20-cross-down-50", "sma50-cross-down-100", "price-cross-down-200"]);
+    const sigColor = (type) => (BULL.has(type) ? UP : BEAR.has(type) ? DOWN : "#d97706");
+    const tdS = 'style="padding:6px 5px;border-bottom:1px solid #eee;font-size:13px;text-align:right;white-space:nowrap;"';
+    const thS = (t, left = false) => `<th style="padding:6px 5px;border-bottom:1px solid #eee;font-size:11px;color:#71717a;text-align:${left ? "left" : "right"};white-space:nowrap;">${t}</th>`;
+    const smaCell = (t, v) =>
+      v == null ? `<td ${tdS}>—</td>` : `<td ${tdS.replace('style="', `style="color:${t.currentPrice >= v ? UP : DOWN};`)}>${price(v)}</td>`;
     parts.push(h2("收盤快照"));
     parts.push(`<table cellspacing="0" cellpadding="0" style="width:100%;border-collapse:collapse;">
-<tr><th ${td.replace("font-size:14px;", "font-size:12px;color:#71717a;text-align:left;")}>標的</th><th ${tdr.replace("font-size:14px;", "font-size:12px;color:#71717a;")}>最新</th><th ${tdr.replace("font-size:14px;", "font-size:12px;color:#71717a;")}>日漲跌</th><th ${tdr.replace("font-size:14px;", "font-size:12px;color:#71717a;")}>5 日</th></tr>
-${rows.map((t) => `<tr><td ${td}>${esc(t.displayName)}</td><td ${tdr}>${price(t.currentPrice)}</td><td ${tdr.replace('style="', `style="color:${color(t.pct1Day)};`)}>${pct(t.pct1Day)}</td><td ${tdr.replace('style="', `style="color:${color(t.pct5Day)};`)}>${pct(t.pct5Day)}</td></tr>`).join("\n")}
-</table>`);
+<tr>${thS("標的", true)}${thS("最新")}${thS("日漲跌")}${thS("5 日")}${thS("SMA20")}${thS("SMA50")}${thS("SMA100")}${thS("SMA200")}</tr>
+${rows
+  .map((t) => {
+    const sig = (t.signals ?? [])
+      .map((g) => `<span style="color:${sigColor(g.type)};">${esc(g.label)}${g.daysAgo != null ? `（${g.daysAgo === 0 ? "今天" : `${g.daysAgo} 天前`}）` : ""}</span>`)
+      .join("、");
+    return `<tr><td style="padding:6px 5px;border-bottom:1px solid #eee;font-size:13px;">${esc(t.displayName)}${sig ? `<div style="font-size:11px;line-height:1.5;margin-top:2px;">${sig}</div>` : ""}</td><td ${tdS}>${price(t.currentPrice)}</td><td ${tdS.replace('style="', `style="color:${color(t.pct1Day)};`)}>${pct(t.pct1Day)}</td><td ${tdS.replace('style="', `style="color:${color(t.pct5Day)};`)}>${pct(t.pct5Day)}</td>${smaCell(t, t.sma20)}${smaCell(t, t.sma50)}${smaCell(t, t.sma100)}${smaCell(t, t.sma200)}</tr>`;
+  })
+  .join("\n")}
+</table>
+<p style="font-size:11px;color:#a1a1aa;margin:6px 0 0;">均線數字紅色＝價格在該均線之上，綠色＝在之下。</p>`);
   }
 
   const m = report.margin;
