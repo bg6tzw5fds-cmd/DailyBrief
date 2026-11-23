@@ -16,7 +16,7 @@ const ROOT = process.argv[2] ?? "daily_reports";
 const OUT_DIR = process.argv[3] ?? "email";
 const PAGES_URL = (process.env.PAGES_URL ?? "").trim();
 
-const SNAPSHOT = ["^GSPC", "^IXIC", "^SOX", "^TWII", "2330.TW", "^TNX", "DX-Y.NYB", "TWD=X", "BZ=F", "GC=F", "^VIX"];
+const SNAPSHOT = ["^GSPC", "^IXIC", "^SOX", "^TWII", "^STOXX", "^BSESN", "000300.SS", "399006.SZ", "2330.TW", "^TNX", "DX-Y.NYB", "TWD=X", "BZ=F", "GC=F", "^VIX"];
 const UP = "#dc2626"; // 台股慣例：紅漲
 const DOWN = "#16a34a"; // 綠跌
 
