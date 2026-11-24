@@ -1,6 +1,6 @@
 name: Daily Brief
 
-# 投資晨報客製版：預設 台北時間每天 07:00、Anthropic Claude、繁體中文。
+# 投資晨報客製版：預設 台北時間每天 06:00、Anthropic Claude、繁體中文。
 # 只需要在 Settings → Secrets and variables → Actions → Secrets 新增 ANTHROPIC_API_KEY。
 
 # Generate a fresh daily report and publish to GitHub Pages.
@@ -85,7 +85,7 @@ jobs:
           fi
 
           TZ_VAL="${REPORT_TZ:-Asia/Taipei}"
-          HOURS_VAL="${REPORT_HOUR:-7}"
+          HOURS_VAL="${REPORT_HOUR:-6}"
           DAYS_VAL="${REPORT_DAYS:-*}"
 
           NOW_HOUR=$(TZ="$TZ_VAL" date +%-H)
@@ -151,7 +151,7 @@ jobs:
             # Tolerate 1h early: if BJ 07:XX is the only trigger before BJ
             # 08:00 gets swallowed, we'd rather fire slightly early than
             # not at all. earliest_hour=0 edge case: don't go negative.
-            # 投資晨報：不提早執行（07:00 前美股收盤資料才完整），
+            # 投資晨報：不提早執行（美股收盤在台北 04:00–05:00，06:00 起資料才完整），
             # 只在預定時間之後補跑。
             catchup_threshold=$earliest_hour
             if [ "$NOW_HOUR" -ge "$catchup_threshold" ]; then
