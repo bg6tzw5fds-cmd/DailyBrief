@@ -46,6 +46,11 @@ on:
     - cron: '7 * * * *'
     - cron: '37 * * * *'
   workflow_dispatch:
+    inputs:
+      send_email:
+        description: '寄送 Email（手動重跑時可取消勾選）'
+        type: boolean
+        default: true
 
 permissions:
   contents: write  # needed to push to gh-pages branch
@@ -263,13 +268,13 @@ jobs:
 
       - name: Build email
         id: email
-        if: env.MAIL_USERNAME != ''
+        if: env.MAIL_USERNAME != '' && (github.event_name != 'workflow_dispatch' || inputs.send_email)
         env:
           PAGES_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
         run: node scripts/build-email.mjs
 
       - name: Send email
-        if: env.MAIL_USERNAME != ''
+        if: env.MAIL_USERNAME != '' && (github.event_name != 'workflow_dispatch' || inputs.send_email)
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: ${{ vars.MAIL_SERVER || 'smtp.gmail.com' }}
