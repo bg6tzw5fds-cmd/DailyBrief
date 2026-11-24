@@ -84,17 +84,17 @@ export function analyzeTicker(
   const closes = raw.candles.map((c) => c.close);
   const n = closes.length;
 
-  const currentPrice = raw.regularMarketPrice;
-  const prev1 = closes[n - 2];
-  const prev5 = closes[n - 6];
+  const currentPrice = raw.override?.current ?? raw.regularMarketPrice;
+  const prev1 = raw.override ? raw.override.prev1 : closes[n - 2];
+  const prev5 = raw.override ? raw.override.prev5 : closes[n - 6];
   const pct1Day = prev1 ? ((currentPrice - prev1) / prev1) * 100 : 0;
   const pct5Day = prev5 ? ((currentPrice - prev5) / prev5) * 100 : 0;
-  const pct52WeekHigh = raw.fiftyTwoWeekHigh
-    ? ((currentPrice - raw.fiftyTwoWeekHigh) / raw.fiftyTwoWeekHigh) * 100
-    : 0;
-  const pct52WeekLow = raw.fiftyTwoWeekLow
-    ? ((currentPrice - raw.fiftyTwoWeekLow) / raw.fiftyTwoWeekLow) * 100
-    : 0;
+  // 52 週高低點以日 K 自行計算（Yahoo meta 偶爾回傳 0 或只有當日高低）。
+  const yearCandles = raw.candles.slice(-252);
+  const hi52 = Math.max(currentPrice, ...yearCandles.map((c) => c.high).filter((v) => v > 0));
+  const lo52 = Math.min(currentPrice, ...yearCandles.map((c) => c.low).filter((v) => v > 0));
+  const pct52WeekHigh = hi52 ? ((currentPrice - hi52) / hi52) * 100 : 0;
+  const pct52WeekLow = lo52 ? ((currentPrice - lo52) / lo52) * 100 : 0;
 
   const sma20arr = sma(closes, 20);
   const sma50arr = sma(closes, 50);
@@ -197,13 +197,14 @@ export function analyzeTicker(
     });
   }
 
-  // 52-week extremes
-  if (pct52WeekHigh >= -3) {
+  // 52-week extremes（歷史資料不足半年時不判斷，避免誤報）
+  const enoughHistory = raw.candles.length >= 120;
+  if (enoughHistory && pct52WeekHigh >= -3) {
     signals.push({
       type: "near-52w-high",
       label: SIGNAL_LABELS["near-52w-high"],
     });
-  } else if (pct52WeekLow <= 3) {
+  } else if (enoughHistory && pct52WeekLow <= 3) {
     signals.push({
       type: "near-52w-low",
       label: SIGNAL_LABELS["near-52w-low"],
