@@ -8,7 +8,7 @@ import { WATCHLIST } from "../lib/trading/watchlist";
 import { fetchTickerData } from "../lib/trading/yahoo";
 
 async function main() {
-  const list = WATCHLIST.filter((t) => ["^GSPC", "^TWII", "^STOXX", "^STOXX50E", "000300.SS", "399006.SZ", "2330.TW"].includes(t.symbol) || isAroundTheClock(t.symbol));
+  const list = WATCHLIST.filter((t) => ["^GSPC", "^BSESN", "^TWII", "^STOXX", "^STOXX50E", "000300.SS", "399006.SZ", "2330.TW"].includes(t.symbol) || isAroundTheClock(t.symbol));
   for (const t of list) {
     const raw = await fetchTickerData(t.symbol);
     const last = raw?.candles.slice(-3).map((c) => `${c.date.toISOString().slice(0, 16)}=${c.close.toFixed(3)}`);
