@@ -16,7 +16,7 @@ async function main() {
   }
   const out = await analyzeWatchlist(list);
   for (const a of out) {
-    console.log(`[aligned] ${a.symbol.padEnd(10)} price=${a.currentPrice.toFixed(3)} 1D=${a.pct1Day.toFixed(2)}% 5D=${a.pct5Day.toFixed(2)}% vs52H=${a.pct52WeekHigh.toFixed(1)}% vs52L=${a.pct52WeekLow.toFixed(1)}% n=${a.candleCount ?? ""} sig=${a.signals.map((x: any) => x.label).join("/")}`);
+    console.log(`[aligned] ${a.symbol.padEnd(10)} price=${a.currentPrice.toFixed(3)} 1D=${a.pct1Day.toFixed(2)}% 5D=${a.pct5Day.toFixed(2)}% vs52H=${a.pct52WeekHigh.toFixed(1)}% vs52L=${a.pct52WeekLow.toFixed(1)}% sig=${a.signals.map((x: any) => x.label).join("/")}`);
   }
 }
 main().then(() => process.exit(0)).catch((e) => { console.error(e); process.exit(1); });
