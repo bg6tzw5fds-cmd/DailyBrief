@@ -82,7 +82,8 @@ const TEXTS_ZH = {
   digestHeadline: "今日頭條",
   digestOverview: "晨報總覽",
   digestSnapshot: "收盤快照",
-  digestSnapshotNote: "前一交易日收盤；黃金、原油等期貨取同一交易日的官方結算價；匯率與美元指數取美股收盤（紐約 16:00）時點價格，都不含亞洲盤新交易日。殖利率單位為 %，紅漲綠跌",
+  marketClosed: "休市",
+  digestSnapshotNote: "前一交易日收盤；黃金、原油等期貨取同一交易日的官方結算價；匯率與美元指數取美股收盤（紐約 16:00）時點價格，都不含亞洲盤新交易日。殖利率單位為 %，紅漲綠跌；前一交易日當地休市的市場標示「休市」，不顯示日漲跌",
   snapshotName: "標的",
   snapshotLast: "最新",
   snapshotSmaNote: "　均線數字紅色＝價格在該均線之上，綠色＝在之下。",
@@ -174,6 +175,7 @@ const TEXTS_EN: typeof TEXTS_ZH = {
   digestHeadline: "Headline",
   digestOverview: "Overview",
   digestSnapshot: "Market Snapshot",
+  marketClosed: "Closed",
   digestSnapshotNote: "Previous close; 24-hour assets (futures, FX, DXY) are taken at the US close (16:00 New York) so all rows cover the same window. Yields in %",
   snapshotName: "Asset",
   snapshotLast: "Last",
@@ -1301,6 +1303,7 @@ export function renderHtml(
   .snap-num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
   .snapshot-note { margin: 0.45rem 0 0; font-size: 0.72rem; color: var(--muted); }
   .digest-category { margin-top: 1.2rem; }
+  .market-closed { color: var(--muted) !important; font-weight: 500; }
   .margin-stats {
     display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.6rem; margin: 0.2rem 0 0.8rem;
   }
@@ -1526,7 +1529,7 @@ function renderTickerCard(t: TickerAnalysis): string {
       </div>
       <div class="ticker-price-block">
         <span class="ticker-price">${currencyPrefix}${fmtNum(t.currentPrice)}</span>
-        <span class="ticker-pct ${priceCls}">${fmtPct(t.pct1Day)}</span>
+        ${t.marketClosed ? `<span class="ticker-pct market-closed">${STR.marketClosed} · ${escapeHtml(t.lastSessionDate ?? "")}</span>` : `<span class="ticker-pct ${priceCls}">${fmtPct(t.pct1Day)}</span>`}
       </div>
     </header>
     <dl class="ticker-indicators">
@@ -1715,7 +1718,7 @@ function renderSnapshot(trading: TradingSection | undefined): string {
           return `<span class="signal-pill tone-${tone}">${escapeHtml(sg.label)}${age}</span>`;
         })
         .join("");
-      return `<tr><td class="snap-name">${escapeHtml(t.displayName)}${pills ? `<div class="snap-signals">${pills}</div>` : ""}</td><td class="snap-num">${currencyPrefixFor(t)}${fmtNum(t.currentPrice)}</td><td class="snap-num ${c1}">${fmtPct(t.pct1Day)}</td><td class="snap-num ${c5}">${fmtPct(t.pct5Day)}</td>${smaTd(t, t.sma20)}${smaTd(t, t.sma50)}${smaTd(t, t.sma100)}${smaTd(t, t.sma200)}</tr>`;
+      return `<tr><td class="snap-name">${escapeHtml(t.displayName)}${pills ? `<div class="snap-signals">${pills}</div>` : ""}</td><td class="snap-num">${currencyPrefixFor(t)}${fmtNum(t.currentPrice)}</td>${t.marketClosed ? `<td class="snap-num market-closed">${STR.marketClosed}</td>` : `<td class="snap-num ${c1}">${fmtPct(t.pct1Day)}</td>`}<td class="snap-num ${c5}">${fmtPct(t.pct5Day)}</td>${smaTd(t, t.sma20)}${smaTd(t, t.sma50)}${smaTd(t, t.sma100)}${smaTd(t, t.sma200)}</tr>`;
     });
   if (rows.length === 0) return "";
   return `<section class="snapshot-card">

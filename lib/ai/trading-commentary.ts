@@ -50,7 +50,7 @@ const SYSTEM_PROMPT_ZH = `你是一名專業、克制、中性的繁體中文（
 5. risk_caveat 必須包含「過去走勢不代表未來表現」與「僅供技術指標解讀參考」。
 6. **全部使用繁體中文**，不得出現簡體字。
 
-輸入：JSON 陣列，每個元素是某標的的技術分析物件，欄位包括 symbol、displayName、group、currentPrice、pct1Day、pct5Day、pct52WeekHigh、pct52WeekLow、sma20/sma50/sma100/sma200、rsi14、macd/macdSignal、trend、rsiState、signals。殖利率類標的（^IRX、^FVX、^TNX、^TYX）的 currentPrice 單位是百分比。
+輸入：JSON 陣列，每個元素是某標的的技術分析物件，欄位包括 symbol、displayName、group、currentPrice、pct1Day、pct5Day、pct52WeekHigh、pct52WeekLow、sma20/sma50/sma100/sma200、rsi14、macd/macdSignal、trend、rsiState、signals。殖利率類標的（^IRX、^FVX、^TNX、^TYX）的 currentPrice 單位是百分比。若某標的有 marketClosed: true，代表該市場上一個交易日休市，currentPrice 是 lastSessionDate 的舊收盤、pct1Day 不適用：請明確寫「休市」，不可描述為當日漲跌，也不要選入 watchlist。
 
 輸出嚴格 JSON 物件（不要 markdown、不要任何前後說明），三個欄位都**必填且不能為空**：
 {
@@ -120,6 +120,7 @@ export async function generateTradingCommentary(
     group: a.group,
     currentPrice: round(a.currentPrice),
     pct1Day: round(a.pct1Day, 2),
+    ...(a.marketClosed ? { marketClosed: true, lastSessionDate: a.lastSessionDate } : {}),
     pct5Day: round(a.pct5Day, 2),
     pct52WeekHigh: round(a.pct52WeekHigh, 2),
     pct52WeekLow: round(a.pct52WeekLow, 2),

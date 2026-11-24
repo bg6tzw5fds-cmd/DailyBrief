@@ -114,6 +114,47 @@ export function alignToRefs(
   };
 }
 
+function partsIn(tz: string, d: Date) {
+  const p = Object.fromEntries(
+    new Intl.DateTimeFormat("en-US", {
+      timeZone: tz, year: "numeric", month: "2-digit", day: "2-digit",
+      weekday: "short", hour: "2-digit", hour12: false,
+    }).formatToParts(d).map((x) => [x.type, x.value]),
+  );
+  return { ymd: `${p.year}-${p.month}-${p.day}`, wd: p.weekday as string, hour: Number(p.hour) % 24 };
+}
+
+/**
+ * 該市場「最近一個應該已經收盤的交易日」（當地日期 YYYY-MM-DD）：
+ * 平日當地 17:00 以後算今天，否則往前找最近的平日。只看週末，不含國定假日
+ * ——正是用來偵測國定假日休市。
+ */
+export function expectedSessionDate(tz: string, now: Date = new Date()): string {
+  let t = now;
+  let { ymd, wd, hour } = partsIn(tz, t);
+  const isWeekday = (w: string) => w !== "Sat" && w !== "Sun";
+  if (isWeekday(wd) && hour >= 17) return ymd;
+  for (let i = 0; i < 7; i++) {
+    t = new Date(t.getTime() - 86400_000);
+    ({ ymd, wd } = partsIn(tz, t));
+    if (isWeekday(wd)) return ymd;
+  }
+  return ymd;
+}
+
+/** Mark tickers whose market was closed on its most recent expected session. Pure; exported for tests. */
+export function markHolidays(a: TickerAnalysis, raw: TickerRawData, now: Date = new Date()): TickerAnalysis {
+  const last = raw.candles[raw.candles.length - 1];
+  if (!last || !raw.timezone) return a;
+  const lastYmd = partsIn(raw.timezone, last.date).ymd;
+  const out = { ...a, lastSessionDate: `${lastYmd.slice(5, 7)}/${lastYmd.slice(8, 10)}` };
+  if (isAroundTheClock(a.symbol)) return out;
+  if (lastYmd < expectedSessionDate(raw.timezone, now)) {
+    return { ...out, marketClosed: true, pct1Day: 0 };
+  }
+  return out;
+}
+
 /**
  * Fetch + analyze the entire watchlist with bounded concurrency. Failures
  * are non-fatal — the affected ticker is dropped from the output.
@@ -164,7 +205,9 @@ export async function analyzeWatchlist(
     const raw = aligned[i];
     if (!raw) return null;
     try {
-      return analyzeTicker(def, raw);
+      const a = markHolidays(analyzeTicker(def, raw), raw);
+      if (a.marketClosed) console.log(`[trading] ${def.symbol} market closed — last session ${a.lastSessionDate}`);
+      return a;
     } catch (e) {
       console.warn(`[trading] ${def.symbol} analyze failed: ${e instanceof Error ? e.message : String(e)}`);
       return null;

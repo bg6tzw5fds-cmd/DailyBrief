@@ -16,6 +16,8 @@ export interface TickerRawData {
   fiftyTwoWeekLow: number;
   /** Daily OHLCV for the last ~1 year, oldest first. */
   candles: OHLC[];
+  /** 交易所時區（IANA），用來判斷最新一根 K 棒是哪一個交易日。 */
+  timezone?: string;
   /**
    * 投資晨報：24 小時交易資產對齊到參考市場收盤時點後的價格。
    * 有提供時，signals.ts 以此計算現價、日漲跌、5 日漲跌。
@@ -61,6 +63,7 @@ async function fetchEastmoney(symbol: string, secid: string): Promise<TickerRawD
     symbol,
     currency: "CNY",
     exchangeName: secid.startsWith("1.") ? "SSE" : "SZSE",
+    timezone: "Asia/Shanghai",
     regularMarketPrice: candles[candles.length - 1].close,
     fiftyTwoWeekHigh: Math.max(...year.map((x) => x.high)),
     fiftyTwoWeekLow: Math.min(...year.map((x) => x.low)),
@@ -173,6 +176,7 @@ export async function fetchTickerData(
     symbol: r.meta.symbol ?? symbol,
     currency: r.meta.currency ?? "",
     exchangeName: r.meta.exchangeName ?? "",
+    timezone: meta.exchangeTimezoneName,
     regularMarketPrice:
       r.meta.regularMarketPrice ?? candles[candles.length - 1]?.close ?? 0,
     fiftyTwoWeekHigh: r.meta.fiftyTwoWeekHigh ?? 0,

@@ -61,7 +61,7 @@ ${rows
     const sig = (t.signals ?? [])
       .map((g) => `<span style="color:${sigColor(g.type)};">${esc(g.label)}${g.daysAgo != null ? `（${g.daysAgo === 0 ? "今天" : `${g.daysAgo} 天前`}）` : ""}</span>`)
       .join("、");
-    return `<tr><td style="padding:6px 5px;border-bottom:1px solid #eee;font-size:13px;">${esc(t.displayName)}${sig ? `<div style="font-size:11px;line-height:1.5;margin-top:2px;">${sig}</div>` : ""}</td><td ${tdS}>${price(t.currentPrice)}</td><td ${tdS.replace('style="', `style="color:${color(t.pct1Day)};`)}>${pct(t.pct1Day)}</td><td ${tdS.replace('style="', `style="color:${color(t.pct5Day)};`)}>${pct(t.pct5Day)}</td>${smaCell(t, t.sma20)}${smaCell(t, t.sma50)}${smaCell(t, t.sma100)}${smaCell(t, t.sma200)}</tr>`;
+    return `<tr><td style="padding:6px 5px;border-bottom:1px solid #eee;font-size:13px;">${esc(t.displayName)}${sig ? `<div style="font-size:11px;line-height:1.5;margin-top:2px;">${sig}</div>` : ""}</td><td ${tdS}>${price(t.currentPrice)}</td>${t.marketClosed ? `<td ${tdS.replace('style="', 'style="color:#71717a;')}>休市</td>` : `<td ${tdS.replace('style="', `style="color:${color(t.pct1Day)};`)}>${pct(t.pct1Day)}</td>`}<td ${tdS.replace('style="', `style="color:${color(t.pct5Day)};`)}>${pct(t.pct5Day)}</td>${smaCell(t, t.sma20)}${smaCell(t, t.sma50)}${smaCell(t, t.sma100)}${smaCell(t, t.sma200)}</tr>`;
   })
   .join("\n")}
 </table>

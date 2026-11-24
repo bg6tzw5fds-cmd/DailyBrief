@@ -56,6 +56,10 @@ export interface TickerAnalysis {
   trend: "bullish" | "bearish" | "neutral";
   rsiState: "overbought" | "oversold" | "normal";
   signals: Signal[];
+  /** 最新一根日 K 的交易日（交易所當地日期，MM/DD）。 */
+  lastSessionDate?: string;
+  /** 上一個應有交易的日子該市場休市：pct1Day 設為 0，畫面顯示「休市」。 */
+  marketClosed?: boolean;
 }
 
 const SIGNAL_LABELS: Record<SignalType, string> = {

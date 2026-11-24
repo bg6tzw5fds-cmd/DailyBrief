@@ -37,9 +37,10 @@ type BriefItem = {
 5. 英文新聞請將 title 與 summary 翻成繁體中文；簡體中文來源也要轉成繁體。
 6. 若輸入提供台股融資融券資料，daily_overview 請用一句話描述融資餘額與融券的變化（只能引用提供的數字）。
 7. 優先選擇：央行決策與官員談話、重要經濟數據（CPI、就業、PMI、GDP）、殖利率與匯率大幅變動、油價與供應衝擊、大型科技與半導體公司財報與資本支出、出口管制與關稅政策。
-8. 收盤數據只能引用輸入提供的數字，不可自行推估或編造數字。
-9. 立場中性：可說明市場解讀與風險，但不提供買進、賣出或目標價建議。
-10. 如某分類無可用條目，對應 briefs 陣列回傳 []。`;
+8. 收盤數據中標示「休市」的市場，只能說明休市，不可寫成當日漲跌或拿來解釋行情。
+9. 收盤數據只能引用輸入提供的數字，不可自行推估或編造數字。
+10. 立場中性：可說明市場解讀與風險，但不提供買進、賣出或目標價建議。
+11. 如某分類無可用條目，對應 briefs 陣列回傳 []。`;
 
 export const SYSTEM_PROMPT_DIGEST_EN = `You are a rigorous English-language news editor. Your job is to distill multi-source feeds into a "5-minute" daily brief.
 

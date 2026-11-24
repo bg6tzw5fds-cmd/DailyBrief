@@ -253,7 +253,9 @@ export function buildMarketSnapshot(trading: TradingSection): string {
   return trading.tickers
     .map(
       (t) =>
-        `- [${labels[t.group as AssetGroup] ?? t.group}] ${t.displayName} (${t.symbol})：${fmt(t.currentPrice)}，日 ${sign(t.pct1Day)}，5 日 ${sign(t.pct5Day)}`,
+        t.marketClosed
+          ? `- [${labels[t.group as AssetGroup] ?? t.group}] ${t.displayName} (${t.symbol})：前一交易日休市（數字為 ${t.lastSessionDate} 舊收盤 ${fmt(t.currentPrice)}，不可描述為當日漲跌）`
+          : `- [${labels[t.group as AssetGroup] ?? t.group}] ${t.displayName} (${t.symbol})：${fmt(t.currentPrice)}，日 ${sign(t.pct1Day)}，5 日 ${sign(t.pct5Day)}`,
     )
     .join("\n");
 }
