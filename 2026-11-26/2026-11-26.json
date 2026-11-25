@@ -1,0 +1,2131 @@
+{
+  "hero_headline": "AI 債務疑慮與關稅風險夾擊　台股單日重挫 4.80%",
+  "daily_overview": "美股感恩節前受科技股賣壓，S&P 500 跌 0.25%、那斯達克跌 0.62%，道瓊漲 0.33%；台股加權指數重挫 4.80% 收 38195 點，台積電跌 3.59%。美國 10 年期公債殖利率 4.85%（-1.14%），美元兌新台幣 33.18（+0.86%），Brent 原油 90.73 美元（+2.76%），黃金 3603 美元（+1.44%）。台股上市融資餘額 4341.38 億元，減少 193.67 億元，融券 169,365 張，減少 17,248 張。AI 債務風險升溫，CoreWeave 與輝達信用違約交換創高，S&P 考慮下調輝達評等；中東襲擊推升油價。留意外資賣超動向。",
+  "tech_briefs": [
+    {
+      "title": "S&P 考慮因治理與關鍵人物風險下調輝達評等",
+      "url": "https://techcrunch.com/2026/11/25/sp-considers-nvidia-credit-downgrade-over-governance-and-key-man-risks/",
+      "source": "TechCrunch AI",
+      "summary": "S&P 正考慮將輝達信用評等降至 AA-（第四高等級），理由涉及公司治理與關鍵人物風險。輝達股價前一交易日跌 3.91% 至 149.30 美元，評等動向可能影響 AI 龍頭的融資成本與市場信心。",
+      "importance": 8
+    },
+    {
+      "title": "川普將出席台積電亞利桑那擴廠典禮　12 月 4 日舉行",
+      "url": "https://money.udn.com/money/story/5612/9902330",
+      "source": "經濟日報",
+      "summary": "彭博報導，美國總統川普將於 12 月 4 日出席台積電鳳凰城廠區擴建典禮，董事長魏哲家率營運主管出席，國發會主委葉俊顯代表政府與會。此舉凸顯台積電在美國半導體政策與 AI 供應鏈的戰略地位。（多家報導）",
+      "importance": 7
+    },
+    {
+      "title": "華城：AI 資料中心電力訂單能見度看到 2030 年",
+      "url": "https://ec.ltn.com.tw/article/paper/1779917",
+      "source": "自由時報 財經",
+      "summary": "重電廠華城執行長許逸晟表示，AI 算力需求尚未見頂，外銷美國比重高，各州電力公司客戶仍積極追貨，訂單能見度已看到 2030 年，未感受到 AIDC 建設放緩，顯示電力設備需求仍具支撐。",
+      "importance": 6
+    },
+    {
+      "title": "微軟大規模當機達 24 小時　啟動「紅色警戒」整頓",
+      "url": "https://www.cna.com.tw/news/aopl/202611260009.aspx",
+      "source": "中央社 財經",
+      "summary": "路透檢視內部備忘錄指出，微軟日前發生長達 24 小時的大規模當機，暴露工程系統與危機應變缺陷，公司已啟動「紅色警戒」全面整頓服務中斷預防機制。微軟前一交易日跌 1.25%，雲端可靠性成為關注點。（多家報導）",
+      "importance": 5
+    },
+    {
+      "title": "FCC 批准 SpaceX 部署百萬顆衛星　用於太空資料中心",
+      "url": "https://www.cna.com.tw/news/ait/202611260012.aspx",
+      "source": "中央社 科技",
+      "summary": "美國聯邦傳播委員會（FCC）授權馬斯克旗下 SpaceX 部署由 100 萬顆衛星組成的星系，用於打造太空資料中心。此案為 AI 算力基礎設施的新型態布局，商業可行性與時程仍待觀察。",
+      "importance": 5
+    }
+  ],
+  "finance_briefs": [
+    {
+      "title": "感恩節前科技股遭賣壓　美股多收黑、道瓊逆勢收高",
+      "url": "https://www.cna.com.tw/news/afe/202611260013.aspx",
+      "source": "中央社 財經",
+      "summary": "美股感恩節假期前科技股承壓，早盤那斯達克一度跌近 4%，逢低買盤進場後跌幅收斂。道瓊收 50182.95 點、漲 164.25 點或 0.33%，S&P 500 跌 0.25%，那斯達克跌 0.62%，顯示盤中情緒偏脆弱。（多家報導）",
+      "importance": 8
+    },
+    {
+      "title": "中東襲擊加劇供應疑慮　國際油價上揚",
+      "url": "https://www.cna.com.tw/news/afe/202611260011.aspx",
+      "source": "中央社 財經",
+      "summary": "中東地區襲擊加劇，使近幾個月逐步恢復的原油運輸前景蒙上陰影。Brent 收 90.73 美元、上漲 2.76%，WTI 收 84.13 美元、上漲 3.30%，油價走高可能增添通膨與能源成本壓力。",
+      "importance": 8
+    },
+    {
+      "title": "CoreWeave、輝達信用違約風險指標創歷史新高",
+      "url": "https://wallstreetcn.com/articles/3786717",
+      "source": "華爾街見聞",
+      "summary": "CoreWeave 五年期信用違約交換成本單日一度上升 2.09 個百分點至 15.34 個百分點，為史上最大單日漲幅，隱含五年內違約機率逾 70%；輝達、Alphabet、甲骨文與 SpaceX 的 CDS 也創高，反映 AI 債務疑慮升溫。",
+      "importance": 9
+    },
+    {
+      "title": "CNBC 評論：Warsh 面對 AI 生產力與升息爭論",
+      "url": "https://www.cnbc.com/2026/11/25/kevin-warsh-greenspan-fed-rates-ai-inflation.html",
+      "source": "CNBC Economy",
+      "summary": "CNBC 評論員 Liesman 以葛林斯潘當年看好網路生產力而按兵不動為例，主張 Warsh 不宜比照，需考慮升息。此為評論觀點，凸顯市場對 AI 生產力能否抵銷通膨壓力的辯論。（多家報導）",
+      "importance": 6
+    },
+    {
+      "title": "台股單日漲 3,310 點後再跌 1,926 點　震盪加劇",
+      "url": "https://tw.news.yahoo.com/%E8%82%A1%E7%81%BD%E8%87%AA%E6%95%911-%E6%90%B6%E6%95%91%E5%A5%97%E7%89%A2%E8%82%A1%E5%88%A5%E6%AD%BB%E5%AE%88%E6%88%90%E6%9C%AC%E5%83%B9-%E9%81%94%E4%BA%BA%E6%8F%AD%E8%81%AF%E7%99%BC%E7%A7%91-%E5%8F%B0%E9%81%94%E9%9B%BB-%E6%AD%A32%E6%B8%9B%E7%A2%BC%E5%83%B9%E4%BD%8D-223000889.html",
+      "source": "Yahoo 股市 台股",
+      "summary": "台股 11/24 大漲 3,310 點，11/25 又下跌 1,926 點，收 38195 點、跌 4.80%。上市外資賣超 1236.55 億元，投信買超 550.35 億元，融資減少 193.67 億元，劇烈震盪下市場關注槓桿是否持續降溫。",
+      "importance": 9
+    }
+  ],
+  "politics_briefs": [
+    {
+      "title": "美國擬對 14 個經濟體加徵新關稅，稅率恐升至約 45%",
+      "url": "https://finance.technews.tw/2026/11/26/us-plans-new-tariffs-on-14-economies/",
+      "source": "科技新報",
+      "summary": "美國政府研擬對包括中國、歐盟、日本與印度在內的 14 個經濟體祭出新一輪關稅，因應其製造業結構性產能問題；報導標題指相關稅率恐升至約 45%，細節與生效時程待確認，貿易不確定性恐持續壓抑風險偏好。",
+      "importance": 8
+    }
+  ],
+  "editor_note": "",
+  "keywords": [],
+  "trading": {
+    "market_overview": "全球指數普遍走弱：S&P 500 收 7182.78，RSI 39.7，低於 SMA20 與 SMA50；那斯達克 RSI 38.6，五日 -3.46%；費半五日 -9.1%。亞股更弱，台股加權單日 -4.8% 至 38195.43，韓國綜合 -6.16%，恒生與滬深 300 的 RSI 均為 27.1 進入超賣，僅印度 SENSEX RSI 73.2 屬超買。台股中鴻海 -8.83%、聯發科 -10%、台積電 -3.59%。AI 與半導體方面，Sandisk 單日 -22.02%、AMD 五日 -23.41%、美光五日 -14.75%，SOXX、PSI 五日分別 -9.78%、-11.51%，動能明顯轉弱。商品面，Brent 90.73、WTI 84.13 單日反彈，XLE、OIH 同步收高；黃金 RSI 34.2、白銀 RSI 29.8 超賣，銅 RSI 30。利率方面，10 年期殖利率 4.85%、30 年期 5.24%，單日約 -1.1%，MACD 皆死亡交叉，殖利率回落未能支撐成長股。美元指數 103.7、美元兌新台幣 33.18 接近 52 週高點，VIX 28.29 單日 +7.32%，避險情緒升溫。",
+    "watchlist": [
+      {
+        "symbol": "^BSESN",
+        "display_name": "印度 SENSEX",
+        "stance": "偏上行",
+        "rationale": "收 83938.28，單日 +1.82%，站上 SMA20（79608.97）、SMA50（75933.59）與 SMA200（77092.2）。MACD 2351.62 高於訊號線 2093.51，距 52 週高點僅 -2.58%。RSI 為 73.2 屬超買區，動能強但短線有過熱疑慮。"
+      },
+      {
+        "symbol": "NG=F",
+        "display_name": "美國天然氣",
+        "stance": "偏上行",
+        "rationale": "收 3.67，五日 +7.81%，高於 SMA20（3.17）與 SMA50（3.07）。出現 SMA20 上穿 SMA50 及 SMA50 上穿 SMA200 的黃金交叉，呈多頭排列。MACD 0.1189 高於訊號線 0.0818，RSI 65.4 尚未進入超買。"
+      },
+      {
+        "symbol": "^HSI",
+        "display_name": "恒生指數",
+        "stance": "偏下行",
+        "rationale": "收 21966.01，五日 -5.7%，低於 SMA20（23485.87）、SMA50 與 SMA200（25046.62），呈空頭排列。MACD -449.46 低於訊號線 -258.85，價差擴大。RSI 27.1 進入超賣，且接近 52 週低點，短線可能技術性反彈，但趨勢仍弱。"
+      },
+      {
+        "symbol": "^KS11",
+        "display_name": "韓國綜合",
+        "stance": "偏下行",
+        "rationale": "收 4697.51，單日 -6.16%、五日 -7.3%，距 52 週高點 -49.95%。價格低於 SMA20（5256.33）、SMA50（5932.77）與 SMA200（6519.59），出現 MACD 死亡交叉與空頭排列。RSI 35.1 尚未進入超賣，下行動能仍在。"
+      },
+      {
+        "symbol": "2454.TW",
+        "display_name": "聯發科",
+        "stance": "中性",
+        "rationale": "收 3645，單日 -10%、五日 -7.49%，跌幅顯著。價格仍高於 SMA200（3422.9），但低於 SMA20（3785.5）與 SMA50（4276.1）。MACD -125.90 略高於訊號線 -146.00，形成黃金交叉。RSI 45，多空訊號互見。"
+      },
+      {
+        "symbol": "SNDK",
+        "display_name": "Sandisk",
+        "stance": "中性",
+        "rationale": "收 73.61，單日 -22.02%、五日 -33.46%，距 52 週高點 -74.99%。價格遠低於 SMA20（122.5）與 SMA50（168.07），MACD -22.64 低於訊號線 -20.75。RSI 24.1 屬超賣，短線動能極度弱勢與超賣反彈並存，方向不明。"
+      }
+    ],
+    "risk_caveat": "以上內容為依公開行情計算的技術指標描述，過去走勢不代表未來表現，市場可能因突發事件快速反轉；本文僅供技術指標解讀參考，不構成任何投資建議或買賣依據。",
+    "tickers": [
+      {
+        "symbol": "^GSPC",
+        "displayName": "S&P 500",
+        "group": "index",
+        "currency": "USD",
+        "exchangeName": "SNP",
+        "currentPrice": 7182.78,
+        "pct1Day": -0.25426489805417174,
+        "pct5Day": -1.9232250272921976,
+        "pct52WeekHigh": -8.435698014456626,
+        "pct52WeekLow": 13.707173639208742,
+        "sma20": 7423.115942382812,
+        "sma50": 7602.526796875,
+        "sma100": 7607.262998046875,
+        "sma200": 7352.490861816406,
+        "rsi14": 39.72244395707752,
+        "macd": -132.2138985149304,
+        "macdSignal": -102.4453018715271,
+        "macdHistogram": -29.7685966434033,
+        "trend": "neutral",
+        "rsiState": "normal",
+        "signals": [
+          {
+            "type": "sma50-cross-down-100",
+            "label": "SMA50 下穿 SMA100（中期下行訊號）",
+            "daysAgo": 1
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "^IXIC",
+        "displayName": "那斯達克綜合",
+        "group": "index",
+        "currency": "USD",
+        "exchangeName": "NIM",
+        "currentPrice": 23585.803,
+        "pct1Day": -0.6224780135442564,
+        "pct5Day": -3.4551042808343624,
+        "pct52WeekHigh": -14.922570812780117,
+        "pct52WeekLow": 13.994770483681926,
+        "sma20": 24712.51962890625,
+        "sma50": 25978.689765625,
+        "sma100": 26016.49947265625,
+        "sma200": 25167.647216796875,
+        "rsi14": 38.58756131705816,
+        "macd": -680.3597624797294,
+        "macdSignal": -583.8935964206954,
+        "macdHistogram": -96.46616605903398,
+        "trend": "neutral",
+        "rsiState": "normal",
+        "signals": [
+          {
+            "type": "sma50-cross-down-100",
+            "label": "SMA50 下穿 SMA100（中期下行訊號）",
+            "daysAgo": 1
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "^DJI",
+        "displayName": "道瓊工業",
+        "group": "index",
+        "currency": "USD",
+        "exchangeName": "DJI",
+        "currentPrice": 50182.95,
+        "pct1Day": 0.32837875397692484,
+        "pct5Day": -0.030323564447540773,
+        "pct52WeekHigh": -8.33214742280665,
+        "pct52WeekLow": 11.375894434376235,
+        "sma20": 51270.4177734375,
+        "sma50": 51582.1203125,
+        "sma100": 52245.61453125,
+        "sma200": 50773.19537109375,
+        "rsi14": 43.48246313355424,
+        "macd": -649.6818655118332,
+        "macdSignal": -433.61245068406316,
+        "macdHistogram": -216.06941482777,
+        "trend": "neutral",
+        "rsiState": "normal",
+        "signals": [
+          {
+            "type": "sma20-cross-down-50",
+            "label": "SMA20 下穿 SMA50（短線下行訊號）",
+            "daysAgo": 3
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "^SOX",
+        "displayName": "費城半導體",
+        "group": "index",
+        "currency": "USD",
+        "exchangeName": "NIM",
+        "currentPrice": 8774.862,
+        "pct1Day": -0.6525672233229644,
+        "pct5Day": -9.095162258116709,
+        "pct52WeekHigh": -40.124951627628604,
+        "pct52WeekLow": 35.890577569747165,
+        "sma20": 9849.259130859375,
+        "sma50": 11207.64427734375,
+        "sma100": 11534.7554296875,
+        "sma200": 10935.603657226562,
+        "rsi14": 37.6418356170092,
+        "macd": -620.3698974196886,
+        "macdSignal": -558.7372449839391,
+        "macdHistogram": -61.63265243574949,
+        "trend": "neutral",
+        "rsiState": "normal",
+        "signals": [],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "^RUT",
+        "displayName": "羅素 2000",
+        "group": "index",
+        "currency": "USD",
+        "exchangeName": "WCB",
+        "currentPrice": 2704.061,
+        "pct1Day": 0.7121596389875077,
+        "pct5Day": -0.3775935089397915,
+        "pct52WeekHigh": -11.911514950612121,
+        "pct52WeekLow": 12.43543677853227,
+        "sma20": 2759.1510498046873,
+        "sma50": 2788.0714111328125,
+        "sma100": 2880.799201660156,
+        "sma200": 2813.406104736328,
+        "rsi14": 45.01644403923893,
+        "macd": -37.86946153169083,
+        "macdSignal": -28.813659931718703,
+        "macdHistogram": -9.055801599972128,
+        "trend": "bearish",
+        "rsiState": "normal",
+        "signals": [
+          {
+            "type": "death-cross",
+            "label": "死亡交叉 SMA50 下穿 SMA200（長期下行訊號）",
+            "daysAgo": 5
+          },
+          {
+            "type": "below-sma50-sma200",
+            "label": "空頭排列"
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "^TWII",
+        "displayName": "台股加權指數",
+        "group": "index",
+        "currency": "TWD",
+        "exchangeName": "TAI",
+        "currentPrice": 38195.43,
+        "pct1Day": -4.802613723919861,
+        "pct5Day": -4.974461066033994,
+        "pct52WeekHigh": -23.561628774885392,
+        "pct52WeekLow": 44.70169064270706,
+        "sma20": 41517.390835937505,
+        "sma50": 45128.9536,
+        "sma100": 45072.6788703125,
+        "sma200": 41628.22088046875,
+        "rsi14": 38.329645802092934,
+        "macd": -2090.7707882943723,
+        "macdSignal": -1813.5756056581051,
+        "macdHistogram": -277.1951826362672,
+        "trend": "neutral",
+        "rsiState": "normal",
+        "signals": [],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "^N225",
+        "displayName": "日經 225",
+        "group": "index",
+        "currency": "JPY",
+        "exchangeName": "OSA",
+        "currentPrice": 57011.62,
+        "pct1Day": -2.7845839196297835,
+        "pct5Day": -3.141006100899435,
+        "pct52WeekHigh": -21.72144930399816,
+        "pct52WeekLow": 18.194805622859366,
+        "sma20": 60524.22572656251,
+        "sma50": 63752.74974375,
+        "sma100": 65092.928348437505,
+        "sma200": 62309.79218203125,
+        "rsi14": 36.74091093921716,
+        "macd": -1789.4211521275793,
+        "macdSignal": -1608.481423180694,
+        "macdHistogram": -180.93972894688523,
+        "trend": "neutral",
+        "rsiState": "normal",
+        "signals": [],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "^KS11",
+        "displayName": "韓國綜合",
+        "group": "index",
+        "currency": "KRW",
+        "exchangeName": "KSC",
+        "currentPrice": 4697.51,
+        "pct1Day": -6.162963434038381,
+        "pct5Day": -7.300134696881906,
+        "pct52WeekHigh": -49.9497625806849,
+        "pct52WeekLow": 22.543203212044382,
+        "sma20": 5256.325475585937,
+        "sma50": 5932.770229296875,
+        "sma100": 6380.122038476563,
+        "sma200": 6519.585223339844,
+        "rsi14": 35.103363898915134,
+        "macd": -303.80490165702577,
+        "macdSignal": -292.5145271713168,
+        "macdHistogram": -11.29037448570898,
+        "trend": "bearish",
+        "rsiState": "normal",
+        "signals": [
+          {
+            "type": "macd-bear-cross",
+            "label": "MACD 死亡交叉",
+            "daysAgo": 3
+          },
+          {
+            "type": "below-sma50-sma200",
+            "label": "空頭排列"
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "^HSI",
+        "displayName": "恒生指數",
+        "group": "index",
+        "currency": "HKD",
+        "exchangeName": "HKG",
+        "currentPrice": 21966.01,
+        "pct1Day": -1.141513867977052,
+        "pct5Day": -5.704032024383183,
+        "pct52WeekHigh": -21.70682915361473,
+        "pct52WeekLow": 0.2287382482473776,
+        "sma20": 23485.86700390625,
+        "sma50": 23899.303325,
+        "sma100": 24573.192014062497,
+        "sma200": 25046.618946484374,
+        "rsi14": 27.1000129557123,
+        "macd": -449.45639772662616,
+        "macdSignal": -258.847901425244,
+        "macdHistogram": -190.60849630138216,
+        "trend": "bearish",
+        "rsiState": "oversold",
+        "signals": [
+          {
+            "type": "rsi-oversold",
+            "label": "RSI 超賣"
+          },
+          {
+            "type": "near-52w-low",
+            "label": "接近 52 週低點"
+          },
+          {
+            "type": "below-sma50-sma200",
+            "label": "空頭排列"
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "^STOXX50E",
+        "displayName": "歐洲 STOXX 50",
+        "group": "index",
+        "currency": "EUR",
+        "exchangeName": "ZRH",
+        "currentPrice": 5894.46,
+        "pct1Day": -1.8205219710955856,
+        "pct5Day": -4.2234913767968125,
+        "pct52WeekHigh": -10.380407696865934,
+        "pct52WeekLow": 9.627454490025935,
+        "sma20": 6193.38203125,
+        "sma50": 6205.06201171875,
+        "sma100": 6291.303212890625,
+        "sma200": 6128.726147460938,
+        "rsi14": 34.89275431721856,
+        "macd": -56.243355855222944,
+        "macdSignal": -16.450491859532505,
+        "macdHistogram": -39.79286399569044,
+        "trend": "neutral",
+        "rsiState": "normal",
+        "signals": [
+          {
+            "type": "price-cross-down-200",
+            "label": "跌破 SMA200（長期下行訊號）",
+            "daysAgo": 4
+          },
+          {
+            "type": "macd-bear-cross",
+            "label": "MACD 死亡交叉",
+            "daysAgo": 4
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "^STOXX",
+        "displayName": "歐洲 STOXX 600",
+        "group": "index",
+        "currency": "EUR",
+        "exchangeName": "ZRH",
+        "currentPrice": 626.03,
+        "pct1Day": -1.0604656474912484,
+        "pct5Day": -2.7979175738702664,
+        "pct52WeekHigh": -6.0832932356534055,
+        "pct52WeekLow": 11.981041708176502,
+        "sma20": 648.7239990234375,
+        "sma50": 641.9488000488282,
+        "sma100": 645.2551977539063,
+        "sma200": 630.8905001831055,
+        "rsi14": 37.292947142027586,
+        "macd": -3.0155131551729255,
+        "macdSignal": 0.7409507023924137,
+        "macdHistogram": -3.7564638575653393,
+        "trend": "neutral",
+        "rsiState": "normal",
+        "signals": [
+          {
+            "type": "price-cross-down-200",
+            "label": "跌破 SMA200（長期下行訊號）",
+            "daysAgo": 0
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "^BSESN",
+        "displayName": "印度 SENSEX",
+        "group": "index",
+        "currency": "INR",
+        "exchangeName": "BSE",
+        "currentPrice": 83938.28,
+        "pct1Day": 1.822368813227913,
+        "pct5Day": 1.7036898482788898,
+        "pct52WeekHigh": -2.5774937422670936,
+        "pct52WeekLow": 17.737250464057322,
+        "sma20": 79608.968296875,
+        "sma50": 75933.58544375,
+        "sma100": 76652.02983125001,
+        "sma200": 77092.204290625,
+        "rsi14": 73.17232483661098,
+        "macd": 2351.6171460292535,
+        "macdSignal": 2093.5059859852995,
+        "macdHistogram": 258.111160043954,
+        "trend": "neutral",
+        "rsiState": "overbought",
+        "signals": [
+          {
+            "type": "rsi-overbought",
+            "label": "RSI 超買"
+          },
+          {
+            "type": "near-52w-high",
+            "label": "接近 52 週高點"
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "000300.SS",
+        "displayName": "滬深 300",
+        "group": "index",
+        "currency": "CNY",
+        "exchangeName": "SSE",
+        "currentPrice": 3898.24,
+        "pct1Day": -1.6544646326018937,
+        "pct5Day": -2.146961295456319,
+        "pct52WeekHigh": -23.024641261228183,
+        "pct52WeekLow": 0.2912331614748878,
+        "sma20": 4013.654999999993,
+        "sma50": 4198.580199999998,
+        "sma100": 4433.037699999996,
+        "sma200": 4589.157050000001,
+        "rsi14": 27.08158856434146,
+        "macd": -69.85630630450623,
+        "macdSignal": -71.58324863341483,
+        "macdHistogram": 1.7269423289085921,
+        "trend": "bearish",
+        "rsiState": "oversold",
+        "signals": [
+          {
+            "type": "rsi-oversold",
+            "label": "RSI 超賣"
+          },
+          {
+            "type": "near-52w-low",
+            "label": "接近 52 週低點"
+          },
+          {
+            "type": "below-sma50-sma200",
+            "label": "空頭排列"
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "399006.SZ",
+        "displayName": "創業板指",
+        "group": "index",
+        "currency": "CNY",
+        "exchangeName": "SZSE",
+        "currentPrice": 2183.58,
+        "pct1Day": -4.186503670485604,
+        "pct5Day": -5.538972668518181,
+        "pct52WeekHigh": -50.151241550448475,
+        "pct52WeekLow": 0,
+        "sma20": 2399.5475,
+        "sma50": 2781.8975999999984,
+        "sma100": 3180.0795000000007,
+        "sma200": 3401.9657999999995,
+        "rsi14": 30.24006849518574,
+        "macd": -150.83703648888059,
+        "macdSignal": -152.34257377041948,
+        "macdHistogram": 1.505537281538892,
+        "trend": "bearish",
+        "rsiState": "normal",
+        "signals": [
+          {
+            "type": "macd-bull-cross",
+            "label": "MACD 黃金交叉",
+            "daysAgo": 2
+          },
+          {
+            "type": "near-52w-low",
+            "label": "接近 52 週低點"
+          },
+          {
+            "type": "below-sma50-sma200",
+            "label": "空頭排列"
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "2330.TW",
+        "displayName": "台積電",
+        "group": "taiwan",
+        "currency": "TWD",
+        "exchangeName": "TAI",
+        "currentPrice": 2150,
+        "pct1Day": -3.587443946188341,
+        "pct5Day": -1.1494252873563218,
+        "pct52WeekHigh": -16.988416988416986,
+        "pct52WeekLow": 56.36363636363636,
+        "sma20": 2236,
+        "sma50": 2371.1,
+        "sma100": 2383.1,
+        "sma200": 2235.9,
+        "rsi14": 43.10393574020294,
+        "macd": -74.21646939505627,
+        "macdSignal": -66.98326650583229,
+        "macdHistogram": -7.233202889223975,
+        "trend": "neutral",
+        "rsiState": "normal",
+        "signals": [
+          {
+            "type": "sma50-cross-down-100",
+            "label": "SMA50 下穿 SMA100（中期下行訊號）",
+            "daysAgo": 3
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "2317.TW",
+        "displayName": "鴻海",
+        "group": "taiwan",
+        "currency": "TWD",
+        "exchangeName": "TAI",
+        "currentPrice": 206.5,
+        "pct1Day": -8.830022075055188,
+        "pct5Day": -6.561085972850679,
+        "pct52WeekHigh": -34.23566878980891,
+        "pct52WeekLow": 10.133333333333333,
+        "sma20": 231.05,
+        "sma50": 241.43,
+        "sma100": 244.975,
+        "sma200": 239.3175,
+        "rsi14": 36.599098495016285,
+        "macd": -8.742432256355727,
+        "macdSignal": -6.626948258193569,
+        "macdHistogram": -2.1154839981621576,
+        "trend": "neutral",
+        "rsiState": "normal",
+        "signals": [],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "2454.TW",
+        "displayName": "聯發科",
+        "group": "taiwan",
+        "currency": "TWD",
+        "exchangeName": "TAI",
+        "currentPrice": 3645,
+        "pct1Day": -10,
+        "pct5Day": -7.487309644670051,
+        "pct52WeekHigh": -33.48540145985402,
+        "pct52WeekLow": 222.56637168141592,
+        "sma20": 3785.5,
+        "sma50": 4276.1,
+        "sma100": 4108.1,
+        "sma200": 3422.9,
+        "rsi14": 44.99506168125861,
+        "macd": -125.9042678513083,
+        "macdSignal": -146.00089532993212,
+        "macdHistogram": 20.096627478623816,
+        "trend": "neutral",
+        "rsiState": "normal",
+        "signals": [
+          {
+            "type": "price-cross-up-200",
+            "label": "站上 SMA200（長期上行訊號）",
+            "daysAgo": 2
+          },
+          {
+            "type": "macd-bull-cross",
+            "label": "MACD 黃金交叉",
+            "daysAgo": 2
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "2308.TW",
+        "displayName": "台達電",
+        "group": "taiwan",
+        "currency": "TWD",
+        "exchangeName": "TAI",
+        "currentPrice": 1055,
+        "pct1Day": -2.7649769585253456,
+        "pct5Day": -0.4716981132075472,
+        "pct52WeekHigh": -59.18762088974855,
+        "pct52WeekLow": 22.10648148148148,
+        "sma20": 1166,
+        "sma50": 1524.9,
+        "sma100": 1655.7,
+        "sma200": 1725.225,
+        "rsi14": 37.595532128949856,
+        "macd": -148.94847165623264,
+        "macdSignal": -153.62688839728946,
+        "macdHistogram": 4.678416741056822,
+        "trend": "bearish",
+        "rsiState": "normal",
+        "signals": [
+          {
+            "type": "macd-bull-cross",
+            "label": "MACD 黃金交叉",
+            "daysAgo": 0
+          },
+          {
+            "type": "below-sma50-sma200",
+            "label": "空頭排列"
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "2382.TW",
+        "displayName": "廣達",
+        "group": "taiwan",
+        "currency": "TWD",
+        "exchangeName": "TAI",
+        "currentPrice": 261,
+        "pct1Day": -7.610619469026549,
+        "pct5Day": -1.509433962264151,
+        "pct52WeekHigh": -40.41095890410959,
+        "pct52WeekLow": 5.454545454545454,
+        "sma20": 285.675,
+        "sma50": 312.84,
+        "sma100": 323.055,
+        "sma200": 321.0175,
+        "rsi14": 36.230789596919585,
+        "macd": -15.471473406416237,
+        "macdSignal": -14.60643481365631,
+        "macdHistogram": -0.8650385927599267,
+        "trend": "bearish",
+        "rsiState": "normal",
+        "signals": [
+          {
+            "type": "death-cross",
+            "label": "死亡交叉 SMA50 下穿 SMA200（長期下行訊號）",
+            "daysAgo": 5
+          },
+          {
+            "type": "below-sma50-sma200",
+            "label": "空頭排列"
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "3711.TW",
+        "displayName": "日月光投控",
+        "group": "taiwan",
+        "currency": "TWD",
+        "exchangeName": "TAI",
+        "currentPrice": 488,
+        "pct1Day": -7.9245283018867925,
+        "pct5Day": -10.948905109489052,
+        "pct52WeekHigh": -36.209150326797385,
+        "pct52WeekLow": 136.89320388349515,
+        "sma20": 570.65,
+        "sma50": 637.52,
+        "sma100": 626.35,
+        "sma200": 543.03,
+        "rsi14": 38.715174341434725,
+        "macd": -43.61005139452402,
+        "macdSignal": -36.64338405368331,
+        "macdHistogram": -6.966667340840708,
+        "trend": "neutral",
+        "rsiState": "normal",
+        "signals": [
+          {
+            "type": "price-cross-down-200",
+            "label": "跌破 SMA200（長期下行訊號）",
+            "daysAgo": 4
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "0050.TW",
+        "displayName": "元大台灣50",
+        "group": "taiwan",
+        "currency": "TWD",
+        "exchangeName": "TAI",
+        "currentPrice": 90.3,
+        "pct1Day": -5.642630219897177,
+        "pct5Day": -4.038255617151952,
+        "pct52WeekHigh": -22.55574512718221,
+        "pct52WeekLow": 51.89234456039256,
+        "sma20": 97.11999839782715,
+        "sma50": 105.18599969482422,
+        "sma100": 104.89499996948241,
+        "sma200": 96.5314998474121,
+        "rsi14": 39.930865168541686,
+        "macd": -4.414927669280118,
+        "macdSignal": -3.9103551077412457,
+        "macdHistogram": -0.5045725615388723,
+        "trend": "neutral",
+        "rsiState": "normal",
+        "signals": [],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "NVDA",
+        "displayName": "輝達 NVIDIA",
+        "group": "ai-semi",
+        "currency": "USD",
+        "exchangeName": "NMS",
+        "currentPrice": 149.3,
+        "pct1Day": -3.91299053401242,
+        "pct5Day": -1.0996334393476732,
+        "pct52WeekHigh": -38.65307844210249,
+        "pct52WeekLow": 19.919678714859444,
+        "sma20": 172.4775016784668,
+        "sma50": 203.65440155029296,
+        "sma100": 208.61640045166016,
+        "sma200": 202.87410026550293,
+        "rsi14": 37.45137610859971,
+        "macd": -16.91889893500067,
+        "macdSignal": -16.24477210509634,
+        "macdHistogram": -0.6741268299043277,
+        "trend": "neutral",
+        "rsiState": "normal",
+        "signals": [
+          {
+            "type": "sma50-cross-down-100",
+            "label": "SMA50 下穿 SMA100（中期下行訊號）",
+            "daysAgo": 5
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "TSM",
+        "displayName": "台積電 ADR",
+        "group": "ai-semi",
+        "currency": "USD",
+        "exchangeName": "NYQ",
+        "currentPrice": 342.34,
+        "pct1Day": -1.9644936904996895,
+        "pct5Day": -5.592630133546183,
+        "pct52WeekHigh": -29.77208871464384,
+        "pct52WeekLow": 25.362537290665188,
+        "sma20": 379.5015014648437,
+        "sma50": 418.2630010986328,
+        "sma100": 417.90850006103517,
+        "sma200": 403.5090005493164,
+        "rsi14": 38.86337616151099,
+        "macd": -20.69996737176689,
+        "macdSignal": -17.60325282774205,
+        "macdHistogram": -3.096714544024838,
+        "trend": "neutral",
+        "rsiState": "normal",
+        "signals": [],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "AVGO",
+        "displayName": "博通 Broadcom",
+        "group": "ai-semi",
+        "currency": "USD",
+        "exchangeName": "NMS",
+        "currentPrice": 300.86,
+        "pct1Day": -0.07306582372681548,
+        "pct5Day": -15.023298863682397,
+        "pct52WeekHigh": -39.22020202020202,
+        "pct52WeekLow": 8.223021582733818,
+        "sma20": 326.9894989013672,
+        "sma50": 340.5513995361328,
+        "sma100": 361.0021994018555,
+        "sma200": 367.30865036010744,
+        "rsi14": 40.74781367538097,
+        "macd": -7.347158655982355,
+        "macdSignal": -4.262085651361158,
+        "macdHistogram": -3.085073004621197,
+        "trend": "bearish",
+        "rsiState": "normal",
+        "signals": [
+          {
+            "type": "macd-bear-cross",
+            "label": "MACD 死亡交叉",
+            "daysAgo": 2
+          },
+          {
+            "type": "below-sma50-sma200",
+            "label": "空頭排列"
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "AMD",
+        "displayName": "超微 AMD",
+        "group": "ai-semi",
+        "currency": "USD",
+        "exchangeName": "NMS",
+        "currentPrice": 406.03,
+        "pct1Day": -1.7518787248382528,
+        "pct5Day": -23.410799264179506,
+        "pct52WeekHigh": -38.342041554177555,
+        "pct52WeekLow": 115.72096342933133,
+        "sma20": 489.2199996948242,
+        "sma50": 548.3505987548829,
+        "sma100": 521.6910000610352,
+        "sma200": 432.9598500061035,
+        "rsi14": 38.01275259244844,
+        "macd": -28.067739544340725,
+        "macdSignal": -18.40740841994524,
+        "macdHistogram": -9.660331124395483,
+        "trend": "neutral",
+        "rsiState": "normal",
+        "signals": [
+          {
+            "type": "price-cross-down-200",
+            "label": "跌破 SMA200（長期下行訊號）",
+            "daysAgo": 1
+          },
+          {
+            "type": "macd-bear-cross",
+            "label": "MACD 死亡交叉",
+            "daysAgo": 3
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "ASML",
+        "displayName": "艾司摩爾 ASML",
+        "group": "ai-semi",
+        "currency": "USD",
+        "exchangeName": "NMS",
+        "currentPrice": 1303.08,
+        "pct1Day": -2.46845629293512,
+        "pct5Day": -6.6073246210953425,
+        "pct52WeekHigh": -34.844695621347896,
+        "pct52WeekLow": 33.82217153126824,
+        "sma20": 1448.7945068359375,
+        "sma50": 1609.8268017578125,
+        "sma100": 1668.6215002441406,
+        "sma200": 1600.3377514648437,
+        "rsi14": 36.21101602462872,
+        "macd": -81.72201051428965,
+        "macdSignal": -73.11793692089125,
+        "macdHistogram": -8.604073593398397,
+        "trend": "neutral",
+        "rsiState": "normal",
+        "signals": [],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "MU",
+        "displayName": "美光 Micron",
+        "group": "ai-semi",
+        "currency": "USD",
+        "exchangeName": "NMS",
+        "currentPrice": 601.25,
+        "pct1Day": -4.5316659558060834,
+        "pct5Day": -14.748963751555152,
+        "pct52WeekHigh": -52.091633466135455,
+        "pct52WeekLow": 178.3564814814815,
+        "sma20": 742.8015014648438,
+        "sma50": 895.4752001953125,
+        "sma100": 910.8375012207031,
+        "sma200": 776.4792012023926,
+        "rsi14": 35.68350056212425,
+        "macd": -72.02036900353175,
+        "macdSignal": -64.253185305834,
+        "macdHistogram": -7.76718369769776,
+        "trend": "neutral",
+        "rsiState": "normal",
+        "signals": [
+          {
+            "type": "sma50-cross-down-100",
+            "label": "SMA50 下穿 SMA100（中期下行訊號）",
+            "daysAgo": 7
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "SNDK",
+        "displayName": "Sandisk",
+        "group": "ai-semi",
+        "currency": "USD",
+        "exchangeName": "NMS",
+        "currentPrice": 73.61,
+        "pct1Day": -22.019171971222402,
+        "pct5Day": -33.46063959706494,
+        "pct52WeekHigh": -74.98799999709651,
+        "pct52WeekLow": 221.79234972677597,
+        "sma20": 122.499312210083,
+        "sma50": 168.07493698120118,
+        "sma100": 178.90444313049318,
+        "sma200": 160.69727153778075,
+        "rsi14": 24.12956258120299,
+        "macd": -22.641744162206436,
+        "macdSignal": -20.745132505596168,
+        "macdHistogram": -1.8966116566102684,
+        "trend": "neutral",
+        "rsiState": "oversold",
+        "signals": [
+          {
+            "type": "rsi-oversold",
+            "label": "RSI 超賣"
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "MSFT",
+        "displayName": "微軟 Microsoft",
+        "group": "ai-semi",
+        "currency": "USD",
+        "exchangeName": "NMS",
+        "currentPrice": 489.93,
+        "pct1Day": -1.2496734367591724,
+        "pct5Day": -3.612112816752179,
+        "pct52WeekHigh": -12.379508430961561,
+        "pct52WeekLow": 40.300682380713596,
+        "sma20": 517.1374938964843,
+        "sma50": 519.5511987304687,
+        "sma100": 489.8775991821289,
+        "sma200": 444.8851988220215,
+        "rsi14": 38.74784783781939,
+        "macd": -8.600808923856903,
+        "macdSignal": -4.283224315834481,
+        "macdHistogram": -4.317584608022422,
+        "trend": "neutral",
+        "rsiState": "normal",
+        "signals": [
+          {
+            "type": "sma20-cross-down-50",
+            "label": "SMA20 下穿 SMA50（短線下行訊號）",
+            "daysAgo": 1
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "GOOGL",
+        "displayName": "Alphabet",
+        "group": "ai-semi",
+        "currency": "USD",
+        "exchangeName": "NMS",
+        "currentPrice": 273.1,
+        "pct1Day": -2.132230085379222,
+        "pct5Day": -3.306897875892726,
+        "pct52WeekHigh": -33.16364998642202,
+        "pct52WeekLow": 3.947013504373327,
+        "sma20": 283.0485015869141,
+        "sma50": 318.2408001708984,
+        "sma100": 332.1483996582031,
+        "sma200": 336.3158995056152,
+        "rsi14": 36.92917512526134,
+        "macd": -12.070083147464743,
+        "macdSignal": -12.680607088285992,
+        "macdHistogram": 0.6105239408212491,
+        "trend": "bearish",
+        "rsiState": "normal",
+        "signals": [
+          {
+            "type": "macd-bull-cross",
+            "label": "MACD 黃金交叉",
+            "daysAgo": 2
+          },
+          {
+            "type": "below-sma50-sma200",
+            "label": "空頭排列"
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "AMZN",
+        "displayName": "亞馬遜 Amazon",
+        "group": "ai-semi",
+        "currency": "USD",
+        "exchangeName": "NMS",
+        "currentPrice": 244.43,
+        "pct1Day": -3.115459786476134,
+        "pct5Day": -8.706204184877212,
+        "pct52WeekHigh": -14.892064898729885,
+        "pct52WeekLow": 24.709183673469393,
+        "sma20": 257.18749923706054,
+        "sma50": 255.11580017089844,
+        "sma100": 255.33539978027343,
+        "sma200": 245.78109992980956,
+        "rsi14": 41.954987144310046,
+        "macd": -0.980372033052447,
+        "macdSignal": 0.9062195267494968,
+        "macdHistogram": -1.8865915598019438,
+        "trend": "neutral",
+        "rsiState": "normal",
+        "signals": [
+          {
+            "type": "sma50-cross-down-100",
+            "label": "SMA50 下穿 SMA100（中期下行訊號）",
+            "daysAgo": 3
+          },
+          {
+            "type": "price-cross-down-200",
+            "label": "跌破 SMA200（長期下行訊號）",
+            "daysAgo": 0
+          },
+          {
+            "type": "macd-bear-cross",
+            "label": "MACD 死亡交叉",
+            "daysAgo": 3
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "META",
+        "displayName": "Meta",
+        "group": "ai-semi",
+        "currency": "USD",
+        "exchangeName": "NMS",
+        "currentPrice": 609.89,
+        "pct1Day": 3.402731753171768,
+        "pct5Day": -1.0529226826633364,
+        "pct52WeekHigh": -21.790926845708448,
+        "pct52WeekLow": 17.22792229884302,
+        "sma20": 615.2680023193359,
+        "sma50": 672.4167993164062,
+        "sma100": 638.7632977294921,
+        "sma200": 627.5314978027344,
+        "rsi14": 45.69671437508555,
+        "macd": -18.281615835130424,
+        "macdSignal": -18.014477062393365,
+        "macdHistogram": -0.2671387727370593,
+        "trend": "neutral",
+        "rsiState": "normal",
+        "signals": [
+          {
+            "type": "macd-bear-cross",
+            "label": "MACD 死亡交叉",
+            "daysAgo": 3
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "ORCL",
+        "displayName": "甲骨文 Oracle",
+        "group": "ai-semi",
+        "currency": "USD",
+        "exchangeName": "NYQ",
+        "currentPrice": 103.88,
+        "pct1Day": -5.132420091324205,
+        "pct5Day": -8.789182055749716,
+        "pct52WeekHigh": -58.48951048951049,
+        "pct52WeekLow": 4.570166931219934,
+        "sma20": 118.8020004272461,
+        "sma50": 130.11379989624024,
+        "sma100": 135.42320007324219,
+        "sma200": 152.4386498260498,
+        "rsi14": 37.74410209030123,
+        "macd": -6.598543117576753,
+        "macdSignal": -5.544968984415734,
+        "macdHistogram": -1.0535741331610193,
+        "trend": "bearish",
+        "rsiState": "normal",
+        "signals": [
+          {
+            "type": "below-sma50-sma200",
+            "label": "空頭排列"
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "SOXX",
+        "displayName": "SOXX 半導體",
+        "group": "etf",
+        "currency": "USD",
+        "exchangeName": "NGM",
+        "currentPrice": 127.98,
+        "pct1Day": -0.49758602199011703,
+        "pct5Day": -9.777938319857334,
+        "pct52WeekHigh": -41.46809806882973,
+        "pct52WeekLow": 40.76111150177402,
+        "sma20": 144.44899978637696,
+        "sma50": 166.06366607666016,
+        "sma100": 170.9483662414551,
+        "sma200": 161.2034000015259,
+        "rsi14": 37.14732568266377,
+        "macd": -9.626359356672083,
+        "macdSignal": -8.708840407602363,
+        "macdHistogram": -0.91751894906972,
+        "trend": "neutral",
+        "rsiState": "normal",
+        "signals": [],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "PSI",
+        "displayName": "PSI 半導體動能",
+        "group": "etf",
+        "currency": "USD",
+        "exchangeName": "PCX",
+        "currentPrice": 96.12,
+        "pct1Day": 0.5229002709224937,
+        "pct5Day": -11.50801181228599,
+        "pct52WeekHigh": -49.20735721312788,
+        "pct52WeekLow": 35.494779661716926,
+        "sma20": 109.70699958801269,
+        "sma50": 128.51919998168944,
+        "sma100": 135.19,
+        "sma200": 131.89424999237062,
+        "rsi14": 37.83594468410271,
+        "macd": -7.9127918648641895,
+        "macdSignal": -7.221762272239458,
+        "macdHistogram": -0.6910295926247318,
+        "trend": "bearish",
+        "rsiState": "normal",
+        "signals": [
+          {
+            "type": "death-cross",
+            "label": "死亡交叉 SMA50 下穿 SMA200（長期下行訊號）",
+            "daysAgo": 4
+          },
+          {
+            "type": "macd-bear-cross",
+            "label": "MACD 死亡交叉",
+            "daysAgo": 3
+          },
+          {
+            "type": "below-sma50-sma200",
+            "label": "空頭排列"
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "IGV",
+        "displayName": "IGV 軟體",
+        "group": "etf",
+        "currency": "USD",
+        "exchangeName": "BTS",
+        "currentPrice": 95.02,
+        "pct1Day": -0.34609174557109457,
+        "pct5Day": -1.9806090293496403,
+        "pct52WeekHigh": -16.429197405120057,
+        "pct52WeekLow": 28.5269844552506,
+        "sma20": 99.50000038146973,
+        "sma50": 104.84040008544922,
+        "sma100": 102.18630004882813,
+        "sma200": 94.59144996643066,
+        "rsi14": 37.81508236524618,
+        "macd": -3.1108236839070997,
+        "macdSignal": -2.67082718028767,
+        "macdHistogram": -0.43999650361942955,
+        "trend": "neutral",
+        "rsiState": "normal",
+        "signals": [
+          {
+            "type": "price-cross-up-200",
+            "label": "站上 SMA200（長期上行訊號）",
+            "daysAgo": 2
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "EWY",
+        "displayName": "EWY 南韓",
+        "group": "etf",
+        "currency": "USD",
+        "exchangeName": "PCX",
+        "currentPrice": 129.19,
+        "pct1Day": -1.1553152130831004,
+        "pct5Day": -5.514514710118154,
+        "pct52WeekHigh": -41.51387552312419,
+        "pct52WeekLow": 46.99055739806481,
+        "sma20": 141.07449913024902,
+        "sma50": 160.31759994506837,
+        "sma100": 166.89689979553222,
+        "sma200": 164.41339988708495,
+        "rsi14": 38.677208751727534,
+        "macd": -8.207550698368294,
+        "macdSignal": -8.004296447552498,
+        "macdHistogram": -0.20325425081579596,
+        "trend": "bearish",
+        "rsiState": "normal",
+        "signals": [
+          {
+            "type": "death-cross",
+            "label": "死亡交叉 SMA50 下穿 SMA200（長期下行訊號）",
+            "daysAgo": 4
+          },
+          {
+            "type": "below-sma50-sma200",
+            "label": "空頭排列"
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "EMXC",
+        "displayName": "EMXC 新興市場(除中國)",
+        "group": "etf",
+        "currency": "USD",
+        "exchangeName": "NGM",
+        "currentPrice": 82.29,
+        "pct1Day": -0.5438698034660835,
+        "pct5Day": -2.6269105195995737,
+        "pct52WeekHigh": -23.179613620178234,
+        "pct52WeekLow": 19.343885381165986,
+        "sma20": 86.5935001373291,
+        "sma50": 93.1420002746582,
+        "sma100": 94.55120010375977,
+        "sma200": 92.39627510070801,
+        "rsi14": 39.535022820102796,
+        "macd": -3.0370856999141864,
+        "macdSignal": -2.7947485853705563,
+        "macdHistogram": -0.24233711454363016,
+        "trend": "neutral",
+        "rsiState": "normal",
+        "signals": [
+          {
+            "type": "sma50-cross-down-100",
+            "label": "SMA50 下穿 SMA100（中期下行訊號）",
+            "daysAgo": 9
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "GDX",
+        "displayName": "GDX 金礦股",
+        "group": "etf",
+        "currency": "USD",
+        "exchangeName": "PCX",
+        "currentPrice": 73.89,
+        "pct1Day": 3.5308913499217347,
+        "pct5Day": -1.2429827567729224,
+        "pct52WeekHigh": -36.94316452674022,
+        "pct52WeekLow": 8.773737182465624,
+        "sma20": 79.57749938964844,
+        "sma50": 84.67219955444335,
+        "sma100": 85.90249969482421,
+        "sma200": 88.63479965209962,
+        "rsi14": 40.999591947937,
+        "macd": -3.639512846482077,
+        "macdSignal": -2.7714136308535338,
+        "macdHistogram": -0.8680992156285434,
+        "trend": "bearish",
+        "rsiState": "normal",
+        "signals": [
+          {
+            "type": "sma50-cross-down-100",
+            "label": "SMA50 下穿 SMA100（中期下行訊號）",
+            "daysAgo": 3
+          },
+          {
+            "type": "below-sma50-sma200",
+            "label": "空頭排列"
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "XLE",
+        "displayName": "XLE 能源",
+        "group": "etf",
+        "currency": "USD",
+        "exchangeName": "PCX",
+        "currentPrice": 60.9,
+        "pct1Day": 0.7444156019538547,
+        "pct5Day": -0.6363206227796637,
+        "pct52WeekHigh": -13.186031824199615,
+        "pct52WeekLow": 39.136393335810226,
+        "sma20": 63.359999656677246,
+        "sma50": 64.43099975585938,
+        "sma100": 62.62009986877442,
+        "sma200": 59.83764991760254,
+        "rsi14": 38.588569295425316,
+        "macd": -1.3654179458121476,
+        "macdSignal": -1.0084839278991509,
+        "macdHistogram": -0.3569340179129967,
+        "trend": "neutral",
+        "rsiState": "normal",
+        "signals": [
+          {
+            "type": "sma20-cross-down-50",
+            "label": "SMA20 下穿 SMA50（短線下行訊號）",
+            "daysAgo": 3
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "OIH",
+        "displayName": "OIH 油服",
+        "group": "etf",
+        "currency": "USD",
+        "exchangeName": "PCX",
+        "currentPrice": 346.83,
+        "pct1Day": 2.697500517105409,
+        "pct5Day": -1.1964785898362937,
+        "pct52WeekHigh": -24.483974716550584,
+        "pct52WeekLow": 25.096483318304774,
+        "sma20": 363.04149932861327,
+        "sma50": 379.3815997314453,
+        "sma100": 390.388798828125,
+        "sma200": 398.5109992980957,
+        "rsi14": 40.678870058598925,
+        "macd": -12.756572733911753,
+        "macdSignal": -10.835435820053643,
+        "macdHistogram": -1.9211369138581098,
+        "trend": "bearish",
+        "rsiState": "normal",
+        "signals": [
+          {
+            "type": "sma50-cross-down-100",
+            "label": "SMA50 下穿 SMA100（中期下行訊號）",
+            "daysAgo": 9
+          },
+          {
+            "type": "below-sma50-sma200",
+            "label": "空頭排列"
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "CRAK",
+        "displayName": "CRAK 煉油",
+        "group": "etf",
+        "currency": "USD",
+        "exchangeName": "PCX",
+        "currentPrice": 51.45,
+        "pct1Day": -0.23269283601771978,
+        "pct5Day": -5.422796770466161,
+        "pct52WeekHigh": -24.747699381111836,
+        "pct52WeekLow": 38.08374213013893,
+        "sma20": 56.549499893188475,
+        "sma50": 61.68699989318848,
+        "sma100": 59.778599967956545,
+        "sma200": 53.70511997222901,
+        "rsi14": 21.694526395918587,
+        "macd": -2.8582722252839474,
+        "macdSignal": -2.417401878396607,
+        "macdHistogram": -0.4408703468873405,
+        "trend": "neutral",
+        "rsiState": "oversold",
+        "signals": [
+          {
+            "type": "price-cross-down-200",
+            "label": "跌破 SMA200（長期下行訊號）",
+            "daysAgo": 3
+          },
+          {
+            "type": "rsi-oversold",
+            "label": "RSI 超賣"
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "XME",
+        "displayName": "XME 金屬採礦",
+        "group": "etf",
+        "currency": "USD",
+        "exchangeName": "PCX",
+        "currentPrice": 84.89,
+        "pct1Day": 1.835411922320025,
+        "pct5Day": -2.8385059730114865,
+        "pct52WeekHigh": -37.43366407540145,
+        "pct52WeekLow": 6.245304604286995,
+        "sma20": 91.99000053405761,
+        "sma50": 99.3168000793457,
+        "sma100": 104.97679962158203,
+        "sma200": 110.17869968414307,
+        "rsi14": 36.48063073001654,
+        "macd": -4.642471779276988,
+        "macdSignal": -3.9816902615787484,
+        "macdHistogram": -0.6607815176982399,
+        "trend": "bearish",
+        "rsiState": "normal",
+        "signals": [
+          {
+            "type": "below-sma50-sma200",
+            "label": "空頭排列"
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "MOO",
+        "displayName": "MOO 農業",
+        "group": "etf",
+        "currency": "USD",
+        "exchangeName": "PCX",
+        "currentPrice": 79.83,
+        "pct1Day": 1.59073318887518,
+        "pct5Day": -1.456612893610495,
+        "pct52WeekHigh": -10.604706302494806,
+        "pct52WeekLow": 11.245816086305712,
+        "sma20": 81.74449996948242,
+        "sma50": 81.97760009765625,
+        "sma100": 82.74570030212402,
+        "sma200": 82.43730026245117,
+        "rsi14": 42.45718254009098,
+        "macd": -0.7804605981010582,
+        "macdSignal": -0.37730870892357044,
+        "macdHistogram": -0.40315188917748773,
+        "trend": "bearish",
+        "rsiState": "normal",
+        "signals": [
+          {
+            "type": "sma50-cross-down-100",
+            "label": "SMA50 下穿 SMA100（中期下行訊號）",
+            "daysAgo": 5
+          },
+          {
+            "type": "death-cross",
+            "label": "死亡交叉 SMA50 下穿 SMA200（長期下行訊號）",
+            "daysAgo": 3
+          },
+          {
+            "type": "below-sma50-sma200",
+            "label": "空頭排列"
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "FLOT",
+        "displayName": "FLOT 浮動利率債",
+        "group": "etf",
+        "currency": "USD",
+        "exchangeName": "BTS",
+        "currentPrice": 50.97,
+        "pct1Day": -0.000002394944274870922,
+        "pct5Day": 0.05889551256344969,
+        "pct52WeekHigh": -0.21535204994415588,
+        "pct52WeekLow": 0.592069946508409,
+        "sma20": 50.908999824523924,
+        "sma50": 50.94799995422363,
+        "sma100": 50.959699935913086,
+        "sma200": 50.94484991073608,
+        "rsi14": 57.54411282130558,
+        "macd": 0.0021461315262243374,
+        "macdSignal": -0.008961562594974415,
+        "macdHistogram": 0.011107694121198752,
+        "trend": "bullish",
+        "rsiState": "normal",
+        "signals": [
+          {
+            "type": "price-cross-up-200",
+            "label": "站上 SMA200（長期上行訊號）",
+            "daysAgo": 2
+          },
+          {
+            "type": "near-52w-high",
+            "label": "接近 52 週高點"
+          },
+          {
+            "type": "above-sma50-sma200",
+            "label": "多頭排列"
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "BZ=F",
+        "displayName": "Brent 原油",
+        "group": "commodity",
+        "currency": "USD",
+        "exchangeName": "NYM",
+        "currentPrice": 90.7300033569336,
+        "pct1Day": 2.7636226255572875,
+        "pct5Day": 2.2194695508000675,
+        "pct52WeekHigh": -28.04916379475319,
+        "pct52WeekLow": 54.51294528404163,
+        "sma20": 96.71349983215332,
+        "sma50": 102.37699966430664,
+        "sma100": 96.51899971008301,
+        "sma200": 94.92694988250733,
+        "rsi14": 37.5720830077947,
+        "macd": -3.8575325561597396,
+        "macdSignal": -3.421878483727286,
+        "macdHistogram": -0.43565407243245335,
+        "trend": "neutral",
+        "rsiState": "normal",
+        "signals": [],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "CL=F",
+        "displayName": "WTI 原油",
+        "group": "commodity",
+        "currency": "USD",
+        "exchangeName": "NYM",
+        "currentPrice": 84.12999725341797,
+        "pct1Day": 3.303038717302462,
+        "pct5Day": 2.7479238830898676,
+        "pct52WeekHigh": -29.586545957746,
+        "pct52WeekLow": 53.019276016523506,
+        "sma20": 88.67050018310547,
+        "sma50": 92.88340026855468,
+        "sma100": 89.07530029296875,
+        "sma200": 88.56575010299683,
+        "rsi14": 41.08895072833174,
+        "macd": -3.4596513079552267,
+        "macdSignal": -2.914036545327611,
+        "macdHistogram": -0.5456147626276158,
+        "trend": "neutral",
+        "rsiState": "normal",
+        "signals": [],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "NG=F",
+        "displayName": "美國天然氣",
+        "group": "commodity",
+        "currency": "USD",
+        "exchangeName": "NYM",
+        "currentPrice": 3.6740000247955322,
+        "pct1Day": -0.32555842564830156,
+        "pct5Day": 7.805165288157677,
+        "pct52WeekHigh": -53.05992131669194,
+        "pct52WeekLow": 47.966168567405866,
+        "sma20": 3.1683499693870543,
+        "sma50": 3.073399991989136,
+        "sma100": 2.954689991474152,
+        "sma200": 2.9687199985980985,
+        "rsi14": 65.36090375960471,
+        "macd": 0.11889280803434454,
+        "macdSignal": 0.08183860402954776,
+        "macdHistogram": 0.03705420400479678,
+        "trend": "bullish",
+        "rsiState": "normal",
+        "signals": [
+          {
+            "type": "sma20-cross-up-50",
+            "label": "SMA20 上穿 SMA50（短線上行訊號）",
+            "daysAgo": 3
+          },
+          {
+            "type": "golden-cross",
+            "label": "黃金交叉 SMA50 上穿 SMA200（長期上行訊號）",
+            "daysAgo": 9
+          },
+          {
+            "type": "above-sma50-sma200",
+            "label": "多頭排列"
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "GC=F",
+        "displayName": "黃金",
+        "group": "commodity",
+        "currency": "USD",
+        "exchangeName": "CMX",
+        "currentPrice": 3602.699951171875,
+        "pct1Day": 1.4416430007567225,
+        "pct5Day": -3.361052811913224,
+        "pct52WeekHigh": -35.50714573038436,
+        "pct52WeekLow": 4.311190579613077,
+        "sma20": 3875.4799682617186,
+        "sma50": 4066.0399853515623,
+        "sma100": 4189.6309887695315,
+        "sma200": 4423.384995117188,
+        "rsi14": 34.236045946675034,
+        "macd": -138.341208322674,
+        "macdSignal": -107.93164548853957,
+        "macdHistogram": -30.40956283413442,
+        "trend": "bearish",
+        "rsiState": "normal",
+        "signals": [
+          {
+            "type": "below-sma50-sma200",
+            "label": "空頭排列"
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "SI=F",
+        "displayName": "白銀",
+        "group": "commodity",
+        "currency": "USD",
+        "exchangeName": "CMX",
+        "currentPrice": 41.375,
+        "pct1Day": 1.908870825137841,
+        "pct5Day": -7.973752574454052,
+        "pct52WeekHigh": -65.89035535114901,
+        "pct52WeekLow": 7.691311743588786,
+        "sma20": 48.11510009765625,
+        "sma50": 55.07291999816894,
+        "sma100": 58.87054992675781,
+        "sma200": 66.94263479232788,
+        "rsi14": 29.757718026727687,
+        "macd": -3.8031285868354843,
+        "macdSignal": -3.242175970508453,
+        "macdHistogram": -0.5609526163270311,
+        "trend": "bearish",
+        "rsiState": "oversold",
+        "signals": [
+          {
+            "type": "rsi-oversold",
+            "label": "RSI 超賣"
+          },
+          {
+            "type": "below-sma50-sma200",
+            "label": "空頭排列"
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "HG=F",
+        "displayName": "銅",
+        "group": "commodity",
+        "currency": "USD",
+        "exchangeName": "CMX",
+        "currentPrice": 5.485499858856201,
+        "pct1Day": 0.036470411965216935,
+        "pct5Day": -3.2966111988850124,
+        "pct52WeekHigh": -19.68521346805973,
+        "pct52WeekLow": 9.819819510210424,
+        "sma20": 6.056099987030029,
+        "sma50": 6.37460000038147,
+        "sma100": 6.424445009231567,
+        "sma200": 6.217619996070862,
+        "rsi14": 30.008588470059138,
+        "macd": -0.26861505636367244,
+        "macdSignal": -0.1983996841884694,
+        "macdHistogram": -0.07021537217520304,
+        "trend": "neutral",
+        "rsiState": "normal",
+        "signals": [
+          {
+            "type": "sma50-cross-down-100",
+            "label": "SMA50 下穿 SMA100（中期下行訊號）",
+            "daysAgo": 4
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "^IRX",
+        "displayName": "美國 3 個月國庫券殖利率 (%)",
+        "group": "rates-fx",
+        "currency": "USD",
+        "exchangeName": "CGI",
+        "currentPrice": 4.155,
+        "pct1Day": -0.31190548374142657,
+        "pct5Day": 0.2412549847889581,
+        "pct52WeekHigh": -0.47904646278214175,
+        "pct52WeekLow": 18.477332083159755,
+        "sma20": 4.0825999736785885,
+        "sma50": 4.054980020523072,
+        "sma100": 3.8988300132751466,
+        "sma200": 3.7549900031089782,
+        "rsi14": 64.94301042757354,
+        "macd": 0.03737999609653997,
+        "macdSignal": 0.03243699476290644,
+        "macdHistogram": 0.004943001333633526,
+        "trend": "bullish",
+        "rsiState": "normal",
+        "signals": [
+          {
+            "type": "near-52w-high",
+            "label": "接近 52 週高點"
+          },
+          {
+            "type": "above-sma50-sma200",
+            "label": "多頭排列"
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "^FVX",
+        "displayName": "美國 5 年期公債殖利率 (%)",
+        "group": "rates-fx",
+        "currency": "USD",
+        "exchangeName": "CGI",
+        "currentPrice": 4.66,
+        "pct1Day": -1.1035631232429755,
+        "pct5Day": -4.586401158312087,
+        "pct52WeekHigh": -9.567240240800455,
+        "pct52WeekLow": 32.877104093267015,
+        "sma20": 4.775400018692016,
+        "sma50": 4.880740022659301,
+        "sma100": 4.657860021591187,
+        "sma200": 4.324810016155243,
+        "rsi14": 38.98430806506094,
+        "macd": -0.026444811760842235,
+        "macdSignal": -0.011786251202068042,
+        "macdHistogram": -0.014658560558774193,
+        "trend": "neutral",
+        "rsiState": "normal",
+        "signals": [
+          {
+            "type": "macd-bear-cross",
+            "label": "MACD 死亡交叉",
+            "daysAgo": 2
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "^TNX",
+        "displayName": "美國 10 年期公債殖利率 (%)",
+        "group": "rates-fx",
+        "currency": "USD",
+        "exchangeName": "CGI",
+        "currentPrice": 4.848,
+        "pct1Day": -1.1419210373581148,
+        "pct5Day": -4.303197500944076,
+        "pct52WeekHigh": -9.619684165601178,
+        "pct52WeekLow": 22.54802553441228,
+        "sma20": 4.969000005722046,
+        "sma50": 5.070960006713867,
+        "sma100": 4.886129984855652,
+        "sma200": 4.613529984951019,
+        "rsi14": 37.30448192076547,
+        "macd": -0.028121289115258463,
+        "macdSignal": -0.01442894942142581,
+        "macdHistogram": -0.013692339693832652,
+        "trend": "neutral",
+        "rsiState": "normal",
+        "signals": [
+          {
+            "type": "macd-bear-cross",
+            "label": "MACD 死亡交叉",
+            "daysAgo": 2
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "^TYX",
+        "displayName": "美國 30 年期公債殖利率 (%)",
+        "group": "rates-fx",
+        "currency": "USD",
+        "exchangeName": "CGI",
+        "currentPrice": 5.235,
+        "pct1Day": -1.077094082893974,
+        "pct5Day": -3.270513182317865,
+        "pct52WeekHigh": -8.670619068911368,
+        "pct52WeekLow": 13.140267214316623,
+        "sma20": 5.338100004196167,
+        "sma50": 5.420180006027222,
+        "sma100": 5.3130200004577635,
+        "sma200": 5.1103400087356565,
+        "rsi14": 36.563757053338264,
+        "macd": -0.02277815591487009,
+        "macdSignal": -0.012762754811439342,
+        "macdHistogram": -0.010015401103430749,
+        "trend": "neutral",
+        "rsiState": "normal",
+        "signals": [
+          {
+            "type": "macd-bear-cross",
+            "label": "MACD 死亡交叉",
+            "daysAgo": 1
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "^VIX",
+        "displayName": "VIX 恐慌指數",
+        "group": "rates-fx",
+        "currency": "USD",
+        "exchangeName": "CXI",
+        "currentPrice": 28.29,
+        "pct1Day": 7.321697059788863,
+        "pct5Day": 15.187298921687878,
+        "pct52WeekHigh": -29.32800184188037,
+        "pct52WeekLow": 111.43497577004389,
+        "sma20": 23.12150001525879,
+        "sma50": 19.020400066375732,
+        "sma100": 17.60340001106262,
+        "sma200": 18.784100041389465,
+        "rsi14": 57.75683241441196,
+        "macd": 2.767289572892473,
+        "macdSignal": 2.1975813237926576,
+        "macdHistogram": 0.5697082490998153,
+        "trend": "bullish",
+        "rsiState": "normal",
+        "signals": [
+          {
+            "type": "golden-cross",
+            "label": "黃金交叉 SMA50 上穿 SMA200（長期上行訊號）",
+            "daysAgo": 1
+          },
+          {
+            "type": "above-sma50-sma200",
+            "label": "多頭排列"
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "DX-Y.NYB",
+        "displayName": "美元指數 DXY",
+        "group": "rates-fx",
+        "currency": "USD",
+        "exchangeName": "NYB",
+        "currentPrice": 103.6989974975586,
+        "pct1Day": -0.11847305994485513,
+        "pct5Day": -0.07805095653406409,
+        "pct52WeekHigh": -0.7949883205230349,
+        "pct52WeekLow": 8.528513014684687,
+        "sma20": 102.83510093688965,
+        "sma50": 102.13404037475586,
+        "sma100": 101.05782028198242,
+        "sma200": 100.1114602279663,
+        "rsi14": 61.698567278326756,
+        "macd": 0.5932513138000957,
+        "macdSignal": 0.5192678020976011,
+        "macdHistogram": 0.07398351170249451,
+        "trend": "bullish",
+        "rsiState": "normal",
+        "signals": [
+          {
+            "type": "near-52w-high",
+            "label": "接近 52 週高點"
+          },
+          {
+            "type": "above-sma50-sma200",
+            "label": "多頭排列"
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "TWD=X",
+        "displayName": "美元 / 新台幣",
+        "group": "rates-fx",
+        "currency": "TWD",
+        "exchangeName": "CCY",
+        "currentPrice": 33.178001403808594,
+        "pct1Day": 0.8572516298217578,
+        "pct5Day": 0.7347600612695775,
+        "pct52WeekHigh": -0.11439727816936793,
+        "pct52WeekLow": 6.760632500553294,
+        "sma20": 32.841684913635255,
+        "sma50": 32.36147197723389,
+        "sma100": 32.18648496627807,
+        "sma200": 31.924525022506714,
+        "rsi14": 66.21627210173935,
+        "macd": 0.18507701953248556,
+        "macdSignal": 0.19304675082911352,
+        "macdHistogram": -0.007969731296627952,
+        "trend": "bullish",
+        "rsiState": "normal",
+        "signals": [
+          {
+            "type": "near-52w-high",
+            "label": "接近 52 週高點"
+          },
+          {
+            "type": "above-sma50-sma200",
+            "label": "多頭排列"
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "JPY=X",
+        "displayName": "美元 / 日圓",
+        "group": "rates-fx",
+        "currency": "JPY",
+        "exchangeName": "CCY",
+        "currentPrice": 159.2220001220703,
+        "pct1Day": -0.011307065104643533,
+        "pct5Day": -0.05022022954754092,
+        "pct52WeekHigh": -2.900983461821344,
+        "pct52WeekLow": 4.5600810686423054,
+        "sma20": 158.75499877929687,
+        "sma50": 158.1349203491211,
+        "sma100": 158.76717056274413,
+        "sma200": 158.9242152404785,
+        "rsi14": 54.5758402256515,
+        "macd": 0.3805750004224251,
+        "macdSignal": 0.39400097939387946,
+        "macdHistogram": -0.013425978971454366,
+        "trend": "neutral",
+        "rsiState": "normal",
+        "signals": [
+          {
+            "type": "macd-bear-cross",
+            "label": "MACD 死亡交叉",
+            "daysAgo": 0
+          },
+          {
+            "type": "near-52w-high",
+            "label": "接近 52 週高點"
+          }
+        ],
+        "lastSessionDate": "11/25"
+      },
+      {
+        "symbol": "EURUSD=X",
+        "displayName": "歐元 / 美元",
+        "group": "rates-fx",
+        "currency": "USD",
+        "exchangeName": "CCY",
+        "currentPrice": 1.0979359149932861,
+        "pct1Day": 0.09881468030538214,
+        "pct5Day": 0,
+        "pct52WeekHigh": -8.68466675616279,
+        "pct52WeekLow": 0.8728587328258888,
+        "sma20": 1.1092933893203736,
+        "sma50": 1.1207688021659852,
+        "sma100": 1.137168321609497,
+        "sma200": 1.149276031255722,
+        "rsi14": 35.57269076071442,
+        "macd": -0.007915431983360088,
+        "macdSignal": -0.006868907665772547,
+        "macdHistogram": -0.0010465243175875414,
+        "trend": "bearish",
+        "rsiState": "normal",
+        "signals": [
+          {
+            "type": "near-52w-low",
+            "label": "接近 52 週低點"
+          },
+          {
+            "type": "below-sma50-sma200",
+            "label": "空頭排列"
+          }
+        ],
+        "lastSessionDate": "11/25"
+      }
+    ],
+    "generated_at": "2026-11-25T23:00:07.303Z"
+  },
+  "margin": {
+    "date": "2026-11-25",
+    "marginAmount": 434137987,
+    "marginAmountChange": -19367026,
+    "marginUnits": 9383491,
+    "marginUnitsChange": -681476,
+    "shortUnits": 169365,
+    "shortUnitsChange": -17248,
+    "shortToMarginRatio": 1.8049252671527047,
+    "stocks": [
+      {
+        "code": "0050",
+        "name": "元大台灣50",
+        "marginToday": 64109,
+        "marginChange": -9991,
+        "shortToday": 460,
+        "shortChange": -64
+      },
+      {
+        "code": "00631L",
+        "name": "元大台灣50正2",
+        "marginToday": 438459,
+        "marginChange": -67241,
+        "shortToday": 16773,
+        "shortChange": -3485
+      },
+      {
+        "code": "00685L",
+        "name": "群益臺灣加權正2",
+        "marginToday": 369101,
+        "marginChange": -43960,
+        "shortToday": 9842,
+        "shortChange": 2399
+      }
+    ],
+    "history": [
+      {
+        "date": "2026-11-19",
+        "marginAmount": 484368330,
+        "marginAmountChange": -23658240,
+        "keepRate": 156.18,
+        "callAccounts": 2947,
+        "callAmount": 2964159000,
+        "exeAccounts": 520,
+        "exeAmount": 918355880,
+        "indexClose": 38426.89,
+        "indexPct": -4.398616640763719,
+        "instForeign": -24312208731,
+        "instTrust": 4389988208,
+        "instDealer": -1863200481
+      },
+      {
+        "date": "2026-11-20",
+        "marginAmount": 435227267,
+        "marginAmountChange": -49141063,
+        "keepRate": 151.78,
+        "callAccounts": 6462,
+        "callAmount": 6463856762,
+        "exeAccounts": 632,
+        "exeAmount": 1495357574,
+        "indexClose": 36033.29,
+        "indexPct": -6.228971431203513,
+        "instForeign": -9510543572,
+        "instTrust": -7346992003,
+        "instDealer": -5067838740
+      },
+      {
+        "date": "2026-11-23",
+        "marginAmount": 433807523,
+        "marginAmountChange": -1419744,
+        "keepRate": 159.42,
+        "callAccounts": 2677,
+        "callAmount": 259951700,
+        "exeAccounts": 224,
+        "exeAmount": 362462910,
+        "indexClose": 36811.89,
+        "indexPct": 2.160779656811798,
+        "instForeign": -28947879995,
+        "instTrust": -4154927586,
+        "instDealer": -2899268616
+      },
+      {
+        "date": "2026-11-24",
+        "marginAmount": 453505173,
+        "marginAmountChange": 19697650,
+        "keepRate": 172.39,
+        "callAccounts": 192,
+        "callAmount": 11929000,
+        "exeAccounts": 2,
+        "exeAmount": 10390550,
+        "indexClose": 40122.35,
+        "indexPct": 8.992909627840353,
+        "instForeign": -50389912492,
+        "instTrust": 9763346809,
+        "instDealer": 1586416389
+      },
+      {
+        "date": "2026-11-25",
+        "marginAmount": 434137987,
+        "marginAmountChange": -19367186,
+        "keepRate": 161.96,
+        "callAccounts": 201,
+        "callAmount": 44046000,
+        "exeAccounts": 7,
+        "exeAmount": 2112700,
+        "indexClose": 38195.43,
+        "indexPct": -4.802610016611689,
+        "instForeign": -123654798153,
+        "instTrust": 55034724295,
+        "instDealer": -7362852102
+      }
+    ]
+  }
+}

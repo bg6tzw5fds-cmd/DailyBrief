@@ -1,0 +1,3239 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>投資晨報 · 2026-11-26</title>
+<style>
+  :root {
+    --bg: #fafaf9;
+    --bg-elevated: #ffffff;
+    --fg: #18181b;
+    --fg-soft: #3f3f46;
+    --muted: #71717a;
+    --rule: #e4e4e7;
+    --card: #f4f4f5;
+    --link: #1d4ed8;
+    --accent: #18181b;
+    --accent-fg: #fafaf9;
+    --rank-high-bg: #fee2e2;
+    --rank-high-fg: #991b1b;
+    --rank-mid-bg: #fef3c7;
+    --rank-mid-fg: #92400e;
+    --rank-low-bg: #e0e7ff;
+    --rank-low-fg: #3730a3;
+    --hero-grad-from: #fafaf9;
+    --hero-grad-to: #f4f4f5;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0a0a0a;
+      --bg-elevated: #18181b;
+      --fg: #fafafa;
+      --fg-soft: #d4d4d8;
+      --muted: #a1a1aa;
+      --rule: #27272a;
+      --card: #18181b;
+      --link: #93c5fd;
+      --accent: #fafafa;
+      --accent-fg: #0a0a0a;
+      --rank-high-bg: rgba(239,68,68,0.18);
+      --rank-high-fg: #fca5a5;
+      --rank-mid-bg: rgba(245,158,11,0.18);
+      --rank-mid-fg: #fcd34d;
+      --rank-low-bg: rgba(99,102,241,0.18);
+      --rank-low-fg: #a5b4fc;
+      --hero-grad-from: #18181b;
+      --hero-grad-to: #0a0a0a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+      "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", "Heiti TC", sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  main { max-width: 960px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+
+  /* ===== header ===== */
+  header.report-header { margin-bottom: 1.25rem; }
+  .eyebrow {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  h1.report-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0.4rem 0 1.2rem;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+  .archive-link {
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--rule);
+    padding-bottom: 1px;
+  }
+  .archive-link:hover { color: var(--accent); border-bottom-style: solid; }
+  .hero-card {
+    background: linear-gradient(135deg, var(--hero-grad-from) 0%, var(--hero-grad-to) 100%);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--accent);
+    padding: 1rem 1.4rem;
+    border-radius: 0.6rem;
+  }
+  .hero-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .hero-headline {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0.35rem 0 0;
+    line-height: 1.45;
+    color: var(--fg);
+  }
+  .overview-card {
+    margin: 0.7rem 0 0;
+    padding: 0.7rem 1.1rem;
+    background: var(--card);
+    border-radius: 0.5rem;
+    border-left: 3px solid var(--muted);
+  }
+  .overview-card .eyebrow { display: block; margin-bottom: 0.3rem; }
+  .overview-text {
+    margin: 0;
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: var(--fg-soft);
+  }
+
+  /* ===== primary tabs ===== */
+  .tabs {
+    display: flex;
+    gap: 0.25rem;
+    margin: 1.25rem 0 0.75rem;
+    border-bottom: 1px solid var(--rule);
+    flex-wrap: wrap;
+  }
+  .tab {
+    background: none;
+    border: none;
+    padding: 0.7rem 1.1rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    font-family: inherit;
+    transition: color 0.15s;
+  }
+  .tab:hover { color: var(--fg); }
+  .tab.active {
+    color: var(--fg);
+    border-bottom-color: var(--accent);
+  }
+  .tab .count {
+    font-size: 0.72rem;
+    color: var(--muted);
+    margin-left: 0.4rem;
+    font-weight: 400;
+  }
+  .panel { display: none; }
+  .panel.active { display: block; }
+
+  /* ===== digest (AI 简报) — compact ===== */
+  .digest-category { margin-bottom: 1.1rem; }
+  .category-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.55rem;
+    margin: 0 0 0.55rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .category-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--fg);
+    margin: 0;
+    letter-spacing: 0.05em;
+  }
+  .category-count {
+    font-size: 0.7rem;
+    color: var(--muted);
+    background: var(--card);
+    padding: 0.12rem 0.45rem;
+    border-radius: 999px;
+  }
+  .brief-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  @media (min-width: 720px) {
+    .brief-list { grid-template-columns: 1fr 1fr; }
+  }
+  .brief {
+    background: var(--bg-elevated);
+    border: 1px solid var(--rule);
+    border-radius: 0.5rem;
+    padding: 0.7rem 0.95rem;
+    transition: border-color 0.15s, transform 0.15s;
+  }
+  .brief:hover {
+    border-color: var(--muted);
+    transform: translateY(-1px);
+  }
+  .brief-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6rem;
+    margin-bottom: 0.3rem;
+  }
+  .brief-source {
+    font-size: 0.72rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+  }
+  .brief-rank {
+    font-size: 0.7rem;
+    padding: 0.12rem 0.5rem;
+    border-radius: 999px;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+  .brief-rank.high { background: var(--rank-high-bg); color: var(--rank-high-fg); }
+  .brief-rank.mid  { background: var(--rank-mid-bg);  color: var(--rank-mid-fg); }
+  .brief-rank.low  { background: var(--rank-low-bg);  color: var(--rank-low-fg); }
+  .brief-title {
+    font-size: 0.98rem;
+    font-weight: 600;
+    margin: 0 0 0.3rem;
+    line-height: 1.35;
+  }
+  .brief-title a { color: var(--fg); text-decoration: none; }
+  .brief-title a:hover { color: var(--link); text-decoration: underline; }
+  .brief-summary {
+    margin: 0;
+    color: var(--fg-soft);
+    font-size: 0.86rem;
+    line-height: 1.55;
+  }
+
+  .editor-card {
+    background: var(--card);
+    border-left: 3px solid var(--muted);
+    border-radius: 0.5rem;
+    padding: 1rem 1.3rem;
+    margin: 1.5rem 0 1.2rem;
+  }
+  .editor-card .eyebrow { display: block; margin-bottom: 0.4rem; }
+  .editor-text {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--fg);
+  }
+  .keywords { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0 0 1.5rem; }
+  .keyword {
+    background: var(--card);
+    color: var(--fg-soft);
+    padding: 0.25rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+  }
+
+  /* ===== L2 sub-tabs ===== */
+  .sub-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 1rem 0;
+  }
+  .sub-tab {
+    background: var(--card);
+    border: 1px solid transparent;
+    padding: 0.5rem 1.05rem;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--fg-soft);
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.15s;
+  }
+  .sub-tab:hover { border-color: var(--muted); color: var(--fg); }
+  .sub-tab.active {
+    background: var(--accent);
+    color: var(--accent-fg);
+  }
+  .sub-tab .count {
+    font-size: 0.7rem;
+    opacity: 0.75;
+    margin-left: 0.4rem;
+    font-weight: 400;
+  }
+  .sub-content { display: none; }
+  .sub-content.active { display: block; }
+
+  /* ===== L3 source-tabs ===== */
+  .source-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin: 0.9rem 0 1.3rem;
+    padding-bottom: 0.7rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .source-tab {
+    background: none;
+    border: 1px solid var(--rule);
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+    font-size: 0.83rem;
+    color: var(--fg-soft);
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.15s;
+  }
+  .source-tab:hover { border-color: var(--muted); color: var(--fg); }
+  .source-tab.active {
+    background: var(--fg);
+    color: var(--bg);
+    border-color: var(--fg);
+  }
+  .source-tab .count {
+    font-size: 0.7rem;
+    opacity: 0.75;
+    margin-left: 0.3rem;
+  }
+  .source-content { display: none; }
+  .source-content.active { display: block; }
+
+  /* ===== article cards in raw panels ===== */
+  .article {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .article:first-child { padding-top: 0; }
+  .article:last-child { border-bottom: none; }
+  .article-title {
+    font-size: 1rem;
+    margin: 0 0 0.3rem;
+    font-weight: 500;
+    line-height: 1.45;
+  }
+  .article-title a { color: var(--fg); text-decoration: none; }
+  .article-title a:hover { color: var(--link); text-decoration: underline; }
+  .article-meta { color: var(--muted); font-size: 0.76rem; margin: 0 0 0.35rem; }
+  .article-stats {
+    color: var(--muted);
+    font-size: 0.8rem;
+    margin: 0 0 0.4rem;
+    font-feature-settings: "tnum";
+  }
+  .article-excerpt {
+    margin: 0;
+    color: var(--fg-soft);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  .article-summary {
+    margin: 0.55rem 0 0;
+    padding: 0.6rem 0.85rem;
+    background: var(--card);
+    border-left: 2px solid var(--link);
+    border-radius: 0.3rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--fg);
+  }
+  .summary-label {
+    display: inline-block;
+    font-size: 0.68rem;
+    color: var(--link);
+    margin-right: 0.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .empty {
+    color: var(--muted);
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 0.9rem;
+  }
+
+  /* ===== trading panel ===== */
+  .crypto-widgets {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.55rem;
+    margin: 0.4rem 0 1.2rem;
+  }
+  @media (min-width: 720px) {
+    .crypto-widgets { grid-template-columns: repeat(4, 1fr); }
+  }
+  .crypto-widget {
+    background: var(--bg-elevated);
+    border: 1px solid var(--rule);
+    border-radius: 0.5rem;
+    padding: 0.7rem 0.85rem;
+    text-align: center;
+  }
+  .widget-label {
+    font-size: 0.7rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.3rem;
+  }
+  .widget-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    color: var(--fg);
+    line-height: 1.1;
+  }
+  .widget-sub {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-top: 0.25rem;
+  }
+  .widget-sub.positive { color: #dc2626; }
+  .widget-sub.negative { color: #16a34a; }
+  @media (prefers-color-scheme: dark) {
+    .widget-sub.positive { color: #fca5a5; }
+    .widget-sub.negative { color: #4ade80; }
+  }
+  .crypto-widget.fg-fear-extreme { border-left: 4px solid #b91c1c; }
+  .crypto-widget.fg-fear-extreme .widget-value { color: #b91c1c; }
+  .crypto-widget.fg-fear { border-left: 4px solid #d97706; }
+  .crypto-widget.fg-fear .widget-value { color: #d97706; }
+  .crypto-widget.fg-neutral { border-left: 4px solid var(--muted); }
+  .crypto-widget.fg-greed { border-left: 4px solid #65a30d; }
+  .crypto-widget.fg-greed .widget-value { color: #65a30d; }
+  .crypto-widget.fg-greed-extreme { border-left: 4px solid #dc2626; }
+  .crypto-widget.fg-greed-extreme .widget-value { color: #dc2626; }
+  @media (prefers-color-scheme: dark) {
+    .crypto-widget.fg-fear-extreme .widget-value,
+    .crypto-widget.fg-fear .widget-value { color: #4ade80; }
+    .crypto-widget.fg-greed .widget-value,
+    .crypto-widget.fg-greed-extreme .widget-value { color: #fca5a5; }
+  }
+
+  .trading-overview-card {
+    margin: 0 0 1.5rem;
+    padding: 1rem 1.3rem;
+    background: var(--card);
+    border-radius: 0.5rem;
+    border-left: 3px solid var(--accent);
+  }
+  .trading-overview-card .eyebrow { display: block; margin-bottom: 0.4rem; }
+  .trading-overview-text { font-size: 0.92rem; line-height: 1.75; color: var(--fg-soft); margin: 0; }
+
+  .trading-section-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.8rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--rule);
+    color: var(--fg);
+    letter-spacing: 0.05em;
+  }
+
+  /* picks (Sonnet's watchlist) */
+  .trading-picks {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+  @media (min-width: 720px) {
+    .trading-picks { grid-template-columns: 1fr 1fr; }
+  }
+  .trading-pick {
+    background: var(--bg-elevated);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--muted);
+    border-radius: 0.5rem;
+    padding: 0.8rem 1rem;
+  }
+  .trading-pick.stance-bull { border-left-color: #dc2626; }
+  .trading-pick.stance-bear { border-left-color: #16a34a; }
+  .trading-pick.stance-neutral { border-left-color: var(--muted); }
+  .pick-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6rem;
+    margin-bottom: 0.45rem;
+  }
+  .pick-symbol-block {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .pick-symbol { font-weight: 700; font-size: 1rem; color: var(--fg); }
+  .pick-name { color: var(--muted); font-size: 0.82rem; }
+  .pick-stance {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .pick-stance-bull { background: rgba(220,38,38,0.12); color: #dc2626; }
+  .pick-stance-bear { background: rgba(22,163,74,0.12); color: #16a34a; }
+  .pick-stance-neutral { background: var(--card); color: var(--muted); }
+  .pick-rationale { margin: 0; font-size: 0.88rem; line-height: 1.65; color: var(--fg-soft); }
+
+  /* asset-group tabs */
+  .trading-group-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0.6rem 0 1.2rem;
+  }
+  .trading-group-tab {
+    background: var(--card);
+    border: 1px solid transparent;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--fg-soft);
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.15s;
+  }
+  .trading-group-tab:hover { border-color: var(--muted); color: var(--fg); }
+  .trading-group-tab.active {
+    background: var(--accent);
+    color: var(--accent-fg);
+  }
+  .trading-group-tab .count {
+    font-size: 0.7rem;
+    opacity: 0.75;
+    margin-left: 0.4rem;
+    font-weight: 400;
+  }
+  .trading-group-content { display: none; }
+  .trading-group-content.active { display: block; }
+
+  /* ticker cards */
+  .ticker-card {
+    background: var(--bg-elevated);
+    border: 1px solid var(--rule);
+    border-radius: 0.55rem;
+    padding: 0.85rem 1.1rem;
+    margin-bottom: 0.7rem;
+  }
+  .ticker-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.65rem;
+  }
+  .ticker-id { min-width: 0; }
+  .ticker-symbol { margin: 0; font-size: 1rem; font-weight: 700; font-family: ui-monospace, "SFMono-Regular", Menlo, monospace; }
+  .ticker-name { margin: 0.15rem 0 0; font-size: 0.82rem; color: var(--muted); }
+  .ticker-price-block { text-align: right; flex-shrink: 0; }
+  .ticker-price { display: block; font-size: 1.05rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .ticker-pct { display: inline-block; font-size: 0.82rem; font-weight: 500; margin-top: 0.15rem; font-variant-numeric: tabular-nums; }
+  .ticker-pct.positive, .positive { color: #dc2626; }
+  .ticker-pct.negative, .negative { color: #16a34a; }
+
+  .ticker-indicators {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.35rem 0.9rem;
+    margin: 0;
+    font-size: 0.82rem;
+    color: var(--fg-soft);
+  }
+  @media (min-width: 720px) {
+    .ticker-indicators { grid-template-columns: repeat(3, 1fr); }
+  }
+  .ticker-indicators > div { display: flex; gap: 0.4rem; align-items: baseline; min-width: 0; }
+  .ticker-indicators dt { color: var(--muted); font-size: 0.74rem; margin: 0; white-space: nowrap; }
+  .ticker-indicators dd { margin: 0; font-variant-numeric: tabular-nums; font-weight: 500; color: var(--fg); }
+  .ticker-indicators dd.positive { color: #dc2626; }
+  .ticker-indicators dd.negative { color: #16a34a; }
+  .trend-bullish { color: #dc2626; }
+  .trend-bearish { color: #16a34a; }
+  .trend-neutral { color: var(--muted); }
+  .rsi-overbought { color: #d97706; }
+  .rsi-oversold { color: #2563eb; }
+
+  .ticker-signals {
+    margin-top: 0.65rem;
+    padding-top: 0.55rem;
+    border-top: 1px dashed var(--rule);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+  .signal-pill {
+    font-size: 0.72rem;
+    padding: 0.18rem 0.55rem;
+    border-radius: 999px;
+    font-weight: 500;
+  }
+  .signal-pill.tone-bull { background: rgba(220,38,38,0.13); color: #991b1b; }
+  .signal-pill.tone-bear { background: rgba(22,163,74,0.13); color: #166534; }
+  .signal-pill.tone-caution { background: rgba(217,119,6,0.15); color: #92400e; }
+  @media (prefers-color-scheme: dark) {
+    .signal-pill.tone-bull { color: #fca5a5; }
+    .signal-pill.tone-bear { color: #4ade80; }
+    .signal-pill.tone-caution { color: #fcd34d; }
+    .trend-bullish, .positive, .ticker-pct.positive { color: #fca5a5; }
+    .trend-bearish, .negative, .ticker-pct.negative { color: #4ade80; }
+    .rsi-overbought { color: #fcd34d; }
+    .rsi-oversold { color: #93c5fd; }
+    .trading-pick.stance-bull { border-left-color: #fca5a5; }
+    .trading-pick.stance-bear { border-left-color: #4ade80; }
+    .pick-stance-bull { background: rgba(252,165,165,0.15); color: #fca5a5; }
+    .pick-stance-bear { background: rgba(74,222,128,0.15); color: #4ade80; }
+  }
+  .signal-age { opacity: 0.7; font-weight: 400; }
+
+  .trading-risk {
+    margin: 1.5rem 0 0;
+    padding: 0.9rem 1.2rem;
+    background: var(--card);
+    border-radius: 0.45rem;
+    border-left: 3px solid #d97706;
+  }
+  .trading-risk .eyebrow { display: block; margin-bottom: 0.35rem; }
+  .trading-risk p { margin: 0; font-size: 0.82rem; line-height: 1.65; color: var(--fg-soft); }
+
+  .snapshot-card {
+    margin: 0.9rem 0 1.4rem;
+    padding: 0.8rem 1.1rem 0.6rem;
+    background: var(--bg-elevated);
+    border: 1px solid var(--rule);
+    border-radius: 0.5rem;
+  }
+  .snapshot-card .eyebrow { display: block; margin-bottom: 0.4rem; }
+  .snapshot-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+  .snapshot-table th {
+    text-align: right; font-weight: 500; color: var(--muted);
+    font-size: 0.75rem; padding: 0.25rem 0.4rem; border-bottom: 1px solid var(--rule);
+  }
+  .snapshot-table th:first-child { text-align: left; }
+  .snapshot-table td { padding: 0.32rem 0.4rem; border-bottom: 1px solid var(--rule); }
+  .snapshot-table tr:last-child td { border-bottom: none; }
+  .snap-name { color: var(--fg); }
+  .snap-num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .snapshot-note { margin: 0.45rem 0 0; font-size: 0.72rem; color: var(--muted); }
+  .digest-category { margin-top: 1.2rem; }
+  .market-closed { color: var(--muted) !important; font-weight: 500; }
+  .margin-stats {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.6rem; margin: 0.2rem 0 0.8rem;
+  }
+  @media (max-width: 520px) { .margin-stats { grid-template-columns: repeat(2, 1fr); } }
+  .margin-stats.inst-stats { grid-template-columns: repeat(3, 1fr); }
+  .margin-stats > div { background: var(--card); border-radius: 0.4rem; padding: 0.5rem 0.7rem; }
+  .margin-stats .widget-value { font-size: 1.05rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .margin-stats .widget-label { font-size: 0.72rem; color: var(--muted); }
+  .margin-stats .widget-sub { font-size: 0.78rem; font-variant-numeric: tabular-nums; }
+  .margin-code { color: var(--muted); font-size: 0.75rem; }
+  .margin-sub { font-size: 0.78rem; color: var(--muted); font-weight: 600; margin: 0.9rem 0 0.3rem; }
+  .margin-scroll { overflow-x: auto; }
+  .margin-link { margin: 0.8rem 0 0.2rem; font-size: 0.85rem; }
+  .margin-link a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .margin-link a:hover { text-decoration: underline; }
+  .margin-scroll .snapshot-table { min-width: 560px; }
+  .snapshot-sma { min-width: 720px; }
+  .snapshot-sma td.snap-name { white-space: normal; }
+  .snap-signals { display: flex; flex-wrap: wrap; gap: 0.25rem; margin-top: 0.2rem; }
+  .snap-signals .signal-pill { font-size: 0.66rem; padding: 0.1rem 0.45rem; }
+  @media (max-width: 520px) {
+    .snapshot-table { font-size: 0.8rem; }
+    .snapshot-table td, .snapshot-table th { padding: 0.28rem 0.25rem; }
+  }
+
+  footer {
+    margin-top: 2.5rem;
+    border-top: 1px solid var(--rule);
+    padding-top: 1.1rem;
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+</style>
+</head>
+<body>
+<main>
+  <header class="report-header">
+    <span class="eyebrow">投資晨報</span>
+    <h1 class="report-title">2026-11-26</h1>
+    <a class="archive-link" href="../archive.html">← 歷史晨報</a>
+  </header>
+
+  <nav class="tabs" role="tablist">
+    <button class="tab active" data-tab="digest">今日重點</button>
+    <button class="tab" data-tab="trading">市場行情<span class="count">60</span></button>
+    <button class="tab" data-tab="finance">財經要點<span class="count">65</span></button>
+    <button class="tab" data-tab="tech">AI 與半導體<span class="count">34</span></button>
+    <button class="tab" data-tab="politics">國際與地緣<span class="count">12</span></button>
+    
+  </nav>
+
+  <section class="panel active" data-panel="digest">
+    <section class="hero-card">
+      <span class="hero-eyebrow">今日頭條</span>
+      <p class="hero-headline">AI 債務疑慮與關稅風險夾擊　台股單日重挫 4.80%</p>
+    </section>
+<section class="overview-card">
+      <span class="eyebrow">晨報總覽</span>
+      <p class="overview-text">美股感恩節前受科技股賣壓，S&amp;P 500 跌 0.25%、那斯達克跌 0.62%，道瓊漲 0.33%；台股加權指數重挫 4.80% 收 38195 點，台積電跌 3.59%。美國 10 年期公債殖利率 4.85%（-1.14%），美元兌新台幣 33.18（+0.86%），Brent 原油 90.73 美元（+2.76%），黃金 3603 美元（+1.44%）。台股上市融資餘額 4341.38 億元，減少 193.67 億元，融券 169,365 張，減少 17,248 張。AI 債務風險升溫，CoreWeave 與輝達信用違約交換創高，S&amp;P 考慮下調輝達評等；中東襲擊推升油價。留意外資賣超動向。</p>
+    </section>
+<section class="snapshot-card">
+    <span class="eyebrow">收盤快照</span>
+    <div class="margin-scroll"><table class="snapshot-table snapshot-sma">
+      <thead><tr><th>標的</th><th>最新</th><th>日漲跌</th><th>5 日</th><th>SMA20</th><th>SMA50</th><th>SMA100</th><th>SMA200</th></tr></thead>
+      <tbody><tr><td class="snap-name">S&amp;P 500<div class="snap-signals"><span class="signal-pill tone-bear">SMA50 下穿 SMA100（中期下行訊號） <span class="signal-age">(1 天前)</span></span></div></td><td class="snap-num">7,182.78</td><td class="snap-num negative">-0.25%</td><td class="snap-num negative">-1.92%</td><td class="snap-num negative">7,423.12</td><td class="snap-num negative">7,602.53</td><td class="snap-num negative">7,607.26</td><td class="snap-num negative">7,352.49</td></tr><tr><td class="snap-name">那斯達克綜合<div class="snap-signals"><span class="signal-pill tone-bear">SMA50 下穿 SMA100（中期下行訊號） <span class="signal-age">(1 天前)</span></span></div></td><td class="snap-num">23,585.80</td><td class="snap-num negative">-0.62%</td><td class="snap-num negative">-3.46%</td><td class="snap-num negative">24,712.52</td><td class="snap-num negative">25,978.69</td><td class="snap-num negative">26,016.50</td><td class="snap-num negative">25,167.65</td></tr><tr><td class="snap-name">費城半導體</td><td class="snap-num">8,774.86</td><td class="snap-num negative">-0.65%</td><td class="snap-num negative">-9.10%</td><td class="snap-num negative">9,849.26</td><td class="snap-num negative">11,207.64</td><td class="snap-num negative">11,534.76</td><td class="snap-num negative">10,935.60</td></tr><tr><td class="snap-name">台股加權指數</td><td class="snap-num">38,195.43</td><td class="snap-num negative">-4.80%</td><td class="snap-num negative">-4.97%</td><td class="snap-num negative">41,517.39</td><td class="snap-num negative">45,128.95</td><td class="snap-num negative">45,072.68</td><td class="snap-num negative">41,628.22</td></tr><tr><td class="snap-name">歐洲 STOXX 600<div class="snap-signals"><span class="signal-pill tone-bear">跌破 SMA200（長期下行訊號） <span class="signal-age">(今天)</span></span></div></td><td class="snap-num">626.03</td><td class="snap-num negative">-1.06%</td><td class="snap-num negative">-2.80%</td><td class="snap-num negative">648.72</td><td class="snap-num negative">641.95</td><td class="snap-num negative">645.26</td><td class="snap-num negative">630.89</td></tr><tr><td class="snap-name">印度 SENSEX<div class="snap-signals"><span class="signal-pill tone-caution">RSI 超買</span><span class="signal-pill tone-bull">接近 52 週高點</span></div></td><td class="snap-num">83,938.28</td><td class="snap-num positive">+1.82%</td><td class="snap-num positive">+1.70%</td><td class="snap-num positive">79,608.97</td><td class="snap-num positive">75,933.59</td><td class="snap-num positive">76,652.03</td><td class="snap-num positive">77,092.20</td></tr><tr><td class="snap-name">滬深 300<div class="snap-signals"><span class="signal-pill tone-caution">RSI 超賣</span><span class="signal-pill tone-bear">接近 52 週低點</span><span class="signal-pill tone-bear">空頭排列</span></div></td><td class="snap-num">3,898.24</td><td class="snap-num negative">-1.65%</td><td class="snap-num negative">-2.15%</td><td class="snap-num negative">4,013.65</td><td class="snap-num negative">4,198.58</td><td class="snap-num negative">4,433.04</td><td class="snap-num negative">4,589.16</td></tr><tr><td class="snap-name">創業板指<div class="snap-signals"><span class="signal-pill tone-bull">MACD 黃金交叉 <span class="signal-age">(2 天前)</span></span><span class="signal-pill tone-bear">接近 52 週低點</span><span class="signal-pill tone-bear">空頭排列</span></div></td><td class="snap-num">2,183.58</td><td class="snap-num negative">-4.19%</td><td class="snap-num negative">-5.54%</td><td class="snap-num negative">2,399.55</td><td class="snap-num negative">2,781.90</td><td class="snap-num negative">3,180.08</td><td class="snap-num negative">3,401.97</td></tr><tr><td class="snap-name">台積電<div class="snap-signals"><span class="signal-pill tone-bear">SMA50 下穿 SMA100（中期下行訊號） <span class="signal-age">(3 天前)</span></span></div></td><td class="snap-num">NT$2,150.00</td><td class="snap-num negative">-3.59%</td><td class="snap-num negative">-1.15%</td><td class="snap-num negative">2,236.00</td><td class="snap-num negative">2,371.10</td><td class="snap-num negative">2,383.10</td><td class="snap-num negative">2,235.90</td></tr><tr><td class="snap-name">美國 10 年期公債殖利率 (%)<div class="snap-signals"><span class="signal-pill tone-bear">MACD 死亡交叉 <span class="signal-age">(2 天前)</span></span></div></td><td class="snap-num">4.85</td><td class="snap-num negative">-1.14%</td><td class="snap-num negative">-4.30%</td><td class="snap-num negative">4.97</td><td class="snap-num negative">5.07</td><td class="snap-num negative">4.89</td><td class="snap-num positive">4.61</td></tr><tr><td class="snap-name">美元指數 DXY<div class="snap-signals"><span class="signal-pill tone-bull">接近 52 週高點</span><span class="signal-pill tone-bull">多頭排列</span></div></td><td class="snap-num">103.70</td><td class="snap-num negative">-0.12%</td><td class="snap-num negative">-0.08%</td><td class="snap-num positive">102.84</td><td class="snap-num positive">102.13</td><td class="snap-num positive">101.06</td><td class="snap-num positive">100.11</td></tr><tr><td class="snap-name">美元 / 新台幣<div class="snap-signals"><span class="signal-pill tone-bull">接近 52 週高點</span><span class="signal-pill tone-bull">多頭排列</span></div></td><td class="snap-num">33.18</td><td class="snap-num positive">+0.86%</td><td class="snap-num positive">+0.73%</td><td class="snap-num positive">32.84</td><td class="snap-num positive">32.36</td><td class="snap-num positive">32.19</td><td class="snap-num positive">31.92</td></tr><tr><td class="snap-name">Brent 原油</td><td class="snap-num">$90.73</td><td class="snap-num positive">+2.76%</td><td class="snap-num positive">+2.22%</td><td class="snap-num negative">96.71</td><td class="snap-num negative">102.38</td><td class="snap-num negative">96.52</td><td class="snap-num negative">94.93</td></tr><tr><td class="snap-name">黃金<div class="snap-signals"><span class="signal-pill tone-bear">空頭排列</span></div></td><td class="snap-num">$3,602.70</td><td class="snap-num positive">+1.44%</td><td class="snap-num negative">-3.36%</td><td class="snap-num negative">3,875.48</td><td class="snap-num negative">4,066.04</td><td class="snap-num negative">4,189.63</td><td class="snap-num negative">4,423.38</td></tr><tr><td class="snap-name">VIX 恐慌指數<div class="snap-signals"><span class="signal-pill tone-bull">黃金交叉 SMA50 上穿 SMA200（長期上行訊號） <span class="signal-age">(1 天前)</span></span><span class="signal-pill tone-bull">多頭排列</span></div></td><td class="snap-num">28.29</td><td class="snap-num positive">+7.32%</td><td class="snap-num positive">+15.19%</td><td class="snap-num positive">23.12</td><td class="snap-num positive">19.02</td><td class="snap-num positive">17.60</td><td class="snap-num positive">18.78</td></tr></tbody>
+    </table></div>
+    <p class="snapshot-note">前一交易日收盤；黃金、原油等期貨取同一交易日的官方結算價；匯率與美元指數取美股收盤（紐約 16:00）時點價格，都不含亞洲盤新交易日。殖利率單位為 %，紅漲綠跌；前一交易日當地休市的市場標示「休市」，不顯示日漲跌　均線數字紅色＝價格在該均線之上，綠色＝在之下。</p>
+  </section>
+<section class="snapshot-card margin-card">
+    <span class="eyebrow">台股籌碼 · 2026-11-25</span>
+    <div class="margin-sub">三大法人買賣超（億元，上市）</div>
+    <div class="margin-stats inst-stats"><div><div class="widget-label">外資及陸資</div><div class="widget-value"><span class="negative">-1236.55 億</span></div></div><div><div class="widget-label">投信</div><div class="widget-value"><span class="positive">+550.35 億</span></div></div><div><div class="widget-label">自營商(自行買賣)</div><div class="widget-value"><span class="negative">-73.63 億</span></div></div></div>
+    <div class="margin-scroll"><table class="snapshot-table">
+      <thead><tr><th>日期</th><th>外資及陸資</th><th>投信</th><th>自營商(自行買賣)</th><th>三者合計</th></tr></thead>
+      <tbody><tr><td class="snap-name">11/25</td><td class="snap-num negative">-1236.55</td><td class="snap-num positive">+550.35</td><td class="snap-num negative">-73.63</td><td class="snap-num negative">-759.83</td></tr><tr><td class="snap-name">11/24</td><td class="snap-num negative">-503.90</td><td class="snap-num positive">+97.63</td><td class="snap-num positive">+15.86</td><td class="snap-num negative">-390.40</td></tr><tr><td class="snap-name">11/23</td><td class="snap-num negative">-289.48</td><td class="snap-num negative">-41.55</td><td class="snap-num negative">-28.99</td><td class="snap-num negative">-360.02</td></tr><tr><td class="snap-name">11/20</td><td class="snap-num negative">-95.11</td><td class="snap-num negative">-73.47</td><td class="snap-num negative">-50.68</td><td class="snap-num negative">-219.25</td></tr><tr><td class="snap-name">11/19</td><td class="snap-num negative">-243.12</td><td class="snap-num positive">+43.90</td><td class="snap-num negative">-18.63</td><td class="snap-num negative">-217.85</td></tr></tbody>
+    </table></div>
+    <p class="snapshot-note">外資及陸資不含外資自營商；自營商僅計自行買賣，不含避險</p>
+    <div class="margin-sub">信用交易</div>
+    <div class="margin-stats"><div><div class="widget-label">融資餘額</div><div class="widget-value">4341.38 億</div><div class="widget-sub negative">-193.67 億</div></div><div><div class="widget-label">全市場擔保維持率</div><div class="widget-value">161.96%</div><div class="widget-sub negative">-10.43%</div></div><div><div class="widget-label">追繳戶數</div><div class="widget-value">201 戶</div><div class="widget-sub ">+9</div></div><div><div class="widget-label">追繳金額</div><div class="widget-value">0.44 億</div></div><div><div class="widget-label">融資（張）</div><div class="widget-value">9,383,491</div><div class="widget-sub negative">-681,476</div></div><div><div class="widget-label">融券（張）</div><div class="widget-value">169,365</div><div class="widget-sub negative">-17,248</div></div><div><div class="widget-label">券資比</div><div class="widget-value">1.80%</div></div></div>
+    <div class="margin-sub">近 5 個交易日</div>
+    <div class="margin-scroll"><table class="snapshot-table">
+      <thead><tr><th>日期</th><th>加權指數</th><th>漲跌%</th><th>融資餘額(億)</th><th>增減(億)</th><th>全市場擔保維持率</th><th>追繳戶數</th><th>追繳金額(億)</th></tr></thead>
+      <tbody><tr><td class="snap-name">11/25</td><td class="snap-num">38,195.43</td><td class="snap-num negative">-4.80%</td><td class="snap-num">4341.38</td><td class="snap-num negative">-193.67</td><td class="snap-num">161.96%</td><td class="snap-num">201</td><td class="snap-num">0.44</td></tr><tr><td class="snap-name">11/24</td><td class="snap-num">40,122.35</td><td class="snap-num positive">+8.99%</td><td class="snap-num">4535.05</td><td class="snap-num positive">+196.98</td><td class="snap-num">172.39%</td><td class="snap-num">192</td><td class="snap-num">0.12</td></tr><tr><td class="snap-name">11/23</td><td class="snap-num">36,811.89</td><td class="snap-num positive">+2.16%</td><td class="snap-num">4338.08</td><td class="snap-num negative">-14.20</td><td class="snap-num">159.42%</td><td class="snap-num">2,677</td><td class="snap-num">2.60</td></tr><tr><td class="snap-name">11/20</td><td class="snap-num">36,033.29</td><td class="snap-num negative">-6.23%</td><td class="snap-num">4352.27</td><td class="snap-num negative">-491.41</td><td class="snap-num">151.78%</td><td class="snap-num">6,462</td><td class="snap-num">64.64</td></tr><tr><td class="snap-name">11/19</td><td class="snap-num">38,426.89</td><td class="snap-num negative">-4.40%</td><td class="snap-num">4843.68</td><td class="snap-num negative">-236.58</td><td class="snap-num">156.18%</td><td class="snap-num">2,947</td><td class="snap-num">29.64</td></tr></tbody>
+    </table></div>
+    <div class="margin-sub">ETF 融資融券（張）</div>
+    <table class="snapshot-table">
+      <thead><tr><th>ETF</th><th>融資（張）</th><th>增減</th><th>融券（張）</th><th>增減</th></tr></thead>
+      <tbody><tr><td class="snap-name">元大台灣50 <span class="margin-code">0050</span></td><td class="snap-num">64,109</td><td class="snap-num negative">-9,991</td><td class="snap-num">460</td><td class="snap-num negative">-64</td></tr><tr><td class="snap-name">元大台灣50正2 <span class="margin-code">00631L</span></td><td class="snap-num">438,459</td><td class="snap-num negative">-67,241</td><td class="snap-num">16,773</td><td class="snap-num negative">-3,485</td></tr><tr><td class="snap-name">群益臺灣加權正2 <span class="margin-code">00685L</span></td><td class="snap-num">369,101</td><td class="snap-num negative">-43,960</td><td class="snap-num">9,842</td><td class="snap-num positive">+2,399</td></tr></tbody>
+    </table>
+    <p class="margin-link"><a href="https://www.wantgoo.com/stock/margin-trading/exclude-etf/taiex" target="_blank" rel="noopener">玩股網：扣除 ETF 融資餘額與融資維持率 →</a></p>
+    <p class="snapshot-note">資料來源：臺灣證券交易所臺股儀表板；為前一交易日資料。融資餘額為上市（含 ETF）；擔保維持率、追繳為上市＋上櫃全市場；追繳戶數指整戶擔保維持率低於 130% 之戶數</p>
+  </section>
+<section class="digest-category">
+    <header class="category-header">
+      <h2 class="category-title">財經與總經重點</h2>
+      <span class="category-count">5</span>
+    </header>
+    <div class="brief-list"><article class="brief">
+    <div class="brief-head">
+      <span class="brief-source">中央社 財經</span>
+      <span class="brief-rank high">重要度 8</span>
+    </div>
+    <h3 class="brief-title"><a href="https://www.cna.com.tw/news/afe/202611260013.aspx" target="_blank" rel="noopener noreferrer">感恩節前科技股遭賣壓　美股多收黑、道瓊逆勢收高</a></h3>
+    <p class="brief-summary">美股感恩節假期前科技股承壓，早盤那斯達克一度跌近 4%，逢低買盤進場後跌幅收斂。道瓊收 50182.95 點、漲 164.25 點或 0.33%，S&amp;P 500 跌 0.25%，那斯達克跌 0.62%，顯示盤中情緒偏脆弱。（多家報導）</p>
+  </article>
+<article class="brief">
+    <div class="brief-head">
+      <span class="brief-source">中央社 財經</span>
+      <span class="brief-rank high">重要度 8</span>
+    </div>
+    <h3 class="brief-title"><a href="https://www.cna.com.tw/news/afe/202611260011.aspx" target="_blank" rel="noopener noreferrer">中東襲擊加劇供應疑慮　國際油價上揚</a></h3>
+    <p class="brief-summary">中東地區襲擊加劇，使近幾個月逐步恢復的原油運輸前景蒙上陰影。Brent 收 90.73 美元、上漲 2.76%，WTI 收 84.13 美元、上漲 3.30%，油價走高可能增添通膨與能源成本壓力。</p>
+  </article>
+<article class="brief">
+    <div class="brief-head">
+      <span class="brief-source">華爾街見聞</span>
+      <span class="brief-rank high">重要度 9</span>
+    </div>
+    <h3 class="brief-title"><a href="https://wallstreetcn.com/articles/3786717" target="_blank" rel="noopener noreferrer">CoreWeave、輝達信用違約風險指標創歷史新高</a></h3>
+    <p class="brief-summary">CoreWeave 五年期信用違約交換成本單日一度上升 2.09 個百分點至 15.34 個百分點，為史上最大單日漲幅，隱含五年內違約機率逾 70%；輝達、Alphabet、甲骨文與 SpaceX 的 CDS 也創高，反映 AI 債務疑慮升溫。</p>
+  </article>
+<article class="brief">
+    <div class="brief-head">
+      <span class="brief-source">CNBC Economy</span>
+      <span class="brief-rank mid">重要度 6</span>
+    </div>
+    <h3 class="brief-title"><a href="https://www.cnbc.com/2026/11/25/kevin-warsh-greenspan-fed-rates-ai-inflation.html" target="_blank" rel="noopener noreferrer">CNBC 評論：Warsh 面對 AI 生產力與升息爭論</a></h3>
+    <p class="brief-summary">CNBC 評論員 Liesman 以葛林斯潘當年看好網路生產力而按兵不動為例，主張 Warsh 不宜比照，需考慮升息。此為評論觀點，凸顯市場對 AI 生產力能否抵銷通膨壓力的辯論。（多家報導）</p>
+  </article>
+<article class="brief">
+    <div class="brief-head">
+      <span class="brief-source">Yahoo 股市 台股</span>
+      <span class="brief-rank high">重要度 9</span>
+    </div>
+    <h3 class="brief-title"><a href="https://tw.news.yahoo.com/%E8%82%A1%E7%81%BD%E8%87%AA%E6%95%911-%E6%90%B6%E6%95%91%E5%A5%97%E7%89%A2%E8%82%A1%E5%88%A5%E6%AD%BB%E5%AE%88%E6%88%90%E6%9C%AC%E5%83%B9-%E9%81%94%E4%BA%BA%E6%8F%AD%E8%81%AF%E7%99%BC%E7%A7%91-%E5%8F%B0%E9%81%94%E9%9B%BB-%E6%AD%A32%E6%B8%9B%E7%A2%BC%E5%83%B9%E4%BD%8D-223000889.html" target="_blank" rel="noopener noreferrer">台股單日漲 3,310 點後再跌 1,926 點　震盪加劇</a></h3>
+    <p class="brief-summary">台股 11/24 大漲 3,310 點，11/25 又下跌 1,926 點，收 38195 點、跌 4.80%。上市外資賣超 1236.55 億元，投信買超 550.35 億元，融資減少 193.67 億元，劇烈震盪下市場關注槓桿是否持續降溫。</p>
+  </article></div>
+  </section>
+<section class="digest-category">
+    <header class="category-header">
+      <h2 class="category-title">AI 與半導體重點</h2>
+      <span class="category-count">5</span>
+    </header>
+    <div class="brief-list"><article class="brief">
+    <div class="brief-head">
+      <span class="brief-source">TechCrunch AI</span>
+      <span class="brief-rank high">重要度 8</span>
+    </div>
+    <h3 class="brief-title"><a href="https://techcrunch.com/2026/11/25/sp-considers-nvidia-credit-downgrade-over-governance-and-key-man-risks/" target="_blank" rel="noopener noreferrer">S&amp;P 考慮因治理與關鍵人物風險下調輝達評等</a></h3>
+    <p class="brief-summary">S&amp;P 正考慮將輝達信用評等降至 AA-（第四高等級），理由涉及公司治理與關鍵人物風險。輝達股價前一交易日跌 3.91% 至 149.30 美元，評等動向可能影響 AI 龍頭的融資成本與市場信心。</p>
+  </article>
+<article class="brief">
+    <div class="brief-head">
+      <span class="brief-source">經濟日報</span>
+      <span class="brief-rank mid">重要度 7</span>
+    </div>
+    <h3 class="brief-title"><a href="https://money.udn.com/money/story/5612/9902330" target="_blank" rel="noopener noreferrer">川普將出席台積電亞利桑那擴廠典禮　12 月 4 日舉行</a></h3>
+    <p class="brief-summary">彭博報導，美國總統川普將於 12 月 4 日出席台積電鳳凰城廠區擴建典禮，董事長魏哲家率營運主管出席，國發會主委葉俊顯代表政府與會。此舉凸顯台積電在美國半導體政策與 AI 供應鏈的戰略地位。（多家報導）</p>
+  </article>
+<article class="brief">
+    <div class="brief-head">
+      <span class="brief-source">自由時報 財經</span>
+      <span class="brief-rank mid">重要度 6</span>
+    </div>
+    <h3 class="brief-title"><a href="https://ec.ltn.com.tw/article/paper/1779917" target="_blank" rel="noopener noreferrer">華城：AI 資料中心電力訂單能見度看到 2030 年</a></h3>
+    <p class="brief-summary">重電廠華城執行長許逸晟表示，AI 算力需求尚未見頂，外銷美國比重高，各州電力公司客戶仍積極追貨，訂單能見度已看到 2030 年，未感受到 AIDC 建設放緩，顯示電力設備需求仍具支撐。</p>
+  </article>
+<article class="brief">
+    <div class="brief-head">
+      <span class="brief-source">中央社 財經</span>
+      <span class="brief-rank mid">重要度 5</span>
+    </div>
+    <h3 class="brief-title"><a href="https://www.cna.com.tw/news/aopl/202611260009.aspx" target="_blank" rel="noopener noreferrer">微軟大規模當機達 24 小時　啟動「紅色警戒」整頓</a></h3>
+    <p class="brief-summary">路透檢視內部備忘錄指出，微軟日前發生長達 24 小時的大規模當機，暴露工程系統與危機應變缺陷，公司已啟動「紅色警戒」全面整頓服務中斷預防機制。微軟前一交易日跌 1.25%，雲端可靠性成為關注點。（多家報導）</p>
+  </article>
+<article class="brief">
+    <div class="brief-head">
+      <span class="brief-source">中央社 科技</span>
+      <span class="brief-rank mid">重要度 5</span>
+    </div>
+    <h3 class="brief-title"><a href="https://www.cna.com.tw/news/ait/202611260012.aspx" target="_blank" rel="noopener noreferrer">FCC 批准 SpaceX 部署百萬顆衛星　用於太空資料中心</a></h3>
+    <p class="brief-summary">美國聯邦傳播委員會（FCC）授權馬斯克旗下 SpaceX 部署由 100 萬顆衛星組成的星系，用於打造太空資料中心。此案為 AI 算力基礎設施的新型態布局，商業可行性與時程仍待觀察。</p>
+  </article></div>
+  </section>
+<section class="digest-category">
+    <header class="category-header">
+      <h2 class="category-title">國際與地緣重點</h2>
+      <span class="category-count">1</span>
+    </header>
+    <div class="brief-list"><article class="brief">
+    <div class="brief-head">
+      <span class="brief-source">科技新報</span>
+      <span class="brief-rank high">重要度 8</span>
+    </div>
+    <h3 class="brief-title"><a href="https://finance.technews.tw/2026/11/26/us-plans-new-tariffs-on-14-economies/" target="_blank" rel="noopener noreferrer">美國擬對 14 個經濟體加徵新關稅，稅率恐升至約 45%</a></h3>
+    <p class="brief-summary">美國政府研擬對包括中國、歐盟、日本與印度在內的 14 個經濟體祭出新一輪關稅，因應其製造業結構性產能問題；報導標題指相關稅率恐升至約 45%，細節與生效時程待確認，貿易不確定性恐持續壓抑風險偏好。</p>
+  </article></div>
+  </section>
+  </section>
+  <section class="panel" data-panel="trading"><section class="trading-overview-card">
+    <span class="eyebrow">技術面總覽</span>
+    <p class="overview-text trading-overview-text">全球指數普遍走弱：S&amp;P 500 收 7182.78，RSI 39.7，低於 SMA20 與 SMA50；那斯達克 RSI 38.6，五日 -3.46%；費半五日 -9.1%。亞股更弱，台股加權單日 -4.8% 至 38195.43，韓國綜合 -6.16%，恒生與滬深 300 的 RSI 均為 27.1 進入超賣，僅印度 SENSEX RSI 73.2 屬超買。台股中鴻海 -8.83%、聯發科 -10%、台積電 -3.59%。AI 與半導體方面，Sandisk 單日 -22.02%、AMD 五日 -23.41%、美光五日 -14.75%，SOXX、PSI 五日分別 -9.78%、-11.51%，動能明顯轉弱。商品面，Brent 90.73、WTI 84.13 單日反彈，XLE、OIH 同步收高；黃金 RSI 34.2、白銀 RSI 29.8 超賣，銅 RSI 30。利率方面，10 年期殖利率 4.85%、30 年期 5.24%，單日約 -1.1%，MACD 皆死亡交叉，殖利率回落未能支撐成長股。美元指數 103.7、美元兌新台幣 33.18 接近 52 週高點，VIX 28.29 單日 +7.32%，避險情緒升溫。</p>
+  </section>
+
+  <section class="trading-watchlist">
+    <h2 class="category-title trading-section-title">今日技術面焦點</h2>
+    <div class="trading-picks">
+      <article class="trading-pick stance-bull">
+    <header class="pick-head">
+      <div class="pick-symbol-block">
+        <span class="pick-symbol">^BSESN</span>
+        <span class="pick-name">印度 SENSEX</span>
+      </div>
+      <span class="pick-stance pick-stance-bull">偏上行</span>
+    </header>
+    <p class="pick-rationale">收 83938.28，單日 +1.82%，站上 SMA20（79608.97）、SMA50（75933.59）與 SMA200（77092.2）。MACD 2351.62 高於訊號線 2093.51，距 52 週高點僅 -2.58%。RSI 為 73.2 屬超買區，動能強但短線有過熱疑慮。</p>
+  </article>
+<article class="trading-pick stance-bull">
+    <header class="pick-head">
+      <div class="pick-symbol-block">
+        <span class="pick-symbol">NG=F</span>
+        <span class="pick-name">美國天然氣</span>
+      </div>
+      <span class="pick-stance pick-stance-bull">偏上行</span>
+    </header>
+    <p class="pick-rationale">收 3.67，五日 +7.81%，高於 SMA20（3.17）與 SMA50（3.07）。出現 SMA20 上穿 SMA50 及 SMA50 上穿 SMA200 的黃金交叉，呈多頭排列。MACD 0.1189 高於訊號線 0.0818，RSI 65.4 尚未進入超買。</p>
+  </article>
+<article class="trading-pick stance-bear">
+    <header class="pick-head">
+      <div class="pick-symbol-block">
+        <span class="pick-symbol">^HSI</span>
+        <span class="pick-name">恒生指數</span>
+      </div>
+      <span class="pick-stance pick-stance-bear">偏下行</span>
+    </header>
+    <p class="pick-rationale">收 21966.01，五日 -5.7%，低於 SMA20（23485.87）、SMA50 與 SMA200（25046.62），呈空頭排列。MACD -449.46 低於訊號線 -258.85，價差擴大。RSI 27.1 進入超賣，且接近 52 週低點，短線可能技術性反彈，但趨勢仍弱。</p>
+  </article>
+<article class="trading-pick stance-bear">
+    <header class="pick-head">
+      <div class="pick-symbol-block">
+        <span class="pick-symbol">^KS11</span>
+        <span class="pick-name">韓國綜合</span>
+      </div>
+      <span class="pick-stance pick-stance-bear">偏下行</span>
+    </header>
+    <p class="pick-rationale">收 4697.51，單日 -6.16%、五日 -7.3%，距 52 週高點 -49.95%。價格低於 SMA20（5256.33）、SMA50（5932.77）與 SMA200（6519.59），出現 MACD 死亡交叉與空頭排列。RSI 35.1 尚未進入超賣，下行動能仍在。</p>
+  </article>
+<article class="trading-pick stance-neutral">
+    <header class="pick-head">
+      <div class="pick-symbol-block">
+        <span class="pick-symbol">2454.TW</span>
+        <span class="pick-name">聯發科</span>
+      </div>
+      <span class="pick-stance pick-stance-neutral">中性</span>
+    </header>
+    <p class="pick-rationale">收 3645，單日 -10%、五日 -7.49%，跌幅顯著。價格仍高於 SMA200（3422.9），但低於 SMA20（3785.5）與 SMA50（4276.1）。MACD -125.90 略高於訊號線 -146.00，形成黃金交叉。RSI 45，多空訊號互見。</p>
+  </article>
+<article class="trading-pick stance-neutral">
+    <header class="pick-head">
+      <div class="pick-symbol-block">
+        <span class="pick-symbol">SNDK</span>
+        <span class="pick-name">Sandisk</span>
+      </div>
+      <span class="pick-stance pick-stance-neutral">中性</span>
+    </header>
+    <p class="pick-rationale">收 73.61，單日 -22.02%、五日 -33.46%，距 52 週高點 -74.99%。價格遠低於 SMA20（122.5）與 SMA50（168.07），MACD -22.64 低於訊號線 -20.75。RSI 24.1 屬超賣，短線動能極度弱勢與超賣反彈並存，方向不明。</p>
+  </article>
+    </div>
+  </section>
+
+  <section class="trading-tickers">
+    <h2 class="category-title trading-section-title">全部標的</h2>
+    <nav class="trading-group-tabs"><button class="trading-group-tab active" data-group="index">全球指數<span class="count">14</span></button><button class="trading-group-tab" data-group="taiwan">台股<span class="count">7</span></button><button class="trading-group-tab" data-group="ai-semi">AI 與半導體<span class="count">12</span></button><button class="trading-group-tab" data-group="etf">追蹤 ETF<span class="count">12</span></button><button class="trading-group-tab" data-group="commodity">商品<span class="count">6</span></button><button class="trading-group-tab" data-group="rates-fx">利率與匯率<span class="count">9</span></button></nav>
+    <div class="trading-group-contents"><div class="trading-group-content active" data-group="index">
+      
+      <article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">^GSPC</h3>
+        <p class="ticker-name">S&amp;P 500</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">7,182.78</span>
+        <span class="ticker-pct negative">-0.25%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-1.92%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-8.4%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">39.7</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-neutral">中性</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">7,423.12</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">7,602.53</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">7,607.26</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">7,352.49</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-132.214 / -102.445</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bear">SMA50 下穿 SMA100（中期下行訊號） <span class="signal-age">(1 天前)</span></span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">^IXIC</h3>
+        <p class="ticker-name">那斯達克綜合</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">23,585.80</span>
+        <span class="ticker-pct negative">-0.62%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-3.46%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-14.9%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">38.6</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-neutral">中性</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">24,712.52</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">25,978.69</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">26,016.50</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">25,167.65</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-680.360 / -583.894</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bear">SMA50 下穿 SMA100（中期下行訊號） <span class="signal-age">(1 天前)</span></span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">^DJI</h3>
+        <p class="ticker-name">道瓊工業</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">50,182.95</span>
+        <span class="ticker-pct positive">+0.33%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-0.03%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-8.3%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">43.5</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-neutral">中性</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">51,270.42</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">51,582.12</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">52,245.61</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">50,773.20</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-649.682 / -433.612</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bear">SMA20 下穿 SMA50（短線下行訊號） <span class="signal-age">(3 天前)</span></span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">^SOX</h3>
+        <p class="ticker-name">費城半導體</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">8,774.86</span>
+        <span class="ticker-pct negative">-0.65%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-9.10%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-40.1%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">37.6</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-neutral">中性</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">9,849.26</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">11,207.64</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">11,534.76</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">10,935.60</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-620.370 / -558.737</dd></div>
+    </dl>
+    
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">^RUT</h3>
+        <p class="ticker-name">羅素 2000</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">2,704.06</span>
+        <span class="ticker-pct positive">+0.71%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-0.38%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-11.9%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">45.0</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-bearish">空頭</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">2,759.15</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">2,788.07</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">2,880.80</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">2,813.41</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-37.869 / -28.814</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bear">死亡交叉 SMA50 下穿 SMA200（長期下行訊號） <span class="signal-age">(5 天前)</span></span><span class="signal-pill tone-bear">空頭排列</span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">^TWII</h3>
+        <p class="ticker-name">台股加權指數</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">38,195.43</span>
+        <span class="ticker-pct negative">-4.80%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-4.97%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-23.6%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">38.3</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-neutral">中性</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">41,517.39</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">45,128.95</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">45,072.68</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">41,628.22</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-2,090.771 / -1,813.576</dd></div>
+    </dl>
+    
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">^N225</h3>
+        <p class="ticker-name">日經 225</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">57,011.62</span>
+        <span class="ticker-pct negative">-2.78%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-3.14%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-21.7%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">36.7</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-neutral">中性</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">60,524.23</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">63,752.75</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">65,092.93</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">62,309.79</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-1,789.421 / -1,608.481</dd></div>
+    </dl>
+    
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">^KS11</h3>
+        <p class="ticker-name">韓國綜合</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">4,697.51</span>
+        <span class="ticker-pct negative">-6.16%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-7.30%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-49.9%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">35.1</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-bearish">空頭</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">5,256.33</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">5,932.77</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">6,380.12</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">6,519.59</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-303.805 / -292.515</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bear">MACD 死亡交叉 <span class="signal-age">(3 天前)</span></span><span class="signal-pill tone-bear">空頭排列</span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">^HSI</h3>
+        <p class="ticker-name">恒生指數</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">21,966.01</span>
+        <span class="ticker-pct negative">-1.14%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-5.70%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-21.7%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-oversold">27.1</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-bearish">空頭</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">23,485.87</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">23,899.30</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">24,573.19</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">25,046.62</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-449.456 / -258.848</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-caution">RSI 超賣</span><span class="signal-pill tone-bear">接近 52 週低點</span><span class="signal-pill tone-bear">空頭排列</span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">^STOXX50E</h3>
+        <p class="ticker-name">歐洲 STOXX 50</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">5,894.46</span>
+        <span class="ticker-pct negative">-1.82%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-4.22%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-10.4%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">34.9</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-neutral">中性</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">6,193.38</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">6,205.06</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">6,291.30</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">6,128.73</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-56.243 / -16.450</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bear">跌破 SMA200（長期下行訊號） <span class="signal-age">(4 天前)</span></span><span class="signal-pill tone-bear">MACD 死亡交叉 <span class="signal-age">(4 天前)</span></span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">^STOXX</h3>
+        <p class="ticker-name">歐洲 STOXX 600</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">626.03</span>
+        <span class="ticker-pct negative">-1.06%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-2.80%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-6.1%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">37.3</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-neutral">中性</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">648.72</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">641.95</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">645.26</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">630.89</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-3.016 / 0.741</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bear">跌破 SMA200（長期下行訊號） <span class="signal-age">(今天)</span></span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">^BSESN</h3>
+        <p class="ticker-name">印度 SENSEX</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">83,938.28</span>
+        <span class="ticker-pct positive">+1.82%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="positive">+1.70%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-2.6%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-overbought">73.2</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-neutral">中性</dd></div>
+      <div><dt>SMA20</dt><dd class="positive">79,608.97</dd></div>
+      <div><dt>SMA50</dt><dd class="positive">75,933.59</dd></div>
+      <div><dt>SMA100</dt><dd class="positive">76,652.03</dd></div>
+      <div><dt>SMA200</dt><dd class="positive">77,092.20</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>2,351.617 / 2,093.506</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-caution">RSI 超買</span><span class="signal-pill tone-bull">接近 52 週高點</span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">000300.SS</h3>
+        <p class="ticker-name">滬深 300</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">3,898.24</span>
+        <span class="ticker-pct negative">-1.65%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-2.15%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-23.0%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-oversold">27.1</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-bearish">空頭</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">4,013.65</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">4,198.58</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">4,433.04</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">4,589.16</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-69.856 / -71.583</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-caution">RSI 超賣</span><span class="signal-pill tone-bear">接近 52 週低點</span><span class="signal-pill tone-bear">空頭排列</span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">399006.SZ</h3>
+        <p class="ticker-name">創業板指</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">2,183.58</span>
+        <span class="ticker-pct negative">-4.19%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-5.54%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-50.2%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">30.2</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-bearish">空頭</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">2,399.55</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">2,781.90</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">3,180.08</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">3,401.97</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-150.837 / -152.343</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bull">MACD 黃金交叉 <span class="signal-age">(2 天前)</span></span><span class="signal-pill tone-bear">接近 52 週低點</span><span class="signal-pill tone-bear">空頭排列</span></div>
+  </article>
+    </div><div class="trading-group-content" data-group="taiwan">
+      
+      <article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">2330.TW</h3>
+        <p class="ticker-name">台積電</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">NT$2,150.00</span>
+        <span class="ticker-pct negative">-3.59%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-1.15%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-17.0%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">43.1</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-neutral">中性</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">2,236.00</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">2,371.10</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">2,383.10</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">2,235.90</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-74.216 / -66.983</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bear">SMA50 下穿 SMA100（中期下行訊號） <span class="signal-age">(3 天前)</span></span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">2317.TW</h3>
+        <p class="ticker-name">鴻海</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">NT$206.50</span>
+        <span class="ticker-pct negative">-8.83%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-6.56%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-34.2%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">36.6</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-neutral">中性</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">231.05</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">241.43</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">244.97</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">239.32</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-8.742 / -6.627</dd></div>
+    </dl>
+    
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">2454.TW</h3>
+        <p class="ticker-name">聯發科</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">NT$3,645.00</span>
+        <span class="ticker-pct negative">-10.00%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-7.49%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-33.5%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">45.0</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-neutral">中性</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">3,785.50</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">4,276.10</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">4,108.10</dd></div>
+      <div><dt>SMA200</dt><dd class="positive">3,422.90</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-125.904 / -146.001</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bull">站上 SMA200（長期上行訊號） <span class="signal-age">(2 天前)</span></span><span class="signal-pill tone-bull">MACD 黃金交叉 <span class="signal-age">(2 天前)</span></span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">2308.TW</h3>
+        <p class="ticker-name">台達電</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">NT$1,055.00</span>
+        <span class="ticker-pct negative">-2.76%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-0.47%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-59.2%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">37.6</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-bearish">空頭</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">1,166.00</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">1,524.90</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">1,655.70</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">1,725.22</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-148.948 / -153.627</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bull">MACD 黃金交叉 <span class="signal-age">(今天)</span></span><span class="signal-pill tone-bear">空頭排列</span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">2382.TW</h3>
+        <p class="ticker-name">廣達</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">NT$261.00</span>
+        <span class="ticker-pct negative">-7.61%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-1.51%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-40.4%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">36.2</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-bearish">空頭</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">285.68</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">312.84</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">323.06</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">321.02</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-15.471 / -14.606</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bear">死亡交叉 SMA50 下穿 SMA200（長期下行訊號） <span class="signal-age">(5 天前)</span></span><span class="signal-pill tone-bear">空頭排列</span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">3711.TW</h3>
+        <p class="ticker-name">日月光投控</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">NT$488.00</span>
+        <span class="ticker-pct negative">-7.92%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-10.95%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-36.2%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">38.7</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-neutral">中性</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">570.65</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">637.52</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">626.35</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">543.03</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-43.610 / -36.643</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bear">跌破 SMA200（長期下行訊號） <span class="signal-age">(4 天前)</span></span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">0050.TW</h3>
+        <p class="ticker-name">元大台灣50</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">NT$90.30</span>
+        <span class="ticker-pct negative">-5.64%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-4.04%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-22.6%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">39.9</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-neutral">中性</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">97.12</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">105.19</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">104.89</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">96.53</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-4.415 / -3.910</dd></div>
+    </dl>
+    
+  </article>
+    </div><div class="trading-group-content" data-group="ai-semi">
+      
+      <article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">NVDA</h3>
+        <p class="ticker-name">輝達 NVIDIA</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$149.30</span>
+        <span class="ticker-pct negative">-3.91%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-1.10%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-38.7%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">37.5</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-neutral">中性</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">172.48</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">203.65</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">208.62</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">202.87</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-16.919 / -16.245</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bear">SMA50 下穿 SMA100（中期下行訊號） <span class="signal-age">(5 天前)</span></span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">TSM</h3>
+        <p class="ticker-name">台積電 ADR</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$342.34</span>
+        <span class="ticker-pct negative">-1.96%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-5.59%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-29.8%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">38.9</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-neutral">中性</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">379.50</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">418.26</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">417.91</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">403.51</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-20.700 / -17.603</dd></div>
+    </dl>
+    
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">AVGO</h3>
+        <p class="ticker-name">博通 Broadcom</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$300.86</span>
+        <span class="ticker-pct negative">-0.07%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-15.02%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-39.2%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">40.7</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-bearish">空頭</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">326.99</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">340.55</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">361.00</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">367.31</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-7.347 / -4.262</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bear">MACD 死亡交叉 <span class="signal-age">(2 天前)</span></span><span class="signal-pill tone-bear">空頭排列</span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">AMD</h3>
+        <p class="ticker-name">超微 AMD</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$406.03</span>
+        <span class="ticker-pct negative">-1.75%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-23.41%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-38.3%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">38.0</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-neutral">中性</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">489.22</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">548.35</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">521.69</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">432.96</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-28.068 / -18.407</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bear">跌破 SMA200（長期下行訊號） <span class="signal-age">(1 天前)</span></span><span class="signal-pill tone-bear">MACD 死亡交叉 <span class="signal-age">(3 天前)</span></span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">ASML</h3>
+        <p class="ticker-name">艾司摩爾 ASML</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$1,303.08</span>
+        <span class="ticker-pct negative">-2.47%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-6.61%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-34.8%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">36.2</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-neutral">中性</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">1,448.79</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">1,609.83</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">1,668.62</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">1,600.34</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-81.722 / -73.118</dd></div>
+    </dl>
+    
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">MU</h3>
+        <p class="ticker-name">美光 Micron</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$601.25</span>
+        <span class="ticker-pct negative">-4.53%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-14.75%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-52.1%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">35.7</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-neutral">中性</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">742.80</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">895.48</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">910.84</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">776.48</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-72.020 / -64.253</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bear">SMA50 下穿 SMA100（中期下行訊號） <span class="signal-age">(7 天前)</span></span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">SNDK</h3>
+        <p class="ticker-name">Sandisk</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$73.61</span>
+        <span class="ticker-pct negative">-22.02%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-33.46%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-75.0%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-oversold">24.1</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-neutral">中性</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">122.50</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">168.07</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">178.90</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">160.70</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-22.642 / -20.745</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-caution">RSI 超賣</span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">MSFT</h3>
+        <p class="ticker-name">微軟 Microsoft</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$489.93</span>
+        <span class="ticker-pct negative">-1.25%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-3.61%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-12.4%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">38.7</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-neutral">中性</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">517.14</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">519.55</dd></div>
+      <div><dt>SMA100</dt><dd class="positive">489.88</dd></div>
+      <div><dt>SMA200</dt><dd class="positive">444.89</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-8.601 / -4.283</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bear">SMA20 下穿 SMA50（短線下行訊號） <span class="signal-age">(1 天前)</span></span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">GOOGL</h3>
+        <p class="ticker-name">Alphabet</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$273.10</span>
+        <span class="ticker-pct negative">-2.13%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-3.31%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-33.2%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">36.9</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-bearish">空頭</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">283.05</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">318.24</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">332.15</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">336.32</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-12.070 / -12.681</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bull">MACD 黃金交叉 <span class="signal-age">(2 天前)</span></span><span class="signal-pill tone-bear">空頭排列</span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">AMZN</h3>
+        <p class="ticker-name">亞馬遜 Amazon</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$244.43</span>
+        <span class="ticker-pct negative">-3.12%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-8.71%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-14.9%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">42.0</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-neutral">中性</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">257.19</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">255.12</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">255.34</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">245.78</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-0.980 / 0.906</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bear">SMA50 下穿 SMA100（中期下行訊號） <span class="signal-age">(3 天前)</span></span><span class="signal-pill tone-bear">跌破 SMA200（長期下行訊號） <span class="signal-age">(今天)</span></span><span class="signal-pill tone-bear">MACD 死亡交叉 <span class="signal-age">(3 天前)</span></span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">META</h3>
+        <p class="ticker-name">Meta</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$609.89</span>
+        <span class="ticker-pct positive">+3.40%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-1.05%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-21.8%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">45.7</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-neutral">中性</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">615.27</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">672.42</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">638.76</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">627.53</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-18.282 / -18.014</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bear">MACD 死亡交叉 <span class="signal-age">(3 天前)</span></span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">ORCL</h3>
+        <p class="ticker-name">甲骨文 Oracle</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$103.88</span>
+        <span class="ticker-pct negative">-5.13%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-8.79%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-58.5%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">37.7</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-bearish">空頭</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">118.80</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">130.11</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">135.42</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">152.44</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-6.599 / -5.545</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bear">空頭排列</span></div>
+  </article>
+    </div><div class="trading-group-content" data-group="etf">
+      
+      <article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">SOXX</h3>
+        <p class="ticker-name">SOXX 半導體</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$127.98</span>
+        <span class="ticker-pct negative">-0.50%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-9.78%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-41.5%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">37.1</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-neutral">中性</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">144.45</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">166.06</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">170.95</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">161.20</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-9.626 / -8.709</dd></div>
+    </dl>
+    
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">PSI</h3>
+        <p class="ticker-name">PSI 半導體動能</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$96.12</span>
+        <span class="ticker-pct positive">+0.52%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-11.51%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-49.2%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">37.8</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-bearish">空頭</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">109.71</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">128.52</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">135.19</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">131.89</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-7.913 / -7.222</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bear">死亡交叉 SMA50 下穿 SMA200（長期下行訊號） <span class="signal-age">(4 天前)</span></span><span class="signal-pill tone-bear">MACD 死亡交叉 <span class="signal-age">(3 天前)</span></span><span class="signal-pill tone-bear">空頭排列</span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">IGV</h3>
+        <p class="ticker-name">IGV 軟體</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$95.02</span>
+        <span class="ticker-pct negative">-0.35%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-1.98%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-16.4%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">37.8</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-neutral">中性</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">99.50</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">104.84</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">102.19</dd></div>
+      <div><dt>SMA200</dt><dd class="positive">94.59</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-3.111 / -2.671</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bull">站上 SMA200（長期上行訊號） <span class="signal-age">(2 天前)</span></span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">EWY</h3>
+        <p class="ticker-name">EWY 南韓</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$129.19</span>
+        <span class="ticker-pct negative">-1.16%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-5.51%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-41.5%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">38.7</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-bearish">空頭</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">141.07</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">160.32</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">166.90</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">164.41</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-8.208 / -8.004</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bear">死亡交叉 SMA50 下穿 SMA200（長期下行訊號） <span class="signal-age">(4 天前)</span></span><span class="signal-pill tone-bear">空頭排列</span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">EMXC</h3>
+        <p class="ticker-name">EMXC 新興市場(除中國)</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$82.29</span>
+        <span class="ticker-pct negative">-0.54%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-2.63%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-23.2%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">39.5</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-neutral">中性</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">86.59</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">93.14</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">94.55</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">92.40</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-3.037 / -2.795</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bear">SMA50 下穿 SMA100（中期下行訊號） <span class="signal-age">(9 天前)</span></span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">GDX</h3>
+        <p class="ticker-name">GDX 金礦股</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$73.89</span>
+        <span class="ticker-pct positive">+3.53%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-1.24%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-36.9%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">41.0</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-bearish">空頭</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">79.58</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">84.67</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">85.90</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">88.63</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-3.640 / -2.771</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bear">SMA50 下穿 SMA100（中期下行訊號） <span class="signal-age">(3 天前)</span></span><span class="signal-pill tone-bear">空頭排列</span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">XLE</h3>
+        <p class="ticker-name">XLE 能源</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$60.90</span>
+        <span class="ticker-pct positive">+0.74%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-0.64%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-13.2%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">38.6</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-neutral">中性</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">63.36</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">64.43</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">62.62</dd></div>
+      <div><dt>SMA200</dt><dd class="positive">59.84</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-1.365 / -1.008</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bear">SMA20 下穿 SMA50（短線下行訊號） <span class="signal-age">(3 天前)</span></span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">OIH</h3>
+        <p class="ticker-name">OIH 油服</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$346.83</span>
+        <span class="ticker-pct positive">+2.70%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-1.20%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-24.5%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">40.7</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-bearish">空頭</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">363.04</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">379.38</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">390.39</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">398.51</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-12.757 / -10.835</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bear">SMA50 下穿 SMA100（中期下行訊號） <span class="signal-age">(9 天前)</span></span><span class="signal-pill tone-bear">空頭排列</span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">CRAK</h3>
+        <p class="ticker-name">CRAK 煉油</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$51.45</span>
+        <span class="ticker-pct negative">-0.23%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-5.42%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-24.7%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-oversold">21.7</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-neutral">中性</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">56.55</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">61.69</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">59.78</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">53.71</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-2.858 / -2.417</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bear">跌破 SMA200（長期下行訊號） <span class="signal-age">(3 天前)</span></span><span class="signal-pill tone-caution">RSI 超賣</span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">XME</h3>
+        <p class="ticker-name">XME 金屬採礦</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$84.89</span>
+        <span class="ticker-pct positive">+1.84%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-2.84%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-37.4%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">36.5</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-bearish">空頭</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">91.99</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">99.32</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">104.98</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">110.18</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-4.642 / -3.982</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bear">空頭排列</span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">MOO</h3>
+        <p class="ticker-name">MOO 農業</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$79.83</span>
+        <span class="ticker-pct positive">+1.59%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-1.46%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-10.6%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">42.5</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-bearish">空頭</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">81.74</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">81.98</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">82.75</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">82.44</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-0.780 / -0.377</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bear">SMA50 下穿 SMA100（中期下行訊號） <span class="signal-age">(5 天前)</span></span><span class="signal-pill tone-bear">死亡交叉 SMA50 下穿 SMA200（長期下行訊號） <span class="signal-age">(3 天前)</span></span><span class="signal-pill tone-bear">空頭排列</span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">FLOT</h3>
+        <p class="ticker-name">FLOT 浮動利率債</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$50.97</span>
+        <span class="ticker-pct negative">-0.00%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="positive">+0.06%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-0.2%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">57.5</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-bullish">多頭</dd></div>
+      <div><dt>SMA20</dt><dd class="positive">50.91</dd></div>
+      <div><dt>SMA50</dt><dd class="positive">50.95</dd></div>
+      <div><dt>SMA100</dt><dd class="positive">50.96</dd></div>
+      <div><dt>SMA200</dt><dd class="positive">50.94</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>0.002 / -0.009</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bull">站上 SMA200（長期上行訊號） <span class="signal-age">(2 天前)</span></span><span class="signal-pill tone-bull">接近 52 週高點</span><span class="signal-pill tone-bull">多頭排列</span></div>
+  </article>
+    </div><div class="trading-group-content" data-group="commodity">
+      
+      <article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">BZ=F</h3>
+        <p class="ticker-name">Brent 原油</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$90.73</span>
+        <span class="ticker-pct positive">+2.76%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="positive">+2.22%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-28.0%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">37.6</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-neutral">中性</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">96.71</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">102.38</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">96.52</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">94.93</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-3.858 / -3.422</dd></div>
+    </dl>
+    
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">CL=F</h3>
+        <p class="ticker-name">WTI 原油</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$84.13</span>
+        <span class="ticker-pct positive">+3.30%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="positive">+2.75%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-29.6%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">41.1</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-neutral">中性</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">88.67</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">92.88</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">89.08</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">88.57</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-3.460 / -2.914</dd></div>
+    </dl>
+    
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">NG=F</h3>
+        <p class="ticker-name">美國天然氣</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$3.67</span>
+        <span class="ticker-pct negative">-0.33%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="positive">+7.81%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-53.1%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">65.4</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-bullish">多頭</dd></div>
+      <div><dt>SMA20</dt><dd class="positive">3.17</dd></div>
+      <div><dt>SMA50</dt><dd class="positive">3.07</dd></div>
+      <div><dt>SMA100</dt><dd class="positive">2.95</dd></div>
+      <div><dt>SMA200</dt><dd class="positive">2.97</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>0.119 / 0.082</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bull">SMA20 上穿 SMA50（短線上行訊號） <span class="signal-age">(3 天前)</span></span><span class="signal-pill tone-bull">黃金交叉 SMA50 上穿 SMA200（長期上行訊號） <span class="signal-age">(9 天前)</span></span><span class="signal-pill tone-bull">多頭排列</span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">GC=F</h3>
+        <p class="ticker-name">黃金</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$3,602.70</span>
+        <span class="ticker-pct positive">+1.44%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-3.36%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-35.5%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">34.2</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-bearish">空頭</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">3,875.48</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">4,066.04</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">4,189.63</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">4,423.38</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-138.341 / -107.932</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bear">空頭排列</span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">SI=F</h3>
+        <p class="ticker-name">白銀</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$41.38</span>
+        <span class="ticker-pct positive">+1.91%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-7.97%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-65.9%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-oversold">29.8</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-bearish">空頭</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">48.12</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">55.07</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">58.87</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">66.94</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-3.803 / -3.242</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-caution">RSI 超賣</span><span class="signal-pill tone-bear">空頭排列</span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">HG=F</h3>
+        <p class="ticker-name">銅</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">$5.49</span>
+        <span class="ticker-pct positive">+0.04%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-3.30%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-19.7%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">30.0</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-neutral">中性</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">6.06</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">6.37</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">6.42</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">6.22</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-0.269 / -0.198</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bear">SMA50 下穿 SMA100（中期下行訊號） <span class="signal-age">(4 天前)</span></span></div>
+  </article>
+    </div><div class="trading-group-content" data-group="rates-fx">
+      
+      <article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">^IRX</h3>
+        <p class="ticker-name">美國 3 個月國庫券殖利率 (%)</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">4.16</span>
+        <span class="ticker-pct negative">-0.31%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="positive">+0.24%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-0.5%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">64.9</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-bullish">多頭</dd></div>
+      <div><dt>SMA20</dt><dd class="positive">4.08</dd></div>
+      <div><dt>SMA50</dt><dd class="positive">4.05</dd></div>
+      <div><dt>SMA100</dt><dd class="positive">3.90</dd></div>
+      <div><dt>SMA200</dt><dd class="positive">3.75</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>0.037 / 0.032</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bull">接近 52 週高點</span><span class="signal-pill tone-bull">多頭排列</span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">^FVX</h3>
+        <p class="ticker-name">美國 5 年期公債殖利率 (%)</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">4.66</span>
+        <span class="ticker-pct negative">-1.10%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-4.59%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-9.6%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">39.0</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-neutral">中性</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">4.78</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">4.88</dd></div>
+      <div><dt>SMA100</dt><dd class="positive">4.66</dd></div>
+      <div><dt>SMA200</dt><dd class="positive">4.32</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-0.026 / -0.012</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bear">MACD 死亡交叉 <span class="signal-age">(2 天前)</span></span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">^TNX</h3>
+        <p class="ticker-name">美國 10 年期公債殖利率 (%)</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">4.85</span>
+        <span class="ticker-pct negative">-1.14%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-4.30%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-9.6%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">37.3</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-neutral">中性</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">4.97</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">5.07</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">4.89</dd></div>
+      <div><dt>SMA200</dt><dd class="positive">4.61</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-0.028 / -0.014</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bear">MACD 死亡交叉 <span class="signal-age">(2 天前)</span></span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">^TYX</h3>
+        <p class="ticker-name">美國 30 年期公債殖利率 (%)</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">5.24</span>
+        <span class="ticker-pct negative">-1.08%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-3.27%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-8.7%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">36.6</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-neutral">中性</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">5.34</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">5.42</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">5.31</dd></div>
+      <div><dt>SMA200</dt><dd class="positive">5.11</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-0.023 / -0.013</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bear">MACD 死亡交叉 <span class="signal-age">(1 天前)</span></span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">^VIX</h3>
+        <p class="ticker-name">VIX 恐慌指數</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">28.29</span>
+        <span class="ticker-pct positive">+7.32%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="positive">+15.19%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-29.3%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">57.8</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-bullish">多頭</dd></div>
+      <div><dt>SMA20</dt><dd class="positive">23.12</dd></div>
+      <div><dt>SMA50</dt><dd class="positive">19.02</dd></div>
+      <div><dt>SMA100</dt><dd class="positive">17.60</dd></div>
+      <div><dt>SMA200</dt><dd class="positive">18.78</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>2.767 / 2.198</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bull">黃金交叉 SMA50 上穿 SMA200（長期上行訊號） <span class="signal-age">(1 天前)</span></span><span class="signal-pill tone-bull">多頭排列</span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">DX-Y.NYB</h3>
+        <p class="ticker-name">美元指數 DXY</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">103.70</span>
+        <span class="ticker-pct negative">-0.12%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-0.08%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-0.8%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">61.7</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-bullish">多頭</dd></div>
+      <div><dt>SMA20</dt><dd class="positive">102.84</dd></div>
+      <div><dt>SMA50</dt><dd class="positive">102.13</dd></div>
+      <div><dt>SMA100</dt><dd class="positive">101.06</dd></div>
+      <div><dt>SMA200</dt><dd class="positive">100.11</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>0.593 / 0.519</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bull">接近 52 週高點</span><span class="signal-pill tone-bull">多頭排列</span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">TWD=X</h3>
+        <p class="ticker-name">美元 / 新台幣</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">33.18</span>
+        <span class="ticker-pct positive">+0.86%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="positive">+0.73%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-0.1%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">66.2</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-bullish">多頭</dd></div>
+      <div><dt>SMA20</dt><dd class="positive">32.84</dd></div>
+      <div><dt>SMA50</dt><dd class="positive">32.36</dd></div>
+      <div><dt>SMA100</dt><dd class="positive">32.19</dd></div>
+      <div><dt>SMA200</dt><dd class="positive">31.92</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>0.185 / 0.193</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bull">接近 52 週高點</span><span class="signal-pill tone-bull">多頭排列</span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">JPY=X</h3>
+        <p class="ticker-name">美元 / 日圓</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">159.22</span>
+        <span class="ticker-pct negative">-0.01%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="negative">-0.05%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-2.9%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">54.6</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-neutral">中性</dd></div>
+      <div><dt>SMA20</dt><dd class="positive">158.75</dd></div>
+      <div><dt>SMA50</dt><dd class="positive">158.13</dd></div>
+      <div><dt>SMA100</dt><dd class="positive">158.77</dd></div>
+      <div><dt>SMA200</dt><dd class="positive">158.92</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>0.381 / 0.394</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bear">MACD 死亡交叉 <span class="signal-age">(今天)</span></span><span class="signal-pill tone-bull">接近 52 週高點</span></div>
+  </article><article class="ticker-card">
+    <header class="ticker-head">
+      <div class="ticker-id">
+        <h3 class="ticker-symbol">EURUSD=X</h3>
+        <p class="ticker-name">歐元 / 美元</p>
+      </div>
+      <div class="ticker-price-block">
+        <span class="ticker-price">1.10</span>
+        <span class="ticker-pct positive">+0.10%</span>
+      </div>
+    </header>
+    <dl class="ticker-indicators">
+      <div><dt>5 日</dt><dd class="positive">+0.00%</dd></div>
+      <div><dt>距 52 週高</dt><dd>-8.7%</dd></div>
+      <div><dt>RSI(14)</dt><dd class="rsi-normal">35.6</dd></div>
+      <div><dt>趨勢</dt><dd class="trend-bearish">空頭</dd></div>
+      <div><dt>SMA20</dt><dd class="negative">1.11</dd></div>
+      <div><dt>SMA50</dt><dd class="negative">1.12</dd></div>
+      <div><dt>SMA100</dt><dd class="negative">1.14</dd></div>
+      <div><dt>SMA200</dt><dd class="negative">1.15</dd></div>
+      <div><dt>MACD / 訊號</dt><dd>-0.008 / -0.007</dd></div>
+    </dl>
+    <div class="ticker-signals"><span class="signal-pill tone-bear">接近 52 週低點</span><span class="signal-pill tone-bear">空頭排列</span></div>
+  </article>
+    </div></div>
+  </section>
+
+  <section class="trading-risk">
+    <span class="eyebrow">風險提示</span>
+    <p>以上內容為依公開行情計算的技術指標描述，過去走勢不代表未來表現，市場可能因突發事件快速反轉；本文僅供技術指標解讀參考，不構成任何投資建議或買賣依據。</p>
+  </section></section>
+  <section class="panel" data-panel="finance">
+    <nav class="sub-tabs"><button class="sub-tab active" data-sub="tw-market" data-cat="finance">台灣財經<span class="count">15</span></button><button class="sub-tab" data-sub="news" data-cat="finance">國際財經<span class="count">15</span></button><button class="sub-tab" data-sub="wscn" data-cat="finance">華爾街見聞<span class="count">15</span></button><button class="sub-tab" data-sub="central-bank" data-cat="finance">央行與總經<span class="count">10</span></button><button class="sub-tab" data-sub="energy" data-cat="finance">能源與原物料<span class="count">10</span></button></nav>
+<div class="sub-contents"><div class="sub-content active" data-sub-content="tw-market" data-cat="finance">
+    
+    <div class="source-contents">
+      <div class="source-content active" data-source-content="_merged" data-sub="tw-market" data-cat="finance">
+    <article class="article">
+  <h3 class="article-title"><a href="https://tw.news.yahoo.com/%E5%8F%B0%E7%A9%8D%E9%9B%BB%E7%BE%8E%E5%9C%8B%E6%93%B4%E5%BB%A0%E5%85%B8%E7%A6%AE%E5%B7%9D%E6%99%AE%E8%A6%81%E4%BE%86-%E5%87%B8%E9%A1%AFai%E9%8F%88%E9%97%9C%E9%8D%B5%E6%88%B0%E7%95%A5%E5%9C%B0%E4%BD%8D-224504725.html" target="_blank" rel="noopener noreferrer">台積電美國擴廠典禮川普要來 凸顯AI鏈關鍵戰略地位</a></h3>
+  
+  <p class="article-meta">Yahoo 股市 台股 · 11/26 06:45</p>
+  <p class="article-excerpt">彭博資訊25日報導，美國總統川普將出席台積電亞利桑那州鳳凰城廠區的擴建典禮，凸顯台積電在美國半導體產業政策及AI供應鏈的關鍵戰略地位。據了解，台積電董事長暨總裁魏哲家將率領兩位共同營運長及兩位副共同營</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://tw.stock.yahoo.com/news/%E5%8F%B0%E8%82%A1%E5%A4%A7%E8%B7%8C%E5%8F%88%E5%8F%8D%E5%BD%88-%E4%BB%96%E6%83%B3%E8%B6%81%E4%BD%8E%E9%BB%9E%E5%8A%A0%E7%A2%BC006208-%E5%85%A7%E8%A1%8C%E6%9B%9D%E9%97%9C%E9%8D%B5-%E7%9C%9F%E7%9A%84%E5%BE%88%E9%9B%A3%E9%A0%90%E6%B8%AC-223500023.html" target="_blank" rel="noopener noreferrer">台股大跌又反彈！他想趁低點加碼006208　內行曝關鍵：真的很難預測</a></h3>
+  
+  <p class="article-meta">Yahoo 股市 台股 · 11/26 06:35</p>
+  <p class="article-excerpt">[FTNN新聞網]實習記者鄭巧薰／綜合報導台股近期走勢震盪，11月初才經歷一波劇烈修正，隨後在國安基金宣布第10度進場及政府祭出穩定市場措施後，指數又出現千...</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://tw.news.yahoo.com/%E8%82%A1%E7%81%BD%E8%87%AA%E6%95%911-%E6%90%B6%E6%95%91%E5%A5%97%E7%89%A2%E8%82%A1%E5%88%A5%E6%AD%BB%E5%AE%88%E6%88%90%E6%9C%AC%E5%83%B9-%E9%81%94%E4%BA%BA%E6%8F%AD%E8%81%AF%E7%99%BC%E7%A7%91-%E5%8F%B0%E9%81%94%E9%9B%BB-%E6%AD%A32%E6%B8%9B%E7%A2%BC%E5%83%B9%E4%BD%8D-223000889.html" target="_blank" rel="noopener noreferrer">股災自救1／搶救套牢股別死守成本價　達人揭聯發科、台達電、正2減碼價位</a></h3>
+  
+  <p class="article-meta">Yahoo 股市 台股 · 11/26 06:30</p>
+  <p class="article-excerpt">台股11/24狂飆3,310點，11/25又摔掉1,926點，眼見手上股票少賠一點，轉眼又被打下去。人稱股市宗哥的投資達人莊文宗直言，市場從不管散戶的成本價，套牢股想趁反彈解套，應評估未來上漲空間與風</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://tw.news.yahoo.com/%E7%9B%A4%E5%89%8D-%E7%BE%8E%E8%82%A1%E8%B7%8C%E5%8B%A2%E4%B8%8A%E6%BC%94%E9%80%86%E8%BD%89-%E5%8F%B0%E6%8C%87%E5%A4%9C%E7%9B%A4%E6%BC%B2274%E9%BB%9E-%E5%8F%B0%E8%82%A1%E4%BB%8A%E6%8B%9A%E6%AD%A2%E8%B7%8C%E5%8F%8D%E5%BD%88-222900095.html" target="_blank" rel="noopener noreferrer">【盤前】美股跌勢上演逆轉！台指夜盤漲274點　台股今拚止跌反彈</a></h3>
+  
+  <p class="article-meta">Yahoo 股市 台股 · 11/26 06:29</p>
+  <p class="article-excerpt">美股跌勢放緩，道瓊逆勢收紅，台指期夜盤上漲274點、台積電期貨上漲13元，台股今（26）日力拚止跌反彈。</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://tw.news.yahoo.com/%E8%82%A1%E7%81%BD%E8%87%AA%E6%95%913-%E5%A4%A7%E5%9E%8B%E6%AC%8A%E5%80%BC%E8%82%A1%E4%B8%8D%E5%BF%85%E6%80%A5%E8%B3%A3-%E5%88%86%E6%9E%90%E5%B8%AB%E9%BB%9E%E5%90%8D%E8%81%AF%E7%99%BC%E7%A7%91-%E5%8F%B0%E9%81%94%E9%9B%BB-1%E7%90%86%E7%94%B1-222800651.html" target="_blank" rel="noopener noreferrer">股災自救3／大型權值股不必急賣！　分析師點名聯發科、台達電「1理由」不怕！</a></h3>
+  
+  <p class="article-meta">Yahoo 股市 台股 · 11/26 06:28</p>
+  <p class="article-excerpt">台股近期動輒上千點震盪，前一天才大漲，隔天又面臨沉重賣壓，不少投資人想趁反彈減碼，卻又擔心賣在相對低點。資深分析師陳智霖認為，面對劇烈震盪行情，投資人應回頭檢視手中持股的技術面與基本面，而非單憑大盤漲</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://tw.stock.yahoo.com/news/%E5%8F%B0%E8%82%A1%E5%86%8D%E6%96%B0%E5%A2%9E4%E6%AA%94%E9%97%9C%E7%A6%81%E9%96%89-%E9%80%99%E6%AA%94-6%E5%A4%A9%E7%B4%AF%E8%B7%8C%E8%BF%916%E6%88%90-%E6%8E%A145%E5%88%86%E9%90%98%E6%92%AE%E5%90%88-%E5%8F%B0%E5%8B%9D%E7%A7%91%E8%B7%8C%E5%A4%AA%E6%85%98%E4%B9%9F%E5%85%A5%E5%88%97-222500828.html" target="_blank" rel="noopener noreferrer">台股再新增4檔關禁閉！「這檔」6天累跌近6成、採45分鐘撮合　台勝科跌太慘也入列</a></h3>
+  
+  <p class="article-meta">Yahoo 股市 台股 · 11/26 06:25</p>
+  <p class="article-excerpt">[FTNN新聞網]記者王凱暄／綜合報導證交所、櫃買中心於昨（25）日公布新一波處置名單，共有4檔個股位列名單上，包括矽晶圓廠台勝科（3532）、零組件廠力銘（35...</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://ec.ltn.com.tw/article/breakingnews/5653621" target="_blank" rel="noopener noreferrer">美股收盤》逢低買盤進場！道瓊收復千點跌幅上漲 台積電ADR跌近2％</a></h3>
+  
+  <p class="article-meta">自由時報 財經 · 11/26 06:05</p>
+  <p class="article-excerpt">受科技股拋售影響，週三美股早盤重挫，由於感恩節假期前投資人逢低買入，收復部分跌勢。道瓊指數終場收高164.25點、0.33%，那斯達克指數下跌0.62%，標普500指數下跌0.2...…</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://ec.ltn.com.tw/article/breakingnews/5653617" target="_blank" rel="noopener noreferrer">科技股逢賣壓　美股多收黑</a></h3>
+  
+  <p class="article-meta">自由時報 財經 · 11/26 05:36</p>
+  <p class="article-excerpt">美國感恩節假期前，科技股逢賣壓，美股主要指數多收黑，標普與那指走低，但在逢低買盤進場後，收盤遠離盤中低點。 道瓊工業指數上漲164.25點或0.33%，收50182.95點。 標準普爾5...…</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.cna.com.tw/news/afe/202611260013.aspx" target="_blank" rel="noopener noreferrer">科技股逢賣壓　美股多收黑</a></h3>
+  
+  <p class="article-meta">中央社 財經 · 11/26 05:31</p>
+  <p class="article-excerpt">（中央社紐約25日綜合外電報導）美國感恩節假期前，科技股逢賣壓，美股主要指數多收黑，標普與那指走低，但在逢低買盤進場後，收盤遠離盤中低點。</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://ec.ltn.com.tw/article/paper/1779917" target="_blank" rel="noopener noreferrer">訂單能見度到2030年華城︰ 未感受到美國AIDC建設放緩</a></h3>
+  
+  <p class="article-meta">自由時報 財經 · 11/26 05:30</p>
+  <p class="article-excerpt">明年Q1市場需求樂觀 〔記者林菁樺／台北報導〕重電廠華城（1519）執行長許逸晟昨表示，AI算力需求還沒達到頂峰，機器人、自動駕駛及無人機等應用都將帶動下一波算力需求；而華城外銷美國比重高，目前各州電力公司客戶仍積極追貨，相關訂單能見度已看到2030年，並未感受到AIDC（AI資料中心）建設放緩，…</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://ec.ltn.com.tw/article/paper/1779883" target="_blank" rel="noopener noreferrer">301目標非台灣 張建一：勿過度擔憂</a></h3>
+  
+  <p class="article-meta">自由時報 財經 · 11/26 05:30</p>
+  <p class="article-excerpt">〔記者廖家寧／台北報導〕美國貿易代表署針對台灣等十六個經濟體展開的三〇一條款「工業產能過剩」調查結果最快本週公布。台經院院長張建一表示，美方此項調查並非針對台灣，「大家都知道主要標的國是誰」；若依台美對等貿易協定（ART）推估，台灣最終關稅合計不會超過十五％，且不疊加原有稅率，在競爭對手同樣面臨課稅…</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://ec.ltn.com.tw/article/paper/1779881" target="_blank" rel="noopener noreferrer">美產能過剩關稅 中國恐面臨最高稅率40%</a></h3>
+  
+  <p class="article-meta">自由時報 財經 · 11/26 05:30</p>
+  <p class="article-excerpt">301調查第二波 14個貿易夥伴增新關稅 台日韓歐稅率約15％ 〔編譯魏國金／綜合報導〕美國媒體CNBC報導，美國已提議對包括中國、歐盟、日本與印度等十四個貿易夥伴提出新關稅。一名美國高級官員說，這些被鎖定的經濟體造成、維持或助長製造領域的結構性產能過剩，對美國的商業活動造成負擔或限制。 美中若…</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://ec.ltn.com.tw/article/paper/1779918" target="_blank" rel="noopener noreferrer">力晶投控董監改選 公司派大獲全勝</a></h3>
+  
+  <p class="article-meta">自由時報 財經 · 11/26 05:30</p>
+  <p class="article-excerpt">市場派委託書出現大量相同筆跡 力晶投控已提告 〔記者林薏茹、劉詠韻／綜合報導〕力晶集團創辦人黃崇仁7月底辭世後，旗下力晶投控（5346）即上演經營權爭奪戰，力晶投控昨召開臨時股東會，全面改選董監事，改選10席，由公司派大獲全勝，取得全部席次，市場派一席未得。 力晶投控公司派所提名的10名董監事中…</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://ec.ltn.com.tw/article/paper/1779885" target="_blank" rel="noopener noreferrer">攻防8年 華為竊密、洗錢等10罪成立</a></h3>
+  
+  <p class="article-meta">自由時報 財經 · 11/26 05:30</p>
+  <p class="article-excerpt">〔編譯魏國金／綜合報導〕紐約布魯克林聯邦法院陪審團二十四日判決，中國科技巨頭華為遭司法部控告的竊取商業機密、電信詐欺與洗錢，以及規避制裁、詐騙銀行以從事伊朗與北韓業務等十項罪名成立，但罪行較重的妨礙司法與組織犯罪等兩項共謀罪名不成立。 紐約時報報導，相關指控於二〇一八年提出，當時華為財務長、創辦人…</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://ec.ltn.com.tw/article/paper/1779921" target="_blank" rel="noopener noreferrer">熱門股》資安題材 中華資安亮紅燈</a></h3>
+  
+  <p class="article-meta">自由時報 財經 · 11/26 05:30</p>
+  <p class="article-excerpt">昨日台股震盪，惟資安廠商因近期網攻頻傳，有望持續帶動營運，股價表現相對抗跌，中華電信旗下中華資安（7765）股價也維持高檔震盪，終場收在漲停311元、上漲28元，為去年9月以來高點，成交量約4800張。 受AI助攻影響，近年駭客網攻越發猖獗，技術、頻率都顯著提升，相應的資安廠商業績也同步向上，中華…</p>
+  
+</article>
+  </div>
+    </div>
+  </div>
+<div class="sub-content" data-sub-content="news" data-cat="finance">
+    
+    <div class="source-contents">
+      <div class="source-content active" data-source-content="_merged" data-sub="news" data-cat="finance">
+    <article class="article">
+  <h3 class="article-title"><a href="https://www.ft.com/content/cfa5222e-c629-4f8c-8d32-d4723e13b7f4?syn-25a6b1a6=1" target="_blank" rel="noopener noreferrer">Poundland collapses into administration</a></h3>
+  
+  <p class="article-meta">Financial Times · 11/26 06:46</p>
+  <p class="article-excerpt">Retailer’s demise follows criticism of US owner Gordon Brothers, which bought the business for less than £1 last year</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 英國折扣零售商 Poundland 進入破產管理程序。其美國東家 Gordon Brothers 去年以不到 1 英鎊的價格買下該公司，近期曾遭外界批評。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.economist.com/finance-and-economics/2026/11/25/can-americas-government-afford-affordability" target="_blank" rel="noopener noreferrer">Can America’s government afford “affordability”?</a></h3>
+  
+  <p class="article-meta">The Economist Finance · 11/26 06:33</p>
+  <p class="article-excerpt">Making things cheap is expensive</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 《經濟學人》探討美國政府推動「可負擔性」（讓民生物價變得更便宜）的政策，指出要讓物價降低，政府本身需要付出高昂的財政成本。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.bloomberg.com/news/videos/2026-11-25/next-20-days-is-mission-critical-for-retailers-yih-video" target="_blank" rel="noopener noreferrer">Next 20 Days Is ‘Mission Critical’ for Retailers: Yih</a></h3>
+  
+  <p class="article-meta">Bloomberg Markets · 11/26 06:31</p>
+  <p class="article-excerpt">Adrienne Yih, Barclays Managing Director and Senior Retail Analyst, says consumer spending is holding up despite shoppers’ concerns about high prices. She argues that household income and purchasing power have adjusted alongside inflation and wage growth, helping explain continued spending. She spea</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 巴克萊資深零售分析師 Adrienne Yih 表示，儘管消費者擔憂物價偏高，消費支出仍保持穩健。她認為家庭所得與購買力已隨通膨及薪資成長而調整，未來 20 天對零售業至關重要。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.bloomberg.com/news/articles/2026-11-25/compass-delays-380-million-abs-after-data-center-outage" target="_blank" rel="noopener noreferrer">Compass Delays $380 Million ABS After Data Center Outage</a></h3>
+  
+  <p class="article-meta">Bloomberg Markets · 11/26 06:27</p>
+  <p class="article-excerpt">Compass Datacenters has put off a $380 million sale of asset-backed securities after one of its data centers faced an operational disruption and investors dropped out of the offering.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> Compass Datacenters 因旗下一座資料中心發生營運中斷，且投資人退出認購，延後發行 3.8 億美元的資產擔保證券（ABS）。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.cnbc.com/2026/11/25/macys-thanksgiving-day-parade-postponed.html" target="_blank" rel="noopener noreferrer">Macy&#39;s postpones Thanksgiving Day Parade due to severe weather</a></h3>
+  
+  <p class="article-meta">CNBC · 11/26 06:26</p>
+  <p class="article-excerpt">Macy&#39;s announced Wednesday that its annual Thanksgiving Day Parade is being postponed to Saturday due to severe weather.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 梅西百貨週三宣布，因惡劣天氣，一年一度的感恩節遊行將延後至週六舉行。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.ft.com/content/43aa7321-2a95-463c-8cb9-77fcc7e39291?syn-25a6b1a6=1" target="_blank" rel="noopener noreferrer">US Treasury financial crime watchdog hit by suspected cyber attack</a></h3>
+  
+  <p class="article-meta">Financial Times · 11/26 06:24</p>
+  <p class="article-excerpt">FinCen takes systems offline after detecting unauthorised access amid growing fears over vulnerability of technology systems</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 美國財政部打擊金融犯罪的機構 FinCEN 偵測到未經授權的存取，疑似遭網路攻擊，已將系統下線。外界對科技系統的脆弱性日益憂慮。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.bloomberg.com/news/videos/2026-11-25/stocks-pare-ai-driven-losses-as-dip-buyers-emerge-video" target="_blank" rel="noopener noreferrer">Stocks Pare AI-Driven Losses as Dip Buyers Emerge</a></h3>
+  
+  <p class="article-meta">Bloomberg Markets · 11/26 06:21</p>
+  <p class="article-excerpt">Wild swings lashed Wall Street again, with dip buyers fading a stock selloff that had briefly sent the Nasdaq 100 to the brink of a bear market. The tech-heavy gauge fell 1%, trimming most of plunge that was driven by worries over the outlook for the artificial-intelligence trade. Eric Weiner, Bloom</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 華爾街再度劇烈震盪，逢低買盤進場，使一度逼近熊市邊緣的那斯達克 100 指數收斂跌幅，終場下跌 1%。先前的重挫源於市場對人工智慧（AI）題材前景的擔憂。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.bloomberg.com/news/articles/2026-11-25/stock-market-today-dow-s-p-live-updates" target="_blank" rel="noopener noreferrer">Asian Stocks Set for Gains After Late US Rebound: Markets Wrap</a></h3>
+  
+  <p class="article-meta">Bloomberg Markets · 11/26 06:10</p>
+  <p class="article-excerpt">Asian stocks looked poised for modest gains after a late Wall Street recovery pulled the Nasdaq 100 from the brink of a bear market, while lingering concerns over the sustainability of the artificial intelligence trade lifted Treasuries.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 美股尾盤反彈，使那斯達克 100 指數自熊市邊緣回升，亞洲股市預期小幅走高。市場對 AI 題材可持續性的疑慮仍在，帶動美國公債走強。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.bloomberg.com/news/articles/2026-11-25/porky-ends-peru-s-election-year-nearly-empty-handed" target="_blank" rel="noopener noreferrer">Porky Ends Peru’s Election Year Nearly Empty-Handed</a></h3>
+  
+  <p class="article-meta">Bloomberg Markets · 11/26 06:07</p>
+  <p class="article-excerpt">Rafael López Aliaga, Lima’s brash ex-mayor, ran for office three times this year, trying to become Peru’s president, a senator and finally, the capital’s mayor once again. The right-wing businessman came close to all three and challenged electoral authorities along the way, but ended up with only a </p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 秘魯利馬前市長 Rafael López Aliaga 今年三度參選，分別角逐總統、參議員及再度競選利馬市長。這位右翼商人在三場選舉中均接近勝出，並曾挑戰選舉主管機關，但最終幾乎一無所獲。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.cnbc.com/2026/11/25/kevin-warsh-greenspan-fed-rates-ai-inflation.html" target="_blank" rel="noopener noreferrer">Liesman: Why Greenspan could bet on productivity — and Warsh needs to hike</a></h3>
+  
+  <p class="article-meta">CNBC · 11/26 05:56</p>
+  <p class="article-excerpt">Alan Greenspan famously held the line on interest rates because he believed in the productivity promise of the internet boom. Why can&#39;t Kevin Warsh do the same?</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> CNBC 評論指出，葛林斯潘當年因看好網路熱潮帶來的生產力提升而維持利率不變。文章探討 Kevin Warsh 為何無法比照辦理，並認為其需要升息。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.bloomberg.com/news/videos/2026-11-25/bloomberg-deals-11-25-2026-video" target="_blank" rel="noopener noreferrer">M&amp;A Maintains Amid Selloff, AI Credit Risk Rises</a></h3>
+  
+  <p class="article-meta">Bloomberg Markets · 11/26 05:45</p>
+  <p class="article-excerpt">A weekly, midday program that delivers high-impact, editorially driven coverage of the most important corporate transactions shaping the global market. Today&#39;s guests: Paul Weiss Global Chair of M&amp;A Group Robert Kindler, Centerview Partners Partner Gayle Turk, Skadden Partner, M&amp;A Brandon Van Dyke, </p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 彭博交易節目指出，在股市下跌之際併購活動維持穩定，但 AI 相關信用風險上升。節目邀請 Paul Weiss、Centerview Partners 及 Skadden 等的併購業界人士討論。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.bbc.co.uk/news/articles/cq0md8g14zryo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">US stocks fall further as fears over AI intensify</a></h3>
+  
+  <p class="article-meta">BBC Business · 11/26 05:43</p>
+  <p class="article-excerpt">All three main US indexes were down in early trading, with the tech-dominated Nasdaq down almost 4%.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 因市場對 AI 的擔憂加劇，美股早盤三大指數全面下跌，以科技股為主的那斯達克指數跌幅將近 4%。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.bloomberg.com/news/videos/2026-11-25/anthropic-rebounds-from-selloff-closing-bell-video" target="_blank" rel="noopener noreferrer">Anthropic Rebounds From 10% Drop as Markets Stage Dramatic Recovery | Closing Bell</a></h3>
+  
+  <p class="article-meta">Bloomberg Markets · 11/26 05:38</p>
+  <p class="article-excerpt">Comprehensive cross-platform coverage of the U.S. market close on Bloomberg Television, Bloomberg Radio, and YouTube with Romaine Bostick, Carol Massar and Lisa Mateo. (Source: Bloomberg)</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 美股在劇烈震盪後戲劇性反彈。彭博收盤節目報導當日市場收盤情況，標題提到 Anthropic 自 10% 的跌幅中回升。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.bbc.co.uk/news/articles/cm3vgdn037z4o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">Poundland collapses putting 11,000 jobs at risk</a></h3>
+  
+  <p class="article-meta">BBC Business · 11/26 05:31</p>
+  <p class="article-excerpt">The discount chain has fallen into administration after its owners failed to find a buyer.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 英國折扣連鎖店 Poundland 因業主未能找到買家而進入破產管理程序，約 11,000 個工作職位面臨風險。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.cnbc.com/2026/11/25/bullish-hopes-spring-as-traders-bet-against-a-higher-vix-options-action-live.html" target="_blank" rel="noopener noreferrer">Bullish hopes spring as traders bet against a higher VIX: Options Action Live</a></h3>
+  
+  <p class="article-meta">CNBC · 11/26 05:26</p>
+  <p class="article-excerpt">With stocks mounting a comeback Wednesday, options trading across a few key volatility products suggests big swings in stocks may dampen in the near term.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 股市週三反彈，數項關鍵波動率商品的選擇權交易顯示，交易人押注 VIX 不會走高，暗示股市的大幅震盪短期內可能趨緩。</p>
+</article>
+  </div>
+    </div>
+  </div>
+<div class="sub-content" data-sub-content="wscn" data-cat="finance">
+    
+    <div class="source-contents">
+      <div class="source-content active" data-source-content="_merged" data-sub="wscn" data-cat="finance">
+    <article class="article">
+  <h3 class="article-title"><a href="https://wallstreetcn.com/articles/3786719" target="_blank" rel="noopener noreferrer">OpenAI與馬斯克年內第二次庭審交鋒：聘請Cravath頂尖律師應戰</a></h3>
+  
+  <p class="article-meta">華爾街見聞 · 11/26 05:45</p>
+  <p class="article-excerpt">这起案件由X Corp与SpaceX Super Intelligence于去年提起，指控苹果与OpenAI合谋垄断生成式AI聊天机器人市场。苹果已于9月与马斯克旗下公司达成和解，双方均未披露条款。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> X Corp與SpaceX Super Intelligence去年提起訴訟，指控蘋果與OpenAI合謀壟斷生成式AI聊天機器人市場。蘋果已於9月與馬斯克旗下公司和解，雙方未披露條款。OpenAI聘請Cravath頂尖律師應訴，這是年內雙方第二次庭審交鋒。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://wallstreetcn.com/member/articles/3786718" target="_blank" rel="noopener noreferrer">關稅壓頂：市場有多害怕</a></h3>
+  
+  <p class="article-meta">華爾街見聞 · 11/26 05:23</p>
+  <p class="article-excerpt">这种一层层不断传导的不确定性很难被定价，市场的节奏也将随着政治节奏上下乱舞。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 文章指出，關稅政策的不確定性層層傳導，難以被市場定價，市場節奏也將隨政治節奏而劇烈波動。原文資訊有限，未提供更多具體數據。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://wallstreetcn.com/articles/3786717" target="_blank" rel="noopener noreferrer">AI債務風險加劇！CoreWeave、輝達信用違約風險指標雙雙創歷史新高</a></h3>
+  
+  <p class="article-meta">華爾街見聞 · 11/26 04:56</p>
+  <p class="article-excerpt">周三CoreWeave五年期债务违约保护成本一度上升2.09个百分点，为史上最大单日涨幅，达到每年15.34个百分点。掉期市场对该公司未来五年内违约的概率定价已超过70%。英伟达、谷歌、甲骨文和SpaceX的信用违约互换也在周三创下最新纪录高位。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 週三CoreWeave五年期債務違約保護成本一度上升2.09個百分點，創史上最大單日漲幅，達每年15.34個百分點，市場對其五年內違約機率的定價已超過70%。輝達、Google、甲骨文與SpaceX的信用違約交換也創下歷史新高。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://wallstreetcn.com/member/articles/3786716" target="_blank" rel="noopener noreferrer">11月26日會員早報：美國核心PCE超預期升至3.3% 胡塞武裝襲擊沙烏地最大煉油廠</a></h3>
+  
+  <p class="article-meta">華爾街見聞 · 11/26 04:56</p>
+  <p class="article-excerpt">美国三季度GDP增速创三年来最快</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 11月26日會員早報重點：美國核心PCE物價指數高於預期，升至3.3%；美國第三季GDP成長率創三年來最快；葉門青年運動（胡塞武裝）宣稱襲擊沙烏地阿拉伯最大煉油廠。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://wallstreetcn.com/articles/3786715" target="_blank" rel="noopener noreferrer">標普將輝達列入「信用觀察負面」名單，治理風險成評級焦點</a></h3>
+  
+  <p class="article-meta">華爾街見聞 · 11/26 04:56</p>
+  <p class="article-excerpt">标普全球评级11月25日将英伟达“AA”信用评级列入“信用观察负面”，90天内或下调一级，理由是管理层与治理风险上升。此前董事会先寻黄仁勋继任者、后又恢复其CEO职务，独立董事调查仍在进行。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 標普全球評級於11月25日將輝達「AA」信用評級列入「信用觀察負面」名單，90天內可能調降一級，理由是管理層與治理風險上升。此前董事會先尋找黃仁勳的接班人，後又恢復其執行長職務，獨立董事調查仍在進行。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://wallstreetcn.com/articles/3786714" target="_blank" rel="noopener noreferrer">范斯：黃仁勳未受調查，沒有任何犯罪證據，根本不需要赦免</a></h3>
+  
+  <p class="article-meta">華爾街見聞 · 11/26 04:56</p>
+  <p class="article-excerpt">美国副总统万斯周三表示，“我不认为黄仁勋需要赦免。我没有看到任何他犯罪的证据”；黄仁勋“没有受到任何调查”，“如果他受到调查，我们显然会告知公众，他没有”。万斯被认为在幕后推动了黄仁勋回归，其解释称：“归根结底，是董事会决定让黄仁勋回来，他是一位非常重要的高管。”</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 美國副總統范斯週三表示，沒有看到黃仁勳犯罪的證據，黃仁勳並未受到任何調查，不需要赦免。他說，是董事會決定讓黃仁勳回來，因為他是非常重要的主管。外界認為范斯在幕後推動黃仁勳回歸。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://wallstreetcn.com/articles/3786713" target="_blank" rel="noopener noreferrer">「大空頭」Burry清空那斯達克賣權，轉向淨多頭，續持有輝達買權</a></h3>
+  
+  <p class="article-meta">華爾街見聞 · 11/26 03:58</p>
+  <p class="article-excerpt">Michael Burry周三表示，“我的投资组合比过去一段时间更加偏多，做空更少”，除Palantir和MetLife的看跌期权外，目前&quot;暂时几乎全部为多头&quot;。其还持有上周五买入的英伟达看涨期权，计划在市场乐观情绪升温期间，于每股200美元时再次做空。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> Michael Burry週三表示，其投資組合比過去更偏多、做空更少，除Palantir與MetLife的賣權外，目前暫時幾乎全為多頭。他仍持有上週五買進的輝達買權，並計劃在市場樂觀升溫期間，於每股200美元時再度放空。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://wallstreetcn.com/articles/3786712" target="_blank" rel="noopener noreferrer">聯準會褐皮書：AI基建支撐工業擴張，高成本加劇消費「K型」分化</a></h3>
+  
+  <p class="article-meta">華爾街見聞 · 11/26 03:49</p>
+  <p class="article-excerpt">美联储最新褐皮书显示，全美8个辖区经济温和扩张，AI数据中心与国防订单撑起制造业韧性。然而，能源、关税及医保等投入成本涨幅持续跑赢终端售价，定价受阻挤压企业利润，高利率与高物价更迫使中低收入群体降级消费，与稳健的高端支出形成明显“K型”分化。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 聯準會最新褐皮書顯示，全美8個轄區經濟溫和擴張，AI資料中心與國防訂單支撐製造業韌性。但能源、關稅與醫保等投入成本漲幅持續高於售價，擠壓企業利潤；高利率與高物價也使中低收入族群降級消費，與高端支出形成「K型」分化。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://wallstreetcn.com/articles/3786711" target="_blank" rel="noopener noreferrer">高盛策略師：AI賣壓尚未見底，逢低承接為時過早，聯準會轉鴿是關鍵</a></h3>
+  
+  <p class="article-meta">華爾街見聞 · 11/26 02:55</p>
+  <p class="article-excerpt">高盛策略师Mueller-Glissmann表示，当前仓位并未达到通常历史上见底时的出清深度，高盛的风险偏好综合指标也未落入可确认底部的区间，除非基本面提供更多助力，否则难以断言底部已现。他认为，若货币政策转向更偏鸽派的立场，将为市场提供关键支撑。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 高盛策略師Mueller-Glissmann表示，目前部位尚未出清到歷史上常見的底部深度，風險偏好綜合指標也未落入可確認底部的區間，除非基本面提供更多助力，難以斷言底部已現。他認為，若貨幣政策轉向偏鴿，將為市場提供關鍵支撐。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://wallstreetcn.com/articles/3786656" target="_blank" rel="noopener noreferrer">那斯達克100一度跌逾4%恐陷熊市，道瓊轉漲，輝達重挫7%，金銀大跌，避險資金湧入美債</a></h3>
+  
+  <p class="article-meta">華爾街見聞 · 11/26 02:28</p>
+  <p class="article-excerpt">纳斯达克100盘中一度较历史峰值回撤20%，若保持至收盘，将意味着科技股陷入熊市。美股盘中有所反弹，标普500跌0.5%，纳指跌1.25%，道指转涨，纳斯达克100跌1.4%，半导体指数跌6%。Anthropic股价转涨，此前一度跌9.5%。英伟达跌7.2%，CoreWeave跌8.2%，闪迪跌7.8%。美国10年期国债收益率跌10个基点。纽约银跌5.5%，纽约金跌3.0%。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 那斯達克100指數盤中一度較歷史高點回撤20%，之後有所反彈：標普500跌0.5%，那斯達克跌1.25%，道瓊轉漲，半導體指數跌6%。輝達跌7.2%，CoreWeave跌8.2%，閃迪跌7.8%。美國10年期公債殖利率下跌10個基點，紐約銀價跌5.5%、金價跌3.0%。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://wallstreetcn.com/articles/3786710" target="_blank" rel="noopener noreferrer">「先賣了再說」！AI投資回報疑慮疊加通膨超預期，那斯達克100一度跌入熊市</a></h3>
+  
+  <p class="article-meta">華爾街見聞 · 11/26 02:07</p>
+  <p class="article-excerpt">周三美国核心PCE超预期上涨3.3%，远高于美联储2%的政策目标。分析指出，这轮残酷抛售由英伟达的不稳定引发，再被美联储加息周期和对科技股盈利增长见顶的担忧放大，投资者质疑AI投资回报不佳。周三美股盘中，纳斯达克100下跌4.5%，一度较高点回落20%，触及熊市门槛。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 週三美國核心PCE物價指數意外升至3.3%，遠高於聯準會2%目標。分析指出，這輪拋售由輝達的不穩定引發，並被升息週期及對科技股獲利見頂的擔憂放大，投資人質疑AI投資回報。那斯達克100盤中下跌4.5%，一度觸及熊市門檻。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://wallstreetcn.com/articles/3786705" target="_blank" rel="noopener noreferrer">摩根大通：日股這輪回檔還沒到頭</a></h3>
+  
+  <p class="article-meta">華爾街見聞 · 11/25 23:46</p>
+  <p class="article-excerpt">摩根大通警告，日股调整背后是全球宏观风险与信贷紧缩担忧，若衰退交易升温，CTA去杠杆可能进一步放大跌势。与此同时，资金正从AI及周期股转向防御板块，但低波动交易也日益拥挤。该行认为，市场能否扭转当前防御格局，关键在于AI资本开支预期回暖或信贷风险消退。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 摩根大通警告，日股回檔背後是全球總經風險與信用緊縮擔憂，若衰退交易升溫，CTA去槓桿可能放大跌勢。資金正從AI及景氣循環股轉向防禦類股，但低波動交易也日益擁擠。能否扭轉防禦格局，關鍵在於AI資本支出預期回溫或信用風險消退。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://wallstreetcn.com/articles/3786709" target="_blank" rel="noopener noreferrer">黃仁勳回來了，但AI的問題並沒有消失</a></h3>
+  
+  <p class="article-meta">華爾街見聞 · 11/25 23:45</p>
+  <p class="article-excerpt">《华尔街日报》专栏作者James Mackintosh指出，黄仁勋回归虽然缓解了英伟达失去核心掌舵人的短期风险，却也暴露出新的隐患：董事会独立性受到质疑，AI数据中心投资依赖持续融资，行业竞争日趋激烈。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 《華爾街日報》專欄作家James Mackintosh指出，黃仁勳回歸雖緩解輝達失去核心掌舵人的短期風險，卻也暴露新隱憂：董事會獨立性受到質疑，AI資料中心投資依賴持續融資，產業競爭也日趨激烈。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://wallstreetcn.com/articles/3786708" target="_blank" rel="noopener noreferrer">胡塞武裝無人機襲擊沙烏地最大煉油廠，布蘭特油價拉升近3%重回92美元</a></h3>
+  
+  <p class="article-meta">華爾街見聞 · 11/25 23:41</p>
+  <p class="article-excerpt">胡塞武装军事发言人称，以单向攻击无人机袭击了沙特最大炼油厂Ras Tanura。其还表示，若沙特进一步轰炸由胡塞武装控制的也门荷台达港，红海沿岸所有沙特港口都将成为胡塞武装的目标。消息公布后，布伦特原油期货迅速拉升2.8%，至每桶92美元。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 葉門青年運動（胡塞武裝）軍事發言人稱，以單向攻擊無人機襲擊沙烏地最大煉油廠Ras Tanura，並表示若沙國再轟炸其控制的荷台達港，紅海沿岸所有沙國港口都將成為目標。消息公布後，布蘭特原油期貨拉升2.8%至每桶92美元。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://wallstreetcn.com/articles/3786706" target="_blank" rel="noopener noreferrer">最難季度之後，小米要換打法了</a></h3>
+  
+  <p class="article-meta">華爾街見聞 · 11/25 23:37</p>
+  <p class="article-excerpt">小米汽车持续拓展产品矩阵，澎程系列上市首月锁单超7万台，手机高端化与海外市场也取得进展。与此同时，AI大模型开始贡献收入，机器人研发和人车家生态协同不断推进。但面对AI投入持续增加、算力需求攀升，小米仍需在硬件业务、技术研发与商业化之间寻找平衡，探索AI落地的更多场景。</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 小米汽車持續擴充產品陣容，澎程系列上市首月鎖單逾7萬台，手機高端化與海外市場也有進展，AI大模型開始貢獻營收。但面對AI投入增加與算力需求攀升，小米仍須在硬體業務、技術研發與商業化之間取得平衡。</p>
+</article>
+  </div>
+    </div>
+  </div>
+<div class="sub-content" data-sub-content="central-bank" data-cat="finance">
+    
+    <div class="source-contents">
+      <div class="source-content active" data-source-content="_merged" data-sub="central-bank" data-cat="finance">
+    <article class="article">
+  <h3 class="article-title"><a href="https://www.cnbc.com/2026/11/25/kevin-warsh-greenspan-fed-rates-ai-inflation.html" target="_blank" rel="noopener noreferrer">Liesman: Why Greenspan could bet on productivity — and Warsh needs to hike</a></h3>
+  
+  <p class="article-meta">CNBC Economy · 11/26 05:56</p>
+  <p class="article-excerpt">Alan Greenspan famously held the line on interest rates because he believed in the productivity promise of the internet boom. Why can&#39;t Kevin Warsh do the same?</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> CNBC 評論指出，前聯準會（Fed）主席葛林斯潘當年因看好網路熱潮帶來的生產力提升而維持利率不動。文章提出疑問：現任主席華許（Kevin Warsh）為何不能比照辦理，並認為華許需要升息。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.federalreserve.gov/newsevents/pressreleases/bcreg20261125b.htm" target="_blank" rel="noopener noreferrer">Agencies announce dollar thresholds for applicability of truth in lending and consumer leasing rules for consumer credit and lease transactions</a></h3>
+  
+  <p class="article-meta">Fed 新聞稿 · 11/26 04:00</p>
+  <p class="article-excerpt">Agencies announce dollar thresholds for applicability of truth in lending and consumer leasing rules for consumer credit and lease transactions</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 聯準會與其他監管機構公布消費者信貸與租賃交易適用《貸款真實性法》（Truth in Lending）及消費者租賃規則的金額門檻。新聞稿未提供具體金額。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.federalreserve.gov/newsevents/pressreleases/bcreg20261125a.htm" target="_blank" rel="noopener noreferrer">Agencies announce dollar thresholds for smaller loan exemption from appraisal requirements for higher-priced mortgage loans</a></h3>
+  
+  <p class="article-meta">Fed 新聞稿 · 11/26 04:00</p>
+  <p class="article-excerpt">Agencies announce dollar thresholds for smaller loan exemption from appraisal requirements for higher-priced mortgage loans</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 聯準會與其他監管機構公布高價房貸（higher-priced mortgage loans）小額貸款可豁免估價要求的金額門檻。新聞稿摘要未提供具體門檻數字。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261125_1~6333a90f3a.en.html" target="_blank" rel="noopener noreferrer">ECB and Sveriges Riksbank conclude agreement for Sweden to join T2</a></h3>
+  
+  <p class="article-meta">ECB 新聞稿 · 11/26 01:30</p>
+  
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 歐洲央行（ECB）與瑞典央行（Sveriges Riksbank）達成協議，讓瑞典加入歐元區大額支付系統 T2。目前未提供更多時程與細節。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.cnbc.com/2026/11/25/holiday-inflation-thanksgiving-travel-food-gifts.html" target="_blank" rel="noopener noreferrer">Even the price of toys is on the rise. How Americans are scaling back holiday plans</a></h3>
+  
+  <p class="article-meta">CNBC Economy · 11/26 00:17</p>
+  <p class="article-excerpt">U.S. consumers face higher food, travel and gift costs in 2026 as inflation and Iran-war energy shocks pressure holiday budgets.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> CNBC 報導，2026 年美國消費者面臨食品、旅遊與禮品價格上揚，通膨與伊朗戰爭引發的能源衝擊加重節日預算壓力，連玩具價格也在上漲，不少美國民眾縮減假期計畫。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.cnbc.com/2026/11/25/pce-inflation-report-october-2026.html" target="_blank" rel="noopener noreferrer">Fed’s preferred inflation gauge accelerated to 3.8% in October, raising the 2027 stakes for the central bank</a></h3>
+  
+  <p class="article-meta">CNBC Economy · 11/25 22:18</p>
+  <p class="article-excerpt">The personal consumption expenditures price index was expected to show an annual inflation rate of 3.8% in October, according to the Dow Jones consensus.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> Fed 偏好的通膨指標——個人消費支出（PCE）物價指數，10 月年增率加速至 3.8%，與道瓊共識預期一致。CNBC 指出，此數據提高了 2027 年聯準會政策面臨的挑戰。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261125~26d1ade228.en.html" target="_blank" rel="noopener noreferrer">Card payments edge past cash in shops; euro area consumers want both</a></h3>
+  
+  <p class="article-meta">ECB 新聞稿 · 11/25 18:00</p>
+  
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 歐洲央行新聞稿指出，歐元區商店中的卡片支付已略高於現金，但消費者仍希望兩種支付方式都能使用。摘要未提供具體比例數據。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="http://www.boj.or.jp/en/statistics/boj/other/mei/release/2026/mei261120.xlsx" target="_blank" rel="noopener noreferrer">Japanese Government Bonds Held by the Bank of Japan</a></h3>
+  
+  <p class="article-meta">日本央行 · 11/25 16:00</p>
+  
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 日本央行公布「日本央行持有之日本公債」統計資料，為 11 月 20 日發布的 Excel 檔案。內容未提供具體持有金額。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="http://www.boj.or.jp/en/research/research_data/cpi/index.htm" target="_blank" rel="noopener noreferrer">Indicators for Core CPI</a></h3>
+  
+  <p class="article-meta">日本央行 · 11/25 13:00</p>
+  
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 日本央行的「核心 CPI 指標」（Indicators for Core CPI）資料頁面提供相關物價統計指標。摘要未提供具體數值。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.cnbc.com/2026/11/25/uae-iran-war-economy-oil.html" target="_blank" rel="noopener noreferrer">‘Ready for any storm’: UAE minister optimistic on economy as IMF lifts forecast</a></h3>
+  
+  <p class="article-meta">CNBC Economy · 11/25 12:06</p>
+  <p class="article-excerpt">The UAE is optimistic about achieving 7%-8% economic growth next year, banking on a &quot;different&quot; economic model.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 阿拉伯聯合大公國官員對經濟前景表示樂觀，在國際貨幣基金（IMF）上調預測之際，預期明年經濟成長率可達 7% 至 8%，並指將仰賴「不同」的經濟模式。</p>
+</article>
+  </div>
+    </div>
+  </div>
+<div class="sub-content" data-sub-content="energy" data-cat="finance">
+    
+    <div class="source-contents">
+      <div class="source-content active" data-source-content="_merged" data-sub="energy" data-cat="finance">
+    <article class="article">
+  <h3 class="article-title"><a href="https://oilprice.com/Energy/Energy-General/Small-Modular-Reactors-Finally-Have-Real-Momentum-in-the-US.html" target="_blank" rel="noopener noreferrer">Small Modular Reactors Finally Have Real Momentum in the U.S.</a></h3>
+  
+  <p class="article-meta">OilPrice.com · 11/26 06:00</p>
+  <p class="article-excerpt">Years of hype have been followed by years of fizzling and delay for what was supposed to have been the small modular reactor revolution. These new small versions of nuclear reactors were supposed to usher in the new nuclear era with their cheaper, safer approach, but today just a very small handful </p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 小型模組化反應爐（SMR）多年來被視為核能新時代的象徵，主打成本較低、安全性較高，但過去數年屢遭炒作後延宕。文章指出，美國的小型模組化反應爐發展如今終於出現實質進展與動能。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://oilprice.com/Energy/Crude-Oil/US-Rig-Count-Holds-Steady-as-Oil-Production-Hits-Fifth-Straight-Record.html" target="_blank" rel="noopener noreferrer">U.S. Rig Count Holds Steady as Oil Production Hits Fifth Straight Record</a></h3>
+  
+  <p class="article-meta">OilPrice.com · 11/26 05:06</p>
+  <p class="article-excerpt">The total number of active drilling rigs for oil and gas in the United States stayed the same this week, according to new data that Baker Hughes published on Wednesday ahead of the Thanksgiving holiday. The total rig count in the US remains at 607, up 63 from this same time last year. The number of </p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 根據貝克休斯（Baker Hughes）於感恩節前的週三公布的數據，美國油氣鑽井平台總數本週持平，維持在607座，較去年同期增加63座。標題指出美國原油產量已連續第五度創下歷史新高。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://oilprice.com/Energy/Energy-General/The-Pentagon-Wants-Detroit-to-Build-Americas-Next-Drone-Army.html" target="_blank" rel="noopener noreferrer">The Pentagon Wants Detroit to Build America&#39;s Next Drone Army</a></h3>
+  
+  <p class="article-meta">OilPrice.com · 11/26 05:00</p>
+  <p class="article-excerpt">The Department of War is in talks with General Motors, other automakers, and auto parts suppliers to convert civilian manufacturing capacity for military drone production. The discussions show a broader push to bolster the Western rearmament cycle by expanding stockpiles of unmanned systems across a</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 美國戰爭部正與通用汽車（GM）、其他車廠及汽車零組件供應商洽談，將民用製造產能轉為生產軍用無人機。此舉反映西方國家擴大重整軍備的趨勢，目標是增加無人系統的庫存。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://oilprice.com/Latest-Energy-News/World-News/US-Backed-Consortium-Signs-Deal-for-Lukoils-International-Oil-Empire.html" target="_blank" rel="noopener noreferrer">U.S.-Backed Consortium Signs Deal for Lukoil&#39;s International Oil Empire</a></h3>
+  
+  <p class="article-meta">OilPrice.com · 11/26 04:30</p>
+  <p class="article-excerpt">US billionaire Todd Boehly has signed a deal with Lukoil to buy the sanctioned Russian oil company&#39;s international assets through a share swap backed by the US International Development Finance Corp (DFC), Reuters reported on Wednesday. The consortium will exchange Lukoil securities worth $10 billio</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 路透報導，美國富豪托德·博利（Todd Boehly）已與盧克石油（Lukoil）簽署協議，將透過換股方式收購這家遭制裁的俄羅斯石油公司的海外資產，交易由美國國際開發金融公司（DFC）提供支持。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://oilprice.com/Energy/Gas-Prices/Cheaper-Gasoline-Wont-Fix-the-Diesel-Squeeze-Hitting-Freight-Costs.html" target="_blank" rel="noopener noreferrer">Cheaper Gasoline Won&#39;t Fix the Diesel Squeeze Hitting Freight Costs</a></h3>
+  
+  <p class="article-meta">OilPrice.com · 11/26 04:00</p>
+  <p class="article-excerpt">Americans heading into the Thanksgiving holiday are finally getting some relief at the gasoline pump. After months of elevated prices, the national average has fallen sharply in November, dropping to approximately $3.66 per gallon as of November 21. That’s a welcome development for millions of holid</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 感恩節前，美國汽油價格出現緩解，全國平均價11月大幅下滑，至11月21日約為每加侖3.66美元，結束數月的高價走勢。但標題指出，汽油降價無法解決衝擊貨運成本的柴油供應吃緊問題。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://oilprice.com/Geopolitics/Europe/Could-Russias-Secret-Space-Weapon-Knock-Out-Starlink.html" target="_blank" rel="noopener noreferrer">Could Russia’s Secret Space Weapon Knock Out Starlink?</a></h3>
+  
+  <p class="article-meta">OilPrice.com · 11/26 03:00</p>
+  <p class="article-excerpt">Reports emerged on November 23 that Russia is planning the launch of a nuclear-armed satellite, named Sputnik-S, into space “at any time in the coming weeks&quot; after years of storing the alleged weapon in the Moscow region. That claim was swiftly denied by the Kremlin amid increasing unease over the m</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 11月23日有報導稱，俄羅斯計畫在未來數週內發射名為「Sputnik-S」的核武衛星，該武器據稱已在莫斯科地區存放多年。克里姆林宮已迅速否認此說法。文章探討此類武器是否可能癱瘓星鏈（Starlink）。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://oilprice.com/Energy/Crude-Oil/JAPEX-Eyes-More-Than-10000-Boed-in-Norway-with-Goliat-Deal.html" target="_blank" rel="noopener noreferrer">JAPEX Eyes More Than 10,000 Boe/d in Norway with Goliat Deal</a></h3>
+  
+  <p class="article-meta">OilPrice.com · 11/26 02:00</p>
+  <p class="article-excerpt">Japan Petroleum Exploration (JAPEX) has agreed to buy an 8% stake in Norway’s Goliat oil field from Equinor as it aims to exceed 10,000 barrels of oil equivalent per day in the country in the 2030s. Under two linked agreements announced Wednesday, JAPEX will pay Equinor $65 million in cash and trans</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 日本石油資源開發（JAPEX）同意向挪威國家石油公司（Equinor）購買挪威Goliat油田8%權益，目標在2030年代於挪威日產量超過1萬桶油當量。根據週三公布的兩項相關協議，JAPEX將向Equinor支付6,500萬美元。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://oilprice.com/Latest-Energy-News/World-News/Kazakhstan-Joins-Iraq-in-Pushing-OPEC-for-a-Higher-Capacity-Rating.html" target="_blank" rel="noopener noreferrer">Kazakhstan Joins Iraq in Pushing OPEC+ for a Higher Capacity Rating</a></h3>
+  
+  <p class="article-meta">OilPrice.com · 11/26 01:30</p>
+  <p class="article-excerpt">Kazakhstan has joined Iraq in asking OPEC+ to raise its estimate of the country&#39;s crude production capacity, Reuters reported Wednesday, citing people familiar with the matter. The request comes four days before the group meets to set its output policy for 2027. The review is OPEC&#39;s first, and will </p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 路透週三引述知情人士報導，哈薩克已與伊拉克一同要求OPEC+上調對該國原油產能的評估。此要求提出時，距離OPEC+召開會議、制定2027年產量政策僅剩四天。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://oilprice.com/Energy/Energy-General/US-Diplomatic-Push-Revives-Hopes-for-Trans-Caspian-Gas-Pipeline.html" target="_blank" rel="noopener noreferrer">U.S. Diplomatic Push Revives Hopes for Trans-Caspian Gas Pipeline</a></h3>
+  
+  <p class="article-meta">OilPrice.com · 11/26 01:00</p>
+  <p class="article-excerpt">Trans-Caspian connectivity was the topic du jour during US Deputy Secretary of State Christopher Landau’s November 23 talks with Turkmen leaders in Ashgabat. Readouts of Landau’s meetings hinted that a trans-Caspian pipeline was among the central items on the agenda. The focal point of Landau’s mult</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 美國副國務卿克里斯多福·蘭道（Christopher Landau）11月23日在阿什哈巴德與土庫曼領導人會談，跨裏海連結成為焦點。會後說明暗示，跨裏海天然氣管線是議程核心項目之一，重燃外界對該計畫的期待。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://oilprice.com/Latest-Energy-News/World-News/Aramco-Opens-7-Billion-Petrochemical-Complex-in-South-Korea.html" target="_blank" rel="noopener noreferrer">Aramco Opens $7 Billion Petrochemical Complex in South Korea</a></h3>
+  
+  <p class="article-meta">OilPrice.com · 11/26 00:31</p>
+  <p class="article-excerpt">Saudi Aramco on Wednesday officially launched a $7-billion petrochemicals complex in South Korea as the oil giant expands its downstream presence in its key crude export market, Asia. Saudi Aramco and its South Korean subsidiary S-OIL inaugurated the Shaheen Project in Seoul, which took $7 billion i</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 沙烏地阿美（Saudi Aramco）週三正式啟用位於南韓的70億美元石化廠區。阿美與南韓子公司S-OIL在首爾為「Shaheen計畫」舉行落成儀式，顯示該公司正擴大在其主要原油出口市場亞洲的下游布局。</p>
+</article>
+  </div>
+    </div>
+  </div></div>
+  </section>
+  <section class="panel" data-panel="tech">
+    <nav class="sub-tabs"><button class="sub-tab active" data-sub="semis" data-cat="tech">半導體產業<span class="count">12</span></button><button class="sub-tab" data-sub="ai-news" data-cat="tech">AI 產業<span class="count">10</span></button><button class="sub-tab" data-sub="tw-tech" data-cat="tech">台灣科技<span class="count">12</span></button></nav>
+<div class="sub-contents"><div class="sub-content active" data-sub-content="semis" data-cat="tech">
+    
+    <div class="source-contents">
+      <div class="source-content active" data-source-content="_merged" data-sub="semis" data-cat="tech">
+    <article class="article">
+  <h3 class="article-title"><a href="https://www.tomshardware.com/pc-components/ssds/get-2tb-of-pcie-5-0-storage-for-less-than-usd300-in-stellar-crucial-p510-sale-drive-is-available-for-just-usd294-99-less-than-some-1tb-alternatives" target="_blank" rel="noopener noreferrer">Get 2TB of PCIe 5.0 storage for less than $300 in stellar Crucial P510 sale</a></h3>
+  
+  <p class="article-meta">Tom&#39;s Hardware · 11/26 06:10</p>
+  <p class="article-excerpt">Snag 2TB of PCIe 5.0 storage for just $294.99 with a deal on the Crucial P510 SSD over at Adorama.</p>
+  <p class="article-summary"><span class="summary-label">中文介紹</span> Tom&#39;s Hardware 報導，零售商 Adorama 推出 Crucial P510 固態硬碟促銷，2TB 容量的 PCIe 5.0 版本售價為 294.99 美元，低於 300 美元。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.tomshardware.com/networking/routers/these-are-the-best-wi-fi-7-mesh-routers-from-asus-tp-link-eero-netgear-and-msi-that-i-found-on-black-friday" target="_blank" rel="noopener noreferrer">These are the best Wi-Fi 7 mesh routers from Asus, TP-Link, Eero, Netgear, and MSI that I found on Black Friday</a></h3>
+  
+  <p class="article-meta">Tom&#39;s Hardware · 11/26 06:04</p>
+  <p class="article-excerpt">Black Friday means great deals on Wi-Fi 7 routers from your favorite manufacturers.</p>
+  <p class="article-summary"><span class="summary-label">中文介紹</span> Tom&#39;s Hardware 整理黑色星期五期間的 Wi-Fi 7 網狀路由器優惠，涵蓋華碩（Asus）、TP-Link、Eero、Netgear 與微星（MSI）等品牌的產品。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.eetimes.com/infineon-coolset-sip-enables-efficient-first-time-right-auxiliary-power-designs/" target="_blank" rel="noopener noreferrer">Infineon CoolSET™ SiP Enables Efficient, ‘First-Time-Right’ Auxiliary Power Designs</a></h3>
+  
+  <p class="article-meta">EE Times · 11/26 06:02</p>
+  <p class="article-excerpt">Auxiliary supply is indispensable, and designers need to facilitate high-efficiency solutions across a wide range of loads, in a limited PCB area, and deliver first-time-right designs. The post Infineon CoolSET™ SiP Enables Efficient, ‘First-Time-Right’ Auxiliary Power Designs appeared first on EE T</p>
+  <p class="article-summary"><span class="summary-label">中文介紹</span> EE Times 報導，英飛凌（Infineon）推出 CoolSET SiP 系統級封裝方案，針對輔助電源設計需求，協助設計人員在有限的電路板面積內，兼顧各種負載下的高效率，並提高設計一次成功的機率。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.tomshardware.com/peripherals/razer-china-partners-up-with-durex-for-a-limited-edition-kit-with-a-mousepad-and-condoms-long-lasting-battle-armor-meets-heavy-armored-beetle" target="_blank" rel="noopener noreferrer">Razer China partners up with Durex for a limited-edition kit of mousepad and condoms</a></h3>
+  
+  <p class="article-meta">Tom&#39;s Hardware · 11/26 05:07</p>
+  <p class="article-excerpt">Razer China partners up with Durex for a limited-edition kit of mousepad and condoms — Long-Lasting Battle Armor meets Heavy Armored Beetle</p>
+  <p class="article-summary"><span class="summary-label">中文介紹</span> Tom&#39;s Hardware 報導，雷蛇（Razer）中國與杜蕾斯（Durex）合作，推出限量聯名套組，內容包含滑鼠墊與保險套。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.tomshardware.com/peripherals/usb/best-usb-charger-and-power-bank-deals-for-black-friday-2026-from-tiny-single-port-smartphone-chargers-to-large-power-banks-for-laptops-weve-found-the-best-deals" target="_blank" rel="noopener noreferrer">Best USB charger and power bank deals 2026</a></h3>
+  
+  <p class="article-meta">Tom&#39;s Hardware · 11/26 05:05</p>
+  <p class="article-excerpt">From single-port 15W chargers to 25K mAh 220W power banks, we found some of the best deals to keep your electronics charged and ready to go.</p>
+  <p class="article-summary"><span class="summary-label">中文介紹</span> Tom&#39;s Hardware 彙整 2026 年黑色星期五的 USB 充電器與行動電源優惠，產品範圍從 15W 單孔手機充電器，到 25K mAh、220W 的大容量行動電源。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.eetimes.com/mcrps-power-supply-for-enterprise-data-centers/" target="_blank" rel="noopener noreferrer">MCRPS Power Supply for Enterprise Data Centers</a></h3>
+  
+  <p class="article-meta">EE Times · 11/26 04:36</p>
+  <p class="article-excerpt">The 5.6 kW MCRPS reference design from Infineon provides a viable solution for next-generation common redundant PSUs in enterprise servers. The post MCRPS Power Supply for Enterprise Data Centers appeared first on EE Times.</p>
+  <p class="article-summary"><span class="summary-label">中文介紹</span> EE Times 報導，英飛凌（Infineon）提出 5.6 kW 的 MCRPS 參考設計，可作為企業伺服器下一代通用冗餘電源供應器（common redundant PSU）的解決方案，應用於企業資料中心。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.tomshardware.com/speakers/save-up-to-36-percent-on-a-some-of-the-best-pc-speakers-weve-reviewed-deals-starting-at-just-usd26-from-audioengine-creative-edifier-and-more" target="_blank" rel="noopener noreferrer">Save up to 36% on a some of the best PC speakers we&#39;ve reviewed</a></h3>
+  
+  <p class="article-meta">Tom&#39;s Hardware · 11/26 04:30</p>
+  <p class="article-excerpt">Some of the best PC speakers we&#39;ve tested are on sale for Black Friday, including options from AudioEngine, Creative, and Onkyo.</p>
+  <p class="article-summary"><span class="summary-label">中文介紹</span> Tom&#39;s Hardware 整理黑色星期五期間的電腦喇叭優惠，折扣最高 36%，價格最低 26 美元起，品牌包括 AudioEngine、Creative、Edifier 與 Onkyo 等。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.tomshardware.com/gift-guides-seasonal-sales/the-lowest-priced-ram-in-2026-price-tracking-on-ddr5-and-ddr4-memory-of-all-capacities" target="_blank" rel="noopener noreferrer">RAM price tracking 2026</a></h3>
+  
+  <p class="article-meta">Tom&#39;s Hardware · 11/26 04:09</p>
+  <p class="article-excerpt">Check the best prices on DDR5 and DDR4 memory kits of different capacities.</p>
+  <p class="article-summary"><span class="summary-label">中文介紹</span> Tom&#39;s Hardware 提供 2026 年記憶體價格追蹤頁面，彙整不同容量 DDR5 與 DDR4 記憶體套件的最低價格資訊。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.tomshardware.com/monitors/gaming-monitors/here-are-the-best-oled-gaming-monitor-deals-you-can-snag-for-black-friday-beautiful-monitors-up-to-39-percent-off" target="_blank" rel="noopener noreferrer">Here are the best OLED gaming monitor deals you can snag for Black Friday 2026</a></h3>
+  
+  <p class="article-meta">Tom&#39;s Hardware · 11/26 03:00</p>
+  <p class="article-excerpt">OLED gaming monitors are hot right now, and Black Friday is an excellent time to be in the market.</p>
+  <p class="article-summary"><span class="summary-label">中文介紹</span> Tom&#39;s Hardware 彙整 2026 年黑色星期五的 OLED 電競螢幕優惠，部分機種折扣最高達 39%。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.tomshardware.com/networking/routers/save-on-a-budget-router-with-prices-starting-at-just-usd39-tp-link-archer-ax1450-and-netgear-rax5-wi-fi-6-routers-go-on-low-sale" target="_blank" rel="noopener noreferrer">Save on a budget router with prices starting at just $39 — TP-Link Archer AX1450 and Netgear RAX5 Wi-Fi 6 routers go on low sale</a></h3>
+  
+  <p class="article-meta">Tom&#39;s Hardware · 11/26 02:54</p>
+  <p class="article-excerpt">The TP-Link Archer AX1450 is available for just $39</p>
+  <p class="article-summary"><span class="summary-label">中文介紹</span> Tom&#39;s Hardware 報導，TP-Link Archer AX1450 與 Netgear RAX5 兩款 Wi-Fi 6 路由器降價促銷，其中 TP-Link Archer AX1450 售價僅 39 美元。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.tomshardware.com/pc-components/microsd-cards/best-nintendo-switch-2-microsd-express-card-deals-2026" target="_blank" rel="noopener noreferrer">Best Black Friday Nintendo Switch 2 microSD Express card deals 2026</a></h3>
+  
+  <p class="article-meta">Tom&#39;s Hardware · 11/26 02:01</p>
+  <p class="article-excerpt">Grab one of these brand-new microSD Express cards for the Nintendo Switch 2 during this Black Friday sales event. We&#39;re constantly updating this list with the best deals across all of the big retailers.</p>
+  <p class="article-summary"><span class="summary-label">中文介紹</span> Tom&#39;s Hardware 彙整黑色星期五期間適用於任天堂 Switch 2 的 microSD Express 記憶卡優惠，涵蓋各大零售商，並表示會持續更新優惠清單。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.eetimes.com/turning-optical-telemetry-into-cluster-reliability-integrating-link-health-data-into-monitoring-and-ticketing/" target="_blank" rel="noopener noreferrer">Turning Optical Telemetry into Cluster Reliability: Integrating Link Health Data into Monitoring and Ticketing</a></h3>
+  
+  <p class="article-meta">EE Times · 11/26 02:00</p>
+  <p class="article-excerpt">Explore how integrating optical link health data into monitoring and ticketing can help teams improve cluster reliability. The post Turning Optical Telemetry into Cluster Reliability: Integrating Link Health Data into Monitoring and Ticketing appeared first on EE Times.</p>
+  <p class="article-summary"><span class="summary-label">中文介紹</span> EE Times 文章探討如何將光學連結的健康狀態遙測資料，整合進監控與工單系統，協助維運團隊提升運算叢集的可靠度。</p>
+</article>
+  </div>
+    </div>
+  </div>
+<div class="sub-content" data-sub-content="ai-news" data-cat="tech">
+    
+    <div class="source-contents">
+      <div class="source-content active" data-source-content="_merged" data-sub="ai-news" data-cat="tech">
+    <article class="article">
+  <h3 class="article-title"><a href="https://techcrunch.com/2026/11/25/sp-considers-nvidia-credit-downgrade-over-governance-and-key-man-risks/" target="_blank" rel="noopener noreferrer">S&amp;P considers Nvidia credit downgrade over governance and ‘key man’ risks</a></h3>
+  
+  <p class="article-meta">TechCrunch AI · 11/26 06:44</p>
+  <p class="article-excerpt">The credit rating agency may lower Nvidia&#39;s credit rating to AA-, the fourth-highest rating.</p>
+  <p class="article-summary"><span class="summary-label">中文介紹</span> 標普（S&amp;P）正考慮調降輝達（Nvidia）的信用評等，可能降至AA-，即第四高等級，理由涉及公司治理與「關鍵人物」風險。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://techcrunch.com/2026/11/25/openai-says-heavy-chatgpt-users-may-hit-limits-sooner-as-it-merges-chat-and-work/" target="_blank" rel="noopener noreferrer">OpenAI says heavy ChatGPT users may hit limits sooner as it merges Chat and Work</a></h3>
+  
+  <p class="article-meta">TechCrunch AI · 11/26 04:03</p>
+  <p class="article-excerpt">OpenAI will introduce a single usage meter across ChatGPT as it combines the Chat and Work experiences.</p>
+  <p class="article-summary"><span class="summary-label">中文介紹</span> OpenAI 表示，隨著 ChatGPT 整合「聊天」與「工作」兩種體驗，將推出單一的用量計量機制，重度使用者可能更快達到使用上限。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://techcrunch.com/2026/11/25/jensen-huang-broke-nvidias-code-of-conduct-and-his-employees-may-not-forget-it/" target="_blank" rel="noopener noreferrer">Jensen Huang broke Nvidia’s code of conduct, and his employees may not forget it</a></h3>
+  
+  <p class="article-meta">TechCrunch AI · 11/26 03:54</p>
+  <p class="article-excerpt">Most codes of conduct serve as a reflection of corporate culture. In Nvidia&#39;s case, that could have consequences.</p>
+  <p class="article-summary"><span class="summary-label">中文介紹</span> 報導指出，輝達執行長黃仁勳違反公司行為準則。行為準則通常反映企業文化，此事可能對輝達內部文化與員工看法造成影響。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://techcrunch.com/2026/11/25/anthropics-dario-amodei-calls-accusations-of-surrendering-human-control-to-ai-absurd/" target="_blank" rel="noopener noreferrer">Anthropic’s Dario Amodei calls accusations of surrendering human control to AI ‘absurd’</a></h3>
+  
+  <p class="article-meta">TechCrunch AI · 11/26 03:44</p>
+  <p class="article-excerpt">Anthropic CEO Dario Amodei pushes back against rivals’ accusations that he favors surrendering human agency to AI, even as leading AI companies increasingly automate their own research and model development.</p>
+  <p class="article-summary"><span class="summary-label">中文介紹</span> Anthropic 執行長阿莫迪（Dario Amodei）反駁競爭對手的指控，稱外界說他主張將人類自主權讓渡給 AI 的說法「荒謬」。同時，主要 AI 公司正日益將自家研究與模型開發自動化。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://techcrunch.com/2026/11/25/want-to-buy-your-kid-an-ai-toy-this-christmas-not-in-new-york/" target="_blank" rel="noopener noreferrer">Want to buy your kid an AI toy this Christmas? Not in New York</a></h3>
+  
+  <p class="article-meta">TechCrunch AI · 11/26 02:11</p>
+  <p class="article-excerpt">New York has banned AI chatbot toys for five years as new research from Common Sense Media reveals troubling safety failures, including exposure to inappropriate content and risks to emotional development.</p>
+  <p class="article-summary"><span class="summary-label">中文介紹</span> 紐約州已禁止 AI 聊天機器人玩具五年。Common Sense Media 的新研究指出這類玩具存在安全缺失，包括接觸不當內容，以及對兒童情感發展的風險。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://techcrunch.com/2026/11/25/state-ags-fight-character-ais-plan-to-auction-off-users-private-chats/" target="_blank" rel="noopener noreferrer">Character.AI’s plan to auction off users’ private chats challenged by state AGs</a></h3>
+  
+  <p class="article-meta">TechCrunch AI · 11/26 01:35</p>
+  <p class="article-excerpt">The proposed Character.ai bankruptcy sale includes sensitive personal data from more than 21 million U.S. accounts, including 2.1 million registered to minors, the state AGs said.</p>
+  <p class="article-summary"><span class="summary-label">中文介紹</span> 各州檢察長質疑 Character.AI 破產拍賣案。出售標的包含逾 2,100 萬個美國帳戶的敏感個人資料，其中 210 萬個帳戶登記人為未成年人。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://techcrunch.com/podcast/ai-data-centers-are-becoming-harder-to-build-and-neoclouds-are-feeling-it/" target="_blank" rel="noopener noreferrer">AI data centers are becoming harder to build, and neoclouds are feeling it</a></h3>
+  
+  <p class="article-meta">TechCrunch AI · 11/25 23:41</p>
+  <p class="article-excerpt">⁠Nvidia has made clear⁠ it won’t backstop an AI data center until it’s nearly ready to run, and that’s landing just as neoclouds report construction delays and more expensive debt. The message to developers is that land, power, and a finished building matter more than a pitch deck. ⁠Anita Verma-Lall</p>
+  <p class="article-summary"><span class="summary-label">中文介紹</span> 輝達表示，在 AI 資料中心接近可營運前不會提供支持，同時新興雲端業者（neocloud）回報工程延誤與債務成本上升。對開發商而言，土地、電力與完工建築比簡報更重要。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://techcrunch.com/2026/11/25/amazon-and-meta-reportedly-in-talks-to-lift-blockade-on-ai-agent-muse/" target="_blank" rel="noopener noreferrer">Amazon and Meta reportedly in talks to lift blockade on AI agent Muse</a></h3>
+  
+  <p class="article-meta">TechCrunch AI · 11/25 22:10</p>
+  <p class="article-excerpt">Amazon and Meta are discussing a potential deal that would end a two-month-long blockade of Muse.</p>
+  <p class="article-summary"><span class="summary-label">中文介紹</span> 據報導，亞馬遜與 Meta 正洽談一項可能的協議，以結束對 AI 代理 Muse 長達兩個月的封鎖。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://techcrunch.com/2026/11/25/the-questions-jensen-huang-and-nvidia-will-still-have-to-answer-about-megaspeed/" target="_blank" rel="noopener noreferrer">The questions Jensen Huang and Nvidia will still have to answer about Megaspeed</a></h3>
+  
+  <p class="article-meta">TechCrunch AI · 11/25 21:00</p>
+  <p class="article-excerpt">The central question for investigators is what Nvidia knew about where those chips ended up and whether Huang&#39;s affair with a Megaspeed executive gave the company reason to doubt Megaspeed&#39;s assurances.</p>
+  <p class="article-summary"><span class="summary-label">中文介紹</span> 調查人員關注的核心問題，是輝達對晶片最終流向掌握多少，以及黃仁勳與 Megaspeed 一名高層的關係，是否讓公司有理由質疑 Megaspeed 的保證。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.technologyreview.com/2026/11/25/1149702/ai-is-straining-americas-open-records-systems/" target="_blank" rel="noopener noreferrer">AI is straining America’s open records systems</a></h3>
+  
+  <p class="article-meta">MIT Tech Review AI · 11/25 18:00</p>
+  <p class="article-excerpt">In Panton, Vermont, population 660, town clerk Kyle Rowe did it all. He crafted budgets, paid vendors, handled property tax disputes, and served as the town’s zoning supervisor and presiding elections officer. During morning office hours at the town hall—a wood-frame structure built as a church in 1</p>
+  <p class="article-summary"><span class="summary-label">中文介紹</span> 報導以人口 660 人的佛蒙特州潘頓鎮為例，該鎮書記凱爾·羅（Kyle Rowe）一人身兼預算、付款、財產稅爭議等多項職務，說明 AI 正對美國公開紀錄制度造成壓力。</p>
+</article>
+  </div>
+    </div>
+  </div>
+<div class="sub-content" data-sub-content="tw-tech" data-cat="tech">
+    
+    <div class="source-contents">
+      <div class="source-content active" data-source-content="_merged" data-sub="tw-tech" data-cat="tech">
+    <article class="article">
+  <h3 class="article-title"><a href="https://finance.technews.tw/2026/11/26/us-plans-new-tariffs-on-14-economies/" target="_blank" rel="noopener noreferrer">美國擬對 14 個經濟體祭出新關稅，台灣課徵 15% 中國關稅恐升至約 45%</a></h3>
+  
+  <p class="article-meta">科技新報 · 11/26 06:40</p>
+  <p class="article-excerpt">美國政府正研擬針對包括中國、歐盟、日本及印度在內的 14 個經濟體祭出新一輪關稅措施，以因應其製造業結構性產能 […]</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.cna.com.tw/news/ait/202611260012.aspx" target="_blank" rel="noopener noreferrer">美批准SpaceX部署100萬顆衛星　建太空資料中心</a></h3>
+  
+  <p class="article-meta">中央社 科技 · 11/26 05:29</p>
+  <p class="article-excerpt">（中央社華盛頓25日綜合外電報導）美國聯邦傳播委員會（FCC）今天表示，已授權億萬富豪馬斯克（Elon Musk）旗下的太空探索科技公司（SpaceX）部署由100萬顆衛星組成的星系，用於打造太空資料中心。</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.cna.com.tw/news/ait/202611250339.aspx" target="_blank" rel="noopener noreferrer">過去24小時　中俄美歐罕見都進行太空發射</a></h3>
+  
+  <p class="article-meta">中央社 科技 · 11/25 22:55</p>
+  <p class="article-excerpt">（中央社台北25日電）中國媒體澎湃新聞今天綜合各方消息報導，在過去24小時內，中國、俄羅斯、美國和歐洲罕見地都進行太空發射。</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://technews.tw/2026/11/25/a-galactic-shock-wave-could-rewrite-the-map-of-the-milky-way/" target="_blank" rel="noopener noreferrer">矩尺臂可能不是旋臂，新研究指它也許是銀河棒前緣的恆星形成區</a></h3>
+  
+  <p class="article-meta">科技新報 · 11/25 22:39</p>
+  <p class="article-excerpt">雪梨大學（University of Sydney）主導的研究指出，銀河系中央旋轉的棒狀結構在周圍氣體雲中形成 […]</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://finance.technews.tw/2026/11/25/enlitech-chairman-highly-optimistic-about-2027-outlook/" target="_blank" rel="noopener noreferrer">光焱科技董座對 2027 年展望極為樂觀，矽光子檢測可望加速放量</a></h3>
+  
+  <p class="article-meta">科技新報 · 11/25 21:15</p>
+  <p class="article-excerpt">光焱科技董事長柯歷亞25日在新廠動土典禮後，接受媒體聯訪時表示，公司對2027年營運「非常樂觀」，並指出在多元 […]</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.cna.com.tw/news/ait/202611250314.aspx" target="_blank" rel="noopener noreferrer">福衛八號第2顆衛星完成運送前審查　預計12/28起運赴美</a></h3>
+  
+  <p class="article-meta">中央社 科技 · 11/25 20:48</p>
+  <p class="article-excerpt">（中央社記者趙敏雅台北25日電）國家太空中心（TASA）今天公布，福衛八號第2顆衛星（FS-8B）已完成運送前審查，預計今年12月28日起運赴美，明年2月搭乘太空探索科技公司（SpaceX）獵鷹九號火箭Transporter-19航班升空。</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://technews.tw/2026/11/25/ford-and-the-pentagon-are-in-talks-to-supply-more-military-vehicles/" target="_blank" rel="noopener noreferrer">福特證實與五角大廈洽談軍車，通用傳評估生產無人機馬達</a></h3>
+  
+  <p class="article-meta">科技新報 · 11/25 17:58</p>
+  <p class="article-excerpt">隨著汽車市場競爭加劇、國防支出攀升，底特律車廠開始把目光轉向軍工市場，福特汽車近日證實，已與五角大廈洽談供應軍 […]</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://technews.tw/2026/11/25/kulicke-soffa-ftc-aptura-wsx/" target="_blank" rel="noopener noreferrer">搶攻大尺寸 CoP 封裝商機！K&amp;S 首套 FTC 設備已出貨台灣兩間客戶</a></h3>
+  
+  <p class="article-meta">科技新報 · 11/25 17:56</p>
+  <p class="article-excerpt">Kulicke &amp; Soffa（下稱 K&amp;S）今（25 日）宣布，已向台灣兩家重要客戶成功交付 […]</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://technews.tw/2026/11/25/generative-ai-chip-transformer/" target="_blank" rel="noopener noreferrer">突破生成式 AI 高耗能瓶頸，台學研團隊打造高能效學習晶片</a></h3>
+  
+  <p class="article-meta">科技新報 · 11/25 17:56</p>
+  <p class="article-excerpt">生成式 AI 應用快速擴展，台灣大學電機工程學系暨電子工程學研究所楊家驤教授團隊在國科會晶創台灣方案支持下，從 […]</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://technews.tw/2026/11/25/south-korea-ai-cheating-prevention-embed-prompts-watermarks-exams/" target="_blank" rel="noopener noreferrer">韓國防堵 AI 作弊，擬試卷中嵌入提示指令及浮水印</a></h3>
+  
+  <p class="article-meta">科技新報 · 11/25 17:30</p>
+  <p class="article-excerpt">韓國近期爆發稅務師資格考試 AI 作弊事件，加上大學修學能力試驗多起違規，韓國政府為此成立了「恢復考試公平性專 […]</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://technews.tw/2026/11/25/silicon-carbide-versatile-essential-nuclear-fuel/" target="_blank" rel="noopener noreferrer">碳化矽真是多功能，核燃料也少不了它</a></h3>
+  
+  <p class="article-meta">科技新報 · 11/25 16:54</p>
+  <p class="article-excerpt">碳化矽（SiC）除了廣泛應用於功率半導體、電動車及工業電源，也是新一代核燃料的重要材料。台電梁天瑞博士於第五屆 […]</p>
+  
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://technews.tw/2026/11/25/webkit-dma/" target="_blank" rel="noopener noreferrer">iPhone 瀏覽器引擎開放形同虛設？Mozilla 籲歐盟介入蘋果限制</a></h3>
+  
+  <p class="article-meta">科技新報 · 11/25 16:52</p>
+  <p class="article-excerpt">即使蘋果已因應歐盟《數位市場法》（DMA），開放第三方瀏覽器引擎長達兩年半，至今 iPhone 上的 Chro […]</p>
+  
+</article>
+  </div>
+    </div>
+  </div></div>
+  </section>
+  <section class="panel" data-panel="politics">
+    <div class="sub-content active" data-sub-content="world" data-cat="politics">
+    
+    <div class="source-contents">
+      <div class="source-content active" data-source-content="_merged" data-sub="world" data-cat="politics">
+    <article class="article">
+  <h3 class="article-title"><a href="https://www.nytimes.com/2026/11/25/world/americas/mexico-prosecutor-cia-us.html" target="_blank" rel="noopener noreferrer">Mexico Investigates Possible Cartel Links of Prosecutor Who Aided C.I.A.</a></h3>
+  
+  <p class="article-meta">NYT World · 11/26 06:30</p>
+  <p class="article-excerpt">The prosecutor recently fled to the United States after Mexico issued a warrant over his involvement with the C.I.A. Now authorities are investigating him for suspected cartel collusion.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 一名曾協助美國中央情報局（CIA）的墨西哥檢察官，日前在墨西哥對其發出通緝令後逃往美國。墨西哥當局目前正調查他是否涉嫌與販毒集團勾結。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.nytimes.com/2026/11/25/arts/television/gordon-ramsay-top-gear-revival.html" target="_blank" rel="noopener noreferrer">Gordon Ramsay to Host Revival of BBC’s ‘Top Gear’</a></h3>
+  
+  <p class="article-meta">NYT World · 11/26 06:23</p>
+  <p class="article-excerpt">The British car show “Top Gear” paused production three years ago and is returning with a new host in 2028, the BBC said.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 英國廣播公司（BBC）表示，英國汽車節目《Top Gear》三年前暫停製作，將於2028年重新推出，並由名廚戈登·拉姆齊（Gordon Ramsay）擔任新主持人。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.bbc.co.uk/news/articles/cqy7rn30v314o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">Thirty-one killed in massive fire as fuel tanker crashes on Cairo highway</a></h3>
+  
+  <p class="article-meta">BBC World · 11/26 06:18</p>
+  <p class="article-excerpt">Another 21 are injured after the tanker reportedly overturns on a busy ring road in the Egyptian capital.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 埃及首都開羅一條繁忙的環城公路上，一輛油罐車據報翻覆並引發大火，造成31人死亡、另有21人受傷。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.nytimes.com/2026/11/25/us/politics/lukoil-deal.html" target="_blank" rel="noopener noreferrer">Lukoil to Sell Foreign Assets, but Not to Kushner and Witkoff Associates</a></h3>
+  
+  <p class="article-meta">NYT World · 11/26 06:16</p>
+  <p class="article-excerpt">Valuable properties belonging to the Russian energy giant will be sold to an American-led consortium. But Middle Eastern business contacts of the two Trump envoys pulled out because of political winds.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 俄羅斯能源巨擘盧克石油（Lukoil）的海外優質資產將出售給美國主導的財團，但並非賣給與川普兩位特使庫許納（Kushner）、威特考夫（Witkoff）有關的團體。兩人在中東的商業人脈因政治風向而退出。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.aljazeera.com/sports/2026/11/25/man-united-denied-at-sporting-as-referee-overshadows-fernandes-double?traffic_source=rss" target="_blank" rel="noopener noreferrer">Man United denied at Sporting as referee overshadows Fernandes double</a></h3>
+  
+  <p class="article-meta">Al Jazeera · 11/26 06:15</p>
+  <p class="article-excerpt">Bruno Fernandes nets twice in Lisbon, but referee&#39;s decisions in spotlight as Mauricio Pochettino denied first win.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 曼聯在里斯本作客葡萄牙體育會，布魯諾·費南德斯（Bruno Fernandes）進兩球，但裁判判決成為焦點，球隊未能取勝，教練波切蒂諾（Pochettino）仍未拿下首勝。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.bbc.co.uk/news/articles/cq0l34e4kkr5o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">North Korea expels Swiss diplomat in sanctions row</a></h3>
+  
+  <p class="article-meta">BBC World · 11/26 05:51</p>
+  <p class="article-excerpt">Swiss officials said relations would be kept through North Korea&#39;s embassy in Bern, and its own embassy in Beijing.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 北韓因制裁爭議驅逐一名瑞士外交官。瑞士官員表示，將透過北韓駐伯恩大使館及瑞士駐北京大使館維持雙邊關係。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.bbc.co.uk/news/articles/cq0md8g14zryo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">US stocks fall further as fears over AI intensify</a></h3>
+  
+  <p class="article-meta">BBC World · 11/26 05:43</p>
+  <p class="article-excerpt">All three main US indexes were down in early trading, with the tech-dominated Nasdaq down almost 4%.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 受人工智慧（AI）疑慮升溫影響，美股早盤三大指數全面下跌，以科技股為主的那斯達克指數跌幅將近4%。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.nytimes.com/2026/11/25/world/middleeast/road-fire-near-cairo-kills-dozens-after-petroleum-laden-truck-crashes.html" target="_blank" rel="noopener noreferrer">Road Fire Near Cairo Kills Dozens After Petroleum-Laden Truck Crashes</a></h3>
+  
+  <p class="article-meta">NYT World · 11/26 05:37</p>
+  <p class="article-excerpt">The blaze killed at least 31 and injured at least 21 near Giza, beside the Nile River, officials said.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 官員表示，埃及吉薩（Giza）尼羅河畔附近一輛載運石油產品的卡車發生車禍並引發大火，造成至少31人死亡、至少21人受傷。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.aljazeera.com/news/2026/11/25/winter-rains-threaten-1000-gaza-shelter-sites-councils-warn?traffic_source=rss" target="_blank" rel="noopener noreferrer">Winter rains threaten 1,000 Gaza shelter sites, councils warn</a></h3>
+  
+  <p class="article-meta">Al Jazeera · 11/26 05:03</p>
+  <p class="article-excerpt">About 200,000 tents need replacing, Gaza’s municipalities say, as the EU urges Israel to reopen all crossings.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 加薩各市政當局警告，冬季降雨恐威脅1,000處避難場所，約有20萬頂帳篷需要更換。歐盟同時呼籲以色列重新開放所有邊境通道。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.aljazeera.com/news/2026/11/25/us-education-department-probes-virginia-schools-after-sexual-abuse-scandal?traffic_source=rss" target="_blank" rel="noopener noreferrer">US Education Department probes Virginia schools after sexual abuse scandal</a></h3>
+  
+  <p class="article-meta">Al Jazeera · 11/26 04:52</p>
+  <p class="article-excerpt">Virginia schools face scrutiny after revelations of abuse and widespread failures in mandatory staff background checks.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 美國教育部對維吉尼亞州學校展開調查，起因是性虐待事件曝光，且學校在強制性的員工背景調查上被指普遍出現疏失。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.nytimes.com/2026/11/25/world/middleeast/judges-israel-corruption-case-netanyahu.html" target="_blank" rel="noopener noreferrer">Judges in Israel Suggest Dropping Key Corruption Case Against Netanyahu</a></h3>
+  
+  <p class="article-meta">NYT World · 11/26 04:45</p>
+  <p class="article-excerpt">Prime Minister Benjamin Netanyahu is accused of bribery, fraud and breach of trust in a long-running trial that has divided the country. He denies all wrongdoing.</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 以色列法官建議撤銷針對總理納坦雅胡（Netanyahu）的關鍵貪腐案。他被控賄賂、詐欺及背信，審理多年並造成國內分歧，他否認所有不當行為。</p>
+</article>
+<article class="article">
+  <h3 class="article-title"><a href="https://www.aljazeera.com/video/newsfeed/2026/11/25/baby-aliyah-steals-the-show-during-australian-senate-debate?traffic_source=rss" target="_blank" rel="noopener noreferrer">Baby Aliyah steals the show during Australian Senate debate</a></h3>
+  
+  <p class="article-meta">Al Jazeera · 11/26 04:42</p>
+  <p class="article-excerpt">Australian Senator Fatima Payman addressed the Senate with her six-month-old daughter, Aliyah, in her arms</p>
+  <p class="article-summary"><span class="summary-label">中文摘要</span> 澳洲參議員法蒂瑪·佩曼（Fatima Payman）在參議院辯論發言時，懷中抱著年僅六個月大的女兒阿莉亞（Aliyah），吸引外界關注。</p>
+</article>
+  </div>
+    </div>
+  </div>
+  </section>
+  
+
+  <footer>
+    內容均來自原始媒體與公開行情資料，本頁僅做摘要整理與連結，不構成投資建議。
+  </footer>
+</main>
+<script>
+  document.querySelectorAll('.tabs > .tab').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var target = btn.dataset.tab;
+      document.querySelectorAll('.tabs > .tab').forEach(function (b) {
+        b.classList.toggle('active', b === btn);
+      });
+      document.querySelectorAll('.panel').forEach(function (p) {
+        p.classList.toggle('active', p.dataset.panel === target);
+      });
+    });
+  });
+  // Scope sub-tab / source-tab toggles to the parent .panel so two L1 panels
+  // can share the same data-cat (e.g. tech main + community both data-cat=tech)
+  // without stomping on each other's active state.
+  document.querySelectorAll('.sub-tab').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var panel = btn.closest('.panel');
+      if (!panel) return;
+      var sub = btn.dataset.sub;
+      panel.querySelectorAll('.sub-tab').forEach(function (b) {
+        b.classList.toggle('active', b === btn);
+      });
+      panel.querySelectorAll('.sub-content').forEach(function (p) {
+        p.classList.toggle('active', p.dataset.subContent === sub);
+      });
+    });
+  });
+  document.querySelectorAll('.source-tab').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var subContent = btn.closest('.sub-content');
+      if (!subContent) return;
+      var src = btn.dataset.source;
+      subContent.querySelectorAll('.source-tab').forEach(function (b) {
+        b.classList.toggle('active', b === btn);
+      });
+      subContent.querySelectorAll('.source-content').forEach(function (p) {
+        p.classList.toggle('active', p.dataset.sourceContent === src);
+      });
+    });
+  });
+  // Trading panel: asset-group sub-tabs (US/crypto/china/commodity)
+  document.querySelectorAll('.trading-group-tab').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var grp = btn.dataset.group;
+      document.querySelectorAll('.trading-group-tab').forEach(function (b) {
+        b.classList.toggle('active', b === btn);
+      });
+      document.querySelectorAll('.trading-group-content').forEach(function (p) {
+        p.classList.toggle('active', p.dataset.group === grp);
+      });
+    });
+  });
+</script>
+</body>
+</html>
