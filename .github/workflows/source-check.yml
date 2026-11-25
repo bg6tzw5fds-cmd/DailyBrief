@@ -22,4 +22,4 @@ jobs:
       - name: Check 24h-asset alignment to US close
         run: npx tsx scripts/check-alignment.ts
       - name: Diagnose raw quotes
-        run: npx tsx scripts/diag-twse.ts
+        run: npx tsx scripts/diag-quotes.ts
