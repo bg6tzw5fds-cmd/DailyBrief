@@ -79,7 +79,22 @@ ${rows
     const tds = 'style="padding:5px 6px;border-bottom:1px solid #eee;font-size:13px;text-align:right;white-space:nowrap;"';
     const cell = (v, n) => `<td ${n == null ? tds : tds.replace('style="', `style="color:${color(n)};`)}>${v ?? "—"}</td>`;
 
-    parts.push(h2(`台股信用交易（${esc(m.date)}）`));
+    const instDays = hist.filter((d) => d.instForeign != null || d.instTrust != null || d.instDealer != null);
+    parts.push(h2(`台股籌碼（${esc(instDays.at(-1)?.date ?? m.date)}）`));
+    if (instDays.length) {
+      const yv = (v) => (v == null ? null : sgn(yiY(v), v));
+      const sum3 = (d) => ([d.instForeign, d.instTrust, d.instDealer].every((v) => v != null) ? d.instForeign + d.instTrust + d.instDealer : null);
+      parts.push(`<p style="font-size:14px;font-weight:600;margin:0 0 4px;">三大法人買賣超（億元，上市）</p>
+<table cellspacing="0" cellpadding="0" style="width:100%;border-collapse:collapse;">
+<tr>${th("日期", false)}${th("外資及陸資")}${th("投信")}${th("自營商(自行買賣)")}${th("三者合計")}</tr>
+${[...instDays]
+  .reverse()
+  .map((d) => `<tr><td ${td.replace("font-size:14px;", "font-size:13px;")}>${esc(d.date.slice(5).replace("-", "/"))}</td>${cell(yv(d.instForeign), d.instForeign)}${cell(yv(d.instTrust), d.instTrust)}${cell(yv(d.instDealer), d.instDealer)}${cell(yv(sum3(d)), sum3(d))}</tr>`)
+  .join("\n")}
+</table>
+<p style="font-size:11px;color:#a1a1aa;margin:4px 0 12px;">外資及陸資不含外資自營商；自營商僅計自行買賣，不含避險。</p>
+<p style="font-size:14px;font-weight:600;margin:0 0 4px;">信用交易</p>`);
+    }
     const head = [];
     if (m.marginAmount) head.push(`上市融資餘額 <b>${yi(m.marginAmount)} 億元</b>（<span style="color:${color(m.marginAmountChange)}">${sgn(yi(m.marginAmountChange), m.marginAmountChange)} 億</span>）`);
     if (last?.keepRate != null) head.push(`全市場擔保維持率 <b>${last.keepRate.toFixed(2)}%</b>`);

@@ -6,6 +6,7 @@
  *   - MI_MARGN_TREND    上市融資金額餘額（近 N 日）
  *   - BFIJ3U_TREND      全市場（上市＋上櫃）擔保維持率、追繳／處分戶數與金額（近 N 日）
  *   - FMTQIK            加權指數每日收盤與漲跌點數（按月）
+ *   - BFI82U            三大法人買賣金額統計（每日一次請求）
  *
  * 不需要 API key。任何一支抓不到都只是少一塊，晨報其餘部分照常產生。
  */
@@ -41,6 +42,45 @@ export interface MarginDay {
   callAmount?: number; // 追繳金額（元）
   exeAccounts?: number; // 處分戶數
   exeAmount?: number; // 處分金額（元）
+  instForeign?: number; // 外資及陸資（不含外資自營商）買賣超（元）
+  instTrust?: number; // 投信買賣超（元）
+  instDealer?: number; // 自營商（自行買賣）買賣超（元）
+}
+
+/** Pure parser for BFI82U — exported for tests. Returns null when the day has no data. */
+export function parseInstitutional(
+  j: Record<string, unknown>,
+): { foreign?: number; trust?: number; dealer?: number } | null {
+  const rows: Row[] = Array.isArray(j.data)
+    ? (j.data as Row[])
+    : Array.isArray(j.tables)
+      ? ((j.tables as Table[])[0]?.data ?? [])
+      : [];
+  if (rows.length === 0) return null;
+  const out: { foreign?: number; trust?: number; dealer?: number } = {};
+  for (const r of rows) {
+    const name = String(r[0] ?? "").replace(/[\s()（）]/g, "");
+    const net = num(r[3]); // 單位名稱, 買進金額, 賣出金額, 買賣差額
+    if (name.includes("自行買賣")) out.dealer = net;
+    else if (name === "投信") out.trust = net;
+    else if (name.startsWith("外資及陸資")) out.foreign = net;
+  }
+  return out.foreign == null && out.trust == null && out.dealer == null ? null : out;
+}
+
+/** 依交易日抓三大法人買賣超，寫回 history（就地修改）。 */
+async function addInstitutional(history: MarginDay[]): Promise<void> {
+  for (const d of history) {
+    const key = d.date.replace(/-/g, "");
+    const j = await getJson(`${BASE}/fund/BFI82U?type=day&dayDate=${key}&response=json`);
+    const p = j ? parseInstitutional(j) : null;
+    if (p) {
+      d.instForeign = p.foreign;
+      d.instTrust = p.trust;
+      d.instDealer = p.dealer;
+    }
+    await sleep(2000);
+  }
 }
 
 export interface MarginSnapshot {
@@ -280,7 +320,14 @@ export async function fetchTwseMargin(): Promise<MarginSnapshot | null> {
       stocks: [],
     };
   }
-  if (history.length) snap.history = history;
+  if (history.length) {
+    try {
+      await addInstitutional(history);
+    } catch (e) {
+      console.warn(`[margin] institutional failed (non-fatal): ${e instanceof Error ? e.message : String(e)}`);
+    }
+    snap.history = history;
+  }
   return snap;
 }
 
@@ -299,6 +346,14 @@ export function marginToPromptText(m: MarginSnapshot): string {
       lines.push(
         `- ${d.date}：指數 ${d.indexClose?.toFixed(2) ?? "—"}（${d.indexPct != null ? (d.indexPct >= 0 ? "+" : "") + d.indexPct.toFixed(2) + "%" : "—"}），融資 ${d.marginAmount != null ? yiFromThousand(d.marginAmount) + " 億" : "—"}（${d.marginAmountChange != null ? (d.marginAmountChange >= 0 ? "+" : "") + yiFromThousand(d.marginAmountChange) + " 億" : "—"}），維持率 ${d.keepRate != null ? d.keepRate.toFixed(2) + "%" : "—"}，追繳 ${d.callAccounts?.toLocaleString("en-US") ?? "—"} 戶／${d.callAmount != null ? yiFromYuan(d.callAmount) + " 億" : "—"}`,
       );
+    }
+  }
+  const inst = (m.history ?? []).filter((d) => d.instForeign != null || d.instTrust != null || d.instDealer != null);
+  if (inst.length) {
+    const yy = (v?: number) => (v == null ? "—" : `${v >= 0 ? "+" : ""}${yiFromYuan(v)} 億`);
+    lines.push("三大法人買賣超（上市，外資及陸資不含外資自營商／投信／自營商自行買賣）：");
+    for (const d of inst) {
+      lines.push(`- ${d.date}：外資 ${yy(d.instForeign)}，投信 ${yy(d.instTrust)}，自營商 ${yy(d.instDealer)}`);
     }
   }
   for (const s of m.stocks) {

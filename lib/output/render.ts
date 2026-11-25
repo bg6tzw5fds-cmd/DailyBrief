@@ -90,7 +90,14 @@ const TEXTS_ZH = {
   snapshot1d: "日漲跌",
   snapshot5d: "5 日",
   digestFinance: "財經與總經重點",
-  marginTitle: "台股信用交易",
+  marginTitle: "台股籌碼",
+  instTitle: "三大法人買賣超（億元，上市）",
+  instForeign: "外資及陸資",
+  instTrust: "投信",
+  instDealer: "自營商(自行買賣)",
+  instSum: "三者合計",
+  instNote: "外資及陸資不含外資自營商；自營商僅計自行買賣，不含避險",
+  creditSub: "信用交易",
   marginNote: "資料來源：臺灣證券交易所臺股儀表板；為前一交易日資料。融資餘額為上市（含 ETF）；擔保維持率、追繳為上市＋上櫃全市場；追繳戶數指整戶擔保維持率低於 130% 之戶數",
   marginKeepRate: "全市場擔保維持率",
   marginCallAcc: "追繳戶數",
@@ -183,7 +190,14 @@ const TEXTS_EN: typeof TEXTS_ZH = {
   snapshot1d: "1D",
   snapshot5d: "5D",
   digestFinance: "Finance & Macro",
-  marginTitle: "Taiwan Margin Trading",
+  marginTitle: "Taiwan Flows & Margin",
+  instTitle: "Institutional net buy/sell (NT$100m, TWSE)",
+  instForeign: "Foreign",
+  instTrust: "Inv. trusts",
+  instDealer: "Dealers (prop)",
+  instSum: "Sum",
+  instNote: "Foreign excludes foreign dealers; dealers = proprietary only, excl. hedging",
+  creditSub: "Margin trading",
   marginNote: "Source: TWSE dashboard; previous trading day. Margin balance is TWSE-listed (incl. ETFs); maintenance ratio and margin calls cover TWSE + TPEx; call accounts = accounts below 130%",
   marginKeepRate: "Market maint. ratio",
   marginCallAcc: "Margin-call accts",
@@ -1308,6 +1322,7 @@ export function renderHtml(
     display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.6rem; margin: 0.2rem 0 0.8rem;
   }
   @media (max-width: 520px) { .margin-stats { grid-template-columns: repeat(2, 1fr); } }
+  .margin-stats.inst-stats { grid-template-columns: repeat(3, 1fr); }
   .margin-stats > div { background: var(--card); border-radius: 0.4rem; padding: 0.5rem 0.7rem; }
   .margin-stats .widget-value { font-size: 1.05rem; font-weight: 600; font-variant-numeric: tabular-nums; }
   .margin-stats .widget-label { font-size: 0.72rem; color: var(--muted); }
@@ -1785,6 +1800,26 @@ function renderMargin(m: MarginSnapshot | undefined): string {
     )
     .join("");
 
+  const instDays = hist.filter((d) => d.instForeign != null || d.instTrust != null || d.instDealer != null);
+  const yiSigned = (v?: number) => (v == null ? dash : signed(yiY(v), v));
+  const instCell = (v?: number) => `<td class="snap-num ${v != null ? cls(v) : ""}">${yiSigned(v)}</td>`;
+  const instRows = [...instDays]
+    .reverse()
+    .map((d) => {
+      const parts3 = [d.instForeign, d.instTrust, d.instDealer];
+      const sum = parts3.every((v) => v != null) ? parts3.reduce((a, b) => a! + b!, 0)! : undefined;
+      return `<tr><td class="snap-name">${escapeHtml(d.date.slice(5).replace("-", "/"))}</td>${instCell(d.instForeign)}${instCell(d.instTrust)}${instCell(d.instDealer)}${instCell(sum)}</tr>`;
+    })
+    .join("");
+  const instLast = instDays[instDays.length - 1];
+  const instStats = instLast
+    ? [
+        stat(STR.instForeign, `<span class="${instLast.instForeign != null ? cls(instLast.instForeign) : ""}">${yiSigned(instLast.instForeign)} 億</span>`),
+        stat(STR.instTrust, `<span class="${instLast.instTrust != null ? cls(instLast.instTrust) : ""}">${yiSigned(instLast.instTrust)} 億</span>`),
+        stat(STR.instDealer, `<span class="${instLast.instDealer != null ? cls(instLast.instDealer) : ""}">${yiSigned(instLast.instDealer)} 億</span>`),
+      ]
+    : [];
+
   const etfRows = m.stocks
     .map(
       (s) =>
@@ -1793,7 +1828,19 @@ function renderMargin(m: MarginSnapshot | undefined): string {
     .join("");
 
   return `<section class="snapshot-card margin-card">
-    <span class="eyebrow">${STR.marginTitle} · ${escapeHtml(m.date)}</span>
+    <span class="eyebrow">${STR.marginTitle} · ${escapeHtml(instLast?.date ?? m.date)}</span>
+    ${
+      instRows
+        ? `<div class="margin-sub">${STR.instTitle}</div>
+    <div class="margin-stats inst-stats">${instStats.join("")}</div>
+    <div class="margin-scroll"><table class="snapshot-table">
+      <thead><tr><th>${STR.marginDate}</th><th>${STR.instForeign}</th><th>${STR.instTrust}</th><th>${STR.instDealer}</th><th>${STR.instSum}</th></tr></thead>
+      <tbody>${instRows}</tbody>
+    </table></div>
+    <p class="snapshot-note">${STR.instNote}</p>
+    <div class="margin-sub">${STR.creditSub}</div>`
+        : ""
+    }
     ${stats.length ? `<div class="margin-stats">${stats.join("")}</div>` : ""}
     ${
       histRows
