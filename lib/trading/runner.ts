@@ -142,6 +142,19 @@ export function expectedSessionDate(tz: string, now: Date = new Date()): string 
   return ymd;
 }
 
+/**
+ * 盤中執行時（例如補跑）去掉「今天尚未收盤」的 K 棒，確保所有市場都是前一交易日收盤。
+ * 判斷方式：最後一根 K 棒是當地「今天」且當地時間未到 17:00。Pure; exported for tests.
+ */
+export function dropUnfinishedSession(raw: TickerRawData, now: Date = new Date()): TickerRawData {
+  if (!raw.timezone || isAroundTheClock(raw.symbol) || raw.candles.length < 2) return raw;
+  const last = raw.candles[raw.candles.length - 1];
+  const nowP = partsIn(raw.timezone, now);
+  if (partsIn(raw.timezone, last.date).ymd !== nowP.ymd || nowP.hour >= 17) return raw;
+  const candles = raw.candles.slice(0, -1);
+  return { ...raw, candles, regularMarketPrice: candles[candles.length - 1].close };
+}
+
 /** Mark tickers whose market was closed on its most recent expected session. Pure; exported for tests. */
 export function markHolidays(a: TickerAnalysis, raw: TickerRawData, now: Date = new Date()): TickerAnalysis {
   const last = raw.candles[raw.candles.length - 1];
@@ -205,7 +218,9 @@ export async function analyzeWatchlist(
     const raw = aligned[i];
     if (!raw) return null;
     try {
-      const a = markHolidays(analyzeTicker(def, raw), raw);
+      const done = dropUnfinishedSession(raw);
+      if (done !== raw) console.log(`[trading] ${def.symbol} session still open — using previous close`);
+      const a = markHolidays(analyzeTicker(def, done), done);
       if (a.marketClosed) console.log(`[trading] ${def.symbol} market closed — last session ${a.lastSessionDate}`);
       return a;
     } catch (e) {
